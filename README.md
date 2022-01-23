@@ -35,8 +35,8 @@ You may adjust these details using additional parameters:
 - The string value delimiter character (double quotes (`"`) per default)
 - String encoding to use (default is the default .NET encoding)
 - If the stream should be left open (default is `false`)
-- Buffer size in bytes (number of bytes that need to include all header columns)
-- Chunk size in bytes (for filling the buffer)
+- Buffer size in bytes (number of bytes that need to include all header columns, default is 80K)
+- Chunk size in bytes (for filling the buffer, default is 4K)
 
 The resulting CSV table object holds the parsed table data:
 
