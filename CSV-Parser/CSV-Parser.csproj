@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>wan24.Data</RootNamespace>
+    <AssemblyName>csvparser</AssemblyName>
+    <PackageId>CSV-Parser</PackageId>
+    <Authors>nd1012</Authors>
+    <Company>Andreas Zimmermann, wan24.de</Company>
+    <Product>CSV-Parser</Product>
+    <Description>A RFC 4180-like CSV parser</Description>
+    <Copyright>©2022 Andreas Zimmermann, wan24.de</Copyright>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/nd1012/CSV-Parser</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/nd1012/CSV-Parser</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>csv,rfc4180</PackageTags>
+    <NeutralLanguage>en-001</NeutralLanguage>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>TRACE;RELEASE</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="LICENSE">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="LICENSE">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
