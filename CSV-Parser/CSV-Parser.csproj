@@ -17,6 +17,7 @@
     <RepositoryType>git</RepositoryType>
     <PackageTags>csv,rfc4180</PackageTags>
     <NeutralLanguage>en-001</NeutralLanguage>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
