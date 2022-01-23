@@ -1,6 +1,6 @@
 # CSV-Parser
 
-A lightweight .NET Standard 2.0 CSV table parser.
+A lightweight .NET Standard 2.0 CSV table (RFC 4180-like) parser.
 
 ## Usage
 
