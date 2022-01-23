@@ -352,7 +352,7 @@ namespace wan24.Data
 					red = await stream.ReadAsync(buffer, index, len);
 					if (red != len) throw new IOException($"Failed to read {len} bytes from stream (got {red})");
 					len = index + red;
-					for (; !found && index < len; found = buffer[index] == 13, index++) ;
+					for (; !found && index < len; found = buffer[index] == 10, index++) ;
 				}
 				return found ? ParseHeaderFromString(encoding.GetString(buffer, 0, index), fieldDelimiter, stringDelimiter) : null;
 			}
