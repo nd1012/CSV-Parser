@@ -30,10 +30,10 @@ These static methods are available:
 
 You may adjust these details using additional parameters:
 
-- If the first line contains the column headers
-- The field delimiter character (comma (`,`) per default)
-- The string value delimiter character (double quotes (`"`) per default)
-- String encoding to use (default is the default .NET encoding)
+- If the first line contains the column headers (default is `true`)
+- The field delimiter character (default is comma (`,`))
+- The string value delimiter character (default is double quotes (`"`))
+- String encoding to use (default is the .NET encoding)
 - If the stream should be left open (default is `false`)
 - Buffer size in bytes (number of bytes that need to include all header columns, default is 80K)
 - Chunk size in bytes (for filling the buffer, default is 4K)
