@@ -1,0 +1,34 @@
+### YamlMime:ManagedReference
+items:
+- uid: wan24.Data
+  commentId: N:wan24.Data
+  id: wan24.Data
+  children:
+  - wan24.Data.CsvParser
+  - wan24.Data.CsvTable
+  langs:
+  - csharp
+  - vb
+  name: wan24.Data
+  nameWithType: wan24.Data
+  fullName: wan24.Data
+  type: Namespace
+  assemblies:
+  - csvparser
+references:
+- uid: wan24.Data.CsvParser
+  commentId: T:wan24.Data.CsvParser
+  name: CsvParser
+  nameWithType: CsvParser
+  fullName: wan24.Data.CsvParser
+- uid: wan24.Data.CsvTable
+  commentId: T:wan24.Data.CsvTable
+  parent: wan24.Data
+  name: CsvTable
+  nameWithType: CsvTable
+  fullName: wan24.Data.CsvTable
+- uid: wan24.Data
+  commentId: N:wan24.Data
+  name: wan24.Data
+  nameWithType: wan24.Data
+  fullName: wan24.Data

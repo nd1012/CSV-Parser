@@ -1,0 +1,341 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: wan24.Data
+  name: wan24.Data
+  href: api/wan24.Data.html
+  commentId: N:wan24.Data
+  fullName: wan24.Data
+  nameWithType: wan24.Data
+- uid: wan24.Data.CsvParser
+  name: CsvParser
+  href: api/wan24.Data.CsvParser.html
+  commentId: T:wan24.Data.CsvParser
+  fullName: wan24.Data.CsvParser
+  nameWithType: CsvParser
+- uid: wan24.Data.CsvParser.CountRowsFromFileAsync(System.String,System.Nullable{System.Char},System.Text.Encoding)
+  name: CountRowsFromFileAsync(String, Nullable<Char>, Encoding)
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_CountRowsFromFileAsync_System_String_System_Nullable_System_Char__System_Text_Encoding_
+  commentId: M:wan24.Data.CsvParser.CountRowsFromFileAsync(System.String,System.Nullable{System.Char},System.Text.Encoding)
+  name.vb: CountRowsFromFileAsync(String, Nullable(Of Char), Encoding)
+  fullName: wan24.Data.CsvParser.CountRowsFromFileAsync(System.String, System.Nullable<System.Char>, System.Text.Encoding)
+  fullName.vb: wan24.Data.CsvParser.CountRowsFromFileAsync(System.String, System.Nullable(Of System.Char), System.Text.Encoding)
+  nameWithType: CsvParser.CountRowsFromFileAsync(String, Nullable<Char>, Encoding)
+  nameWithType.vb: CsvParser.CountRowsFromFileAsync(String, Nullable(Of Char), Encoding)
+- uid: wan24.Data.CsvParser.CountRowsFromFileAsync*
+  name: CountRowsFromFileAsync
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_CountRowsFromFileAsync_
+  commentId: Overload:wan24.Data.CsvParser.CountRowsFromFileAsync
+  isSpec: "True"
+  fullName: wan24.Data.CsvParser.CountRowsFromFileAsync
+  nameWithType: CsvParser.CountRowsFromFileAsync
+- uid: wan24.Data.CsvParser.CountRowsFromStream(System.IO.Stream,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)
+  name: CountRowsFromStream(Stream, Nullable<Char>, Boolean, Encoding)
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_CountRowsFromStream_System_IO_Stream_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_
+  commentId: M:wan24.Data.CsvParser.CountRowsFromStream(System.IO.Stream,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)
+  name.vb: CountRowsFromStream(Stream, Nullable(Of Char), Boolean, Encoding)
+  fullName: wan24.Data.CsvParser.CountRowsFromStream(System.IO.Stream, System.Nullable<System.Char>, System.Boolean, System.Text.Encoding)
+  fullName.vb: wan24.Data.CsvParser.CountRowsFromStream(System.IO.Stream, System.Nullable(Of System.Char), System.Boolean, System.Text.Encoding)
+  nameWithType: CsvParser.CountRowsFromStream(Stream, Nullable<Char>, Boolean, Encoding)
+  nameWithType.vb: CsvParser.CountRowsFromStream(Stream, Nullable(Of Char), Boolean, Encoding)
+- uid: wan24.Data.CsvParser.CountRowsFromStream*
+  name: CountRowsFromStream
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_CountRowsFromStream_
+  commentId: Overload:wan24.Data.CsvParser.CountRowsFromStream
+  isSpec: "True"
+  fullName: wan24.Data.CsvParser.CountRowsFromStream
+  nameWithType: CsvParser.CountRowsFromStream
+- uid: wan24.Data.CsvParser.CountRowsFromStreamAsync(System.IO.Stream,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)
+  name: CountRowsFromStreamAsync(Stream, Nullable<Char>, Boolean, Encoding)
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_CountRowsFromStreamAsync_System_IO_Stream_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_
+  commentId: M:wan24.Data.CsvParser.CountRowsFromStreamAsync(System.IO.Stream,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)
+  name.vb: CountRowsFromStreamAsync(Stream, Nullable(Of Char), Boolean, Encoding)
+  fullName: wan24.Data.CsvParser.CountRowsFromStreamAsync(System.IO.Stream, System.Nullable<System.Char>, System.Boolean, System.Text.Encoding)
+  fullName.vb: wan24.Data.CsvParser.CountRowsFromStreamAsync(System.IO.Stream, System.Nullable(Of System.Char), System.Boolean, System.Text.Encoding)
+  nameWithType: CsvParser.CountRowsFromStreamAsync(Stream, Nullable<Char>, Boolean, Encoding)
+  nameWithType.vb: CsvParser.CountRowsFromStreamAsync(Stream, Nullable(Of Char), Boolean, Encoding)
+- uid: wan24.Data.CsvParser.CountRowsFromStreamAsync*
+  name: CountRowsFromStreamAsync
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_CountRowsFromStreamAsync_
+  commentId: Overload:wan24.Data.CsvParser.CountRowsFromStreamAsync
+  isSpec: "True"
+  fullName: wan24.Data.CsvParser.CountRowsFromStreamAsync
+  nameWithType: CsvParser.CountRowsFromStreamAsync
+- uid: wan24.Data.CsvParser.CountRowsFromString(System.String,System.Nullable{System.Char})
+  name: CountRowsFromString(String, Nullable<Char>)
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_CountRowsFromString_System_String_System_Nullable_System_Char__
+  commentId: M:wan24.Data.CsvParser.CountRowsFromString(System.String,System.Nullable{System.Char})
+  name.vb: CountRowsFromString(String, Nullable(Of Char))
+  fullName: wan24.Data.CsvParser.CountRowsFromString(System.String, System.Nullable<System.Char>)
+  fullName.vb: wan24.Data.CsvParser.CountRowsFromString(System.String, System.Nullable(Of System.Char))
+  nameWithType: CsvParser.CountRowsFromString(String, Nullable<Char>)
+  nameWithType.vb: CsvParser.CountRowsFromString(String, Nullable(Of Char))
+- uid: wan24.Data.CsvParser.CountRowsFromString*
+  name: CountRowsFromString
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_CountRowsFromString_
+  commentId: Overload:wan24.Data.CsvParser.CountRowsFromString
+  isSpec: "True"
+  fullName: wan24.Data.CsvParser.CountRowsFromString
+  nameWithType: CsvParser.CountRowsFromString
+- uid: wan24.Data.CsvParser.ParseFile(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding)
+  name: ParseFile(String, Boolean, Char, Nullable<Char>, Encoding)
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseFile_System_String_System_Boolean_System_Char_System_Nullable_System_Char__System_Text_Encoding_
+  commentId: M:wan24.Data.CsvParser.ParseFile(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding)
+  name.vb: ParseFile(String, Boolean, Char, Nullable(Of Char), Encoding)
+  fullName: wan24.Data.CsvParser.ParseFile(System.String, System.Boolean, System.Char, System.Nullable<System.Char>, System.Text.Encoding)
+  fullName.vb: wan24.Data.CsvParser.ParseFile(System.String, System.Boolean, System.Char, System.Nullable(Of System.Char), System.Text.Encoding)
+  nameWithType: CsvParser.ParseFile(String, Boolean, Char, Nullable<Char>, Encoding)
+  nameWithType.vb: CsvParser.ParseFile(String, Boolean, Char, Nullable(Of Char), Encoding)
+- uid: wan24.Data.CsvParser.ParseFile(System.String,System.Nullable{System.Char},System.Text.Encoding)
+  name: ParseFile(String, Nullable<Char>, Encoding)
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseFile_System_String_System_Nullable_System_Char__System_Text_Encoding_
+  commentId: M:wan24.Data.CsvParser.ParseFile(System.String,System.Nullable{System.Char},System.Text.Encoding)
+  name.vb: ParseFile(String, Nullable(Of Char), Encoding)
+  fullName: wan24.Data.CsvParser.ParseFile(System.String, System.Nullable<System.Char>, System.Text.Encoding)
+  fullName.vb: wan24.Data.CsvParser.ParseFile(System.String, System.Nullable(Of System.Char), System.Text.Encoding)
+  nameWithType: CsvParser.ParseFile(String, Nullable<Char>, Encoding)
+  nameWithType.vb: CsvParser.ParseFile(String, Nullable(Of Char), Encoding)
+- uid: wan24.Data.CsvParser.ParseFile*
+  name: ParseFile
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseFile_
+  commentId: Overload:wan24.Data.CsvParser.ParseFile
+  isSpec: "True"
+  fullName: wan24.Data.CsvParser.ParseFile
+  nameWithType: CsvParser.ParseFile
+- uid: wan24.Data.CsvParser.ParseFileAsync(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding)
+  name: ParseFileAsync(String, Boolean, Char, Nullable<Char>, Encoding)
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseFileAsync_System_String_System_Boolean_System_Char_System_Nullable_System_Char__System_Text_Encoding_
+  commentId: M:wan24.Data.CsvParser.ParseFileAsync(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding)
+  name.vb: ParseFileAsync(String, Boolean, Char, Nullable(Of Char), Encoding)
+  fullName: wan24.Data.CsvParser.ParseFileAsync(System.String, System.Boolean, System.Char, System.Nullable<System.Char>, System.Text.Encoding)
+  fullName.vb: wan24.Data.CsvParser.ParseFileAsync(System.String, System.Boolean, System.Char, System.Nullable(Of System.Char), System.Text.Encoding)
+  nameWithType: CsvParser.ParseFileAsync(String, Boolean, Char, Nullable<Char>, Encoding)
+  nameWithType.vb: CsvParser.ParseFileAsync(String, Boolean, Char, Nullable(Of Char), Encoding)
+- uid: wan24.Data.CsvParser.ParseFileAsync*
+  name: ParseFileAsync
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseFileAsync_
+  commentId: Overload:wan24.Data.CsvParser.ParseFileAsync
+  isSpec: "True"
+  fullName: wan24.Data.CsvParser.ParseFileAsync
+  nameWithType: CsvParser.ParseFileAsync
+- uid: wan24.Data.CsvParser.ParseHeaderFromFile(System.String,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32)
+  name: ParseHeaderFromFile(String, Char, Nullable<Char>, Encoding, Int32, Int32)
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseHeaderFromFile_System_String_System_Char_System_Nullable_System_Char__System_Text_Encoding_System_Int32_System_Int32_
+  commentId: M:wan24.Data.CsvParser.ParseHeaderFromFile(System.String,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32)
+  name.vb: ParseHeaderFromFile(String, Char, Nullable(Of Char), Encoding, Int32, Int32)
+  fullName: wan24.Data.CsvParser.ParseHeaderFromFile(System.String, System.Char, System.Nullable<System.Char>, System.Text.Encoding, System.Int32, System.Int32)
+  fullName.vb: wan24.Data.CsvParser.ParseHeaderFromFile(System.String, System.Char, System.Nullable(Of System.Char), System.Text.Encoding, System.Int32, System.Int32)
+  nameWithType: CsvParser.ParseHeaderFromFile(String, Char, Nullable<Char>, Encoding, Int32, Int32)
+  nameWithType.vb: CsvParser.ParseHeaderFromFile(String, Char, Nullable(Of Char), Encoding, Int32, Int32)
+- uid: wan24.Data.CsvParser.ParseHeaderFromFile*
+  name: ParseHeaderFromFile
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseHeaderFromFile_
+  commentId: Overload:wan24.Data.CsvParser.ParseHeaderFromFile
+  isSpec: "True"
+  fullName: wan24.Data.CsvParser.ParseHeaderFromFile
+  nameWithType: CsvParser.ParseHeaderFromFile
+- uid: wan24.Data.CsvParser.ParseHeaderFromFileAsync(System.String,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32)
+  name: ParseHeaderFromFileAsync(String, Char, Nullable<Char>, Encoding, Int32, Int32)
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseHeaderFromFileAsync_System_String_System_Char_System_Nullable_System_Char__System_Text_Encoding_System_Int32_System_Int32_
+  commentId: M:wan24.Data.CsvParser.ParseHeaderFromFileAsync(System.String,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32)
+  name.vb: ParseHeaderFromFileAsync(String, Char, Nullable(Of Char), Encoding, Int32, Int32)
+  fullName: wan24.Data.CsvParser.ParseHeaderFromFileAsync(System.String, System.Char, System.Nullable<System.Char>, System.Text.Encoding, System.Int32, System.Int32)
+  fullName.vb: wan24.Data.CsvParser.ParseHeaderFromFileAsync(System.String, System.Char, System.Nullable(Of System.Char), System.Text.Encoding, System.Int32, System.Int32)
+  nameWithType: CsvParser.ParseHeaderFromFileAsync(String, Char, Nullable<Char>, Encoding, Int32, Int32)
+  nameWithType.vb: CsvParser.ParseHeaderFromFileAsync(String, Char, Nullable(Of Char), Encoding, Int32, Int32)
+- uid: wan24.Data.CsvParser.ParseHeaderFromFileAsync*
+  name: ParseHeaderFromFileAsync
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseHeaderFromFileAsync_
+  commentId: Overload:wan24.Data.CsvParser.ParseHeaderFromFileAsync
+  isSpec: "True"
+  fullName: wan24.Data.CsvParser.ParseHeaderFromFileAsync
+  nameWithType: CsvParser.ParseHeaderFromFileAsync
+- uid: wan24.Data.CsvParser.ParseHeaderFromStream(System.IO.Stream,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32)
+  name: ParseHeaderFromStream(Stream, Char, Nullable<Char>, Boolean, Encoding, Int32, Int32)
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseHeaderFromStream_System_IO_Stream_System_Char_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_System_Int32_System_Int32_
+  commentId: M:wan24.Data.CsvParser.ParseHeaderFromStream(System.IO.Stream,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32)
+  name.vb: ParseHeaderFromStream(Stream, Char, Nullable(Of Char), Boolean, Encoding, Int32, Int32)
+  fullName: wan24.Data.CsvParser.ParseHeaderFromStream(System.IO.Stream, System.Char, System.Nullable<System.Char>, System.Boolean, System.Text.Encoding, System.Int32, System.Int32)
+  fullName.vb: wan24.Data.CsvParser.ParseHeaderFromStream(System.IO.Stream, System.Char, System.Nullable(Of System.Char), System.Boolean, System.Text.Encoding, System.Int32, System.Int32)
+  nameWithType: CsvParser.ParseHeaderFromStream(Stream, Char, Nullable<Char>, Boolean, Encoding, Int32, Int32)
+  nameWithType.vb: CsvParser.ParseHeaderFromStream(Stream, Char, Nullable(Of Char), Boolean, Encoding, Int32, Int32)
+- uid: wan24.Data.CsvParser.ParseHeaderFromStream*
+  name: ParseHeaderFromStream
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseHeaderFromStream_
+  commentId: Overload:wan24.Data.CsvParser.ParseHeaderFromStream
+  isSpec: "True"
+  fullName: wan24.Data.CsvParser.ParseHeaderFromStream
+  nameWithType: CsvParser.ParseHeaderFromStream
+- uid: wan24.Data.CsvParser.ParseHeaderFromStreamAsync(System.IO.Stream,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32)
+  name: ParseHeaderFromStreamAsync(Stream, Char, Nullable<Char>, Boolean, Encoding, Int32, Int32)
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseHeaderFromStreamAsync_System_IO_Stream_System_Char_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_System_Int32_System_Int32_
+  commentId: M:wan24.Data.CsvParser.ParseHeaderFromStreamAsync(System.IO.Stream,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32)
+  name.vb: ParseHeaderFromStreamAsync(Stream, Char, Nullable(Of Char), Boolean, Encoding, Int32, Int32)
+  fullName: wan24.Data.CsvParser.ParseHeaderFromStreamAsync(System.IO.Stream, System.Char, System.Nullable<System.Char>, System.Boolean, System.Text.Encoding, System.Int32, System.Int32)
+  fullName.vb: wan24.Data.CsvParser.ParseHeaderFromStreamAsync(System.IO.Stream, System.Char, System.Nullable(Of System.Char), System.Boolean, System.Text.Encoding, System.Int32, System.Int32)
+  nameWithType: CsvParser.ParseHeaderFromStreamAsync(Stream, Char, Nullable<Char>, Boolean, Encoding, Int32, Int32)
+  nameWithType.vb: CsvParser.ParseHeaderFromStreamAsync(Stream, Char, Nullable(Of Char), Boolean, Encoding, Int32, Int32)
+- uid: wan24.Data.CsvParser.ParseHeaderFromStreamAsync*
+  name: ParseHeaderFromStreamAsync
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseHeaderFromStreamAsync_
+  commentId: Overload:wan24.Data.CsvParser.ParseHeaderFromStreamAsync
+  isSpec: "True"
+  fullName: wan24.Data.CsvParser.ParseHeaderFromStreamAsync
+  nameWithType: CsvParser.ParseHeaderFromStreamAsync
+- uid: wan24.Data.CsvParser.ParseHeaderFromString(System.String,System.Char,System.Nullable{System.Char})
+  name: ParseHeaderFromString(String, Char, Nullable<Char>)
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseHeaderFromString_System_String_System_Char_System_Nullable_System_Char__
+  commentId: M:wan24.Data.CsvParser.ParseHeaderFromString(System.String,System.Char,System.Nullable{System.Char})
+  name.vb: ParseHeaderFromString(String, Char, Nullable(Of Char))
+  fullName: wan24.Data.CsvParser.ParseHeaderFromString(System.String, System.Char, System.Nullable<System.Char>)
+  fullName.vb: wan24.Data.CsvParser.ParseHeaderFromString(System.String, System.Char, System.Nullable(Of System.Char))
+  nameWithType: CsvParser.ParseHeaderFromString(String, Char, Nullable<Char>)
+  nameWithType.vb: CsvParser.ParseHeaderFromString(String, Char, Nullable(Of Char))
+- uid: wan24.Data.CsvParser.ParseHeaderFromString*
+  name: ParseHeaderFromString
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseHeaderFromString_
+  commentId: Overload:wan24.Data.CsvParser.ParseHeaderFromString
+  isSpec: "True"
+  fullName: wan24.Data.CsvParser.ParseHeaderFromString
+  nameWithType: CsvParser.ParseHeaderFromString
+- uid: wan24.Data.CsvParser.ParseStream(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)
+  name: ParseStream(Stream, Boolean, Char, Nullable<Char>, Boolean, Encoding)
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseStream_System_IO_Stream_System_Boolean_System_Char_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_
+  commentId: M:wan24.Data.CsvParser.ParseStream(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)
+  name.vb: ParseStream(Stream, Boolean, Char, Nullable(Of Char), Boolean, Encoding)
+  fullName: wan24.Data.CsvParser.ParseStream(System.IO.Stream, System.Boolean, System.Char, System.Nullable<System.Char>, System.Boolean, System.Text.Encoding)
+  fullName.vb: wan24.Data.CsvParser.ParseStream(System.IO.Stream, System.Boolean, System.Char, System.Nullable(Of System.Char), System.Boolean, System.Text.Encoding)
+  nameWithType: CsvParser.ParseStream(Stream, Boolean, Char, Nullable<Char>, Boolean, Encoding)
+  nameWithType.vb: CsvParser.ParseStream(Stream, Boolean, Char, Nullable(Of Char), Boolean, Encoding)
+- uid: wan24.Data.CsvParser.ParseStream*
+  name: ParseStream
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseStream_
+  commentId: Overload:wan24.Data.CsvParser.ParseStream
+  isSpec: "True"
+  fullName: wan24.Data.CsvParser.ParseStream
+  nameWithType: CsvParser.ParseStream
+- uid: wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)
+  name: ParseStreamAsync(Stream, Boolean, Char, Nullable<Char>, Boolean, Encoding)
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseStreamAsync_System_IO_Stream_System_Boolean_System_Char_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_
+  commentId: M:wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)
+  name.vb: ParseStreamAsync(Stream, Boolean, Char, Nullable(Of Char), Boolean, Encoding)
+  fullName: wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream, System.Boolean, System.Char, System.Nullable<System.Char>, System.Boolean, System.Text.Encoding)
+  fullName.vb: wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream, System.Boolean, System.Char, System.Nullable(Of System.Char), System.Boolean, System.Text.Encoding)
+  nameWithType: CsvParser.ParseStreamAsync(Stream, Boolean, Char, Nullable<Char>, Boolean, Encoding)
+  nameWithType.vb: CsvParser.ParseStreamAsync(Stream, Boolean, Char, Nullable(Of Char), Boolean, Encoding)
+- uid: wan24.Data.CsvParser.ParseStreamAsync*
+  name: ParseStreamAsync
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseStreamAsync_
+  commentId: Overload:wan24.Data.CsvParser.ParseStreamAsync
+  isSpec: "True"
+  fullName: wan24.Data.CsvParser.ParseStreamAsync
+  nameWithType: CsvParser.ParseStreamAsync
+- uid: wan24.Data.CsvParser.ParseString(System.String,System.Boolean,System.Char,System.Nullable{System.Char})
+  name: ParseString(String, Boolean, Char, Nullable<Char>)
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseString_System_String_System_Boolean_System_Char_System_Nullable_System_Char__
+  commentId: M:wan24.Data.CsvParser.ParseString(System.String,System.Boolean,System.Char,System.Nullable{System.Char})
+  name.vb: ParseString(String, Boolean, Char, Nullable(Of Char))
+  fullName: wan24.Data.CsvParser.ParseString(System.String, System.Boolean, System.Char, System.Nullable<System.Char>)
+  fullName.vb: wan24.Data.CsvParser.ParseString(System.String, System.Boolean, System.Char, System.Nullable(Of System.Char))
+  nameWithType: CsvParser.ParseString(String, Boolean, Char, Nullable<Char>)
+  nameWithType.vb: CsvParser.ParseString(String, Boolean, Char, Nullable(Of Char))
+- uid: wan24.Data.CsvParser.ParseString*
+  name: ParseString
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseString_
+  commentId: Overload:wan24.Data.CsvParser.ParseString
+  isSpec: "True"
+  fullName: wan24.Data.CsvParser.ParseString
+  nameWithType: CsvParser.ParseString
+- uid: wan24.Data.CsvTable
+  name: CsvTable
+  href: api/wan24.Data.CsvTable.html
+  commentId: T:wan24.Data.CsvTable
+  fullName: wan24.Data.CsvTable
+  nameWithType: CsvTable
+- uid: wan24.Data.CsvTable.#ctor
+  name: CsvTable()
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable__ctor
+  commentId: M:wan24.Data.CsvTable.#ctor
+  fullName: wan24.Data.CsvTable.CsvTable()
+  nameWithType: CsvTable.CsvTable()
+- uid: wan24.Data.CsvTable.#ctor*
+  name: CsvTable
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable__ctor_
+  commentId: Overload:wan24.Data.CsvTable.#ctor
+  isSpec: "True"
+  fullName: wan24.Data.CsvTable.CsvTable
+  nameWithType: CsvTable.CsvTable
+- uid: wan24.Data.CsvTable.CountColumns
+  name: CountColumns
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_CountColumns
+  commentId: P:wan24.Data.CsvTable.CountColumns
+  fullName: wan24.Data.CsvTable.CountColumns
+  nameWithType: CsvTable.CountColumns
+- uid: wan24.Data.CsvTable.CountColumns*
+  name: CountColumns
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_CountColumns_
+  commentId: Overload:wan24.Data.CsvTable.CountColumns
+  isSpec: "True"
+  fullName: wan24.Data.CsvTable.CountColumns
+  nameWithType: CsvTable.CountColumns
+- uid: wan24.Data.CsvTable.CountRows
+  name: CountRows
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_CountRows
+  commentId: P:wan24.Data.CsvTable.CountRows
+  fullName: wan24.Data.CsvTable.CountRows
+  nameWithType: CsvTable.CountRows
+- uid: wan24.Data.CsvTable.CountRows*
+  name: CountRows
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_CountRows_
+  commentId: Overload:wan24.Data.CsvTable.CountRows
+  isSpec: "True"
+  fullName: wan24.Data.CsvTable.CountRows
+  nameWithType: CsvTable.CountRows
+- uid: wan24.Data.CsvTable.Header
+  name: Header
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_Header
+  commentId: P:wan24.Data.CsvTable.Header
+  fullName: wan24.Data.CsvTable.Header
+  nameWithType: CsvTable.Header
+- uid: wan24.Data.CsvTable.Header*
+  name: Header
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_Header_
+  commentId: Overload:wan24.Data.CsvTable.Header
+  isSpec: "True"
+  fullName: wan24.Data.CsvTable.Header
+  nameWithType: CsvTable.Header
+- uid: wan24.Data.CsvTable.Rows
+  name: Rows
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_Rows
+  commentId: P:wan24.Data.CsvTable.Rows
+  fullName: wan24.Data.CsvTable.Rows
+  nameWithType: CsvTable.Rows
+- uid: wan24.Data.CsvTable.Rows*
+  name: Rows
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_Rows_
+  commentId: Overload:wan24.Data.CsvTable.Rows
+  isSpec: "True"
+  fullName: wan24.Data.CsvTable.Rows
+  nameWithType: CsvTable.Rows
+- uid: wan24.Data.CsvTable.RX_NUMBER
+  name: RX_NUMBER
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_RX_NUMBER
+  commentId: F:wan24.Data.CsvTable.RX_NUMBER
+  fullName: wan24.Data.CsvTable.RX_NUMBER
+  nameWithType: CsvTable.RX_NUMBER
+- uid: wan24.Data.CsvTable.ToString(System.Boolean,System.Char,System.Nullable{System.Char})
+  name: ToString(Boolean, Char, Nullable<Char>)
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_ToString_System_Boolean_System_Char_System_Nullable_System_Char__
+  commentId: M:wan24.Data.CsvTable.ToString(System.Boolean,System.Char,System.Nullable{System.Char})
+  name.vb: ToString(Boolean, Char, Nullable(Of Char))
+  fullName: wan24.Data.CsvTable.ToString(System.Boolean, System.Char, System.Nullable<System.Char>)
+  fullName.vb: wan24.Data.CsvTable.ToString(System.Boolean, System.Char, System.Nullable(Of System.Char))
+  nameWithType: CsvTable.ToString(Boolean, Char, Nullable<Char>)
+  nameWithType.vb: CsvTable.ToString(Boolean, Char, Nullable(Of Char))
+- uid: wan24.Data.CsvTable.ToString*
+  name: ToString
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_ToString_
+  commentId: Overload:wan24.Data.CsvTable.ToString
+  isSpec: "True"
+  fullName: wan24.Data.CsvTable.ToString
+  nameWithType: CsvTable.ToString

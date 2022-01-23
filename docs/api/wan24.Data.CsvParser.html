@@ -1,0 +1,1244 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class CsvParser
+   | CSV-Parser </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class CsvParser
+   | CSV-Parser ">
+    <meta name="generator" content="docfx 2.59.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    <meta property="docfx:newtab" content="true">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="wan24.Data.CsvParser">
+  
+  
+  <h1 id="wan24_Data_CsvParser" data-uid="wan24.Data.CsvParser" class="text-break">Class CsvParser
+  </h1>
+  <div class="markdown level0 summary"><p>CSV parser</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">CsvParser</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="wan24.Data.html">wan24.Data</a></h6>
+  <h6><strong>Assembly</strong>: csvparser.dll</h6>
+  <h5 id="wan24_Data_CsvParser_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class CsvParser</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvParser_CountRowsFromFileAsync_System_String_System_Nullable_System_Char__System_Text_Encoding_.md&amp;value=---%0Auid%3A%20wan24.Data.CsvParser.CountRowsFromFileAsync(System.String%2CSystem.Nullable%7BSystem.Char%7D%2CSystem.Text.Encoding)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvParser.cs/#L169">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvParser_CountRowsFromFileAsync_" data-uid="wan24.Data.CsvParser.CountRowsFromFileAsync*"></a>
+  <h4 id="wan24_Data_CsvParser_CountRowsFromFileAsync_System_String_System_Nullable_System_Char__System_Text_Encoding_" data-uid="wan24.Data.CsvParser.CountRowsFromFileAsync(System.String,System.Nullable{System.Char},System.Text.Encoding)">CountRowsFromFileAsync(String, Nullable&lt;Char&gt;, Encoding)</h4>
+  <div class="markdown level1 summary"><p>Parse a file and determine the number of CSV table rows</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static async Task&lt;int&gt; CountRowsFromFileAsync(string fileName, char? stringDelimiter = '&quot;', Encoding encoding = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">fileName</span></td>
+        <td><p>Filename</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">stringDelimiter</span></td>
+        <td><p>String delimiter</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Text.Encoding</span></td>
+        <td><span class="parametername">encoding</span></td>
+        <td><p>String encoding</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><p>Row count</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvParser_CountRowsFromStream_System_IO_Stream_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_.md&amp;value=---%0Auid%3A%20wan24.Data.CsvParser.CountRowsFromStream(System.IO.Stream%2CSystem.Nullable%7BSystem.Char%7D%2CSystem.Boolean%2CSystem.Text.Encoding)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvParser.cs/#L180">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvParser_CountRowsFromStream_" data-uid="wan24.Data.CsvParser.CountRowsFromStream*"></a>
+  <h4 id="wan24_Data_CsvParser_CountRowsFromStream_System_IO_Stream_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_" data-uid="wan24.Data.CsvParser.CountRowsFromStream(System.IO.Stream,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)">CountRowsFromStream(Stream, Nullable&lt;Char&gt;, Boolean, Encoding)</h4>
+  <div class="markdown level1 summary"><p>Parse a stream and determine the number of CSV table rows</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int CountRowsFromStream(Stream stream, char? stringDelimiter = '&quot;', bool leaveOpen = false, Encoding encoding = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.Stream</span></td>
+        <td><span class="parametername">stream</span></td>
+        <td><p>Stream</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">stringDelimiter</span></td>
+        <td><p>String delimiter</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">leaveOpen</span></td>
+        <td><p>Leave the stream open?</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Text.Encoding</span></td>
+        <td><span class="parametername">encoding</span></td>
+        <td><p>String encoding</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>Row count</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvParser_CountRowsFromStreamAsync_System_IO_Stream_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_.md&amp;value=---%0Auid%3A%20wan24.Data.CsvParser.CountRowsFromStreamAsync(System.IO.Stream%2CSystem.Nullable%7BSystem.Char%7D%2CSystem.Boolean%2CSystem.Text.Encoding)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvParser.cs/#L200">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvParser_CountRowsFromStreamAsync_" data-uid="wan24.Data.CsvParser.CountRowsFromStreamAsync*"></a>
+  <h4 id="wan24_Data_CsvParser_CountRowsFromStreamAsync_System_IO_Stream_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_" data-uid="wan24.Data.CsvParser.CountRowsFromStreamAsync(System.IO.Stream,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)">CountRowsFromStreamAsync(Stream, Nullable&lt;Char&gt;, Boolean, Encoding)</h4>
+  <div class="markdown level1 summary"><p>Parse a stream and determine the number of CSV table rows</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static async Task&lt;int&gt; CountRowsFromStreamAsync(Stream stream, char? stringDelimiter = '&quot;', bool leaveOpen = false, Encoding encoding = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.Stream</span></td>
+        <td><span class="parametername">stream</span></td>
+        <td><p>Stream</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">stringDelimiter</span></td>
+        <td><p>String delimiter</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">leaveOpen</span></td>
+        <td><p>Leave the stream open?</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Text.Encoding</span></td>
+        <td><span class="parametername">encoding</span></td>
+        <td><p>String encoding</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><p>Row count</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvParser_CountRowsFromString_System_String_System_Nullable_System_Char__.md&amp;value=---%0Auid%3A%20wan24.Data.CsvParser.CountRowsFromString(System.String%2CSystem.Nullable%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvParser.cs/#L218">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvParser_CountRowsFromString_" data-uid="wan24.Data.CsvParser.CountRowsFromString*"></a>
+  <h4 id="wan24_Data_CsvParser_CountRowsFromString_System_String_System_Nullable_System_Char__" data-uid="wan24.Data.CsvParser.CountRowsFromString(System.String,System.Nullable{System.Char})">CountRowsFromString(String, Nullable&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Parse a string and determine the number of CSV table rows</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int CountRowsFromString(string csv, char? stringDelimiter = '&quot;')</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">csv</span></td>
+        <td><p>CSV data</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">stringDelimiter</span></td>
+        <td><p>String delimiter</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>Row count</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvParser_ParseFile_System_String_System_Boolean_System_Char_System_Nullable_System_Char__System_Text_Encoding_.md&amp;value=---%0Auid%3A%20wan24.Data.CsvParser.ParseFile(System.String%2CSystem.Boolean%2CSystem.Char%2CSystem.Nullable%7BSystem.Char%7D%2CSystem.Text.Encoding)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvParser.cs/#L24">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvParser_ParseFile_" data-uid="wan24.Data.CsvParser.ParseFile*"></a>
+  <h4 id="wan24_Data_CsvParser_ParseFile_System_String_System_Boolean_System_Char_System_Nullable_System_Char__System_Text_Encoding_" data-uid="wan24.Data.CsvParser.ParseFile(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding)">ParseFile(String, Boolean, Char, Nullable&lt;Char&gt;, Encoding)</h4>
+  <div class="markdown level1 summary"><p>Parse a file</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static CsvTable ParseFile(string fileName, bool header = true, char fieldDelimiter = ',', char? stringDelimiter = '&quot;', Encoding encoding = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">fileName</span></td>
+        <td><p>Filename</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">header</span></td>
+        <td><p>Column headers in the first row?</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">fieldDelimiter</span></td>
+        <td><p>Field delimiter</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">stringDelimiter</span></td>
+        <td><p>String delimiter</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Text.Encoding</span></td>
+        <td><span class="parametername">encoding</span></td>
+        <td><p>String encoding</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="wan24.Data.CsvTable.html">CsvTable</a></td>
+        <td><p>CSV table</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvParser_ParseFile_System_String_System_Nullable_System_Char__System_Text_Encoding_.md&amp;value=---%0Auid%3A%20wan24.Data.CsvParser.ParseFile(System.String%2CSystem.Nullable%7BSystem.Char%7D%2CSystem.Text.Encoding)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvParser.cs/#L159">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvParser_ParseFile_" data-uid="wan24.Data.CsvParser.ParseFile*"></a>
+  <h4 id="wan24_Data_CsvParser_ParseFile_System_String_System_Nullable_System_Char__System_Text_Encoding_" data-uid="wan24.Data.CsvParser.ParseFile(System.String,System.Nullable{System.Char},System.Text.Encoding)">ParseFile(String, Nullable&lt;Char&gt;, Encoding)</h4>
+  <div class="markdown level1 summary"><p>Parse a file and determine the number of CSV table rows</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ParseFile(string fileName, char? stringDelimiter = '&quot;', Encoding encoding = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">fileName</span></td>
+        <td><p>Filename</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">stringDelimiter</span></td>
+        <td><p>String delimiter</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Text.Encoding</span></td>
+        <td><span class="parametername">encoding</span></td>
+        <td><p>String encoding</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><p>Row count</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvParser_ParseFileAsync_System_String_System_Boolean_System_Char_System_Nullable_System_Char__System_Text_Encoding_.md&amp;value=---%0Auid%3A%20wan24.Data.CsvParser.ParseFileAsync(System.String%2CSystem.Boolean%2CSystem.Char%2CSystem.Nullable%7BSystem.Char%7D%2CSystem.Text.Encoding)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvParser.cs/#L36">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvParser_ParseFileAsync_" data-uid="wan24.Data.CsvParser.ParseFileAsync*"></a>
+  <h4 id="wan24_Data_CsvParser_ParseFileAsync_System_String_System_Boolean_System_Char_System_Nullable_System_Char__System_Text_Encoding_" data-uid="wan24.Data.CsvParser.ParseFileAsync(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding)">ParseFileAsync(String, Boolean, Char, Nullable&lt;Char&gt;, Encoding)</h4>
+  <div class="markdown level1 summary"><p>Parse a file</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static async Task&lt;CsvTable&gt; ParseFileAsync(string fileName, bool header = true, char fieldDelimiter = ',', char? stringDelimiter = '&quot;', Encoding encoding = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">fileName</span></td>
+        <td><p>Filename</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">header</span></td>
+        <td><p>Column headers in the first row?</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">fieldDelimiter</span></td>
+        <td><p>Field delimiter</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">stringDelimiter</span></td>
+        <td><p>String delimiter</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Text.Encoding</span></td>
+        <td><span class="parametername">encoding</span></td>
+        <td><p>String encoding</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="wan24.Data.CsvTable.html">CsvTable</a>&gt;</td>
+        <td><p>CSV table</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvParser_ParseHeaderFromFile_System_String_System_Char_System_Nullable_System_Char__System_Text_Encoding_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20wan24.Data.CsvParser.ParseHeaderFromFile(System.String%2CSystem.Char%2CSystem.Nullable%7BSystem.Char%7D%2CSystem.Text.Encoding%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvParser.cs/#L246">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvParser_ParseHeaderFromFile_" data-uid="wan24.Data.CsvParser.ParseHeaderFromFile*"></a>
+  <h4 id="wan24_Data_CsvParser_ParseHeaderFromFile_System_String_System_Char_System_Nullable_System_Char__System_Text_Encoding_System_Int32_System_Int32_" data-uid="wan24.Data.CsvParser.ParseHeaderFromFile(System.String,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32)">ParseHeaderFromFile(String, Char, Nullable&lt;Char&gt;, Encoding, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Parse a file and return the column headers</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string[] ParseHeaderFromFile(string fileName, char fieldDelimiter = ',', char? stringDelimiter = '&quot;', Encoding encoding = null, int bufferSize = 81920, int chunkSize = 4096)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">fileName</span></td>
+        <td><p>Filename</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">fieldDelimiter</span></td>
+        <td><p>Field delimiter</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">stringDelimiter</span></td>
+        <td><p>String delimiter</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Text.Encoding</span></td>
+        <td><span class="parametername">encoding</span></td>
+        <td><p>String encoding</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">bufferSize</span></td>
+        <td><p>Buffer size in bytes</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">chunkSize</span></td>
+        <td><p>Chunk size in bytes</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><p>Column headers or <span class="xref">null</span>, if none</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvParser_ParseHeaderFromFileAsync_System_String_System_Char_System_Nullable_System_Char__System_Text_Encoding_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20wan24.Data.CsvParser.ParseHeaderFromFileAsync(System.String%2CSystem.Char%2CSystem.Nullable%7BSystem.Char%7D%2CSystem.Text.Encoding%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvParser.cs/#L267">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvParser_ParseHeaderFromFileAsync_" data-uid="wan24.Data.CsvParser.ParseHeaderFromFileAsync*"></a>
+  <h4 id="wan24_Data_CsvParser_ParseHeaderFromFileAsync_System_String_System_Char_System_Nullable_System_Char__System_Text_Encoding_System_Int32_System_Int32_" data-uid="wan24.Data.CsvParser.ParseHeaderFromFileAsync(System.String,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32)">ParseHeaderFromFileAsync(String, Char, Nullable&lt;Char&gt;, Encoding, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Parse a file and return the column headers</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static async Task&lt;string[]&gt; ParseHeaderFromFileAsync(string fileName, char fieldDelimiter = ',', char? stringDelimiter = '&quot;', Encoding encoding = null, int bufferSize = 81920, int chunkSize = 4096)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">fileName</span></td>
+        <td><p>Filename</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">fieldDelimiter</span></td>
+        <td><p>Field delimiter</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">stringDelimiter</span></td>
+        <td><p>String delimiter</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Text.Encoding</span></td>
+        <td><span class="parametername">encoding</span></td>
+        <td><p>String encoding</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">bufferSize</span></td>
+        <td><p>Buffer size in bytes</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">chunkSize</span></td>
+        <td><p>Chunk size in bytes</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.String</span>[]&gt;</td>
+        <td><p>Column headers or <span class="xref">null</span>, if none</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvParser_ParseHeaderFromStream_System_IO_Stream_System_Char_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20wan24.Data.CsvParser.ParseHeaderFromStream(System.IO.Stream%2CSystem.Char%2CSystem.Nullable%7BSystem.Char%7D%2CSystem.Boolean%2CSystem.Text.Encoding%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvParser.cs/#L289">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvParser_ParseHeaderFromStream_" data-uid="wan24.Data.CsvParser.ParseHeaderFromStream*"></a>
+  <h4 id="wan24_Data_CsvParser_ParseHeaderFromStream_System_IO_Stream_System_Char_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_System_Int32_System_Int32_" data-uid="wan24.Data.CsvParser.ParseHeaderFromStream(System.IO.Stream,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32)">ParseHeaderFromStream(Stream, Char, Nullable&lt;Char&gt;, Boolean, Encoding, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Parse a stream and return the column headers</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string[] ParseHeaderFromStream(Stream stream, char fieldDelimiter = ',', char? stringDelimiter = '&quot;', bool leaveOpen = true, Encoding encoding = null, int bufferSize = 81920, int chunkSize = 4096)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.Stream</span></td>
+        <td><span class="parametername">stream</span></td>
+        <td><p>Stream</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">fieldDelimiter</span></td>
+        <td><p>Field delimiter</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">stringDelimiter</span></td>
+        <td><p>String delimiter</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">leaveOpen</span></td>
+        <td><p>Leave the stream open?</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Text.Encoding</span></td>
+        <td><span class="parametername">encoding</span></td>
+        <td><p>String encoding</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">bufferSize</span></td>
+        <td><p>Buffer size in bytes</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">chunkSize</span></td>
+        <td><p>Chunk size in bytes</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><p>Column headers or <span class="xref">null</span>, if none</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvParser_ParseHeaderFromStreamAsync_System_IO_Stream_System_Char_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20wan24.Data.CsvParser.ParseHeaderFromStreamAsync(System.IO.Stream%2CSystem.Char%2CSystem.Nullable%7BSystem.Char%7D%2CSystem.Boolean%2CSystem.Text.Encoding%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvParser.cs/#L331">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvParser_ParseHeaderFromStreamAsync_" data-uid="wan24.Data.CsvParser.ParseHeaderFromStreamAsync*"></a>
+  <h4 id="wan24_Data_CsvParser_ParseHeaderFromStreamAsync_System_IO_Stream_System_Char_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_System_Int32_System_Int32_" data-uid="wan24.Data.CsvParser.ParseHeaderFromStreamAsync(System.IO.Stream,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32)">ParseHeaderFromStreamAsync(Stream, Char, Nullable&lt;Char&gt;, Boolean, Encoding, Int32, Int32)</h4>
+  <div class="markdown level1 summary"><p>Parse a stream and return the column headers</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static async Task&lt;string[]&gt; ParseHeaderFromStreamAsync(Stream stream, char fieldDelimiter = ',', char? stringDelimiter = '&quot;', bool leaveOpen = true, Encoding encoding = null, int bufferSize = 81920, int chunkSize = 4096)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.Stream</span></td>
+        <td><span class="parametername">stream</span></td>
+        <td><p>Stream</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">fieldDelimiter</span></td>
+        <td><p>Field delimiter</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">stringDelimiter</span></td>
+        <td><p>String delimiter</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">leaveOpen</span></td>
+        <td><p>Leave the stream open?</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Text.Encoding</span></td>
+        <td><span class="parametername">encoding</span></td>
+        <td><p>String encoding</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">bufferSize</span></td>
+        <td><p>Buffer size in bytes</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">chunkSize</span></td>
+        <td><p>Chunk size in bytes</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.String</span>[]&gt;</td>
+        <td><p>Column headers or <span class="xref">null</span>, if none</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvParser_ParseHeaderFromString_System_String_System_Char_System_Nullable_System_Char__.md&amp;value=---%0Auid%3A%20wan24.Data.CsvParser.ParseHeaderFromString(System.String%2CSystem.Char%2CSystem.Nullable%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvParser.cs/#L369">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvParser_ParseHeaderFromString_" data-uid="wan24.Data.CsvParser.ParseHeaderFromString*"></a>
+  <h4 id="wan24_Data_CsvParser_ParseHeaderFromString_System_String_System_Char_System_Nullable_System_Char__" data-uid="wan24.Data.CsvParser.ParseHeaderFromString(System.String,System.Char,System.Nullable{System.Char})">ParseHeaderFromString(String, Char, Nullable&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Parse a string and return the column headers</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string[] ParseHeaderFromString(string csv, char fieldDelimiter = ',', char? stringDelimiter = '&quot;')</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">csv</span></td>
+        <td><p>CSV data</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">fieldDelimiter</span></td>
+        <td><p>Field delimiter</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">stringDelimiter</span></td>
+        <td><p>String delimiter</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><p>Column headers or <span class="xref">null</span>, if none</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvParser_ParseStream_System_IO_Stream_System_Boolean_System_Char_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_.md&amp;value=---%0Auid%3A%20wan24.Data.CsvParser.ParseStream(System.IO.Stream%2CSystem.Boolean%2CSystem.Char%2CSystem.Nullable%7BSystem.Char%7D%2CSystem.Boolean%2CSystem.Text.Encoding)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvParser.cs/#L49">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvParser_ParseStream_" data-uid="wan24.Data.CsvParser.ParseStream*"></a>
+  <h4 id="wan24_Data_CsvParser_ParseStream_System_IO_Stream_System_Boolean_System_Char_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_" data-uid="wan24.Data.CsvParser.ParseStream(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)">ParseStream(Stream, Boolean, Char, Nullable&lt;Char&gt;, Boolean, Encoding)</h4>
+  <div class="markdown level1 summary"><p>Parse a stream</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static CsvTable ParseStream(Stream stream, bool header = true, char fieldDelimiter = ',', char? stringDelimiter = '&quot;', bool leaveOpen = false, Encoding encoding = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.Stream</span></td>
+        <td><span class="parametername">stream</span></td>
+        <td><p>Stream</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">header</span></td>
+        <td><p>Column headers in the first row?</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">fieldDelimiter</span></td>
+        <td><p>Field delimiter</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">stringDelimiter</span></td>
+        <td><p>String delimiter</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">leaveOpen</span></td>
+        <td><p>Leave the stream open?</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Text.Encoding</span></td>
+        <td><span class="parametername">encoding</span></td>
+        <td><p>String encoding</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="wan24.Data.CsvTable.html">CsvTable</a></td>
+        <td><p>CSV table</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvParser_ParseStreamAsync_System_IO_Stream_System_Boolean_System_Char_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_.md&amp;value=---%0Auid%3A%20wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream%2CSystem.Boolean%2CSystem.Char%2CSystem.Nullable%7BSystem.Char%7D%2CSystem.Boolean%2CSystem.Text.Encoding)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvParser.cs/#L71">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvParser_ParseStreamAsync_" data-uid="wan24.Data.CsvParser.ParseStreamAsync*"></a>
+  <h4 id="wan24_Data_CsvParser_ParseStreamAsync_System_IO_Stream_System_Boolean_System_Char_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_" data-uid="wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)">ParseStreamAsync(Stream, Boolean, Char, Nullable&lt;Char&gt;, Boolean, Encoding)</h4>
+  <div class="markdown level1 summary"><p>Parse a stream</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static async Task&lt;CsvTable&gt; ParseStreamAsync(Stream stream, bool header = true, char fieldDelimiter = ',', char? stringDelimiter = '&quot;', bool leaveOpen = false, Encoding encoding = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.Stream</span></td>
+        <td><span class="parametername">stream</span></td>
+        <td><p>Stream</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">header</span></td>
+        <td><p>Column headers in the first row?</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">fieldDelimiter</span></td>
+        <td><p>Field delimiter</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">stringDelimiter</span></td>
+        <td><p>String delimiter</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">leaveOpen</span></td>
+        <td><p>Leave the stream open?</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Text.Encoding</span></td>
+        <td><span class="parametername">encoding</span></td>
+        <td><p>String encoding</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="wan24.Data.CsvTable.html">CsvTable</a>&gt;</td>
+        <td><p>CSV table</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvParser_ParseString_System_String_System_Boolean_System_Char_System_Nullable_System_Char__.md&amp;value=---%0Auid%3A%20wan24.Data.CsvParser.ParseString(System.String%2CSystem.Boolean%2CSystem.Char%2CSystem.Nullable%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvParser.cs/#L98">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvParser_ParseString_" data-uid="wan24.Data.CsvParser.ParseString*"></a>
+  <h4 id="wan24_Data_CsvParser_ParseString_System_String_System_Boolean_System_Char_System_Nullable_System_Char__" data-uid="wan24.Data.CsvParser.ParseString(System.String,System.Boolean,System.Char,System.Nullable{System.Char})">ParseString(String, Boolean, Char, Nullable&lt;Char&gt;)</h4>
+  <div class="markdown level1 summary"><p>Parse a string</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static CsvTable ParseString(string csv, bool header = true, char fieldDelimiter = ',', char? stringDelimiter = '&quot;')</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">csv</span></td>
+        <td><p>CSV data</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">header</span></td>
+        <td><p>Column headers in the first row?</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">fieldDelimiter</span></td>
+        <td><p>Field delimiter</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">stringDelimiter</span></td>
+        <td><p>String delimiter</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="wan24.Data.CsvTable.html">CsvTable</a></td>
+        <td><p>CSV table</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvParser.md&amp;value=---%0Auid%3A%20wan24.Data.CsvParser%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvParser.cs/#L13" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            (c) 2022 Andreas Zimmermann, wan24.de
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
