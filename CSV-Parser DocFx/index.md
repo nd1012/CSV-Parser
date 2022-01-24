@@ -27,6 +27,12 @@ These static methods are available:
 - `ParseHeaderFromFile` and `ParseHeaderFromFileAsync` for **parsing column headers** from a CSV file
 - `ParseHeaderFromStream` and `ParseHeaderFromStreamAsync` for **parsing column headers** from a CSV stream
 - `ParseHeaderFromString` for **parsing column headers** from a CSV string
+- `EnumerateFile` for **enumerating each row** from a CSV file
+- `EnumerateStream` for **enumerating each row** from a CSV stream
+- `EnumerateString` for **enumerating each row** from a CSV string
+- `CreateMap` for **creating mapping informations**
+- `Map` for **mapping a row to an object**
+- `Unmap` for **mapping an object to a row**
 
 You may adjust these details using additional parameters:
 
@@ -37,6 +43,10 @@ You may adjust these details using additional parameters:
 - If the stream should be left open (default is `false`)
 - Buffer size in bytes (number of bytes that need to include all header columns, default is 80K)
 - Chunk size in bytes (for filling the buffer, default is 4K)
+- Desired row offset (zero based index of the first row to include in the result)
+- Maximum number of rows to include in the result (beginning from the row offset)
+
+### CSV table result
 
 The resulting CSV table object holds the parsed table data:
 
@@ -44,5 +54,74 @@ The resulting CSV table object holds the parsed table data:
 - `CountRows`: row count
 - `Header`: column headers
 - `Rows`: row data
+- `AsDictionaries`: rows as dictionaries (having the headers as key)
+- `Mapping`: row <-> object mapping
 
-The overloaded `ToString` method would create CSV table data from a CSV table.
+The overloaded `ToString` method would create CSV table data from a CSV table. Other methods are:
+
+- `CreateHeaders`: create automatic headers (0..n)
+- `AddColumn`: add/insert a column (optional using a field value factory)
+- `RemoveColumn`: remove a column
+- `AddRow`: add a validated row
+- `Validate`: validate the CSV table
+- `Clear`: clear row (and header) data
+- `AsDictionary`: get a row as dictionary
+- `Clone`: create a copy of the CSV table object
+- `AsObject`: get a row mapped as/to an object
+- `AsObjects`: enumerate all rows as objects
+- `AddObjects`: map objects to a new row
+
+### Reading/writing CSV data from/to a stream
+
+For memory saving stream usage, you might want to use the `CsvStream`:
+
+```cs
+// Reading
+using(CsvStream csv = new CsvStream(File.OpenRead(@"path\to\data.csv")))
+{
+	csv.SkipHeader();// Or ReadHeader (optional, if any)
+	foreach(string[] row in csv.Rows)// Or use ReadObjects
+	{
+		// Enumerate rows or use ReadRow or ReadObject instead
+		...
+	}
+}
+
+// Writing
+using(CsvStream csv = new CsvStream(File.OpenWrite(@"path\to\data.csv")))
+{
+	csv.WriteHeader(new string[] {...});// Optional
+	csv.WriteRow(...);// Or use WriteObject(s)
+}
+```
+
+Find all methods as asynchronous versions, having the `Async` postfix.
+
+### Reading/writing objects
+
+In order to be able to read/write objects, you need to define a mapping. This mapping is responsible for telling the CSV-Parser from which property to get a row field value, and to which property to write a field value from a row. The mapping also supports value factories which can convert a value.
+
+```cs
+Dictionary<int,CsvMapping> mapping = CsvParser.CreateMapping(
+	new CsvMapping()
+	{
+		Field = 0,
+		PropertyName = "AnyProperty",
+		ObjectValueFactory = ...,// Convert from string to property value (optional)
+		RowValueFactory = ...// Convert from property value to string (optional)
+	},
+	...
+);
+```
+
+Set this mapping to the `Mapping` property of a `CsvTable`, give it to the `CsvStream` constructor or as parameter to one of the `CsvParser` mapping methods.
+
+### Ignore errors in CSV data
+
+Usually each row should have the number of fields that equals the number of columns. To ignore, when a row has a different field count:
+
+```cs
+CsvParser.IgnoreErrors = true;
+```
+
+This setting will also ignore `null` headers/values, and if using `ToString` when a string delimiter is required to produce valid CSV data.

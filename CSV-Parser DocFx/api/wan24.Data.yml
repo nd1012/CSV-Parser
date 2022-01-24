@@ -4,7 +4,9 @@ items:
   commentId: N:wan24.Data
   id: wan24.Data
   children:
+  - wan24.Data.CsvMapping
   - wan24.Data.CsvParser
+  - wan24.Data.CsvStream
   - wan24.Data.CsvTable
   langs:
   - csharp
@@ -16,11 +18,22 @@ items:
   assemblies:
   - csvparser
 references:
+- uid: wan24.Data.CsvMapping
+  commentId: T:wan24.Data.CsvMapping
+  name: CsvMapping
+  nameWithType: CsvMapping
+  fullName: wan24.Data.CsvMapping
 - uid: wan24.Data.CsvParser
   commentId: T:wan24.Data.CsvParser
   name: CsvParser
   nameWithType: CsvParser
   fullName: wan24.Data.CsvParser
+- uid: wan24.Data.CsvStream
+  commentId: T:wan24.Data.CsvStream
+  parent: wan24.Data
+  name: CsvStream
+  nameWithType: CsvStream
+  fullName: wan24.Data.CsvStream
 - uid: wan24.Data.CsvTable
   commentId: T:wan24.Data.CsvTable
   parent: wan24.Data

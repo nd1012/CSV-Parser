@@ -21,7 +21,19 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "TeiBXyPmmP+XiaCeh6lf2/bHZrx+hW1aD3OAAEOENg0="
+          "hash": "e2PE53Gxh4Lvur0/OZfXg9KgKEHu2zuBWbo98Kue0QY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/wan24.Data.CsvMapping.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/wan24.Data.CsvMapping.html",
+          "hash": "ufRAozkRaN/3mK1wZmA+PqsRRtOFeMnQcTlXC3kGszs="
         }
       },
       "is_incremental": false,
@@ -33,7 +45,19 @@
       "output": {
         ".html": {
           "relative_path": "api/wan24.Data.CsvParser.html",
-          "hash": "alYfR1IVXN0GL0yPSUYVGlk0pYf7iPkRACjky17yVbg="
+          "hash": "64tALp65HdD9b0Yut3ihzADHqKAFfY7TmcBQUIWLGY4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/wan24.Data.CsvStream.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/wan24.Data.CsvStream.html",
+          "hash": "pISw8hHlNdyPBwSxyCO+hitnetpTunQmR5hjHA3/12A="
         }
       },
       "is_incremental": false,
@@ -45,7 +69,7 @@
       "output": {
         ".html": {
           "relative_path": "api/wan24.Data.CsvTable.html",
-          "hash": "O62c3lGz7gibBzA1/49983T5r3n++8M8obDSDL0a9zM="
+          "hash": "Rif6WtqdzvRX6e980qeLE0dL4CADNVwwhKq1KNZ+aH8="
         }
       },
       "is_incremental": false,
@@ -57,7 +81,7 @@
       "output": {
         ".html": {
           "relative_path": "api/wan24.Data.html",
-          "hash": "u28WVxmPBOoQRABcVdQ3IzkQJkMKmbNP3Pzc0NNZRjY="
+          "hash": "R/0l+Ro9U80PRLa1MHp1kbc8EamDcZui1crs5h17DRc="
         }
       },
       "is_incremental": false,
@@ -93,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "6tS81ZXme2/2CpA41f6Ug/yPLqxQZPnodNT78WqgLhw="
+          "hash": "Ax2fKFBINW8b7na7i0K4i6tkdkcA9LM127RnRsfhh3s="
         }
       },
       "is_incremental": false,
@@ -132,7 +156,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 3,
+          "total_file_count": 5,
           "skipped_file_count": 0
         },
         "TocDocumentProcessor": {

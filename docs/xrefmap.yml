@@ -7,12 +7,99 @@ references:
   commentId: N:wan24.Data
   fullName: wan24.Data
   nameWithType: wan24.Data
+- uid: wan24.Data.CsvMapping
+  name: CsvMapping
+  href: api/wan24.Data.CsvMapping.html
+  commentId: T:wan24.Data.CsvMapping
+  fullName: wan24.Data.CsvMapping
+  nameWithType: CsvMapping
+- uid: wan24.Data.CsvMapping.#ctor
+  name: CsvMapping()
+  href: api/wan24.Data.CsvMapping.html#wan24_Data_CsvMapping__ctor
+  commentId: M:wan24.Data.CsvMapping.#ctor
+  fullName: wan24.Data.CsvMapping.CsvMapping()
+  nameWithType: CsvMapping.CsvMapping()
+- uid: wan24.Data.CsvMapping.#ctor*
+  name: CsvMapping
+  href: api/wan24.Data.CsvMapping.html#wan24_Data_CsvMapping__ctor_
+  commentId: Overload:wan24.Data.CsvMapping.#ctor
+  isSpec: "True"
+  fullName: wan24.Data.CsvMapping.CsvMapping
+  nameWithType: CsvMapping.CsvMapping
+- uid: wan24.Data.CsvMapping.Field
+  name: Field
+  href: api/wan24.Data.CsvMapping.html#wan24_Data_CsvMapping_Field
+  commentId: P:wan24.Data.CsvMapping.Field
+  fullName: wan24.Data.CsvMapping.Field
+  nameWithType: CsvMapping.Field
+- uid: wan24.Data.CsvMapping.Field*
+  name: Field
+  href: api/wan24.Data.CsvMapping.html#wan24_Data_CsvMapping_Field_
+  commentId: Overload:wan24.Data.CsvMapping.Field
+  isSpec: "True"
+  fullName: wan24.Data.CsvMapping.Field
+  nameWithType: CsvMapping.Field
+- uid: wan24.Data.CsvMapping.ObjectValueFactory
+  name: ObjectValueFactory
+  href: api/wan24.Data.CsvMapping.html#wan24_Data_CsvMapping_ObjectValueFactory
+  commentId: P:wan24.Data.CsvMapping.ObjectValueFactory
+  fullName: wan24.Data.CsvMapping.ObjectValueFactory
+  nameWithType: CsvMapping.ObjectValueFactory
+- uid: wan24.Data.CsvMapping.ObjectValueFactory*
+  name: ObjectValueFactory
+  href: api/wan24.Data.CsvMapping.html#wan24_Data_CsvMapping_ObjectValueFactory_
+  commentId: Overload:wan24.Data.CsvMapping.ObjectValueFactory
+  isSpec: "True"
+  fullName: wan24.Data.CsvMapping.ObjectValueFactory
+  nameWithType: CsvMapping.ObjectValueFactory
+- uid: wan24.Data.CsvMapping.PropertyName
+  name: PropertyName
+  href: api/wan24.Data.CsvMapping.html#wan24_Data_CsvMapping_PropertyName
+  commentId: P:wan24.Data.CsvMapping.PropertyName
+  fullName: wan24.Data.CsvMapping.PropertyName
+  nameWithType: CsvMapping.PropertyName
+- uid: wan24.Data.CsvMapping.PropertyName*
+  name: PropertyName
+  href: api/wan24.Data.CsvMapping.html#wan24_Data_CsvMapping_PropertyName_
+  commentId: Overload:wan24.Data.CsvMapping.PropertyName
+  isSpec: "True"
+  fullName: wan24.Data.CsvMapping.PropertyName
+  nameWithType: CsvMapping.PropertyName
+- uid: wan24.Data.CsvMapping.RowValueFactory
+  name: RowValueFactory
+  href: api/wan24.Data.CsvMapping.html#wan24_Data_CsvMapping_RowValueFactory
+  commentId: P:wan24.Data.CsvMapping.RowValueFactory
+  fullName: wan24.Data.CsvMapping.RowValueFactory
+  nameWithType: CsvMapping.RowValueFactory
+- uid: wan24.Data.CsvMapping.RowValueFactory*
+  name: RowValueFactory
+  href: api/wan24.Data.CsvMapping.html#wan24_Data_CsvMapping_RowValueFactory_
+  commentId: Overload:wan24.Data.CsvMapping.RowValueFactory
+  isSpec: "True"
+  fullName: wan24.Data.CsvMapping.RowValueFactory
+  nameWithType: CsvMapping.RowValueFactory
 - uid: wan24.Data.CsvParser
   name: CsvParser
   href: api/wan24.Data.CsvParser.html
   commentId: T:wan24.Data.CsvParser
   fullName: wan24.Data.CsvParser
   nameWithType: CsvParser
+- uid: wan24.Data.CsvParser.CountRowsFromFile(System.String,System.Nullable{System.Char},System.Text.Encoding)
+  name: CountRowsFromFile(String, Nullable<Char>, Encoding)
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_CountRowsFromFile_System_String_System_Nullable_System_Char__System_Text_Encoding_
+  commentId: M:wan24.Data.CsvParser.CountRowsFromFile(System.String,System.Nullable{System.Char},System.Text.Encoding)
+  name.vb: CountRowsFromFile(String, Nullable(Of Char), Encoding)
+  fullName: wan24.Data.CsvParser.CountRowsFromFile(System.String, System.Nullable<System.Char>, System.Text.Encoding)
+  fullName.vb: wan24.Data.CsvParser.CountRowsFromFile(System.String, System.Nullable(Of System.Char), System.Text.Encoding)
+  nameWithType: CsvParser.CountRowsFromFile(String, Nullable<Char>, Encoding)
+  nameWithType.vb: CsvParser.CountRowsFromFile(String, Nullable(Of Char), Encoding)
+- uid: wan24.Data.CsvParser.CountRowsFromFile*
+  name: CountRowsFromFile
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_CountRowsFromFile_
+  commentId: Overload:wan24.Data.CsvParser.CountRowsFromFile
+  isSpec: "True"
+  fullName: wan24.Data.CsvParser.CountRowsFromFile
+  nameWithType: CsvParser.CountRowsFromFile
 - uid: wan24.Data.CsvParser.CountRowsFromFileAsync(System.String,System.Nullable{System.Char},System.Text.Encoding)
   name: CountRowsFromFileAsync(String, Nullable<Char>, Encoding)
   href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_CountRowsFromFileAsync_System_String_System_Nullable_System_Char__System_Text_Encoding_
@@ -77,24 +164,117 @@ references:
   isSpec: "True"
   fullName: wan24.Data.CsvParser.CountRowsFromString
   nameWithType: CsvParser.CountRowsFromString
-- uid: wan24.Data.CsvParser.ParseFile(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding)
-  name: ParseFile(String, Boolean, Char, Nullable<Char>, Encoding)
-  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseFile_System_String_System_Boolean_System_Char_System_Nullable_System_Char__System_Text_Encoding_
-  commentId: M:wan24.Data.CsvParser.ParseFile(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding)
-  name.vb: ParseFile(String, Boolean, Char, Nullable(Of Char), Encoding)
-  fullName: wan24.Data.CsvParser.ParseFile(System.String, System.Boolean, System.Char, System.Nullable<System.Char>, System.Text.Encoding)
-  fullName.vb: wan24.Data.CsvParser.ParseFile(System.String, System.Boolean, System.Char, System.Nullable(Of System.Char), System.Text.Encoding)
-  nameWithType: CsvParser.ParseFile(String, Boolean, Char, Nullable<Char>, Encoding)
-  nameWithType.vb: CsvParser.ParseFile(String, Boolean, Char, Nullable(Of Char), Encoding)
-- uid: wan24.Data.CsvParser.ParseFile(System.String,System.Nullable{System.Char},System.Text.Encoding)
-  name: ParseFile(String, Nullable<Char>, Encoding)
-  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseFile_System_String_System_Nullable_System_Char__System_Text_Encoding_
-  commentId: M:wan24.Data.CsvParser.ParseFile(System.String,System.Nullable{System.Char},System.Text.Encoding)
-  name.vb: ParseFile(String, Nullable(Of Char), Encoding)
-  fullName: wan24.Data.CsvParser.ParseFile(System.String, System.Nullable<System.Char>, System.Text.Encoding)
-  fullName.vb: wan24.Data.CsvParser.ParseFile(System.String, System.Nullable(Of System.Char), System.Text.Encoding)
-  nameWithType: CsvParser.ParseFile(String, Nullable<Char>, Encoding)
-  nameWithType.vb: CsvParser.ParseFile(String, Nullable(Of Char), Encoding)
+- uid: wan24.Data.CsvParser.CreateMapping(wan24.Data.CsvMapping[])
+  name: CreateMapping(CsvMapping[])
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_CreateMapping_wan24_Data_CsvMapping___
+  commentId: M:wan24.Data.CsvParser.CreateMapping(wan24.Data.CsvMapping[])
+  name.vb: CreateMapping(CsvMapping())
+  fullName: wan24.Data.CsvParser.CreateMapping(wan24.Data.CsvMapping[])
+  fullName.vb: wan24.Data.CsvParser.CreateMapping(wan24.Data.CsvMapping())
+  nameWithType: CsvParser.CreateMapping(CsvMapping[])
+  nameWithType.vb: CsvParser.CreateMapping(CsvMapping())
+- uid: wan24.Data.CsvParser.CreateMapping*
+  name: CreateMapping
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_CreateMapping_
+  commentId: Overload:wan24.Data.CsvParser.CreateMapping
+  isSpec: "True"
+  fullName: wan24.Data.CsvParser.CreateMapping
+  nameWithType: CsvParser.CreateMapping
+- uid: wan24.Data.CsvParser.EnumerateFile(System.String,System.Char,System.Nullable{System.Char},System.Text.Encoding)
+  name: EnumerateFile(String, Char, Nullable<Char>, Encoding)
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_EnumerateFile_System_String_System_Char_System_Nullable_System_Char__System_Text_Encoding_
+  commentId: M:wan24.Data.CsvParser.EnumerateFile(System.String,System.Char,System.Nullable{System.Char},System.Text.Encoding)
+  name.vb: EnumerateFile(String, Char, Nullable(Of Char), Encoding)
+  fullName: wan24.Data.CsvParser.EnumerateFile(System.String, System.Char, System.Nullable<System.Char>, System.Text.Encoding)
+  fullName.vb: wan24.Data.CsvParser.EnumerateFile(System.String, System.Char, System.Nullable(Of System.Char), System.Text.Encoding)
+  nameWithType: CsvParser.EnumerateFile(String, Char, Nullable<Char>, Encoding)
+  nameWithType.vb: CsvParser.EnumerateFile(String, Char, Nullable(Of Char), Encoding)
+- uid: wan24.Data.CsvParser.EnumerateFile*
+  name: EnumerateFile
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_EnumerateFile_
+  commentId: Overload:wan24.Data.CsvParser.EnumerateFile
+  isSpec: "True"
+  fullName: wan24.Data.CsvParser.EnumerateFile
+  nameWithType: CsvParser.EnumerateFile
+- uid: wan24.Data.CsvParser.EnumerateStream(System.IO.Stream,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)
+  name: EnumerateStream(Stream, Char, Nullable<Char>, Boolean, Encoding)
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_EnumerateStream_System_IO_Stream_System_Char_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_
+  commentId: M:wan24.Data.CsvParser.EnumerateStream(System.IO.Stream,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)
+  name.vb: EnumerateStream(Stream, Char, Nullable(Of Char), Boolean, Encoding)
+  fullName: wan24.Data.CsvParser.EnumerateStream(System.IO.Stream, System.Char, System.Nullable<System.Char>, System.Boolean, System.Text.Encoding)
+  fullName.vb: wan24.Data.CsvParser.EnumerateStream(System.IO.Stream, System.Char, System.Nullable(Of System.Char), System.Boolean, System.Text.Encoding)
+  nameWithType: CsvParser.EnumerateStream(Stream, Char, Nullable<Char>, Boolean, Encoding)
+  nameWithType.vb: CsvParser.EnumerateStream(Stream, Char, Nullable(Of Char), Boolean, Encoding)
+- uid: wan24.Data.CsvParser.EnumerateStream*
+  name: EnumerateStream
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_EnumerateStream_
+  commentId: Overload:wan24.Data.CsvParser.EnumerateStream
+  isSpec: "True"
+  fullName: wan24.Data.CsvParser.EnumerateStream
+  nameWithType: CsvParser.EnumerateStream
+- uid: wan24.Data.CsvParser.EnumerateString(System.String,System.Char,System.Nullable{System.Char})
+  name: EnumerateString(String, Char, Nullable<Char>)
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_EnumerateString_System_String_System_Char_System_Nullable_System_Char__
+  commentId: M:wan24.Data.CsvParser.EnumerateString(System.String,System.Char,System.Nullable{System.Char})
+  name.vb: EnumerateString(String, Char, Nullable(Of Char))
+  fullName: wan24.Data.CsvParser.EnumerateString(System.String, System.Char, System.Nullable<System.Char>)
+  fullName.vb: wan24.Data.CsvParser.EnumerateString(System.String, System.Char, System.Nullable(Of System.Char))
+  nameWithType: CsvParser.EnumerateString(String, Char, Nullable<Char>)
+  nameWithType.vb: CsvParser.EnumerateString(String, Char, Nullable(Of Char))
+- uid: wan24.Data.CsvParser.EnumerateString*
+  name: EnumerateString
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_EnumerateString_
+  commentId: Overload:wan24.Data.CsvParser.EnumerateString
+  isSpec: "True"
+  fullName: wan24.Data.CsvParser.EnumerateString
+  nameWithType: CsvParser.EnumerateString
+- uid: wan24.Data.CsvParser.IgnoreErrors
+  name: IgnoreErrors
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_IgnoreErrors
+  commentId: P:wan24.Data.CsvParser.IgnoreErrors
+  fullName: wan24.Data.CsvParser.IgnoreErrors
+  nameWithType: CsvParser.IgnoreErrors
+- uid: wan24.Data.CsvParser.IgnoreErrors*
+  name: IgnoreErrors
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_IgnoreErrors_
+  commentId: Overload:wan24.Data.CsvParser.IgnoreErrors
+  isSpec: "True"
+  fullName: wan24.Data.CsvParser.IgnoreErrors
+  nameWithType: CsvParser.IgnoreErrors
+- uid: wan24.Data.CsvParser.Map*
+  name: Map
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_Map_
+  commentId: Overload:wan24.Data.CsvParser.Map
+  isSpec: "True"
+  fullName: wan24.Data.CsvParser.Map
+  nameWithType: CsvParser.Map
+- uid: wan24.Data.CsvParser.Map``1(System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping},System.String[])
+  name: Map<T>(Dictionary<Int32, CsvMapping>, String[])
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_Map__1_System_Collections_Generic_Dictionary_System_Int32_wan24_Data_CsvMapping__System_String___
+  commentId: M:wan24.Data.CsvParser.Map``1(System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping},System.String[])
+  name.vb: Map(Of T)(Dictionary(Of Int32, CsvMapping), String())
+  fullName: wan24.Data.CsvParser.Map<T>(System.Collections.Generic.Dictionary<System.Int32, wan24.Data.CsvMapping>, System.String[])
+  fullName.vb: wan24.Data.CsvParser.Map(Of T)(System.Collections.Generic.Dictionary(Of System.Int32, wan24.Data.CsvMapping), System.String())
+  nameWithType: CsvParser.Map<T>(Dictionary<Int32, CsvMapping>, String[])
+  nameWithType.vb: CsvParser.Map(Of T)(Dictionary(Of Int32, CsvMapping), String())
+- uid: wan24.Data.CsvParser.Map``1(System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping},System.String[],``0)
+  name: Map<T>(Dictionary<Int32, CsvMapping>, String[], T)
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_Map__1_System_Collections_Generic_Dictionary_System_Int32_wan24_Data_CsvMapping__System_String_____0_
+  commentId: M:wan24.Data.CsvParser.Map``1(System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping},System.String[],``0)
+  name.vb: Map(Of T)(Dictionary(Of Int32, CsvMapping), String(), T)
+  fullName: wan24.Data.CsvParser.Map<T>(System.Collections.Generic.Dictionary<System.Int32, wan24.Data.CsvMapping>, System.String[], T)
+  fullName.vb: wan24.Data.CsvParser.Map(Of T)(System.Collections.Generic.Dictionary(Of System.Int32, wan24.Data.CsvMapping), System.String(), T)
+  nameWithType: CsvParser.Map<T>(Dictionary<Int32, CsvMapping>, String[], T)
+  nameWithType.vb: CsvParser.Map(Of T)(Dictionary(Of Int32, CsvMapping), String(), T)
+- uid: wan24.Data.CsvParser.ParseFile(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32)
+  name: ParseFile(String, Boolean, Char, Nullable<Char>, Encoding, Int32, Int32)
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseFile_System_String_System_Boolean_System_Char_System_Nullable_System_Char__System_Text_Encoding_System_Int32_System_Int32_
+  commentId: M:wan24.Data.CsvParser.ParseFile(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32)
+  name.vb: ParseFile(String, Boolean, Char, Nullable(Of Char), Encoding, Int32, Int32)
+  fullName: wan24.Data.CsvParser.ParseFile(System.String, System.Boolean, System.Char, System.Nullable<System.Char>, System.Text.Encoding, System.Int32, System.Int32)
+  fullName.vb: wan24.Data.CsvParser.ParseFile(System.String, System.Boolean, System.Char, System.Nullable(Of System.Char), System.Text.Encoding, System.Int32, System.Int32)
+  nameWithType: CsvParser.ParseFile(String, Boolean, Char, Nullable<Char>, Encoding, Int32, Int32)
+  nameWithType.vb: CsvParser.ParseFile(String, Boolean, Char, Nullable(Of Char), Encoding, Int32, Int32)
 - uid: wan24.Data.CsvParser.ParseFile*
   name: ParseFile
   href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseFile_
@@ -102,15 +282,15 @@ references:
   isSpec: "True"
   fullName: wan24.Data.CsvParser.ParseFile
   nameWithType: CsvParser.ParseFile
-- uid: wan24.Data.CsvParser.ParseFileAsync(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding)
-  name: ParseFileAsync(String, Boolean, Char, Nullable<Char>, Encoding)
-  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseFileAsync_System_String_System_Boolean_System_Char_System_Nullable_System_Char__System_Text_Encoding_
-  commentId: M:wan24.Data.CsvParser.ParseFileAsync(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding)
-  name.vb: ParseFileAsync(String, Boolean, Char, Nullable(Of Char), Encoding)
-  fullName: wan24.Data.CsvParser.ParseFileAsync(System.String, System.Boolean, System.Char, System.Nullable<System.Char>, System.Text.Encoding)
-  fullName.vb: wan24.Data.CsvParser.ParseFileAsync(System.String, System.Boolean, System.Char, System.Nullable(Of System.Char), System.Text.Encoding)
-  nameWithType: CsvParser.ParseFileAsync(String, Boolean, Char, Nullable<Char>, Encoding)
-  nameWithType.vb: CsvParser.ParseFileAsync(String, Boolean, Char, Nullable(Of Char), Encoding)
+- uid: wan24.Data.CsvParser.ParseFileAsync(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32)
+  name: ParseFileAsync(String, Boolean, Char, Nullable<Char>, Encoding, Int32, Int32)
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseFileAsync_System_String_System_Boolean_System_Char_System_Nullable_System_Char__System_Text_Encoding_System_Int32_System_Int32_
+  commentId: M:wan24.Data.CsvParser.ParseFileAsync(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32)
+  name.vb: ParseFileAsync(String, Boolean, Char, Nullable(Of Char), Encoding, Int32, Int32)
+  fullName: wan24.Data.CsvParser.ParseFileAsync(System.String, System.Boolean, System.Char, System.Nullable<System.Char>, System.Text.Encoding, System.Int32, System.Int32)
+  fullName.vb: wan24.Data.CsvParser.ParseFileAsync(System.String, System.Boolean, System.Char, System.Nullable(Of System.Char), System.Text.Encoding, System.Int32, System.Int32)
+  nameWithType: CsvParser.ParseFileAsync(String, Boolean, Char, Nullable<Char>, Encoding, Int32, Int32)
+  nameWithType.vb: CsvParser.ParseFileAsync(String, Boolean, Char, Nullable(Of Char), Encoding, Int32, Int32)
 - uid: wan24.Data.CsvParser.ParseFileAsync*
   name: ParseFileAsync
   href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseFileAsync_
@@ -198,15 +378,15 @@ references:
   isSpec: "True"
   fullName: wan24.Data.CsvParser.ParseHeaderFromString
   nameWithType: CsvParser.ParseHeaderFromString
-- uid: wan24.Data.CsvParser.ParseStream(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)
-  name: ParseStream(Stream, Boolean, Char, Nullable<Char>, Boolean, Encoding)
-  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseStream_System_IO_Stream_System_Boolean_System_Char_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_
-  commentId: M:wan24.Data.CsvParser.ParseStream(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)
-  name.vb: ParseStream(Stream, Boolean, Char, Nullable(Of Char), Boolean, Encoding)
-  fullName: wan24.Data.CsvParser.ParseStream(System.IO.Stream, System.Boolean, System.Char, System.Nullable<System.Char>, System.Boolean, System.Text.Encoding)
-  fullName.vb: wan24.Data.CsvParser.ParseStream(System.IO.Stream, System.Boolean, System.Char, System.Nullable(Of System.Char), System.Boolean, System.Text.Encoding)
-  nameWithType: CsvParser.ParseStream(Stream, Boolean, Char, Nullable<Char>, Boolean, Encoding)
-  nameWithType.vb: CsvParser.ParseStream(Stream, Boolean, Char, Nullable(Of Char), Boolean, Encoding)
+- uid: wan24.Data.CsvParser.ParseStream(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32)
+  name: ParseStream(Stream, Boolean, Char, Nullable<Char>, Boolean, Encoding, Int32, Int32)
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseStream_System_IO_Stream_System_Boolean_System_Char_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_System_Int32_System_Int32_
+  commentId: M:wan24.Data.CsvParser.ParseStream(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32)
+  name.vb: ParseStream(Stream, Boolean, Char, Nullable(Of Char), Boolean, Encoding, Int32, Int32)
+  fullName: wan24.Data.CsvParser.ParseStream(System.IO.Stream, System.Boolean, System.Char, System.Nullable<System.Char>, System.Boolean, System.Text.Encoding, System.Int32, System.Int32)
+  fullName.vb: wan24.Data.CsvParser.ParseStream(System.IO.Stream, System.Boolean, System.Char, System.Nullable(Of System.Char), System.Boolean, System.Text.Encoding, System.Int32, System.Int32)
+  nameWithType: CsvParser.ParseStream(Stream, Boolean, Char, Nullable<Char>, Boolean, Encoding, Int32, Int32)
+  nameWithType.vb: CsvParser.ParseStream(Stream, Boolean, Char, Nullable(Of Char), Boolean, Encoding, Int32, Int32)
 - uid: wan24.Data.CsvParser.ParseStream*
   name: ParseStream
   href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseStream_
@@ -214,15 +394,15 @@ references:
   isSpec: "True"
   fullName: wan24.Data.CsvParser.ParseStream
   nameWithType: CsvParser.ParseStream
-- uid: wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)
-  name: ParseStreamAsync(Stream, Boolean, Char, Nullable<Char>, Boolean, Encoding)
-  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseStreamAsync_System_IO_Stream_System_Boolean_System_Char_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_
-  commentId: M:wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)
-  name.vb: ParseStreamAsync(Stream, Boolean, Char, Nullable(Of Char), Boolean, Encoding)
-  fullName: wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream, System.Boolean, System.Char, System.Nullable<System.Char>, System.Boolean, System.Text.Encoding)
-  fullName.vb: wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream, System.Boolean, System.Char, System.Nullable(Of System.Char), System.Boolean, System.Text.Encoding)
-  nameWithType: CsvParser.ParseStreamAsync(Stream, Boolean, Char, Nullable<Char>, Boolean, Encoding)
-  nameWithType.vb: CsvParser.ParseStreamAsync(Stream, Boolean, Char, Nullable(Of Char), Boolean, Encoding)
+- uid: wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32)
+  name: ParseStreamAsync(Stream, Boolean, Char, Nullable<Char>, Boolean, Encoding, Int32, Int32)
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseStreamAsync_System_IO_Stream_System_Boolean_System_Char_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_System_Int32_System_Int32_
+  commentId: M:wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32)
+  name.vb: ParseStreamAsync(Stream, Boolean, Char, Nullable(Of Char), Boolean, Encoding, Int32, Int32)
+  fullName: wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream, System.Boolean, System.Char, System.Nullable<System.Char>, System.Boolean, System.Text.Encoding, System.Int32, System.Int32)
+  fullName.vb: wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream, System.Boolean, System.Char, System.Nullable(Of System.Char), System.Boolean, System.Text.Encoding, System.Int32, System.Int32)
+  nameWithType: CsvParser.ParseStreamAsync(Stream, Boolean, Char, Nullable<Char>, Boolean, Encoding, Int32, Int32)
+  nameWithType.vb: CsvParser.ParseStreamAsync(Stream, Boolean, Char, Nullable(Of Char), Boolean, Encoding, Int32, Int32)
 - uid: wan24.Data.CsvParser.ParseStreamAsync*
   name: ParseStreamAsync
   href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseStreamAsync_
@@ -230,15 +410,15 @@ references:
   isSpec: "True"
   fullName: wan24.Data.CsvParser.ParseStreamAsync
   nameWithType: CsvParser.ParseStreamAsync
-- uid: wan24.Data.CsvParser.ParseString(System.String,System.Boolean,System.Char,System.Nullable{System.Char})
-  name: ParseString(String, Boolean, Char, Nullable<Char>)
-  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseString_System_String_System_Boolean_System_Char_System_Nullable_System_Char__
-  commentId: M:wan24.Data.CsvParser.ParseString(System.String,System.Boolean,System.Char,System.Nullable{System.Char})
-  name.vb: ParseString(String, Boolean, Char, Nullable(Of Char))
-  fullName: wan24.Data.CsvParser.ParseString(System.String, System.Boolean, System.Char, System.Nullable<System.Char>)
-  fullName.vb: wan24.Data.CsvParser.ParseString(System.String, System.Boolean, System.Char, System.Nullable(Of System.Char))
-  nameWithType: CsvParser.ParseString(String, Boolean, Char, Nullable<Char>)
-  nameWithType.vb: CsvParser.ParseString(String, Boolean, Char, Nullable(Of Char))
+- uid: wan24.Data.CsvParser.ParseString(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Int32,System.Int32)
+  name: ParseString(String, Boolean, Char, Nullable<Char>, Int32, Int32)
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseString_System_String_System_Boolean_System_Char_System_Nullable_System_Char__System_Int32_System_Int32_
+  commentId: M:wan24.Data.CsvParser.ParseString(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Int32,System.Int32)
+  name.vb: ParseString(String, Boolean, Char, Nullable(Of Char), Int32, Int32)
+  fullName: wan24.Data.CsvParser.ParseString(System.String, System.Boolean, System.Char, System.Nullable<System.Char>, System.Int32, System.Int32)
+  fullName.vb: wan24.Data.CsvParser.ParseString(System.String, System.Boolean, System.Char, System.Nullable(Of System.Char), System.Int32, System.Int32)
+  nameWithType: CsvParser.ParseString(String, Boolean, Char, Nullable<Char>, Int32, Int32)
+  nameWithType.vb: CsvParser.ParseString(String, Boolean, Char, Nullable(Of Char), Int32, Int32)
 - uid: wan24.Data.CsvParser.ParseString*
   name: ParseString
   href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseString_
@@ -246,18 +426,609 @@ references:
   isSpec: "True"
   fullName: wan24.Data.CsvParser.ParseString
   nameWithType: CsvParser.ParseString
+- uid: wan24.Data.CsvParser.Unmap*
+  name: Unmap
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_Unmap_
+  commentId: Overload:wan24.Data.CsvParser.Unmap
+  isSpec: "True"
+  fullName: wan24.Data.CsvParser.Unmap
+  nameWithType: CsvParser.Unmap
+- uid: wan24.Data.CsvParser.Unmap``1(System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping},``0)
+  name: Unmap<T>(Dictionary<Int32, CsvMapping>, T)
+  href: api/wan24.Data.CsvParser.html#wan24_Data_CsvParser_Unmap__1_System_Collections_Generic_Dictionary_System_Int32_wan24_Data_CsvMapping____0_
+  commentId: M:wan24.Data.CsvParser.Unmap``1(System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping},``0)
+  name.vb: Unmap(Of T)(Dictionary(Of Int32, CsvMapping), T)
+  fullName: wan24.Data.CsvParser.Unmap<T>(System.Collections.Generic.Dictionary<System.Int32, wan24.Data.CsvMapping>, T)
+  fullName.vb: wan24.Data.CsvParser.Unmap(Of T)(System.Collections.Generic.Dictionary(Of System.Int32, wan24.Data.CsvMapping), T)
+  nameWithType: CsvParser.Unmap<T>(Dictionary<Int32, CsvMapping>, T)
+  nameWithType.vb: CsvParser.Unmap(Of T)(Dictionary(Of Int32, CsvMapping), T)
+- uid: wan24.Data.CsvStream
+  name: CsvStream
+  href: api/wan24.Data.CsvStream.html
+  commentId: T:wan24.Data.CsvStream
+  fullName: wan24.Data.CsvStream
+  nameWithType: CsvStream
+- uid: wan24.Data.CsvStream.#ctor(System.IO.Stream,System.Char,System.Nullable{System.Char},System.Int32,System.Int32,System.Boolean,System.Text.Encoding,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  name: CsvStream(Stream, Char, Nullable<Char>, Int32, Int32, Boolean, Encoding, Dictionary<Int32, CsvMapping>)
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream__ctor_System_IO_Stream_System_Char_System_Nullable_System_Char__System_Int32_System_Int32_System_Boolean_System_Text_Encoding_System_Collections_Generic_Dictionary_System_Int32_wan24_Data_CsvMapping__
+  commentId: M:wan24.Data.CsvStream.#ctor(System.IO.Stream,System.Char,System.Nullable{System.Char},System.Int32,System.Int32,System.Boolean,System.Text.Encoding,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  name.vb: CsvStream(Stream, Char, Nullable(Of Char), Int32, Int32, Boolean, Encoding, Dictionary(Of Int32, CsvMapping))
+  fullName: wan24.Data.CsvStream.CsvStream(System.IO.Stream, System.Char, System.Nullable<System.Char>, System.Int32, System.Int32, System.Boolean, System.Text.Encoding, System.Collections.Generic.Dictionary<System.Int32, wan24.Data.CsvMapping>)
+  fullName.vb: wan24.Data.CsvStream.CsvStream(System.IO.Stream, System.Char, System.Nullable(Of System.Char), System.Int32, System.Int32, System.Boolean, System.Text.Encoding, System.Collections.Generic.Dictionary(Of System.Int32, wan24.Data.CsvMapping))
+  nameWithType: CsvStream.CsvStream(Stream, Char, Nullable<Char>, Int32, Int32, Boolean, Encoding, Dictionary<Int32, CsvMapping>)
+  nameWithType.vb: CsvStream.CsvStream(Stream, Char, Nullable(Of Char), Int32, Int32, Boolean, Encoding, Dictionary(Of Int32, CsvMapping))
+- uid: wan24.Data.CsvStream.#ctor(System.IO.Stream,System.Collections.Generic.IEnumerable{System.String},System.Char,System.Nullable{System.Char},System.Int32,System.Int32,System.Boolean,System.Text.Encoding,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  name: CsvStream(Stream, IEnumerable<String>, Char, Nullable<Char>, Int32, Int32, Boolean, Encoding, Dictionary<Int32, CsvMapping>)
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream__ctor_System_IO_Stream_System_Collections_Generic_IEnumerable_System_String__System_Char_System_Nullable_System_Char__System_Int32_System_Int32_System_Boolean_System_Text_Encoding_System_Collections_Generic_Dictionary_System_Int32_wan24_Data_CsvMapping__
+  commentId: M:wan24.Data.CsvStream.#ctor(System.IO.Stream,System.Collections.Generic.IEnumerable{System.String},System.Char,System.Nullable{System.Char},System.Int32,System.Int32,System.Boolean,System.Text.Encoding,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  name.vb: CsvStream(Stream, IEnumerable(Of String), Char, Nullable(Of Char), Int32, Int32, Boolean, Encoding, Dictionary(Of Int32, CsvMapping))
+  fullName: wan24.Data.CsvStream.CsvStream(System.IO.Stream, System.Collections.Generic.IEnumerable<System.String>, System.Char, System.Nullable<System.Char>, System.Int32, System.Int32, System.Boolean, System.Text.Encoding, System.Collections.Generic.Dictionary<System.Int32, wan24.Data.CsvMapping>)
+  fullName.vb: wan24.Data.CsvStream.CsvStream(System.IO.Stream, System.Collections.Generic.IEnumerable(Of System.String), System.Char, System.Nullable(Of System.Char), System.Int32, System.Int32, System.Boolean, System.Text.Encoding, System.Collections.Generic.Dictionary(Of System.Int32, wan24.Data.CsvMapping))
+  nameWithType: CsvStream.CsvStream(Stream, IEnumerable<String>, Char, Nullable<Char>, Int32, Int32, Boolean, Encoding, Dictionary<Int32, CsvMapping>)
+  nameWithType.vb: CsvStream.CsvStream(Stream, IEnumerable(Of String), Char, Nullable(Of Char), Int32, Int32, Boolean, Encoding, Dictionary(Of Int32, CsvMapping))
+- uid: wan24.Data.CsvStream.#ctor(System.IO.Stream,wan24.Data.CsvTable,System.Int32,System.Int32,System.Boolean,System.Text.Encoding,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  name: CsvStream(Stream, CsvTable, Int32, Int32, Boolean, Encoding, Dictionary<Int32, CsvMapping>)
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream__ctor_System_IO_Stream_wan24_Data_CsvTable_System_Int32_System_Int32_System_Boolean_System_Text_Encoding_System_Collections_Generic_Dictionary_System_Int32_wan24_Data_CsvMapping__
+  commentId: M:wan24.Data.CsvStream.#ctor(System.IO.Stream,wan24.Data.CsvTable,System.Int32,System.Int32,System.Boolean,System.Text.Encoding,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  name.vb: CsvStream(Stream, CsvTable, Int32, Int32, Boolean, Encoding, Dictionary(Of Int32, CsvMapping))
+  fullName: wan24.Data.CsvStream.CsvStream(System.IO.Stream, wan24.Data.CsvTable, System.Int32, System.Int32, System.Boolean, System.Text.Encoding, System.Collections.Generic.Dictionary<System.Int32, wan24.Data.CsvMapping>)
+  fullName.vb: wan24.Data.CsvStream.CsvStream(System.IO.Stream, wan24.Data.CsvTable, System.Int32, System.Int32, System.Boolean, System.Text.Encoding, System.Collections.Generic.Dictionary(Of System.Int32, wan24.Data.CsvMapping))
+  nameWithType: CsvStream.CsvStream(Stream, CsvTable, Int32, Int32, Boolean, Encoding, Dictionary<Int32, CsvMapping>)
+  nameWithType.vb: CsvStream.CsvStream(Stream, CsvTable, Int32, Int32, Boolean, Encoding, Dictionary(Of Int32, CsvMapping))
+- uid: wan24.Data.CsvStream.#ctor*
+  name: CsvStream
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream__ctor_
+  commentId: Overload:wan24.Data.CsvStream.#ctor
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.CsvStream
+  nameWithType: CsvStream.CsvStream
+- uid: wan24.Data.CsvStream.BaseStream
+  name: BaseStream
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_BaseStream
+  commentId: P:wan24.Data.CsvStream.BaseStream
+  fullName: wan24.Data.CsvStream.BaseStream
+  nameWithType: CsvStream.BaseStream
+- uid: wan24.Data.CsvStream.BaseStream*
+  name: BaseStream
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_BaseStream_
+  commentId: Overload:wan24.Data.CsvStream.BaseStream
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.BaseStream
+  nameWithType: CsvStream.BaseStream
+- uid: wan24.Data.CsvStream.CanRead
+  name: CanRead
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_CanRead
+  commentId: P:wan24.Data.CsvStream.CanRead
+  fullName: wan24.Data.CsvStream.CanRead
+  nameWithType: CsvStream.CanRead
+- uid: wan24.Data.CsvStream.CanRead*
+  name: CanRead
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_CanRead_
+  commentId: Overload:wan24.Data.CsvStream.CanRead
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.CanRead
+  nameWithType: CsvStream.CanRead
+- uid: wan24.Data.CsvStream.CanSeek
+  name: CanSeek
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_CanSeek
+  commentId: P:wan24.Data.CsvStream.CanSeek
+  fullName: wan24.Data.CsvStream.CanSeek
+  nameWithType: CsvStream.CanSeek
+- uid: wan24.Data.CsvStream.CanSeek*
+  name: CanSeek
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_CanSeek_
+  commentId: Overload:wan24.Data.CsvStream.CanSeek
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.CanSeek
+  nameWithType: CsvStream.CanSeek
+- uid: wan24.Data.CsvStream.CanWrite
+  name: CanWrite
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_CanWrite
+  commentId: P:wan24.Data.CsvStream.CanWrite
+  fullName: wan24.Data.CsvStream.CanWrite
+  nameWithType: CsvStream.CanWrite
+- uid: wan24.Data.CsvStream.CanWrite*
+  name: CanWrite
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_CanWrite_
+  commentId: Overload:wan24.Data.CsvStream.CanWrite
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.CanWrite
+  nameWithType: CsvStream.CanWrite
+- uid: wan24.Data.CsvStream.Close
+  name: Close()
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_Close
+  commentId: M:wan24.Data.CsvStream.Close
+  fullName: wan24.Data.CsvStream.Close()
+  nameWithType: CsvStream.Close()
+- uid: wan24.Data.CsvStream.Close*
+  name: Close
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_Close_
+  commentId: Overload:wan24.Data.CsvStream.Close
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.Close
+  nameWithType: CsvStream.Close
+- uid: wan24.Data.CsvStream.ColumnCount
+  name: ColumnCount
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_ColumnCount
+  commentId: P:wan24.Data.CsvStream.ColumnCount
+  fullName: wan24.Data.CsvStream.ColumnCount
+  nameWithType: CsvStream.ColumnCount
+- uid: wan24.Data.CsvStream.ColumnCount*
+  name: ColumnCount
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_ColumnCount_
+  commentId: Overload:wan24.Data.CsvStream.ColumnCount
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.ColumnCount
+  nameWithType: CsvStream.ColumnCount
+- uid: wan24.Data.CsvStream.CountRows
+  name: CountRows()
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_CountRows
+  commentId: M:wan24.Data.CsvStream.CountRows
+  fullName: wan24.Data.CsvStream.CountRows()
+  nameWithType: CsvStream.CountRows()
+- uid: wan24.Data.CsvStream.CountRows*
+  name: CountRows
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_CountRows_
+  commentId: Overload:wan24.Data.CsvStream.CountRows
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.CountRows
+  nameWithType: CsvStream.CountRows
+- uid: wan24.Data.CsvStream.CountRowsAsync
+  name: CountRowsAsync()
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_CountRowsAsync
+  commentId: M:wan24.Data.CsvStream.CountRowsAsync
+  fullName: wan24.Data.CsvStream.CountRowsAsync()
+  nameWithType: CsvStream.CountRowsAsync()
+- uid: wan24.Data.CsvStream.CountRowsAsync*
+  name: CountRowsAsync
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_CountRowsAsync_
+  commentId: Overload:wan24.Data.CsvStream.CountRowsAsync
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.CountRowsAsync
+  nameWithType: CsvStream.CountRowsAsync
+- uid: wan24.Data.CsvStream.FieldDelimiter
+  name: FieldDelimiter
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_FieldDelimiter
+  commentId: P:wan24.Data.CsvStream.FieldDelimiter
+  fullName: wan24.Data.CsvStream.FieldDelimiter
+  nameWithType: CsvStream.FieldDelimiter
+- uid: wan24.Data.CsvStream.FieldDelimiter*
+  name: FieldDelimiter
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_FieldDelimiter_
+  commentId: Overload:wan24.Data.CsvStream.FieldDelimiter
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.FieldDelimiter
+  nameWithType: CsvStream.FieldDelimiter
+- uid: wan24.Data.CsvStream.Flush
+  name: Flush()
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_Flush
+  commentId: M:wan24.Data.CsvStream.Flush
+  fullName: wan24.Data.CsvStream.Flush()
+  nameWithType: CsvStream.Flush()
+- uid: wan24.Data.CsvStream.Flush*
+  name: Flush
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_Flush_
+  commentId: Overload:wan24.Data.CsvStream.Flush
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.Flush
+  nameWithType: CsvStream.Flush
+- uid: wan24.Data.CsvStream.Header
+  name: Header
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_Header
+  commentId: P:wan24.Data.CsvStream.Header
+  fullName: wan24.Data.CsvStream.Header
+  nameWithType: CsvStream.Header
+- uid: wan24.Data.CsvStream.Header*
+  name: Header
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_Header_
+  commentId: Overload:wan24.Data.CsvStream.Header
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.Header
+  nameWithType: CsvStream.Header
+- uid: wan24.Data.CsvStream.LeaveOpen
+  name: LeaveOpen
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_LeaveOpen
+  commentId: P:wan24.Data.CsvStream.LeaveOpen
+  fullName: wan24.Data.CsvStream.LeaveOpen
+  nameWithType: CsvStream.LeaveOpen
+- uid: wan24.Data.CsvStream.LeaveOpen*
+  name: LeaveOpen
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_LeaveOpen_
+  commentId: Overload:wan24.Data.CsvStream.LeaveOpen
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.LeaveOpen
+  nameWithType: CsvStream.LeaveOpen
+- uid: wan24.Data.CsvStream.Length
+  name: Length
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_Length
+  commentId: P:wan24.Data.CsvStream.Length
+  fullName: wan24.Data.CsvStream.Length
+  nameWithType: CsvStream.Length
+- uid: wan24.Data.CsvStream.Length*
+  name: Length
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_Length_
+  commentId: Overload:wan24.Data.CsvStream.Length
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.Length
+  nameWithType: CsvStream.Length
+- uid: wan24.Data.CsvStream.Mapping
+  name: Mapping
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_Mapping
+  commentId: P:wan24.Data.CsvStream.Mapping
+  fullName: wan24.Data.CsvStream.Mapping
+  nameWithType: CsvStream.Mapping
+- uid: wan24.Data.CsvStream.Mapping*
+  name: Mapping
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_Mapping_
+  commentId: Overload:wan24.Data.CsvStream.Mapping
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.Mapping
+  nameWithType: CsvStream.Mapping
+- uid: wan24.Data.CsvStream.Position
+  name: Position
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_Position
+  commentId: P:wan24.Data.CsvStream.Position
+  fullName: wan24.Data.CsvStream.Position
+  nameWithType: CsvStream.Position
+- uid: wan24.Data.CsvStream.Position*
+  name: Position
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_Position_
+  commentId: Overload:wan24.Data.CsvStream.Position
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.Position
+  nameWithType: CsvStream.Position
+- uid: wan24.Data.CsvStream.Read(System.Byte[],System.Int32,System.Int32)
+  name: Read(Byte[], Int32, Int32)
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_Read_System_Byte___System_Int32_System_Int32_
+  commentId: M:wan24.Data.CsvStream.Read(System.Byte[],System.Int32,System.Int32)
+  name.vb: Read(Byte(), Int32, Int32)
+  fullName: wan24.Data.CsvStream.Read(System.Byte[], System.Int32, System.Int32)
+  fullName.vb: wan24.Data.CsvStream.Read(System.Byte(), System.Int32, System.Int32)
+  nameWithType: CsvStream.Read(Byte[], Int32, Int32)
+  nameWithType.vb: CsvStream.Read(Byte(), Int32, Int32)
+- uid: wan24.Data.CsvStream.Read*
+  name: Read
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_Read_
+  commentId: Overload:wan24.Data.CsvStream.Read
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.Read
+  nameWithType: CsvStream.Read
+- uid: wan24.Data.CsvStream.ReadHeader
+  name: ReadHeader()
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_ReadHeader
+  commentId: M:wan24.Data.CsvStream.ReadHeader
+  fullName: wan24.Data.CsvStream.ReadHeader()
+  nameWithType: CsvStream.ReadHeader()
+- uid: wan24.Data.CsvStream.ReadHeader*
+  name: ReadHeader
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_ReadHeader_
+  commentId: Overload:wan24.Data.CsvStream.ReadHeader
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.ReadHeader
+  nameWithType: CsvStream.ReadHeader
+- uid: wan24.Data.CsvStream.ReadHeaderAsync
+  name: ReadHeaderAsync()
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_ReadHeaderAsync
+  commentId: M:wan24.Data.CsvStream.ReadHeaderAsync
+  fullName: wan24.Data.CsvStream.ReadHeaderAsync()
+  nameWithType: CsvStream.ReadHeaderAsync()
+- uid: wan24.Data.CsvStream.ReadHeaderAsync*
+  name: ReadHeaderAsync
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_ReadHeaderAsync_
+  commentId: Overload:wan24.Data.CsvStream.ReadHeaderAsync
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.ReadHeaderAsync
+  nameWithType: CsvStream.ReadHeaderAsync
+- uid: wan24.Data.CsvStream.ReadObject*
+  name: ReadObject
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_ReadObject_
+  commentId: Overload:wan24.Data.CsvStream.ReadObject
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.ReadObject
+  nameWithType: CsvStream.ReadObject
+- uid: wan24.Data.CsvStream.ReadObject``1
+  name: ReadObject<T>()
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_ReadObject__1
+  commentId: M:wan24.Data.CsvStream.ReadObject``1
+  name.vb: ReadObject(Of T)()
+  fullName: wan24.Data.CsvStream.ReadObject<T>()
+  fullName.vb: wan24.Data.CsvStream.ReadObject(Of T)()
+  nameWithType: CsvStream.ReadObject<T>()
+  nameWithType.vb: CsvStream.ReadObject(Of T)()
+- uid: wan24.Data.CsvStream.ReadObject``1(``0)
+  name: ReadObject<T>(T)
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_ReadObject__1___0_
+  commentId: M:wan24.Data.CsvStream.ReadObject``1(``0)
+  name.vb: ReadObject(Of T)(T)
+  fullName: wan24.Data.CsvStream.ReadObject<T>(T)
+  fullName.vb: wan24.Data.CsvStream.ReadObject(Of T)(T)
+  nameWithType: CsvStream.ReadObject<T>(T)
+  nameWithType.vb: CsvStream.ReadObject(Of T)(T)
+- uid: wan24.Data.CsvStream.ReadObjectAsync*
+  name: ReadObjectAsync
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_ReadObjectAsync_
+  commentId: Overload:wan24.Data.CsvStream.ReadObjectAsync
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.ReadObjectAsync
+  nameWithType: CsvStream.ReadObjectAsync
+- uid: wan24.Data.CsvStream.ReadObjectAsync``1
+  name: ReadObjectAsync<T>()
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_ReadObjectAsync__1
+  commentId: M:wan24.Data.CsvStream.ReadObjectAsync``1
+  name.vb: ReadObjectAsync(Of T)()
+  fullName: wan24.Data.CsvStream.ReadObjectAsync<T>()
+  fullName.vb: wan24.Data.CsvStream.ReadObjectAsync(Of T)()
+  nameWithType: CsvStream.ReadObjectAsync<T>()
+  nameWithType.vb: CsvStream.ReadObjectAsync(Of T)()
+- uid: wan24.Data.CsvStream.ReadObjectAsync``1(``0)
+  name: ReadObjectAsync<T>(T)
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_ReadObjectAsync__1___0_
+  commentId: M:wan24.Data.CsvStream.ReadObjectAsync``1(``0)
+  name.vb: ReadObjectAsync(Of T)(T)
+  fullName: wan24.Data.CsvStream.ReadObjectAsync<T>(T)
+  fullName.vb: wan24.Data.CsvStream.ReadObjectAsync(Of T)(T)
+  nameWithType: CsvStream.ReadObjectAsync<T>(T)
+  nameWithType.vb: CsvStream.ReadObjectAsync(Of T)(T)
+- uid: wan24.Data.CsvStream.ReadObjects*
+  name: ReadObjects
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_ReadObjects_
+  commentId: Overload:wan24.Data.CsvStream.ReadObjects
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.ReadObjects
+  nameWithType: CsvStream.ReadObjects
+- uid: wan24.Data.CsvStream.ReadObjects``1
+  name: ReadObjects<T>()
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_ReadObjects__1
+  commentId: M:wan24.Data.CsvStream.ReadObjects``1
+  name.vb: ReadObjects(Of T)()
+  fullName: wan24.Data.CsvStream.ReadObjects<T>()
+  fullName.vb: wan24.Data.CsvStream.ReadObjects(Of T)()
+  nameWithType: CsvStream.ReadObjects<T>()
+  nameWithType.vb: CsvStream.ReadObjects(Of T)()
+- uid: wan24.Data.CsvStream.ReadRow
+  name: ReadRow()
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_ReadRow
+  commentId: M:wan24.Data.CsvStream.ReadRow
+  fullName: wan24.Data.CsvStream.ReadRow()
+  nameWithType: CsvStream.ReadRow()
+- uid: wan24.Data.CsvStream.ReadRow*
+  name: ReadRow
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_ReadRow_
+  commentId: Overload:wan24.Data.CsvStream.ReadRow
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.ReadRow
+  nameWithType: CsvStream.ReadRow
+- uid: wan24.Data.CsvStream.ReadRowAsync
+  name: ReadRowAsync()
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_ReadRowAsync
+  commentId: M:wan24.Data.CsvStream.ReadRowAsync
+  fullName: wan24.Data.CsvStream.ReadRowAsync()
+  nameWithType: CsvStream.ReadRowAsync()
+- uid: wan24.Data.CsvStream.ReadRowAsync*
+  name: ReadRowAsync
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_ReadRowAsync_
+  commentId: Overload:wan24.Data.CsvStream.ReadRowAsync
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.ReadRowAsync
+  nameWithType: CsvStream.ReadRowAsync
+- uid: wan24.Data.CsvStream.Rows
+  name: Rows
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_Rows
+  commentId: P:wan24.Data.CsvStream.Rows
+  fullName: wan24.Data.CsvStream.Rows
+  nameWithType: CsvStream.Rows
+- uid: wan24.Data.CsvStream.Rows*
+  name: Rows
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_Rows_
+  commentId: Overload:wan24.Data.CsvStream.Rows
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.Rows
+  nameWithType: CsvStream.Rows
+- uid: wan24.Data.CsvStream.Seek(System.Int64,System.IO.SeekOrigin)
+  name: Seek(Int64, SeekOrigin)
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_Seek_System_Int64_System_IO_SeekOrigin_
+  commentId: M:wan24.Data.CsvStream.Seek(System.Int64,System.IO.SeekOrigin)
+  fullName: wan24.Data.CsvStream.Seek(System.Int64, System.IO.SeekOrigin)
+  nameWithType: CsvStream.Seek(Int64, SeekOrigin)
+- uid: wan24.Data.CsvStream.Seek*
+  name: Seek
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_Seek_
+  commentId: Overload:wan24.Data.CsvStream.Seek
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.Seek
+  nameWithType: CsvStream.Seek
+- uid: wan24.Data.CsvStream.SetLength(System.Int64)
+  name: SetLength(Int64)
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_SetLength_System_Int64_
+  commentId: M:wan24.Data.CsvStream.SetLength(System.Int64)
+  fullName: wan24.Data.CsvStream.SetLength(System.Int64)
+  nameWithType: CsvStream.SetLength(Int64)
+- uid: wan24.Data.CsvStream.SetLength*
+  name: SetLength
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_SetLength_
+  commentId: Overload:wan24.Data.CsvStream.SetLength
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.SetLength
+  nameWithType: CsvStream.SetLength
+- uid: wan24.Data.CsvStream.SkipHeader
+  name: SkipHeader()
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_SkipHeader
+  commentId: M:wan24.Data.CsvStream.SkipHeader
+  fullName: wan24.Data.CsvStream.SkipHeader()
+  nameWithType: CsvStream.SkipHeader()
+- uid: wan24.Data.CsvStream.SkipHeader*
+  name: SkipHeader
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_SkipHeader_
+  commentId: Overload:wan24.Data.CsvStream.SkipHeader
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.SkipHeader
+  nameWithType: CsvStream.SkipHeader
+- uid: wan24.Data.CsvStream.SkipHeaderAsync
+  name: SkipHeaderAsync()
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_SkipHeaderAsync
+  commentId: M:wan24.Data.CsvStream.SkipHeaderAsync
+  fullName: wan24.Data.CsvStream.SkipHeaderAsync()
+  nameWithType: CsvStream.SkipHeaderAsync()
+- uid: wan24.Data.CsvStream.SkipHeaderAsync*
+  name: SkipHeaderAsync
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_SkipHeaderAsync_
+  commentId: Overload:wan24.Data.CsvStream.SkipHeaderAsync
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.SkipHeaderAsync
+  nameWithType: CsvStream.SkipHeaderAsync
+- uid: wan24.Data.CsvStream.StringDelimiter
+  name: StringDelimiter
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_StringDelimiter
+  commentId: P:wan24.Data.CsvStream.StringDelimiter
+  fullName: wan24.Data.CsvStream.StringDelimiter
+  nameWithType: CsvStream.StringDelimiter
+- uid: wan24.Data.CsvStream.StringDelimiter*
+  name: StringDelimiter
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_StringDelimiter_
+  commentId: Overload:wan24.Data.CsvStream.StringDelimiter
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.StringDelimiter
+  nameWithType: CsvStream.StringDelimiter
+- uid: wan24.Data.CsvStream.StringEncoding
+  name: StringEncoding
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_StringEncoding
+  commentId: P:wan24.Data.CsvStream.StringEncoding
+  fullName: wan24.Data.CsvStream.StringEncoding
+  nameWithType: CsvStream.StringEncoding
+- uid: wan24.Data.CsvStream.StringEncoding*
+  name: StringEncoding
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_StringEncoding_
+  commentId: Overload:wan24.Data.CsvStream.StringEncoding
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.StringEncoding
+  nameWithType: CsvStream.StringEncoding
+- uid: wan24.Data.CsvStream.Write(System.Byte[],System.Int32,System.Int32)
+  name: Write(Byte[], Int32, Int32)
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_Write_System_Byte___System_Int32_System_Int32_
+  commentId: M:wan24.Data.CsvStream.Write(System.Byte[],System.Int32,System.Int32)
+  name.vb: Write(Byte(), Int32, Int32)
+  fullName: wan24.Data.CsvStream.Write(System.Byte[], System.Int32, System.Int32)
+  fullName.vb: wan24.Data.CsvStream.Write(System.Byte(), System.Int32, System.Int32)
+  nameWithType: CsvStream.Write(Byte[], Int32, Int32)
+  nameWithType.vb: CsvStream.Write(Byte(), Int32, Int32)
+- uid: wan24.Data.CsvStream.Write*
+  name: Write
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_Write_
+  commentId: Overload:wan24.Data.CsvStream.Write
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.Write
+  nameWithType: CsvStream.Write
+- uid: wan24.Data.CsvStream.WriteHeader(System.Collections.Generic.IEnumerable{System.String})
+  name: WriteHeader(IEnumerable<String>)
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_WriteHeader_System_Collections_Generic_IEnumerable_System_String__
+  commentId: M:wan24.Data.CsvStream.WriteHeader(System.Collections.Generic.IEnumerable{System.String})
+  name.vb: WriteHeader(IEnumerable(Of String))
+  fullName: wan24.Data.CsvStream.WriteHeader(System.Collections.Generic.IEnumerable<System.String>)
+  fullName.vb: wan24.Data.CsvStream.WriteHeader(System.Collections.Generic.IEnumerable(Of System.String))
+  nameWithType: CsvStream.WriteHeader(IEnumerable<String>)
+  nameWithType.vb: CsvStream.WriteHeader(IEnumerable(Of String))
+- uid: wan24.Data.CsvStream.WriteHeader*
+  name: WriteHeader
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_WriteHeader_
+  commentId: Overload:wan24.Data.CsvStream.WriteHeader
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.WriteHeader
+  nameWithType: CsvStream.WriteHeader
+- uid: wan24.Data.CsvStream.WriteHeaderAsync(System.Collections.Generic.IEnumerable{System.String})
+  name: WriteHeaderAsync(IEnumerable<String>)
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_WriteHeaderAsync_System_Collections_Generic_IEnumerable_System_String__
+  commentId: M:wan24.Data.CsvStream.WriteHeaderAsync(System.Collections.Generic.IEnumerable{System.String})
+  name.vb: WriteHeaderAsync(IEnumerable(Of String))
+  fullName: wan24.Data.CsvStream.WriteHeaderAsync(System.Collections.Generic.IEnumerable<System.String>)
+  fullName.vb: wan24.Data.CsvStream.WriteHeaderAsync(System.Collections.Generic.IEnumerable(Of System.String))
+  nameWithType: CsvStream.WriteHeaderAsync(IEnumerable<String>)
+  nameWithType.vb: CsvStream.WriteHeaderAsync(IEnumerable(Of String))
+- uid: wan24.Data.CsvStream.WriteHeaderAsync*
+  name: WriteHeaderAsync
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_WriteHeaderAsync_
+  commentId: Overload:wan24.Data.CsvStream.WriteHeaderAsync
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.WriteHeaderAsync
+  nameWithType: CsvStream.WriteHeaderAsync
+- uid: wan24.Data.CsvStream.WriteObjects*
+  name: WriteObjects
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_WriteObjects_
+  commentId: Overload:wan24.Data.CsvStream.WriteObjects
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.WriteObjects
+  nameWithType: CsvStream.WriteObjects
+- uid: wan24.Data.CsvStream.WriteObjects``1(``0[])
+  name: WriteObjects<T>(T[])
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_WriteObjects__1___0___
+  commentId: M:wan24.Data.CsvStream.WriteObjects``1(``0[])
+  name.vb: WriteObjects(Of T)(T())
+  fullName: wan24.Data.CsvStream.WriteObjects<T>(T[])
+  fullName.vb: wan24.Data.CsvStream.WriteObjects(Of T)(T())
+  nameWithType: CsvStream.WriteObjects<T>(T[])
+  nameWithType.vb: CsvStream.WriteObjects(Of T)(T())
+- uid: wan24.Data.CsvStream.WriteObjectsAsync*
+  name: WriteObjectsAsync
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_WriteObjectsAsync_
+  commentId: Overload:wan24.Data.CsvStream.WriteObjectsAsync
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.WriteObjectsAsync
+  nameWithType: CsvStream.WriteObjectsAsync
+- uid: wan24.Data.CsvStream.WriteObjectsAsync``1(``0[])
+  name: WriteObjectsAsync<T>(T[])
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_WriteObjectsAsync__1___0___
+  commentId: M:wan24.Data.CsvStream.WriteObjectsAsync``1(``0[])
+  name.vb: WriteObjectsAsync(Of T)(T())
+  fullName: wan24.Data.CsvStream.WriteObjectsAsync<T>(T[])
+  fullName.vb: wan24.Data.CsvStream.WriteObjectsAsync(Of T)(T())
+  nameWithType: CsvStream.WriteObjectsAsync<T>(T[])
+  nameWithType.vb: CsvStream.WriteObjectsAsync(Of T)(T())
+- uid: wan24.Data.CsvStream.WriteRows(System.Collections.Generic.IEnumerable{System.String}[])
+  name: WriteRows(IEnumerable<String>[])
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_WriteRows_System_Collections_Generic_IEnumerable_System_String____
+  commentId: M:wan24.Data.CsvStream.WriteRows(System.Collections.Generic.IEnumerable{System.String}[])
+  name.vb: WriteRows(IEnumerable(Of String)())
+  fullName: wan24.Data.CsvStream.WriteRows(System.Collections.Generic.IEnumerable<System.String>[])
+  fullName.vb: wan24.Data.CsvStream.WriteRows(System.Collections.Generic.IEnumerable(Of System.String)())
+  nameWithType: CsvStream.WriteRows(IEnumerable<String>[])
+  nameWithType.vb: CsvStream.WriteRows(IEnumerable(Of String)())
+- uid: wan24.Data.CsvStream.WriteRows*
+  name: WriteRows
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_WriteRows_
+  commentId: Overload:wan24.Data.CsvStream.WriteRows
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.WriteRows
+  nameWithType: CsvStream.WriteRows
+- uid: wan24.Data.CsvStream.WriteRowsAsync(System.Collections.Generic.IEnumerable{System.String}[])
+  name: WriteRowsAsync(IEnumerable<String>[])
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_WriteRowsAsync_System_Collections_Generic_IEnumerable_System_String____
+  commentId: M:wan24.Data.CsvStream.WriteRowsAsync(System.Collections.Generic.IEnumerable{System.String}[])
+  name.vb: WriteRowsAsync(IEnumerable(Of String)())
+  fullName: wan24.Data.CsvStream.WriteRowsAsync(System.Collections.Generic.IEnumerable<System.String>[])
+  fullName.vb: wan24.Data.CsvStream.WriteRowsAsync(System.Collections.Generic.IEnumerable(Of System.String)())
+  nameWithType: CsvStream.WriteRowsAsync(IEnumerable<String>[])
+  nameWithType.vb: CsvStream.WriteRowsAsync(IEnumerable(Of String)())
+- uid: wan24.Data.CsvStream.WriteRowsAsync*
+  name: WriteRowsAsync
+  href: api/wan24.Data.CsvStream.html#wan24_Data_CsvStream_WriteRowsAsync_
+  commentId: Overload:wan24.Data.CsvStream.WriteRowsAsync
+  isSpec: "True"
+  fullName: wan24.Data.CsvStream.WriteRowsAsync
+  nameWithType: CsvStream.WriteRowsAsync
 - uid: wan24.Data.CsvTable
   name: CsvTable
   href: api/wan24.Data.CsvTable.html
   commentId: T:wan24.Data.CsvTable
   fullName: wan24.Data.CsvTable
   nameWithType: CsvTable
-- uid: wan24.Data.CsvTable.#ctor
-  name: CsvTable()
-  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable__ctor
-  commentId: M:wan24.Data.CsvTable.#ctor
-  fullName: wan24.Data.CsvTable.CsvTable()
-  nameWithType: CsvTable.CsvTable()
+- uid: wan24.Data.CsvTable.#ctor(System.Nullable{System.Boolean},System.Char,System.Nullable{System.Char},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{System.String}})
+  name: CsvTable(Nullable<Boolean>, Char, Nullable<Char>, IEnumerable<String>, IEnumerable<IEnumerable<String>>)
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable__ctor_System_Nullable_System_Boolean__System_Char_System_Nullable_System_Char__System_Collections_Generic_IEnumerable_System_String__System_Collections_Generic_IEnumerable_System_Collections_Generic_IEnumerable_System_String___
+  commentId: M:wan24.Data.CsvTable.#ctor(System.Nullable{System.Boolean},System.Char,System.Nullable{System.Char},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{System.String}})
+  name.vb: CsvTable(Nullable(Of Boolean), Char, Nullable(Of Char), IEnumerable(Of String), IEnumerable(Of IEnumerable(Of String)))
+  fullName: wan24.Data.CsvTable.CsvTable(System.Nullable<System.Boolean>, System.Char, System.Nullable<System.Char>, System.Collections.Generic.IEnumerable<System.String>, System.Collections.Generic.IEnumerable<System.Collections.Generic.IEnumerable<System.String>>)
+  fullName.vb: wan24.Data.CsvTable.CsvTable(System.Nullable(Of System.Boolean), System.Char, System.Nullable(Of System.Char), System.Collections.Generic.IEnumerable(Of System.String), System.Collections.Generic.IEnumerable(Of System.Collections.Generic.IEnumerable(Of System.String)))
+  nameWithType: CsvTable.CsvTable(Nullable<Boolean>, Char, Nullable<Char>, IEnumerable<String>, IEnumerable<IEnumerable<String>>)
+  nameWithType.vb: CsvTable.CsvTable(Nullable(Of Boolean), Char, Nullable(Of Char), IEnumerable(Of String), IEnumerable(Of IEnumerable(Of String)))
 - uid: wan24.Data.CsvTable.#ctor*
   name: CsvTable
   href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable__ctor_
@@ -265,6 +1036,147 @@ references:
   isSpec: "True"
   fullName: wan24.Data.CsvTable.CsvTable
   nameWithType: CsvTable.CsvTable
+- uid: wan24.Data.CsvTable.AddColumn(System.String,System.Int32,System.Func{System.Int32,System.String})
+  name: AddColumn(String, Int32, Func<Int32, String>)
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_AddColumn_System_String_System_Int32_System_Func_System_Int32_System_String__
+  commentId: M:wan24.Data.CsvTable.AddColumn(System.String,System.Int32,System.Func{System.Int32,System.String})
+  name.vb: AddColumn(String, Int32, Func(Of Int32, String))
+  fullName: wan24.Data.CsvTable.AddColumn(System.String, System.Int32, System.Func<System.Int32, System.String>)
+  fullName.vb: wan24.Data.CsvTable.AddColumn(System.String, System.Int32, System.Func(Of System.Int32, System.String))
+  nameWithType: CsvTable.AddColumn(String, Int32, Func<Int32, String>)
+  nameWithType.vb: CsvTable.AddColumn(String, Int32, Func(Of Int32, String))
+- uid: wan24.Data.CsvTable.AddColumn*
+  name: AddColumn
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_AddColumn_
+  commentId: Overload:wan24.Data.CsvTable.AddColumn
+  isSpec: "True"
+  fullName: wan24.Data.CsvTable.AddColumn
+  nameWithType: CsvTable.AddColumn
+- uid: wan24.Data.CsvTable.AddObjects*
+  name: AddObjects
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_AddObjects_
+  commentId: Overload:wan24.Data.CsvTable.AddObjects
+  isSpec: "True"
+  fullName: wan24.Data.CsvTable.AddObjects
+  nameWithType: CsvTable.AddObjects
+- uid: wan24.Data.CsvTable.AddObjects``1(``0[])
+  name: AddObjects<T>(T[])
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_AddObjects__1___0___
+  commentId: M:wan24.Data.CsvTable.AddObjects``1(``0[])
+  name.vb: AddObjects(Of T)(T())
+  fullName: wan24.Data.CsvTable.AddObjects<T>(T[])
+  fullName.vb: wan24.Data.CsvTable.AddObjects(Of T)(T())
+  nameWithType: CsvTable.AddObjects<T>(T[])
+  nameWithType.vb: CsvTable.AddObjects(Of T)(T())
+- uid: wan24.Data.CsvTable.AddRow(System.Collections.Generic.IEnumerable{System.String})
+  name: AddRow(IEnumerable<String>)
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_AddRow_System_Collections_Generic_IEnumerable_System_String__
+  commentId: M:wan24.Data.CsvTable.AddRow(System.Collections.Generic.IEnumerable{System.String})
+  name.vb: AddRow(IEnumerable(Of String))
+  fullName: wan24.Data.CsvTable.AddRow(System.Collections.Generic.IEnumerable<System.String>)
+  fullName.vb: wan24.Data.CsvTable.AddRow(System.Collections.Generic.IEnumerable(Of System.String))
+  nameWithType: CsvTable.AddRow(IEnumerable<String>)
+  nameWithType.vb: CsvTable.AddRow(IEnumerable(Of String))
+- uid: wan24.Data.CsvTable.AddRow*
+  name: AddRow
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_AddRow_
+  commentId: Overload:wan24.Data.CsvTable.AddRow
+  isSpec: "True"
+  fullName: wan24.Data.CsvTable.AddRow
+  nameWithType: CsvTable.AddRow
+- uid: wan24.Data.CsvTable.AsDictionaries
+  name: AsDictionaries
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_AsDictionaries
+  commentId: P:wan24.Data.CsvTable.AsDictionaries
+  fullName: wan24.Data.CsvTable.AsDictionaries
+  nameWithType: CsvTable.AsDictionaries
+- uid: wan24.Data.CsvTable.AsDictionaries*
+  name: AsDictionaries
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_AsDictionaries_
+  commentId: Overload:wan24.Data.CsvTable.AsDictionaries
+  isSpec: "True"
+  fullName: wan24.Data.CsvTable.AsDictionaries
+  nameWithType: CsvTable.AsDictionaries
+- uid: wan24.Data.CsvTable.AsDictionary(System.Int32)
+  name: AsDictionary(Int32)
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_AsDictionary_System_Int32_
+  commentId: M:wan24.Data.CsvTable.AsDictionary(System.Int32)
+  fullName: wan24.Data.CsvTable.AsDictionary(System.Int32)
+  nameWithType: CsvTable.AsDictionary(Int32)
+- uid: wan24.Data.CsvTable.AsDictionary*
+  name: AsDictionary
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_AsDictionary_
+  commentId: Overload:wan24.Data.CsvTable.AsDictionary
+  isSpec: "True"
+  fullName: wan24.Data.CsvTable.AsDictionary
+  nameWithType: CsvTable.AsDictionary
+- uid: wan24.Data.CsvTable.AsObject*
+  name: AsObject
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_AsObject_
+  commentId: Overload:wan24.Data.CsvTable.AsObject
+  isSpec: "True"
+  fullName: wan24.Data.CsvTable.AsObject
+  nameWithType: CsvTable.AsObject
+- uid: wan24.Data.CsvTable.AsObject``1(System.Int32)
+  name: AsObject<T>(Int32)
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_AsObject__1_System_Int32_
+  commentId: M:wan24.Data.CsvTable.AsObject``1(System.Int32)
+  name.vb: AsObject(Of T)(Int32)
+  fullName: wan24.Data.CsvTable.AsObject<T>(System.Int32)
+  fullName.vb: wan24.Data.CsvTable.AsObject(Of T)(System.Int32)
+  nameWithType: CsvTable.AsObject<T>(Int32)
+  nameWithType.vb: CsvTable.AsObject(Of T)(Int32)
+- uid: wan24.Data.CsvTable.AsObject``1(System.Int32,``0)
+  name: AsObject<T>(Int32, T)
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_AsObject__1_System_Int32___0_
+  commentId: M:wan24.Data.CsvTable.AsObject``1(System.Int32,``0)
+  name.vb: AsObject(Of T)(Int32, T)
+  fullName: wan24.Data.CsvTable.AsObject<T>(System.Int32, T)
+  fullName.vb: wan24.Data.CsvTable.AsObject(Of T)(System.Int32, T)
+  nameWithType: CsvTable.AsObject<T>(Int32, T)
+  nameWithType.vb: CsvTable.AsObject(Of T)(Int32, T)
+- uid: wan24.Data.CsvTable.AsObjects*
+  name: AsObjects
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_AsObjects_
+  commentId: Overload:wan24.Data.CsvTable.AsObjects
+  isSpec: "True"
+  fullName: wan24.Data.CsvTable.AsObjects
+  nameWithType: CsvTable.AsObjects
+- uid: wan24.Data.CsvTable.AsObjects``1(System.Int32)
+  name: AsObjects<T>(Int32)
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_AsObjects__1_System_Int32_
+  commentId: M:wan24.Data.CsvTable.AsObjects``1(System.Int32)
+  name.vb: AsObjects(Of T)(Int32)
+  fullName: wan24.Data.CsvTable.AsObjects<T>(System.Int32)
+  fullName.vb: wan24.Data.CsvTable.AsObjects(Of T)(System.Int32)
+  nameWithType: CsvTable.AsObjects<T>(Int32)
+  nameWithType.vb: CsvTable.AsObjects(Of T)(Int32)
+- uid: wan24.Data.CsvTable.Clear(System.Boolean)
+  name: Clear(Boolean)
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_Clear_System_Boolean_
+  commentId: M:wan24.Data.CsvTable.Clear(System.Boolean)
+  fullName: wan24.Data.CsvTable.Clear(System.Boolean)
+  nameWithType: CsvTable.Clear(Boolean)
+- uid: wan24.Data.CsvTable.Clear*
+  name: Clear
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_Clear_
+  commentId: Overload:wan24.Data.CsvTable.Clear
+  isSpec: "True"
+  fullName: wan24.Data.CsvTable.Clear
+  nameWithType: CsvTable.Clear
+- uid: wan24.Data.CsvTable.Clone
+  name: Clone()
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_Clone
+  commentId: M:wan24.Data.CsvTable.Clone
+  fullName: wan24.Data.CsvTable.Clone()
+  nameWithType: CsvTable.Clone()
+- uid: wan24.Data.CsvTable.Clone*
+  name: Clone
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_Clone_
+  commentId: Overload:wan24.Data.CsvTable.Clone
+  isSpec: "True"
+  fullName: wan24.Data.CsvTable.Clone
+  nameWithType: CsvTable.Clone
 - uid: wan24.Data.CsvTable.CountColumns
   name: CountColumns
   href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_CountColumns
@@ -291,6 +1203,58 @@ references:
   isSpec: "True"
   fullName: wan24.Data.CsvTable.CountRows
   nameWithType: CsvTable.CountRows
+- uid: wan24.Data.CsvTable.CreateHeaders
+  name: CreateHeaders()
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_CreateHeaders
+  commentId: M:wan24.Data.CsvTable.CreateHeaders
+  fullName: wan24.Data.CsvTable.CreateHeaders()
+  nameWithType: CsvTable.CreateHeaders()
+- uid: wan24.Data.CsvTable.CreateHeaders*
+  name: CreateHeaders
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_CreateHeaders_
+  commentId: Overload:wan24.Data.CsvTable.CreateHeaders
+  isSpec: "True"
+  fullName: wan24.Data.CsvTable.CreateHeaders
+  nameWithType: CsvTable.CreateHeaders
+- uid: wan24.Data.CsvTable.FieldDelimiter
+  name: FieldDelimiter
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_FieldDelimiter
+  commentId: P:wan24.Data.CsvTable.FieldDelimiter
+  fullName: wan24.Data.CsvTable.FieldDelimiter
+  nameWithType: CsvTable.FieldDelimiter
+- uid: wan24.Data.CsvTable.FieldDelimiter*
+  name: FieldDelimiter
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_FieldDelimiter_
+  commentId: Overload:wan24.Data.CsvTable.FieldDelimiter
+  isSpec: "True"
+  fullName: wan24.Data.CsvTable.FieldDelimiter
+  nameWithType: CsvTable.FieldDelimiter
+- uid: wan24.Data.CsvTable.GetEnumerator
+  name: GetEnumerator()
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_GetEnumerator
+  commentId: M:wan24.Data.CsvTable.GetEnumerator
+  fullName: wan24.Data.CsvTable.GetEnumerator()
+  nameWithType: CsvTable.GetEnumerator()
+- uid: wan24.Data.CsvTable.GetEnumerator*
+  name: GetEnumerator
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_GetEnumerator_
+  commentId: Overload:wan24.Data.CsvTable.GetEnumerator
+  isSpec: "True"
+  fullName: wan24.Data.CsvTable.GetEnumerator
+  nameWithType: CsvTable.GetEnumerator
+- uid: wan24.Data.CsvTable.HasHeader
+  name: HasHeader
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_HasHeader
+  commentId: P:wan24.Data.CsvTable.HasHeader
+  fullName: wan24.Data.CsvTable.HasHeader
+  nameWithType: CsvTable.HasHeader
+- uid: wan24.Data.CsvTable.HasHeader*
+  name: HasHeader
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_HasHeader_
+  commentId: Overload:wan24.Data.CsvTable.HasHeader
+  isSpec: "True"
+  fullName: wan24.Data.CsvTable.HasHeader
+  nameWithType: CsvTable.HasHeader
 - uid: wan24.Data.CsvTable.Header
   name: Header
   href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_Header
@@ -304,6 +1268,48 @@ references:
   isSpec: "True"
   fullName: wan24.Data.CsvTable.Header
   nameWithType: CsvTable.Header
+- uid: wan24.Data.CsvTable.Item(System.Int32)
+  name: Item[Int32]
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_Item_System_Int32_
+  commentId: P:wan24.Data.CsvTable.Item(System.Int32)
+  name.vb: Item(Int32)
+  fullName: wan24.Data.CsvTable.Item[System.Int32]
+  fullName.vb: wan24.Data.CsvTable.Item(System.Int32)
+  nameWithType: CsvTable.Item[Int32]
+  nameWithType.vb: CsvTable.Item(Int32)
+- uid: wan24.Data.CsvTable.Item*
+  name: Item
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_Item_
+  commentId: Overload:wan24.Data.CsvTable.Item
+  isSpec: "True"
+  fullName: wan24.Data.CsvTable.Item
+  nameWithType: CsvTable.Item
+- uid: wan24.Data.CsvTable.Mapping
+  name: Mapping
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_Mapping
+  commentId: P:wan24.Data.CsvTable.Mapping
+  fullName: wan24.Data.CsvTable.Mapping
+  nameWithType: CsvTable.Mapping
+- uid: wan24.Data.CsvTable.Mapping*
+  name: Mapping
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_Mapping_
+  commentId: Overload:wan24.Data.CsvTable.Mapping
+  isSpec: "True"
+  fullName: wan24.Data.CsvTable.Mapping
+  nameWithType: CsvTable.Mapping
+- uid: wan24.Data.CsvTable.RemoveColumn(System.Int32)
+  name: RemoveColumn(Int32)
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_RemoveColumn_System_Int32_
+  commentId: M:wan24.Data.CsvTable.RemoveColumn(System.Int32)
+  fullName: wan24.Data.CsvTable.RemoveColumn(System.Int32)
+  nameWithType: CsvTable.RemoveColumn(Int32)
+- uid: wan24.Data.CsvTable.RemoveColumn*
+  name: RemoveColumn
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_RemoveColumn_
+  commentId: Overload:wan24.Data.CsvTable.RemoveColumn
+  isSpec: "True"
+  fullName: wan24.Data.CsvTable.RemoveColumn
+  nameWithType: CsvTable.RemoveColumn
 - uid: wan24.Data.CsvTable.Rows
   name: Rows
   href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_Rows
@@ -317,21 +1323,45 @@ references:
   isSpec: "True"
   fullName: wan24.Data.CsvTable.Rows
   nameWithType: CsvTable.Rows
-- uid: wan24.Data.CsvTable.RX_NUMBER
-  name: RX_NUMBER
-  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_RX_NUMBER
-  commentId: F:wan24.Data.CsvTable.RX_NUMBER
-  fullName: wan24.Data.CsvTable.RX_NUMBER
-  nameWithType: CsvTable.RX_NUMBER
-- uid: wan24.Data.CsvTable.ToString(System.Boolean,System.Char,System.Nullable{System.Char})
-  name: ToString(Boolean, Char, Nullable<Char>)
-  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_ToString_System_Boolean_System_Char_System_Nullable_System_Char__
-  commentId: M:wan24.Data.CsvTable.ToString(System.Boolean,System.Char,System.Nullable{System.Char})
-  name.vb: ToString(Boolean, Char, Nullable(Of Char))
-  fullName: wan24.Data.CsvTable.ToString(System.Boolean, System.Char, System.Nullable<System.Char>)
-  fullName.vb: wan24.Data.CsvTable.ToString(System.Boolean, System.Char, System.Nullable(Of System.Char))
-  nameWithType: CsvTable.ToString(Boolean, Char, Nullable<Char>)
-  nameWithType.vb: CsvTable.ToString(Boolean, Char, Nullable(Of Char))
+- uid: wan24.Data.CsvTable.StringDelimiter
+  name: StringDelimiter
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_StringDelimiter
+  commentId: P:wan24.Data.CsvTable.StringDelimiter
+  fullName: wan24.Data.CsvTable.StringDelimiter
+  nameWithType: CsvTable.StringDelimiter
+- uid: wan24.Data.CsvTable.StringDelimiter*
+  name: StringDelimiter
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_StringDelimiter_
+  commentId: Overload:wan24.Data.CsvTable.StringDelimiter
+  isSpec: "True"
+  fullName: wan24.Data.CsvTable.StringDelimiter
+  nameWithType: CsvTable.StringDelimiter
+- uid: wan24.Data.CsvTable.System#Collections#IEnumerable#GetEnumerator
+  name: IEnumerable.GetEnumerator()
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_System_Collections_IEnumerable_GetEnumerator
+  commentId: M:wan24.Data.CsvTable.System#Collections#IEnumerable#GetEnumerator
+  name.vb: System.Collections.IEnumerable.GetEnumerator()
+  fullName: wan24.Data.CsvTable.System.Collections.IEnumerable.GetEnumerator()
+  nameWithType: CsvTable.IEnumerable.GetEnumerator()
+  nameWithType.vb: CsvTable.System.Collections.IEnumerable.GetEnumerator()
+- uid: wan24.Data.CsvTable.System#Collections#IEnumerable#GetEnumerator*
+  name: IEnumerable.GetEnumerator
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_System_Collections_IEnumerable_GetEnumerator_
+  commentId: Overload:wan24.Data.CsvTable.System#Collections#IEnumerable#GetEnumerator
+  isSpec: "True"
+  name.vb: System.Collections.IEnumerable.GetEnumerator
+  fullName: wan24.Data.CsvTable.System.Collections.IEnumerable.GetEnumerator
+  nameWithType: CsvTable.IEnumerable.GetEnumerator
+  nameWithType.vb: CsvTable.System.Collections.IEnumerable.GetEnumerator
+- uid: wan24.Data.CsvTable.ToString(System.Nullable{System.Boolean},System.Nullable{System.Char},System.Nullable{System.Char})
+  name: ToString(Nullable<Boolean>, Nullable<Char>, Nullable<Char>)
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_ToString_System_Nullable_System_Boolean__System_Nullable_System_Char__System_Nullable_System_Char__
+  commentId: M:wan24.Data.CsvTable.ToString(System.Nullable{System.Boolean},System.Nullable{System.Char},System.Nullable{System.Char})
+  name.vb: ToString(Nullable(Of Boolean), Nullable(Of Char), Nullable(Of Char))
+  fullName: wan24.Data.CsvTable.ToString(System.Nullable<System.Boolean>, System.Nullable<System.Char>, System.Nullable<System.Char>)
+  fullName.vb: wan24.Data.CsvTable.ToString(System.Nullable(Of System.Boolean), System.Nullable(Of System.Char), System.Nullable(Of System.Char))
+  nameWithType: CsvTable.ToString(Nullable<Boolean>, Nullable<Char>, Nullable<Char>)
+  nameWithType.vb: CsvTable.ToString(Nullable(Of Boolean), Nullable(Of Char), Nullable(Of Char))
 - uid: wan24.Data.CsvTable.ToString*
   name: ToString
   href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_ToString_
@@ -339,3 +1369,16 @@ references:
   isSpec: "True"
   fullName: wan24.Data.CsvTable.ToString
   nameWithType: CsvTable.ToString
+- uid: wan24.Data.CsvTable.Validate
+  name: Validate()
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_Validate
+  commentId: M:wan24.Data.CsvTable.Validate
+  fullName: wan24.Data.CsvTable.Validate()
+  nameWithType: CsvTable.Validate()
+- uid: wan24.Data.CsvTable.Validate*
+  name: Validate
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_Validate_
+  commentId: Overload:wan24.Data.CsvTable.Validate
+  isSpec: "True"
+  fullName: wan24.Data.CsvTable.Validate
+  nameWithType: CsvTable.Validate

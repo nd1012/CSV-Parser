@@ -1,0 +1,739 @@
+### YamlMime:ManagedReference
+items:
+- uid: wan24.Data.CsvMapping
+  commentId: T:wan24.Data.CsvMapping
+  id: CsvMapping
+  parent: wan24.Data
+  children:
+  - wan24.Data.CsvMapping.#ctor
+  - wan24.Data.CsvMapping.Field
+  - wan24.Data.CsvMapping.ObjectValueFactory
+  - wan24.Data.CsvMapping.PropertyName
+  - wan24.Data.CsvMapping.RowValueFactory
+  langs:
+  - csharp
+  - vb
+  name: CsvMapping
+  nameWithType: CsvMapping
+  fullName: wan24.Data.CsvMapping
+  type: Class
+  source:
+    remote:
+      path: CSV-Parser/CsvMapping.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: CsvMapping
+    path: ../CSV-Parser/CsvMapping.cs
+    startLine: 7
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nCSV mapping\n"
+  example: []
+  syntax:
+    content: public class CsvMapping
+    content.vb: Public Class CsvMapping
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  - System.Object.ToString
+  modifiers.csharp:
+  - public
+  - class
+  modifiers.vb:
+  - Public
+  - Class
+- uid: wan24.Data.CsvMapping.#ctor
+  commentId: M:wan24.Data.CsvMapping.#ctor
+  id: '#ctor'
+  parent: wan24.Data.CsvMapping
+  langs:
+  - csharp
+  - vb
+  name: CsvMapping()
+  nameWithType: CsvMapping.CsvMapping()
+  fullName: wan24.Data.CsvMapping.CsvMapping()
+  type: Constructor
+  source:
+    remote:
+      path: CSV-Parser/CsvMapping.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: .ctor
+    path: ../CSV-Parser/CsvMapping.cs
+    startLine: 12
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nConstructor\n"
+  example: []
+  syntax:
+    content: public CsvMapping()
+    content.vb: Public Sub New
+  overload: wan24.Data.CsvMapping.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: wan24.Data.CsvMapping.Field
+  commentId: P:wan24.Data.CsvMapping.Field
+  id: Field
+  parent: wan24.Data.CsvMapping
+  langs:
+  - csharp
+  - vb
+  name: Field
+  nameWithType: CsvMapping.Field
+  fullName: wan24.Data.CsvMapping.Field
+  type: Property
+  source:
+    remote:
+      path: CSV-Parser/CsvMapping.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: Field
+    path: ../CSV-Parser/CsvMapping.cs
+    startLine: 17
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nField index\n"
+  example: []
+  syntax:
+    content: public int Field { get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Field As Integer
+  overload: wan24.Data.CsvMapping.Field*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: wan24.Data.CsvMapping.PropertyName
+  commentId: P:wan24.Data.CsvMapping.PropertyName
+  id: PropertyName
+  parent: wan24.Data.CsvMapping
+  langs:
+  - csharp
+  - vb
+  name: PropertyName
+  nameWithType: CsvMapping.PropertyName
+  fullName: wan24.Data.CsvMapping.PropertyName
+  type: Property
+  source:
+    remote:
+      path: CSV-Parser/CsvMapping.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: PropertyName
+    path: ../CSV-Parser/CsvMapping.cs
+    startLine: 22
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nProperty name\n"
+  example: []
+  syntax:
+    content: public string PropertyName { get; set; }
+    parameters: []
+    return:
+      type: System.String
+    content.vb: Public Property PropertyName As String
+  overload: wan24.Data.CsvMapping.PropertyName*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: wan24.Data.CsvMapping.ObjectValueFactory
+  commentId: P:wan24.Data.CsvMapping.ObjectValueFactory
+  id: ObjectValueFactory
+  parent: wan24.Data.CsvMapping
+  langs:
+  - csharp
+  - vb
+  name: ObjectValueFactory
+  nameWithType: CsvMapping.ObjectValueFactory
+  fullName: wan24.Data.CsvMapping.ObjectValueFactory
+  type: Property
+  source:
+    remote:
+      path: CSV-Parser/CsvMapping.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: ObjectValueFactory
+    path: ../CSV-Parser/CsvMapping.cs
+    startLine: 27
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nObject value factory\n"
+  example: []
+  syntax:
+    content: public Func<string, object> ObjectValueFactory { get; set; }
+    parameters: []
+    return:
+      type: System.Func{System.String,System.Object}
+    content.vb: Public Property ObjectValueFactory As Func(Of String, Object)
+  overload: wan24.Data.CsvMapping.ObjectValueFactory*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: wan24.Data.CsvMapping.RowValueFactory
+  commentId: P:wan24.Data.CsvMapping.RowValueFactory
+  id: RowValueFactory
+  parent: wan24.Data.CsvMapping
+  langs:
+  - csharp
+  - vb
+  name: RowValueFactory
+  nameWithType: CsvMapping.RowValueFactory
+  fullName: wan24.Data.CsvMapping.RowValueFactory
+  type: Property
+  source:
+    remote:
+      path: CSV-Parser/CsvMapping.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: RowValueFactory
+    path: ../CSV-Parser/CsvMapping.cs
+    startLine: 32
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nRow value factory\n"
+  example: []
+  syntax:
+    content: public Func<object, string> RowValueFactory { get; set; }
+    parameters: []
+    return:
+      type: System.Func{System.Object,System.String}
+    content.vb: Public Property RowValueFactory As Func(Of Object, String)
+  overload: wan24.Data.CsvMapping.RowValueFactory*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+references:
+- uid: wan24.Data
+  commentId: N:wan24.Data
+  name: wan24.Data
+  nameWithType: wan24.Data
+  fullName: wan24.Data
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: wan24.Data.CsvMapping.#ctor*
+  commentId: Overload:wan24.Data.CsvMapping.#ctor
+  name: CsvMapping
+  nameWithType: CsvMapping.CsvMapping
+  fullName: wan24.Data.CsvMapping.CsvMapping
+- uid: wan24.Data.CsvMapping.Field*
+  commentId: Overload:wan24.Data.CsvMapping.Field
+  name: Field
+  nameWithType: CsvMapping.Field
+  fullName: wan24.Data.CsvMapping.Field
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: wan24.Data.CsvMapping.PropertyName*
+  commentId: Overload:wan24.Data.CsvMapping.PropertyName
+  name: PropertyName
+  nameWithType: CsvMapping.PropertyName
+  fullName: wan24.Data.CsvMapping.PropertyName
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: wan24.Data.CsvMapping.ObjectValueFactory*
+  commentId: Overload:wan24.Data.CsvMapping.ObjectValueFactory
+  name: ObjectValueFactory
+  nameWithType: CsvMapping.ObjectValueFactory
+  fullName: wan24.Data.CsvMapping.ObjectValueFactory
+- uid: System.Func{System.String,System.Object}
+  commentId: T:System.Func{System.String,System.Object}
+  parent: System
+  definition: System.Func`2
+  name: Func<String, Object>
+  nameWithType: Func<String, Object>
+  fullName: System.Func<System.String, System.Object>
+  nameWithType.vb: Func(Of String, Object)
+  fullName.vb: System.Func(Of System.String, System.Object)
+  name.vb: Func(Of String, Object)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: wan24.Data.CsvMapping.RowValueFactory*
+  commentId: Overload:wan24.Data.CsvMapping.RowValueFactory
+  name: RowValueFactory
+  nameWithType: CsvMapping.RowValueFactory
+  fullName: wan24.Data.CsvMapping.RowValueFactory
+- uid: System.Func{System.Object,System.String}
+  commentId: T:System.Func{System.Object,System.String}
+  parent: System
+  definition: System.Func`2
+  name: Func<Object, String>
+  nameWithType: Func<Object, String>
+  fullName: System.Func<System.Object, System.String>
+  nameWithType.vb: Func(Of Object, String)
+  fullName.vb: System.Func(Of System.Object, System.String)
+  name.vb: Func(Of Object, String)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )

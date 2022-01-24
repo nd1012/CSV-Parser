@@ -81,6 +81,12 @@
 <li><code>ParseHeaderFromFile</code> and <code>ParseHeaderFromFileAsync</code> for <strong>parsing column headers</strong> from a CSV file</li>
 <li><code>ParseHeaderFromStream</code> and <code>ParseHeaderFromStreamAsync</code> for <strong>parsing column headers</strong> from a CSV stream</li>
 <li><code>ParseHeaderFromString</code> for <strong>parsing column headers</strong> from a CSV string</li>
+<li><code>EnumerateFile</code> for <strong>enumerating each row</strong> from a CSV file</li>
+<li><code>EnumerateStream</code> for <strong>enumerating each row</strong> from a CSV stream</li>
+<li><code>EnumerateString</code> for <strong>enumerating each row</strong> from a CSV string</li>
+<li><code>CreateMap</code> for <strong>creating mapping informations</strong></li>
+<li><code>Map</code> for <strong>mapping a row to an object</strong></li>
+<li><code>Unmap</code> for <strong>mapping an object to a row</strong></li>
 </ul>
 <p>You may adjust these details using additional parameters:</p>
 <ul>
@@ -91,15 +97,73 @@
 <li>If the stream should be left open (default is <code>false</code>)</li>
 <li>Buffer size in bytes (number of bytes that need to include all header columns, default is 80K)</li>
 <li>Chunk size in bytes (for filling the buffer, default is 4K)</li>
+<li>Desired row offset (zero based index of the first row to include in the result)</li>
+<li>Maximum number of rows to include in the result (beginning from the row offset)</li>
 </ul>
+<h3 id="csv-table-result">CSV table result</h3>
 <p>The resulting CSV table object holds the parsed table data:</p>
 <ul>
 <li><code>CountColumns</code>: column count</li>
 <li><code>CountRows</code>: row count</li>
 <li><code>Header</code>: column headers</li>
 <li><code>Rows</code>: row data</li>
+<li><code>AsDictionaries</code>: rows as dictionaries (having the headers as key)</li>
+<li><code>Mapping</code>: row &lt;-&gt; object mapping</li>
 </ul>
-<p>The overloaded <code>ToString</code> method would create CSV table data from a CSV table.</p>
+<p>The overloaded <code>ToString</code> method would create CSV table data from a CSV table. Other methods are:</p>
+<ul>
+<li><code>CreateHeaders</code>: create automatic headers (0..n)</li>
+<li><code>AddColumn</code>: add/insert a column (optional using a field value factory)</li>
+<li><code>RemoveColumn</code>: remove a column</li>
+<li><code>AddRow</code>: add a validated row</li>
+<li><code>Validate</code>: validate the CSV table</li>
+<li><code>Clear</code>: clear row (and header) data</li>
+<li><code>AsDictionary</code>: get a row as dictionary</li>
+<li><code>Clone</code>: create a copy of the CSV table object</li>
+<li><code>AsObject</code>: get a row mapped as/to an object</li>
+<li><code>AsObjects</code>: enumerate all rows as objects</li>
+<li><code>AddObjects</code>: map objects to a new row</li>
+</ul>
+<h3 id="readingwriting-csv-data-fromto-a-stream">Reading/writing CSV data from/to a stream</h3>
+<p>For memory saving stream usage, you might want to use the <code>CsvStream</code>:</p>
+<pre><code class="lang-cs">// Reading
+using(CsvStream csv = new CsvStream(File.OpenRead(@&quot;path\to\data.csv&quot;)))
+{
+	csv.SkipHeader();// Or ReadHeader (optional, if any)
+	foreach(string[] row in csv.Rows)// Or use ReadObjects
+	{
+		// Enumerate rows or use ReadRow or ReadObject instead
+		...
+	}
+}
+
+// Writing
+using(CsvStream csv = new CsvStream(File.OpenWrite(@&quot;path\to\data.csv&quot;)))
+{
+	csv.WriteHeader(new string[] {...});// Optional
+	csv.WriteRow(...);// Or use WriteObject(s)
+}
+</code></pre>
+<p>Find all methods as asynchronous versions, having the <code>Async</code> postfix.</p>
+<h3 id="readingwriting-objects">Reading/writing objects</h3>
+<p>In order to be able to read/write objects, you need to define a mapping. This mapping is responsible for telling the CSV-Parser from which property to get a row field value, and to which property to write a field value from a row. The mapping also supports value factories which can convert a value.</p>
+<pre><code class="lang-cs">Dictionary&lt;int,CsvMapping&gt; mapping = CsvParser.CreateMapping(
+	new CsvMapping()
+	{
+		Field = 0,
+		PropertyName = &quot;AnyProperty&quot;,
+		ObjectValueFactory = ...,// Convert from string to property value (optional)
+		RowValueFactory = ...// Convert from property value to string (optional)
+	},
+	...
+);
+</code></pre>
+<p>Set this mapping to the <code>Mapping</code> property of a <code>CsvTable</code>, give it to the <code>CsvStream</code> constructor or as parameter to one of the <code>CsvParser</code> mapping methods.</p>
+<h3 id="ignore-errors-in-csv-data">Ignore errors in CSV data</h3>
+<p>Usually each row should have the number of fields that equals the number of columns. To ignore, when a row has a different field count:</p>
+<pre><code class="lang-cs">CsvParser.IgnoreErrors = true;
+</code></pre>
+<p>This setting will also ignore <code>null</code> headers/values, and if using <code>ToString</code> when a string delimiter is required to produce valid CSV data.</p>
 </article>
           </div>
           

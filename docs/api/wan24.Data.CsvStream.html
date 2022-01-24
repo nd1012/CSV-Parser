@@ -1,0 +1,2018 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class CsvStream
+   | CSV-Parser </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class CsvStream
+   | CSV-Parser ">
+    <meta name="generator" content="docfx 2.59.0.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    <meta property="docfx:newtab" content="true">
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="wan24.Data.CsvStream">
+  
+  
+  <h1 id="wan24_Data_CsvStream" data-uid="wan24.Data.CsvStream" class="text-break">Class CsvStream
+  </h1>
+  <div class="markdown level0 summary"><p>CSV stream</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">System.MarshalByRefObject</span></div>
+    <div class="level2"><span class="xref">System.IO.Stream</span></div>
+    <div class="level3"><span class="xref">CsvStream</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.IDisposable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.IO.Stream.Null</span>
+    </div>
+    <div>
+      <span class="xref">System.IO.Stream.BeginRead(System.Byte[], System.Int32, System.Int32, System.AsyncCallback, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.IO.Stream.BeginWrite(System.Byte[], System.Int32, System.Int32, System.AsyncCallback, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.IO.Stream.CopyTo(System.IO.Stream)</span>
+    </div>
+    <div>
+      <span class="xref">System.IO.Stream.CopyTo(System.IO.Stream, System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">System.IO.Stream.CopyToAsync(System.IO.Stream)</span>
+    </div>
+    <div>
+      <span class="xref">System.IO.Stream.CopyToAsync(System.IO.Stream, System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">System.IO.Stream.CopyToAsync(System.IO.Stream, System.Int32, System.Threading.CancellationToken)</span>
+    </div>
+    <div>
+      <span class="xref">System.IO.Stream.CreateWaitHandle()</span>
+    </div>
+    <div>
+      <span class="xref">System.IO.Stream.Dispose()</span>
+    </div>
+    <div>
+      <span class="xref">System.IO.Stream.Dispose(System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">System.IO.Stream.EndRead(System.IAsyncResult)</span>
+    </div>
+    <div>
+      <span class="xref">System.IO.Stream.EndWrite(System.IAsyncResult)</span>
+    </div>
+    <div>
+      <span class="xref">System.IO.Stream.FlushAsync()</span>
+    </div>
+    <div>
+      <span class="xref">System.IO.Stream.FlushAsync(System.Threading.CancellationToken)</span>
+    </div>
+    <div>
+      <span class="xref">System.IO.Stream.ObjectInvariant()</span>
+    </div>
+    <div>
+      <span class="xref">System.IO.Stream.ReadAsync(System.Byte[], System.Int32, System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">System.IO.Stream.ReadAsync(System.Byte[], System.Int32, System.Int32, System.Threading.CancellationToken)</span>
+    </div>
+    <div>
+      <span class="xref">System.IO.Stream.ReadByte()</span>
+    </div>
+    <div>
+      <span class="xref">System.IO.Stream.Synchronized(System.IO.Stream)</span>
+    </div>
+    <div>
+      <span class="xref">System.IO.Stream.WriteAsync(System.Byte[], System.Int32, System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">System.IO.Stream.WriteAsync(System.Byte[], System.Int32, System.Int32, System.Threading.CancellationToken)</span>
+    </div>
+    <div>
+      <span class="xref">System.IO.Stream.WriteByte(System.Byte)</span>
+    </div>
+    <div>
+      <span class="xref">System.IO.Stream.CanTimeout</span>
+    </div>
+    <div>
+      <span class="xref">System.IO.Stream.ReadTimeout</span>
+    </div>
+    <div>
+      <span class="xref">System.IO.Stream.WriteTimeout</span>
+    </div>
+    <div>
+      <span class="xref">System.MarshalByRefObject.GetLifetimeService()</span>
+    </div>
+    <div>
+      <span class="xref">System.MarshalByRefObject.InitializeLifetimeService()</span>
+    </div>
+    <div>
+      <span class="xref">System.MarshalByRefObject.MemberwiseClone(System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="wan24.Data.html">wan24.Data</a></h6>
+  <h6><strong>Assembly</strong>: csvparser.dll</h6>
+  <h5 id="wan24_Data_CsvStream_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class CsvStream : Stream, IDisposable</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream__ctor_System_IO_Stream_System_Char_System_Nullable_System_Char__System_Int32_System_Int32_System_Boolean_System_Text_Encoding_System_Collections_Generic_Dictionary_System_Int32_wan24_Data_CsvMapping__.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.%23ctor(System.IO.Stream%2CSystem.Char%2CSystem.Nullable%7BSystem.Char%7D%2CSystem.Int32%2CSystem.Int32%2CSystem.Boolean%2CSystem.Text.Encoding%2CSystem.Collections.Generic.Dictionary%7BSystem.Int32%2Cwan24.Data.CsvMapping%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L51">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream__ctor_" data-uid="wan24.Data.CsvStream.#ctor*"></a>
+  <h4 id="wan24_Data_CsvStream__ctor_System_IO_Stream_System_Char_System_Nullable_System_Char__System_Int32_System_Int32_System_Boolean_System_Text_Encoding_System_Collections_Generic_Dictionary_System_Int32_wan24_Data_CsvMapping__" data-uid="wan24.Data.CsvStream.#ctor(System.IO.Stream,System.Char,System.Nullable{System.Char},System.Int32,System.Int32,System.Boolean,System.Text.Encoding,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})">CsvStream(Stream, Char, Nullable&lt;Char&gt;, Int32, Int32, Boolean, Encoding, Dictionary&lt;Int32, CsvMapping&gt;)</h4>
+  <div class="markdown level1 summary"><p>Constructor</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CsvStream(Stream baseStream, char fieldDelimiter = ',', char? stringDelimiter = '&quot;', int bufferSize = 81920, int chunkSize = 4096, bool leaveOpen = false, Encoding encoding = null, Dictionary&lt;int, CsvMapping&gt; mapping = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.Stream</span></td>
+        <td><span class="parametername">baseStream</span></td>
+        <td><p>Base stream</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">fieldDelimiter</span></td>
+        <td><p>Field delimiter</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">stringDelimiter</span></td>
+        <td><p>String delimiter</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">bufferSize</span></td>
+        <td><p>Buffer size in bytes</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">chunkSize</span></td>
+        <td><p>Chunk size in bytes</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">leaveOpen</span></td>
+        <td><p>Leave the base stream open when disposing?</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Text.Encoding</span></td>
+        <td><span class="parametername">encoding</span></td>
+        <td><p>Encoding</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.Int32</span>, <a class="xref" href="wan24.Data.CsvMapping.html">CsvMapping</a>&gt;</td>
+        <td><span class="parametername">mapping</span></td>
+        <td><p>Object mapping</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream__ctor_System_IO_Stream_System_Collections_Generic_IEnumerable_System_String__System_Char_System_Nullable_System_Char__System_Int32_System_Int32_System_Boolean_System_Text_Encoding_System_Collections_Generic_Dictionary_System_Int32_wan24_Data_CsvMapping__.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.%23ctor(System.IO.Stream%2CSystem.Collections.Generic.IEnumerable%7BSystem.String%7D%2CSystem.Char%2CSystem.Nullable%7BSystem.Char%7D%2CSystem.Int32%2CSystem.Int32%2CSystem.Boolean%2CSystem.Text.Encoding%2CSystem.Collections.Generic.Dictionary%7BSystem.Int32%2Cwan24.Data.CsvMapping%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L109">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream__ctor_" data-uid="wan24.Data.CsvStream.#ctor*"></a>
+  <h4 id="wan24_Data_CsvStream__ctor_System_IO_Stream_System_Collections_Generic_IEnumerable_System_String__System_Char_System_Nullable_System_Char__System_Int32_System_Int32_System_Boolean_System_Text_Encoding_System_Collections_Generic_Dictionary_System_Int32_wan24_Data_CsvMapping__" data-uid="wan24.Data.CsvStream.#ctor(System.IO.Stream,System.Collections.Generic.IEnumerable{System.String},System.Char,System.Nullable{System.Char},System.Int32,System.Int32,System.Boolean,System.Text.Encoding,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})">CsvStream(Stream, IEnumerable&lt;String&gt;, Char, Nullable&lt;Char&gt;, Int32, Int32, Boolean, Encoding, Dictionary&lt;Int32, CsvMapping&gt;)</h4>
+  <div class="markdown level1 summary"><p>Constructor</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CsvStream(Stream baseStream, IEnumerable&lt;string&gt; header, char fieldDelimiter = ',', char? stringDelimiter = '&quot;', int bufferSize = 81920, int chunkSize = 4096, bool leaveOpen = false, Encoding encoding = null, Dictionary&lt;int, CsvMapping&gt; mapping = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.Stream</span></td>
+        <td><span class="parametername">baseStream</span></td>
+        <td><p>Base stream</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">header</span></td>
+        <td><p>Column headers</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td><span class="parametername">fieldDelimiter</span></td>
+        <td><p>Field delimiter</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td><span class="parametername">stringDelimiter</span></td>
+        <td><p>String delimiter</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">bufferSize</span></td>
+        <td><p>Buffer size in bytes</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">chunkSize</span></td>
+        <td><p>Chunk size in bytes</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">leaveOpen</span></td>
+        <td><p>Leave the base stream open when disposing?</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Text.Encoding</span></td>
+        <td><span class="parametername">encoding</span></td>
+        <td><p>Encoding</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.Int32</span>, <a class="xref" href="wan24.Data.CsvMapping.html">CsvMapping</a>&gt;</td>
+        <td><span class="parametername">mapping</span></td>
+        <td><p>Object mapping</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream__ctor_System_IO_Stream_wan24_Data_CsvTable_System_Int32_System_Int32_System_Boolean_System_Text_Encoding_System_Collections_Generic_Dictionary_System_Int32_wan24_Data_CsvMapping__.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.%23ctor(System.IO.Stream%2Cwan24.Data.CsvTable%2CSystem.Int32%2CSystem.Int32%2CSystem.Boolean%2CSystem.Text.Encoding%2CSystem.Collections.Generic.Dictionary%7BSystem.Int32%2Cwan24.Data.CsvMapping%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L85">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream__ctor_" data-uid="wan24.Data.CsvStream.#ctor*"></a>
+  <h4 id="wan24_Data_CsvStream__ctor_System_IO_Stream_wan24_Data_CsvTable_System_Int32_System_Int32_System_Boolean_System_Text_Encoding_System_Collections_Generic_Dictionary_System_Int32_wan24_Data_CsvMapping__" data-uid="wan24.Data.CsvStream.#ctor(System.IO.Stream,wan24.Data.CsvTable,System.Int32,System.Int32,System.Boolean,System.Text.Encoding,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})">CsvStream(Stream, CsvTable, Int32, Int32, Boolean, Encoding, Dictionary&lt;Int32, CsvMapping&gt;)</h4>
+  <div class="markdown level1 summary"><p>Constructor</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CsvStream(Stream baseStream, CsvTable table, int bufferSize = 81920, int chunkSize = 4096, bool leaveOpen = false, Encoding encoding = null, Dictionary&lt;int, CsvMapping&gt; mapping = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.Stream</span></td>
+        <td><span class="parametername">baseStream</span></td>
+        <td><p>Base stream</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="wan24.Data.CsvTable.html">CsvTable</a></td>
+        <td><span class="parametername">table</span></td>
+        <td><p>CSV table configuration</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">bufferSize</span></td>
+        <td><p>Buffer size in bytes</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">chunkSize</span></td>
+        <td><p>Chunk size in bytes</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td><span class="parametername">leaveOpen</span></td>
+        <td><p>Leave the base stream open when disposing?</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Text.Encoding</span></td>
+        <td><span class="parametername">encoding</span></td>
+        <td><p>Encoding</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.Int32</span>, <a class="xref" href="wan24.Data.CsvMapping.html">CsvMapping</a>&gt;</td>
+        <td><span class="parametername">mapping</span></td>
+        <td><p>Object mapping</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_BaseStream.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.BaseStream%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L139">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_BaseStream_" data-uid="wan24.Data.CsvStream.BaseStream*"></a>
+  <h4 id="wan24_Data_CsvStream_BaseStream" data-uid="wan24.Data.CsvStream.BaseStream">BaseStream</h4>
+  <div class="markdown level1 summary"><p>Base stream</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Stream BaseStream { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.IO.Stream</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_CanRead.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.CanRead%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L194">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_CanRead_" data-uid="wan24.Data.CsvStream.CanRead*"></a>
+  <h4 id="wan24_Data_CsvStream_CanRead" data-uid="wan24.Data.CsvStream.CanRead">CanRead</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool CanRead { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.IO.Stream.CanRead</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_CanSeek.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.CanSeek%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L197">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_CanSeek_" data-uid="wan24.Data.CsvStream.CanSeek*"></a>
+  <h4 id="wan24_Data_CsvStream_CanSeek" data-uid="wan24.Data.CsvStream.CanSeek">CanSeek</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool CanSeek { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.IO.Stream.CanSeek</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_CanWrite.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.CanWrite%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L200">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_CanWrite_" data-uid="wan24.Data.CsvStream.CanWrite*"></a>
+  <h4 id="wan24_Data_CsvStream_CanWrite" data-uid="wan24.Data.CsvStream.CanWrite">CanWrite</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool CanWrite { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.IO.Stream.CanWrite</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_ColumnCount.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.ColumnCount%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L164">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_ColumnCount_" data-uid="wan24.Data.CsvStream.ColumnCount*"></a>
+  <h4 id="wan24_Data_CsvStream_ColumnCount" data-uid="wan24.Data.CsvStream.ColumnCount">ColumnCount</h4>
+  <div class="markdown level1 summary"><p>Number of columns</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ColumnCount { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_FieldDelimiter.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.FieldDelimiter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L149">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_FieldDelimiter_" data-uid="wan24.Data.CsvStream.FieldDelimiter*"></a>
+  <h4 id="wan24_Data_CsvStream_FieldDelimiter" data-uid="wan24.Data.CsvStream.FieldDelimiter">FieldDelimiter</h4>
+  <div class="markdown level1 summary"><p>Field delimiter</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public char FieldDelimiter { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Char</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_Header.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.Header%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L159">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_Header_" data-uid="wan24.Data.CsvStream.Header*"></a>
+  <h4 id="wan24_Data_CsvStream_Header" data-uid="wan24.Data.CsvStream.Header">Header</h4>
+  <div class="markdown level1 summary"><p>Column headers</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;string&gt; Header { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_LeaveOpen.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.LeaveOpen%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L144">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_LeaveOpen_" data-uid="wan24.Data.CsvStream.LeaveOpen*"></a>
+  <h4 id="wan24_Data_CsvStream_LeaveOpen" data-uid="wan24.Data.CsvStream.LeaveOpen">LeaveOpen</h4>
+  <div class="markdown level1 summary"><p>Leave the base stream open when disposing?</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool LeaveOpen { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Boolean</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_Length.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.Length%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L203">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_Length_" data-uid="wan24.Data.CsvStream.Length*"></a>
+  <h4 id="wan24_Data_CsvStream_Length" data-uid="wan24.Data.CsvStream.Length">Length</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override long Length { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.IO.Stream.Length</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_Mapping.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.Mapping%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L134">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_Mapping_" data-uid="wan24.Data.CsvStream.Mapping*"></a>
+  <h4 id="wan24_Data_CsvStream_Mapping" data-uid="wan24.Data.CsvStream.Mapping">Mapping</h4>
+  <div class="markdown level1 summary"><p>Object mapping</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;int, CsvMapping&gt; Mapping { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.Dictionary</span>&lt;<span class="xref">System.Int32</span>, <a class="xref" href="wan24.Data.CsvMapping.html">CsvMapping</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_Position.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.Position%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L206">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_Position_" data-uid="wan24.Data.CsvStream.Position*"></a>
+  <h4 id="wan24_Data_CsvStream_Position" data-uid="wan24.Data.CsvStream.Position">Position</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override long Position { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.IO.Stream.Position</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_Rows.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.Rows%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L184">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_Rows_" data-uid="wan24.Data.CsvStream.Rows*"></a>
+  <h4 id="wan24_Data_CsvStream_Rows" data-uid="wan24.Data.CsvStream.Rows">Rows</h4>
+  <div class="markdown level1 summary"><p>Enumerable rows</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;string[]&gt; Rows { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>[]&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_StringDelimiter.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.StringDelimiter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L154">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_StringDelimiter_" data-uid="wan24.Data.CsvStream.StringDelimiter*"></a>
+  <h4 id="wan24_Data_CsvStream_StringDelimiter" data-uid="wan24.Data.CsvStream.StringDelimiter">StringDelimiter</h4>
+  <div class="markdown level1 summary"><p>String delimiter</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public char? StringDelimiter { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Nullable</span>&lt;<span class="xref">System.Char</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_StringEncoding.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.StringEncoding%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L129">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_StringEncoding_" data-uid="wan24.Data.CsvStream.StringEncoding*"></a>
+  <h4 id="wan24_Data_CsvStream_StringEncoding" data-uid="wan24.Data.CsvStream.StringEncoding">StringEncoding</h4>
+  <div class="markdown level1 summary"><p>Encoding</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Encoding StringEncoding { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Text.Encoding</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_Close.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.Close%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L224">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_Close_" data-uid="wan24.Data.CsvStream.Close*"></a>
+  <h4 id="wan24_Data_CsvStream_Close" data-uid="wan24.Data.CsvStream.Close">Close()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Close()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.IO.Stream.Close()</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_CountRows.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.CountRows%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L496">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_CountRows_" data-uid="wan24.Data.CsvStream.CountRows*"></a>
+  <h4 id="wan24_Data_CsvStream_CountRows" data-uid="wan24.Data.CsvStream.CountRows">CountRows()</h4>
+  <div class="markdown level1 summary"><p>Get the row count (will reset the stream offset)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long CountRows()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><p>Row count</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_CountRowsAsync.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.CountRowsAsync%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L514">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_CountRowsAsync_" data-uid="wan24.Data.CsvStream.CountRowsAsync*"></a>
+  <h4 id="wan24_Data_CsvStream_CountRowsAsync" data-uid="wan24.Data.CsvStream.CountRowsAsync">CountRowsAsync()</h4>
+  <div class="markdown level1 summary"><p>Get the row count (will reset the stream offset)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;long&gt; CountRowsAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
+        <td><p>Row count</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_Flush.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.Flush%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L209">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_Flush_" data-uid="wan24.Data.CsvStream.Flush*"></a>
+  <h4 id="wan24_Data_CsvStream_Flush" data-uid="wan24.Data.CsvStream.Flush">Flush()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Flush()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.IO.Stream.Flush()</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_Read_System_Byte___System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.Read(System.Byte%5B%5D%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L212">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_Read_" data-uid="wan24.Data.CsvStream.Read*"></a>
+  <h4 id="wan24_Data_CsvStream_Read_System_Byte___System_Int32_System_Int32_" data-uid="wan24.Data.CsvStream.Read(System.Byte[],System.Int32,System.Int32)">Read(Byte[], Int32, Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int Read(byte[] buffer, int offset, int count)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span>[]</td>
+        <td><span class="parametername">buffer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">offset</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.IO.Stream.Read(System.Byte[], System.Int32, System.Int32)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_ReadHeader.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.ReadHeader%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L295">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_ReadHeader_" data-uid="wan24.Data.CsvStream.ReadHeader*"></a>
+  <h4 id="wan24_Data_CsvStream_ReadHeader" data-uid="wan24.Data.CsvStream.ReadHeader">ReadHeader()</h4>
+  <div class="markdown level1 summary"><p>Read the header</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string[] ReadHeader()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><p>Column headers</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_ReadHeaderAsync.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.ReadHeaderAsync%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L425">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_ReadHeaderAsync_" data-uid="wan24.Data.CsvStream.ReadHeaderAsync*"></a>
+  <h4 id="wan24_Data_CsvStream_ReadHeaderAsync" data-uid="wan24.Data.CsvStream.ReadHeaderAsync">ReadHeaderAsync()</h4>
+  <div class="markdown level1 summary"><p>Read the header</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;string[]&gt; ReadHeaderAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.String</span>[]&gt;</td>
+        <td><p>Column headers</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_ReadObject__1.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.ReadObject%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L550">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_ReadObject_" data-uid="wan24.Data.CsvStream.ReadObject*"></a>
+  <h4 id="wan24_Data_CsvStream_ReadObject__1" data-uid="wan24.Data.CsvStream.ReadObject``1">ReadObject&lt;T&gt;()</h4>
+  <div class="markdown level1 summary"><p>Read an object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T ReadObject&lt;T&gt;()
+    where T : new()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>Object</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Object type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_ReadObject__1___0_.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.ReadObject%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L563">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_ReadObject_" data-uid="wan24.Data.CsvStream.ReadObject*"></a>
+  <h4 id="wan24_Data_CsvStream_ReadObject__1___0_" data-uid="wan24.Data.CsvStream.ReadObject``1(``0)">ReadObject&lt;T&gt;(T)</h4>
+  <div class="markdown level1 summary"><p>Read an object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public T ReadObject&lt;T&gt;(T obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>Object</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><p>Object</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Object type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_ReadObjectAsync__1.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.ReadObjectAsync%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L602">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_ReadObjectAsync_" data-uid="wan24.Data.CsvStream.ReadObjectAsync*"></a>
+  <h4 id="wan24_Data_CsvStream_ReadObjectAsync__1" data-uid="wan24.Data.CsvStream.ReadObjectAsync``1">ReadObjectAsync&lt;T&gt;()</h4>
+  <div class="markdown level1 summary"><p>Read an object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;T&gt; ReadObjectAsync&lt;T&gt;()
+    where T : new()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;T&gt;</td>
+        <td><p>Object</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Object type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_ReadObjectAsync__1___0_.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.ReadObjectAsync%60%601(%60%600)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L615">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_ReadObjectAsync_" data-uid="wan24.Data.CsvStream.ReadObjectAsync*"></a>
+  <h4 id="wan24_Data_CsvStream_ReadObjectAsync__1___0_" data-uid="wan24.Data.CsvStream.ReadObjectAsync``1(``0)">ReadObjectAsync&lt;T&gt;(T)</h4>
+  <div class="markdown level1 summary"><p>Read an object</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;T&gt; ReadObjectAsync&lt;T&gt;(T obj)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">T</span></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>Object</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;T&gt;</td>
+        <td><p>Object</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Object type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_ReadObjects__1.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.ReadObjects%60%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L575">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_ReadObjects_" data-uid="wan24.Data.CsvStream.ReadObjects*"></a>
+  <h4 id="wan24_Data_CsvStream_ReadObjects__1" data-uid="wan24.Data.CsvStream.ReadObjects``1">ReadObjects&lt;T&gt;()</h4>
+  <div class="markdown level1 summary"><p>Read objects</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;T&gt; ReadObjects&lt;T&gt;()
+    where T : new()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;T&gt;</td>
+        <td><p>Objects</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Object type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_ReadRow.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.ReadRow%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L337">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_ReadRow_" data-uid="wan24.Data.CsvStream.ReadRow*"></a>
+  <h4 id="wan24_Data_CsvStream_ReadRow" data-uid="wan24.Data.CsvStream.ReadRow">ReadRow()</h4>
+  <div class="markdown level1 summary"><p>Read a row</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string[] ReadRow()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span>[]</td>
+        <td><p>Row or <span class="xref">null</span></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_ReadRowAsync.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.ReadRowAsync%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L455">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_ReadRowAsync_" data-uid="wan24.Data.CsvStream.ReadRowAsync*"></a>
+  <h4 id="wan24_Data_CsvStream_ReadRowAsync" data-uid="wan24.Data.CsvStream.ReadRowAsync">ReadRowAsync()</h4>
+  <div class="markdown level1 summary"><p>Read a row</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;string[]&gt; ReadRowAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.String</span>[]&gt;</td>
+        <td><p>Row or <span class="xref">null</span></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_Seek_System_Int64_System_IO_SeekOrigin_.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.Seek(System.Int64%2CSystem.IO.SeekOrigin)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L215">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_Seek_" data-uid="wan24.Data.CsvStream.Seek*"></a>
+  <h4 id="wan24_Data_CsvStream_Seek_System_Int64_System_IO_SeekOrigin_" data-uid="wan24.Data.CsvStream.Seek(System.Int64,System.IO.SeekOrigin)">Seek(Int64, SeekOrigin)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override long Seek(long offset, SeekOrigin origin)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">offset</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.IO.SeekOrigin</span></td>
+        <td><span class="parametername">origin</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.IO.Stream.Seek(System.Int64, System.IO.SeekOrigin)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_SetLength_System_Int64_.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.SetLength(System.Int64)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L218">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_SetLength_" data-uid="wan24.Data.CsvStream.SetLength*"></a>
+  <h4 id="wan24_Data_CsvStream_SetLength_System_Int64_" data-uid="wan24.Data.CsvStream.SetLength(System.Int64)">SetLength(Int64)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void SetLength(long value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.IO.Stream.SetLength(System.Int64)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_SkipHeader.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.SkipHeader%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L325">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_SkipHeader_" data-uid="wan24.Data.CsvStream.SkipHeader*"></a>
+  <h4 id="wan24_Data_CsvStream_SkipHeader" data-uid="wan24.Data.CsvStream.SkipHeader">SkipHeader()</h4>
+  <div class="markdown level1 summary"><p>Skip the header line</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CsvStream SkipHeader()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="wan24.Data.CsvStream.html">CsvStream</a></td>
+        <td><p>This</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_SkipHeaderAsync.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.SkipHeaderAsync%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L484">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_SkipHeaderAsync_" data-uid="wan24.Data.CsvStream.SkipHeaderAsync*"></a>
+  <h4 id="wan24_Data_CsvStream_SkipHeaderAsync" data-uid="wan24.Data.CsvStream.SkipHeaderAsync">SkipHeaderAsync()</h4>
+  <div class="markdown level1 summary"><p>Skip the header line</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;CsvStream&gt; SkipHeaderAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="wan24.Data.CsvStream.html">CsvStream</a>&gt;</td>
+        <td><p>This</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_Write_System_Byte___System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.Write(System.Byte%5B%5D%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L221">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_Write_" data-uid="wan24.Data.CsvStream.Write*"></a>
+  <h4 id="wan24_Data_CsvStream_Write_System_Byte___System_Int32_System_Int32_" data-uid="wan24.Data.CsvStream.Write(System.Byte[],System.Int32,System.Int32)">Write(Byte[], Int32, Int32)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Write(byte[] buffer, int offset, int count)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Byte</span>[]</td>
+        <td><span class="parametername">buffer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">offset</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">count</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">System.IO.Stream.Write(System.Byte[], System.Int32, System.Int32)</span></div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_WriteHeader_System_Collections_Generic_IEnumerable_System_String__.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.WriteHeader(System.Collections.Generic.IEnumerable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L237">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_WriteHeader_" data-uid="wan24.Data.CsvStream.WriteHeader*"></a>
+  <h4 id="wan24_Data_CsvStream_WriteHeader_System_Collections_Generic_IEnumerable_System_String__" data-uid="wan24.Data.CsvStream.WriteHeader(System.Collections.Generic.IEnumerable{System.String})">WriteHeader(IEnumerable&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Write the header</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CsvStream WriteHeader(IEnumerable&lt;string&gt; header = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">header</span></td>
+        <td><p>Header</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="wan24.Data.CsvStream.html">CsvStream</a></td>
+        <td><p>This</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_WriteHeaderAsync_System_Collections_Generic_IEnumerable_System_String__.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.WriteHeaderAsync(System.Collections.Generic.IEnumerable%7BSystem.String%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L367">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_WriteHeaderAsync_" data-uid="wan24.Data.CsvStream.WriteHeaderAsync*"></a>
+  <h4 id="wan24_Data_CsvStream_WriteHeaderAsync_System_Collections_Generic_IEnumerable_System_String__" data-uid="wan24.Data.CsvStream.WriteHeaderAsync(System.Collections.Generic.IEnumerable{System.String})">WriteHeaderAsync(IEnumerable&lt;String&gt;)</h4>
+  <div class="markdown level1 summary"><p>Write the header</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;CsvStream&gt; WriteHeaderAsync(IEnumerable&lt;string&gt; header = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;</td>
+        <td><span class="parametername">header</span></td>
+        <td><p>Header</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="wan24.Data.CsvStream.html">CsvStream</a>&gt;</td>
+        <td><p>This</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_WriteObjects__1___0___.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.WriteObjects%60%601(%60%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L536">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_WriteObjects_" data-uid="wan24.Data.CsvStream.WriteObjects*"></a>
+  <h4 id="wan24_Data_CsvStream_WriteObjects__1___0___" data-uid="wan24.Data.CsvStream.WriteObjects``1(``0[])">WriteObjects&lt;T&gt;(T[])</h4>
+  <div class="markdown level1 summary"><p>Write objects</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CsvStream WriteObjects&lt;T&gt;(params T[] objs)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td><span class="parametername">objs</span></td>
+        <td><p>Objects</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="wan24.Data.CsvStream.html">CsvStream</a></td>
+        <td><p>This</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Object type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_WriteObjectsAsync__1___0___.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.WriteObjectsAsync%60%601(%60%600%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L588">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_WriteObjectsAsync_" data-uid="wan24.Data.CsvStream.WriteObjectsAsync*"></a>
+  <h4 id="wan24_Data_CsvStream_WriteObjectsAsync__1___0___" data-uid="wan24.Data.CsvStream.WriteObjectsAsync``1(``0[])">WriteObjectsAsync&lt;T&gt;(T[])</h4>
+  <div class="markdown level1 summary"><p>Write objects</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;CsvStream&gt; WriteObjectsAsync&lt;T&gt;(params T[] objs)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>T[]</td>
+        <td><span class="parametername">objs</span></td>
+        <td><p>Objects</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="wan24.Data.CsvStream.html">CsvStream</a>&gt;</td>
+        <td><p>This</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Object type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_WriteRows_System_Collections_Generic_IEnumerable_System_String____.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.WriteRows(System.Collections.Generic.IEnumerable%7BSystem.String%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L266">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_WriteRows_" data-uid="wan24.Data.CsvStream.WriteRows*"></a>
+  <h4 id="wan24_Data_CsvStream_WriteRows_System_Collections_Generic_IEnumerable_System_String____" data-uid="wan24.Data.CsvStream.WriteRows(System.Collections.Generic.IEnumerable{System.String}[])">WriteRows(IEnumerable&lt;String&gt;[])</h4>
+  <div class="markdown level1 summary"><p>Write rows</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CsvStream WriteRows(params IEnumerable&lt;string&gt;[] rows)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;[]</td>
+        <td><span class="parametername">rows</span></td>
+        <td><p>Rows</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="wan24.Data.CsvStream.html">CsvStream</a></td>
+        <td><p>This</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream_WriteRowsAsync_System_Collections_Generic_IEnumerable_System_String____.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream.WriteRowsAsync(System.Collections.Generic.IEnumerable%7BSystem.String%7D%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L396">View Source</a>
+  </span>
+  <a id="wan24_Data_CsvStream_WriteRowsAsync_" data-uid="wan24.Data.CsvStream.WriteRowsAsync*"></a>
+  <h4 id="wan24_Data_CsvStream_WriteRowsAsync_System_Collections_Generic_IEnumerable_System_String____" data-uid="wan24.Data.CsvStream.WriteRowsAsync(System.Collections.Generic.IEnumerable{System.String}[])">WriteRowsAsync(IEnumerable&lt;String&gt;[])</h4>
+  <div class="markdown level1 summary"><p>Write rows</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public async Task&lt;CsvStream&gt; WriteRowsAsync(params IEnumerable&lt;string&gt;[] rows)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<span class="xref">System.String</span>&gt;[]</td>
+        <td><span class="parametername">rows</span></td>
+        <td><p>Rows</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<a class="xref" href="wan24.Data.CsvStream.html">CsvStream</a>&gt;</td>
+        <td><p>This</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvStream.md&amp;value=---%0Auid%3A%20wan24.Data.CsvStream%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/nd1012/CSV-Parser/blob/main/CSV-Parser/CsvStream.cs/#L13" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            (c) 2022 Andreas Zimmermann, wan24.de
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
