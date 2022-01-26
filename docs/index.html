@@ -107,6 +107,7 @@
 <li><code>CountRows</code>: row count</li>
 <li><code>Header</code>: column headers</li>
 <li><code>Rows</code>: row data</li>
+<li><code>Objects</code>: objects from rows having their type name in the first field</li>
 <li><code>AsDictionaries</code>: rows as dictionaries (having the headers as key)</li>
 <li><code>Mapping</code>: row &lt;-&gt; object mapping</li>
 </ul>
@@ -115,6 +116,9 @@
 <li><code>CreateHeaders</code>: create automatic headers (0..n)</li>
 <li><code>AddColumn</code>: add/insert a column (optional using a field value factory)</li>
 <li><code>RemoveColumn</code>: remove a column</li>
+<li><code>MoveColumn</code>: move a column to another position</li>
+<li><code>SwapColumn</code>: swap two columns</li>
+<li><code>ReorderColumns</code>: apply a new column order</li>
 <li><code>AddRow</code>: add a validated row</li>
 <li><code>Validate</code>: validate the CSV table</li>
 <li><code>Clear</code>: clear row (and header) data</li>
@@ -123,9 +127,10 @@
 <li><code>AsObject</code>: get a row mapped as/to an object</li>
 <li><code>AsObjects</code>: enumerate all rows as objects</li>
 <li><code>AddObjects</code>: map objects to a new row</li>
+<li><code>CreateMapping</code>: create a mapping from the column headers</li>
 </ul>
 <h3 id="readingwriting-csv-data-fromto-a-stream">Reading/writing CSV data from/to a stream</h3>
-<p>For memory saving stream usage, you might want to use the <code>CsvStream</code>:</p>
+<p>For memory saving stream operations, you might want to use the <code>CsvStream</code>:</p>
 <pre><code class="lang-cs">// Reading
 using(CsvStream csv = new CsvStream(File.OpenRead(@&quot;path\to\data.csv&quot;)))
 {
@@ -145,25 +150,69 @@ using(CsvStream csv = new CsvStream(File.OpenWrite(@&quot;path\to\data.csv&quot;
 }
 </code></pre>
 <p>Find all methods as asynchronous versions, having the <code>Async</code> postfix.</p>
+<p>For working with dictionaries, you can use the property <code>AsDictionaries</code> or the methods <code>ReadDictionary</code> and <code>ReadDictionaryAsync</code>.</p>
+<p>Per default when reading a header/row, the size is limited to 80KB. To adjust this value, you can modify these values at construction time:</p>
+<ul>
+<li><code>bufferSize</code>: Read buffer size in bytes (= maximum header/row size (default: 80KB))</li>
+<li><code>chunkSize</code>: Chunk size in bytes (how many bytes to read before trying to match a header/row from the buffer (default: 4KB))</li>
+</ul>
 <h3 id="readingwriting-objects">Reading/writing objects</h3>
-<p>In order to be able to read/write objects, you need to define a mapping. This mapping is responsible for telling the CSV-Parser from which property to get a row field value, and to which property to write a field value from a row. The mapping also supports value factories which can convert a value.</p>
+<p>In order to be able to read/write objects, you need to define a mapping. This mapping is responsible for telling the CSV-Parser from which property to get a row field value, and to which property to write a field value from a row. The mapping also supports value factories which can convert a value, and value validation.</p>
 <pre><code class="lang-cs">Dictionary&lt;int,CsvMapping&gt; mapping = CsvParser.CreateMapping(
 	new CsvMapping()
 	{
 		Field = 0,
 		PropertyName = &quot;AnyProperty&quot;,
 		ObjectValueFactory = ...,// Convert from string to property value (optional)
-		RowValueFactory = ...// Convert from property value to string (optional)
+		RowValueFactory = ...,// Convert from property value to string (optional)
+		PreValidation = ...,// Validate a string value from the CSV data
+		PostValidation = ...// Validate a converted value before setting it as object property value
 	},
 	...
 );
 </code></pre>
-<p>Set this mapping to the <code>Mapping</code> property of a <code>CsvTable</code>, give it to the <code>CsvStream</code> constructor or as parameter to one of the <code>CsvParser</code> mapping methods.</p>
+<p>Set this mapping to the <code>Mapping</code> property of a <code>CsvTable</code>, give it to the <code>CsvStream</code> constructor, or as parameter to one of the object mapping methods, if available.</p>
+<p>For value conversion, <code>CsvParser.ObjectValueFactories</code> and <code>CsvParser.RowValueFactories</code> offer default converter functions for these types:</p>
+<ul>
+<li><code>bool</code></li>
+<li><code>int</code></li>
+<li><code>float</code></li>
+<li><code>char</code></li>
+<li><code>byte[]</code></li>
+</ul>
+<p>You can extend them with any type.</p>
+<p>If you want to use the same mapping for the same type everytime when no other mapping was given, you can add a prepared mapping to <code>CsvParser.TypeMappings</code>.</p>
+<p>In an object you may use the <code>CsvMappingAttribute</code> attribute for properties that should be mapped:</p>
+<pre><code class="lang-cs">[CsvMapping(0)]
+public string PropertyName { get; }
+</code></pre>
+<p>The attribute parameter is the index of the related CSV column. Then, for creating a mapping for your object, use <code>CsvParser.CreateMapping</code> without parameters. The returned mapping will be stored in the <code>CsvParser.TypeMappings</code>.</p>
+<p>Actually CSV is used to store a table. Each row has a fixed number of fields, maybe a header row is present. But you can use CSV also for storing mixed data - for example different objects:</p>
+<pre><code class="lang-cs">// Assumed all used types are working with CsvMappingAttribute, 
+// or mapping are prepared in CsvParser.TypeMappings already
+
+// Writing objects
+using(CsvStream csv = new CsvStream(FileStream.OpenWrite('objects.csv)))
+{
+	csv.WriteObjectRows(anyObjectInstance, anotherTypeInstance);
+}
+
+// Reading objects
+using(CsvStream csv = new CsvStream(FileStream.OpenRead('objects.csv)))
+{
+	anyObjectInstance = csv.ReadObjectRow() as AnyType;
+	anotherTypeInstance = csv.ReadObjectRow() as AnotherType;
+}
+</code></pre>
+<p><strong>NOTE</strong>: The field mapping needs to count from field index zero, because the mapper will get the row without the first field that contains the type name! This ensures that you can re-use the mapping everywhere.</p>
+<p>Using the streams <code>ObjectRows</code> property you can also enumerate trough objects from a CSV file.</p>
+<p><code>CsvTable</code> implements <code>AsObject</code>, <code>AddObjects</code> and <code>Objects</code> for this purpose.</p>
 <h3 id="ignore-errors-in-csv-data">Ignore errors in CSV data</h3>
 <p>Usually each row should have the number of fields that equals the number of columns. To ignore, when a row has a different field count:</p>
 <pre><code class="lang-cs">CsvParser.IgnoreErrors = true;
 </code></pre>
 <p>This setting will also ignore <code>null</code> headers/values, and if using <code>ToString</code> when a string delimiter is required to produce valid CSV data.</p>
+<p><strong>WARNING</strong>: Ignoring errors may cause unknown failures and produce invalid CSV data!</p>
 </article>
           </div>
           

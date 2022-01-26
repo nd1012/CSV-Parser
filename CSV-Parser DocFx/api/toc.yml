@@ -4,6 +4,10 @@
   items:
   - uid: wan24.Data.CsvMapping
     name: CsvMapping
+  - uid: wan24.Data.CsvMappingAttribute
+    name: CsvMappingAttribute
+  - uid: wan24.Data.CsvMappings
+    name: CsvMappings
   - uid: wan24.Data.CsvParser
     name: CsvParser
   - uid: wan24.Data.CsvStream

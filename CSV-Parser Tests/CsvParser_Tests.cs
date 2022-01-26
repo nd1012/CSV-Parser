@@ -24,20 +24,7 @@ namespace CSV_Parser_Tests
                 new string[]{"e","f"}
             }
             );
-        private static readonly Dictionary<int, CsvMapping> Mapping = CsvParser.CreateMapping(
-            new CsvMapping()
-            {
-                Field = 0,
-                PropertyName = "Field1"
-            },
-            new CsvMapping()
-            {
-                Field = 1,
-                PropertyName = "Field2",
-                ObjectValueFactory = (value) => value[0],
-                RowValueFactory = (value) => value.ToString()
-            }
-            );
+        private static readonly Dictionary<int, CsvMapping> Mapping = CsvParser.CreateMapping<TestObject>();
 
         [TestMethod]
         public void CsvParser_Test()
@@ -74,6 +61,7 @@ namespace CSV_Parser_Tests
             Assert.AreEqual(CsvParser.EnumerateString(csvData).Count(), Data.CountRows + 1);
 
             //TODO Mapping
+            //TODO Object rows
         }
 
         [TestMethod]
@@ -86,6 +74,7 @@ namespace CSV_Parser_Tests
             CompareHeader(await CsvParser.ParseHeaderFromStreamAsync(new MemoryStream(Encoding.Default.GetBytes(Data.ToString(true))), leaveOpen: false));
 
             //TODO Mapping
+            //TODO Object rows
         }
 
         [TestMethod]
@@ -148,6 +137,7 @@ namespace CSV_Parser_Tests
             Assert.AreEqual(dict["col2"], "f");
 
             //TODO Mapping
+            //TODO Object rows
         }
 
         private static void CompareTable(CsvTable table)
@@ -173,7 +163,9 @@ namespace CSV_Parser_Tests
 
         private class TestObject
         {
+            [CsvMapping(0)]
             public string Field1 { get; set; }
+            [CsvMapping(1)]
             public char Field2 { get; set; }
         }
     }

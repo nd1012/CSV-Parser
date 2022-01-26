@@ -7,6 +7,7 @@ namespace wan24.Data
 {
     public static partial class CsvParser
     {
+#if !NO_STREAM
 		/// <summary>
 		/// Parse a file and return the column headers
 		/// </summary>
@@ -108,6 +109,7 @@ namespace wan24.Data
 		{
 			using (CsvStream csv = new CsvStream(stream, fieldDelimiter, stringDelimiter, bufferSize, chunkSize, leaveOpen, encoding)) return await csv.ReadRowAsync();
 		}
+#endif
 
 		/// <summary>
 		/// Parse a string and return the column headers

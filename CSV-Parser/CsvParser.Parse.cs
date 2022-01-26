@@ -9,6 +9,7 @@ namespace wan24.Data
 {
 	public static partial class CsvParser
     {
+#if !NO_STREAM
 		/// <summary>
 		/// Parse a file
 		/// </summary>
@@ -98,7 +99,7 @@ namespace wan24.Data
 			using (CsvStream csv = new CsvStream(stream, fieldDelimiter, stringDelimiter, leaveOpen: leaveOpen, encoding: encoding))
 			{
 				if (header) columns = csv.ReadHeader();
-				return new CsvTable(hasHeader: header, fieldDelimiter, stringDelimiter, columns, offset < 1 && limit < 1 ? csv.Rows : csv.Rows.Skip(offset).Take(limit));
+				return new CsvTable(hasHeader: header, fieldDelimiter, stringDelimiter, columns, limit < 1 ? csv.Rows.Skip(offset) : csv.Rows.Skip(offset).Take(limit));
 			}
 		}
 
@@ -140,6 +141,7 @@ namespace wan24.Data
 				return new CsvTable(hasHeader: header, fieldDelimiter, stringDelimiter, columns, rows);
 			}
 		}
+#endif
 
 		/// <summary>
 		/// Parse a string

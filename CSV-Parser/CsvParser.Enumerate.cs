@@ -6,6 +6,7 @@ namespace wan24.Data
 {
     public static partial class CsvParser
     {
+#if !NO_STREAM
 		/// <summary>
 		/// Parse a file and enumerate the rows
 		/// </summary>
@@ -43,6 +44,7 @@ namespace wan24.Data
 				foreach (string[] row in csv.Rows)
 					yield return row;
 		}
+#endif
 
 		/// <summary>
 		/// Parse a string

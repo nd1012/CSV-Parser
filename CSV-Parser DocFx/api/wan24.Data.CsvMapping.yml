@@ -6,8 +6,11 @@ items:
   parent: wan24.Data
   children:
   - wan24.Data.CsvMapping.#ctor
+  - wan24.Data.CsvMapping.Clone
   - wan24.Data.CsvMapping.Field
   - wan24.Data.CsvMapping.ObjectValueFactory
+  - wan24.Data.CsvMapping.PostValidation
+  - wan24.Data.CsvMapping.PreValidation
   - wan24.Data.CsvMapping.PropertyName
   - wan24.Data.CsvMapping.RowValueFactory
   langs:
@@ -24,17 +27,21 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CsvMapping
     path: ../CSV-Parser/CsvMapping.cs
-    startLine: 7
+    startLine: 8
   assemblies:
   - csvparser
   namespace: wan24.Data
   summary: "\nCSV mapping\n"
   example: []
   syntax:
-    content: public class CsvMapping
-    content.vb: Public Class CsvMapping
+    content: 'public class CsvMapping : ICloneable'
+    content.vb: >-
+      Public Class CsvMapping
+          Implements ICloneable
   inheritance:
   - System.Object
+  implements:
+  - System.ICloneable
   inheritedMembers:
   - System.Object.Equals(System.Object)
   - System.Object.Equals(System.Object,System.Object)
@@ -67,7 +74,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: .ctor
     path: ../CSV-Parser/CsvMapping.cs
-    startLine: 12
+    startLine: 13
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -99,7 +106,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Field
     path: ../CSV-Parser/CsvMapping.cs
-    startLine: 17
+    startLine: 18
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -136,7 +143,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: PropertyName
     path: ../CSV-Parser/CsvMapping.cs
-    startLine: 22
+    startLine: 23
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -173,7 +180,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ObjectValueFactory
     path: ../CSV-Parser/CsvMapping.cs
-    startLine: 27
+    startLine: 28
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -210,7 +217,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: RowValueFactory
     path: ../CSV-Parser/CsvMapping.cs
-    startLine: 32
+    startLine: 33
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -229,6 +236,115 @@ items:
   - set
   modifiers.vb:
   - Public
+- uid: wan24.Data.CsvMapping.PreValidation
+  commentId: P:wan24.Data.CsvMapping.PreValidation
+  id: PreValidation
+  parent: wan24.Data.CsvMapping
+  langs:
+  - csharp
+  - vb
+  name: PreValidation
+  nameWithType: CsvMapping.PreValidation
+  fullName: wan24.Data.CsvMapping.PreValidation
+  type: Property
+  source:
+    remote:
+      path: CSV-Parser/CsvMapping.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: PreValidation
+    path: ../CSV-Parser/CsvMapping.cs
+    startLine: 38
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nField value pre-validation\n"
+  example: []
+  syntax:
+    content: public Func<string, bool> PreValidation { get; set; }
+    parameters: []
+    return:
+      type: System.Func{System.String,System.Boolean}
+    content.vb: Public Property PreValidation As Func(Of String, Boolean)
+  overload: wan24.Data.CsvMapping.PreValidation*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: wan24.Data.CsvMapping.PostValidation
+  commentId: P:wan24.Data.CsvMapping.PostValidation
+  id: PostValidation
+  parent: wan24.Data.CsvMapping
+  langs:
+  - csharp
+  - vb
+  name: PostValidation
+  nameWithType: CsvMapping.PostValidation
+  fullName: wan24.Data.CsvMapping.PostValidation
+  type: Property
+  source:
+    remote:
+      path: CSV-Parser/CsvMapping.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: PostValidation
+    path: ../CSV-Parser/CsvMapping.cs
+    startLine: 43
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nField value post-validation\n"
+  example: []
+  syntax:
+    content: public Func<object, bool> PostValidation { get; set; }
+    parameters: []
+    return:
+      type: System.Func{System.Object,System.Boolean}
+    content.vb: Public Property PostValidation As Func(Of Object, Boolean)
+  overload: wan24.Data.CsvMapping.PostValidation*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: wan24.Data.CsvMapping.Clone
+  commentId: M:wan24.Data.CsvMapping.Clone
+  id: Clone
+  parent: wan24.Data.CsvMapping
+  langs:
+  - csharp
+  - vb
+  name: Clone()
+  nameWithType: CsvMapping.Clone()
+  fullName: wan24.Data.CsvMapping.Clone()
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvMapping.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: Clone
+    path: ../CSV-Parser/CsvMapping.cs
+    startLine: 46
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  example: []
+  syntax:
+    content: public object Clone()
+    return:
+      type: System.Object
+    content.vb: Public Function Clone As Object
+  overload: wan24.Data.CsvMapping.Clone*
+  implements:
+  - System.ICloneable.Clone
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
 references:
 - uid: wan24.Data
   commentId: N:wan24.Data
@@ -242,6 +358,13 @@ references:
   name: Object
   nameWithType: Object
   fullName: System.Object
+- uid: System.ICloneable
+  commentId: T:System.ICloneable
+  parent: System
+  isExternal: true
+  name: ICloneable
+  nameWithType: ICloneable
+  fullName: System.ICloneable
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
@@ -734,6 +857,172 @@ references:
     nameWithType: String
     fullName: System.String
     isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: wan24.Data.CsvMapping.PreValidation*
+  commentId: Overload:wan24.Data.CsvMapping.PreValidation
+  name: PreValidation
+  nameWithType: CsvMapping.PreValidation
+  fullName: wan24.Data.CsvMapping.PreValidation
+- uid: System.Func{System.String,System.Boolean}
+  commentId: T:System.Func{System.String,System.Boolean}
+  parent: System
+  definition: System.Func`2
+  name: Func<String, Boolean>
+  nameWithType: Func<String, Boolean>
+  fullName: System.Func<System.String, System.Boolean>
+  nameWithType.vb: Func(Of String, Boolean)
+  fullName.vb: System.Func(Of System.String, System.Boolean)
+  name.vb: Func(Of String, Boolean)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: wan24.Data.CsvMapping.PostValidation*
+  commentId: Overload:wan24.Data.CsvMapping.PostValidation
+  name: PostValidation
+  nameWithType: CsvMapping.PostValidation
+  fullName: wan24.Data.CsvMapping.PostValidation
+- uid: System.Func{System.Object,System.Boolean}
+  commentId: T:System.Func{System.Object,System.Boolean}
+  parent: System
+  definition: System.Func`2
+  name: Func<Object, Boolean>
+  nameWithType: Func<Object, Boolean>
+  fullName: System.Func<System.Object, System.Boolean>
+  nameWithType.vb: Func(Of Object, Boolean)
+  fullName.vb: System.Func(Of System.Object, System.Boolean)
+  name.vb: Func(Of Object, Boolean)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Boolean
+    name: Boolean
+    nameWithType: Boolean
+    fullName: System.Boolean
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: wan24.Data.CsvMapping.Clone*
+  commentId: Overload:wan24.Data.CsvMapping.Clone
+  name: Clone
+  nameWithType: CsvMapping.Clone
+  fullName: wan24.Data.CsvMapping.Clone
+- uid: System.ICloneable.Clone
+  commentId: M:System.ICloneable.Clone
+  parent: System.ICloneable
+  isExternal: true
+  name: Clone()
+  nameWithType: ICloneable.Clone()
+  fullName: System.ICloneable.Clone()
+  spec.csharp:
+  - uid: System.ICloneable.Clone
+    name: Clone
+    nameWithType: ICloneable.Clone
+    fullName: System.ICloneable.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.ICloneable.Clone
+    name: Clone
+    nameWithType: ICloneable.Clone
+    fullName: System.ICloneable.Clone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
   - name: )
     nameWithType: )
     fullName: )

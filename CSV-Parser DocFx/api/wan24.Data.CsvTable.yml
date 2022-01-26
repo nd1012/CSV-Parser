@@ -7,27 +7,35 @@ items:
   children:
   - wan24.Data.CsvTable.#ctor(System.Nullable{System.Boolean},System.Char,System.Nullable{System.Char},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{System.String}})
   - wan24.Data.CsvTable.AddColumn(System.String,System.Int32,System.Func{System.Int32,System.String})
+  - wan24.Data.CsvTable.AddObjects(System.Object[])
   - wan24.Data.CsvTable.AddObjects``1(``0[])
+  - wan24.Data.CsvTable.AddObjects``1(System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping},``0[])
   - wan24.Data.CsvTable.AddRow(System.Collections.Generic.IEnumerable{System.String})
   - wan24.Data.CsvTable.AsDictionaries
   - wan24.Data.CsvTable.AsDictionary(System.Int32)
-  - wan24.Data.CsvTable.AsObject``1(System.Int32)
-  - wan24.Data.CsvTable.AsObject``1(System.Int32,``0)
-  - wan24.Data.CsvTable.AsObjects``1(System.Int32)
+  - wan24.Data.CsvTable.AsObject(System.Int32)
+  - wan24.Data.CsvTable.AsObject``1(System.Int32,``0,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  - wan24.Data.CsvTable.AsObject``1(System.Int32,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  - wan24.Data.CsvTable.AsObjects``1(System.Int32,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
   - wan24.Data.CsvTable.Clear(System.Boolean)
   - wan24.Data.CsvTable.Clone
   - wan24.Data.CsvTable.CountColumns
   - wan24.Data.CsvTable.CountRows
   - wan24.Data.CsvTable.CreateHeaders
+  - wan24.Data.CsvTable.CreateMapping
   - wan24.Data.CsvTable.FieldDelimiter
   - wan24.Data.CsvTable.GetEnumerator
   - wan24.Data.CsvTable.HasHeader
   - wan24.Data.CsvTable.Header
   - wan24.Data.CsvTable.Item(System.Int32)
   - wan24.Data.CsvTable.Mapping
+  - wan24.Data.CsvTable.MoveColumn(System.Int32,System.Int32,System.Boolean)
+  - wan24.Data.CsvTable.Objects
   - wan24.Data.CsvTable.RemoveColumn(System.Int32)
+  - wan24.Data.CsvTable.ReorderColumns(System.Int32[],System.Boolean)
   - wan24.Data.CsvTable.Rows
   - wan24.Data.CsvTable.StringDelimiter
+  - wan24.Data.CsvTable.SwapColumn(System.Int32,System.Int32,System.Boolean)
   - wan24.Data.CsvTable.System#Collections#IEnumerable#GetEnumerator
   - wan24.Data.CsvTable.ToString(System.Nullable{System.Boolean},System.Nullable{System.Char},System.Nullable{System.Char})
   - wan24.Data.CsvTable.Validate
@@ -40,12 +48,12 @@ items:
   type: Class
   source:
     remote:
-      path: CSV-Parser/CsvTable.cs
+      path: CSV-Parser/CsvTable.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CsvTable
-    path: ../CSV-Parser/CsvTable.cs
-    startLine: 12
+    path: ../CSV-Parser/CsvTable.Map.cs
+    startLine: 7
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -76,6 +84,379 @@ items:
   modifiers.vb:
   - Public
   - Class
+- uid: wan24.Data.CsvTable.CreateHeaders
+  commentId: M:wan24.Data.CsvTable.CreateHeaders
+  id: CreateHeaders
+  parent: wan24.Data.CsvTable
+  langs:
+  - csharp
+  - vb
+  name: CreateHeaders()
+  nameWithType: CsvTable.CreateHeaders()
+  fullName: wan24.Data.CsvTable.CreateHeaders()
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvTable.Common.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: CreateHeaders
+    path: ../CSV-Parser/CsvTable.Common.cs
+    startLine: 13
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nCreate column headers (0..n)\n"
+  example: []
+  syntax:
+    content: public CsvTable CreateHeaders()
+    return:
+      type: wan24.Data.CsvTable
+      description: This
+    content.vb: Public Function CreateHeaders As CsvTable
+  overload: wan24.Data.CsvTable.CreateHeaders*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: wan24.Data.CsvTable.AddColumn(System.String,System.Int32,System.Func{System.Int32,System.String})
+  commentId: M:wan24.Data.CsvTable.AddColumn(System.String,System.Int32,System.Func{System.Int32,System.String})
+  id: AddColumn(System.String,System.Int32,System.Func{System.Int32,System.String})
+  parent: wan24.Data.CsvTable
+  langs:
+  - csharp
+  - vb
+  name: AddColumn(String, Int32, Func<Int32, String>)
+  nameWithType: CsvTable.AddColumn(String, Int32, Func<Int32, String>)
+  fullName: wan24.Data.CsvTable.AddColumn(System.String, System.Int32, System.Func<System.Int32, System.String>)
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvTable.Common.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: AddColumn
+    path: ../CSV-Parser/CsvTable.Common.cs
+    startLine: 27
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nAdd a column\n"
+  example: []
+  syntax:
+    content: public CsvTable AddColumn(string header, int index = -1, Func<int, string> valueFactory = null)
+    parameters:
+    - id: header
+      type: System.String
+      description: Header
+    - id: index
+      type: System.Int32
+      description: Index
+    - id: valueFactory
+      type: System.Func{System.Int32,System.String}
+      description: Value factory
+    return:
+      type: wan24.Data.CsvTable
+      description: This
+    content.vb: Public Function AddColumn(header As String, index As Integer = -1, valueFactory As Func(Of Integer, String) = Nothing) As CsvTable
+  overload: wan24.Data.CsvTable.AddColumn*
+  nameWithType.vb: CsvTable.AddColumn(String, Int32, Func(Of Int32, String))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: wan24.Data.CsvTable.AddColumn(System.String, System.Int32, System.Func(Of System.Int32, System.String))
+  name.vb: AddColumn(String, Int32, Func(Of Int32, String))
+- uid: wan24.Data.CsvTable.RemoveColumn(System.Int32)
+  commentId: M:wan24.Data.CsvTable.RemoveColumn(System.Int32)
+  id: RemoveColumn(System.Int32)
+  parent: wan24.Data.CsvTable
+  langs:
+  - csharp
+  - vb
+  name: RemoveColumn(Int32)
+  nameWithType: CsvTable.RemoveColumn(Int32)
+  fullName: wan24.Data.CsvTable.RemoveColumn(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvTable.Common.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: RemoveColumn
+    path: ../CSV-Parser/CsvTable.Common.cs
+    startLine: 56
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nRemove a column\n"
+  example: []
+  syntax:
+    content: public CsvTable RemoveColumn(int index)
+    parameters:
+    - id: index
+      type: System.Int32
+      description: Index
+    return:
+      type: wan24.Data.CsvTable
+      description: This
+    content.vb: Public Function RemoveColumn(index As Integer) As CsvTable
+  overload: wan24.Data.CsvTable.RemoveColumn*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: wan24.Data.CsvTable.MoveColumn(System.Int32,System.Int32,System.Boolean)
+  commentId: M:wan24.Data.CsvTable.MoveColumn(System.Int32,System.Int32,System.Boolean)
+  id: MoveColumn(System.Int32,System.Int32,System.Boolean)
+  parent: wan24.Data.CsvTable
+  langs:
+  - csharp
+  - vb
+  name: MoveColumn(Int32, Int32, Boolean)
+  nameWithType: CsvTable.MoveColumn(Int32, Int32, Boolean)
+  fullName: wan24.Data.CsvTable.MoveColumn(System.Int32, System.Int32, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvTable.Common.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: MoveColumn
+    path: ../CSV-Parser/CsvTable.Common.cs
+    startLine: 79
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nMove a column\n"
+  example: []
+  syntax:
+    content: public CsvTable MoveColumn(int currentIndex, int newIndex, bool updateMapping = true)
+    parameters:
+    - id: currentIndex
+      type: System.Int32
+      description: Current index
+    - id: newIndex
+      type: System.Int32
+      description: New index
+    - id: updateMapping
+      type: System.Boolean
+      description: Update the mapping?
+    return:
+      type: wan24.Data.CsvTable
+      description: This
+    content.vb: Public Function MoveColumn(currentIndex As Integer, newIndex As Integer, updateMapping As Boolean = True) As CsvTable
+  overload: wan24.Data.CsvTable.MoveColumn*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: wan24.Data.CsvTable.SwapColumn(System.Int32,System.Int32,System.Boolean)
+  commentId: M:wan24.Data.CsvTable.SwapColumn(System.Int32,System.Int32,System.Boolean)
+  id: SwapColumn(System.Int32,System.Int32,System.Boolean)
+  parent: wan24.Data.CsvTable
+  langs:
+  - csharp
+  - vb
+  name: SwapColumn(Int32, Int32, Boolean)
+  nameWithType: CsvTable.SwapColumn(Int32, Int32, Boolean)
+  fullName: wan24.Data.CsvTable.SwapColumn(System.Int32, System.Int32, System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvTable.Common.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: SwapColumn
+    path: ../CSV-Parser/CsvTable.Common.cs
+    startLine: 137
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nSwap a column\n"
+  example: []
+  syntax:
+    content: public CsvTable SwapColumn(int a, int b, bool updateMapping = true)
+    parameters:
+    - id: a
+      type: System.Int32
+      description: Index A
+    - id: b
+      type: System.Int32
+      description: Index B
+    - id: updateMapping
+      type: System.Boolean
+      description: Update the mapping?
+    return:
+      type: wan24.Data.CsvTable
+      description: This
+    content.vb: Public Function SwapColumn(a As Integer, b As Integer, updateMapping As Boolean = True) As CsvTable
+  overload: wan24.Data.CsvTable.SwapColumn*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: wan24.Data.CsvTable.ReorderColumns(System.Int32[],System.Boolean)
+  commentId: M:wan24.Data.CsvTable.ReorderColumns(System.Int32[],System.Boolean)
+  id: ReorderColumns(System.Int32[],System.Boolean)
+  parent: wan24.Data.CsvTable
+  langs:
+  - csharp
+  - vb
+  name: ReorderColumns(Int32[], Boolean)
+  nameWithType: CsvTable.ReorderColumns(Int32[], Boolean)
+  fullName: wan24.Data.CsvTable.ReorderColumns(System.Int32[], System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvTable.Common.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: ReorderColumns
+    path: ../CSV-Parser/CsvTable.Common.cs
+    startLine: 169
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nRe-order columns\n"
+  example: []
+  syntax:
+    content: public CsvTable ReorderColumns(int[] newIndexes, bool updateMapping = true)
+    parameters:
+    - id: newIndexes
+      type: System.Int32[]
+      description: New indexes
+    - id: updateMapping
+      type: System.Boolean
+      description: Update the mapping?
+    return:
+      type: wan24.Data.CsvTable
+      description: This
+    content.vb: Public Function ReorderColumns(newIndexes As Integer(), updateMapping As Boolean = True) As CsvTable
+  overload: wan24.Data.CsvTable.ReorderColumns*
+  nameWithType.vb: CsvTable.ReorderColumns(Int32(), Boolean)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: wan24.Data.CsvTable.ReorderColumns(System.Int32(), System.Boolean)
+  name.vb: ReorderColumns(Int32(), Boolean)
+- uid: wan24.Data.CsvTable.AddRow(System.Collections.Generic.IEnumerable{System.String})
+  commentId: M:wan24.Data.CsvTable.AddRow(System.Collections.Generic.IEnumerable{System.String})
+  id: AddRow(System.Collections.Generic.IEnumerable{System.String})
+  parent: wan24.Data.CsvTable
+  langs:
+  - csharp
+  - vb
+  name: AddRow(IEnumerable<String>)
+  nameWithType: CsvTable.AddRow(IEnumerable<String>)
+  fullName: wan24.Data.CsvTable.AddRow(System.Collections.Generic.IEnumerable<System.String>)
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvTable.Common.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: AddRow
+    path: ../CSV-Parser/CsvTable.Common.cs
+    startLine: 196
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nAdd a row\n"
+  example: []
+  syntax:
+    content: public CsvTable AddRow(IEnumerable<string> row)
+    parameters:
+    - id: row
+      type: System.Collections.Generic.IEnumerable{System.String}
+      description: Row
+    return:
+      type: wan24.Data.CsvTable
+      description: This
+    content.vb: Public Function AddRow(row As IEnumerable(Of String)) As CsvTable
+  overload: wan24.Data.CsvTable.AddRow*
+  nameWithType.vb: CsvTable.AddRow(IEnumerable(Of String))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: wan24.Data.CsvTable.AddRow(System.Collections.Generic.IEnumerable(Of System.String))
+  name.vb: AddRow(IEnumerable(Of String))
+- uid: wan24.Data.CsvTable.Validate
+  commentId: M:wan24.Data.CsvTable.Validate
+  id: Validate
+  parent: wan24.Data.CsvTable
+  langs:
+  - csharp
+  - vb
+  name: Validate()
+  nameWithType: CsvTable.Validate()
+  fullName: wan24.Data.CsvTable.Validate()
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvTable.Common.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: Validate
+    path: ../CSV-Parser/CsvTable.Common.cs
+    startLine: 212
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nValidate the table and all rows (will throw an exception on error)\n"
+  example: []
+  syntax:
+    content: public CsvTable Validate()
+    return:
+      type: wan24.Data.CsvTable
+      description: This
+    content.vb: Public Function Validate As CsvTable
+  overload: wan24.Data.CsvTable.Validate*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: wan24.Data.CsvTable.Clear(System.Boolean)
+  commentId: M:wan24.Data.CsvTable.Clear(System.Boolean)
+  id: Clear(System.Boolean)
+  parent: wan24.Data.CsvTable
+  langs:
+  - csharp
+  - vb
+  name: Clear(Boolean)
+  nameWithType: CsvTable.Clear(Boolean)
+  fullName: wan24.Data.CsvTable.Clear(System.Boolean)
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvTable.Common.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: Clear
+    path: ../CSV-Parser/CsvTable.Common.cs
+    startLine: 233
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nClear the data\n"
+  example: []
+  syntax:
+    content: public CsvTable Clear(bool includingHeader = true)
+    parameters:
+    - id: includingHeader
+      type: System.Boolean
+      description: Including column headers?
+    return:
+      type: wan24.Data.CsvTable
+      description: This
+    content.vb: Public Function Clear(includingHeader As Boolean = True) As CsvTable
+  overload: wan24.Data.CsvTable.Clear*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
 - uid: wan24.Data.CsvTable.#ctor(System.Nullable{System.Boolean},System.Char,System.Nullable{System.Char},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{System.String}})
   commentId: M:wan24.Data.CsvTable.#ctor(System.Nullable{System.Boolean},System.Char,System.Nullable{System.Char},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{System.String}})
   id: '#ctor(System.Nullable{System.Boolean},System.Char,System.Nullable{System.Char},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{System.String}})'
@@ -94,7 +475,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: .ctor
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 22
+    startLine: 21
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -145,7 +526,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: this[]
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 53
+    startLine: 52
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -189,7 +570,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: HasHeader
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 61
+    startLine: 60
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -226,7 +607,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: FieldDelimiter
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 66
+    startLine: 65
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -263,7 +644,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: StringDelimiter
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 71
+    startLine: 70
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -300,7 +681,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CountColumns
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 76
+    startLine: 75
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -337,7 +718,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CountRows
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 81
+    startLine: 80
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -374,7 +755,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Header
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 86
+    startLine: 85
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -411,7 +792,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Rows
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 91
+    startLine: 90
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -430,544 +811,6 @@ items:
   modifiers.vb:
   - Public
   - ReadOnly
-- uid: wan24.Data.CsvTable.AsDictionaries
-  commentId: P:wan24.Data.CsvTable.AsDictionaries
-  id: AsDictionaries
-  parent: wan24.Data.CsvTable
-  langs:
-  - csharp
-  - vb
-  name: AsDictionaries
-  nameWithType: CsvTable.AsDictionaries
-  fullName: wan24.Data.CsvTable.AsDictionaries
-  type: Property
-  source:
-    remote:
-      path: CSV-Parser/CsvTable.cs
-      branch: main
-      repo: https://github.com/nd1012/CSV-Parser.git
-    id: AsDictionaries
-    path: ../CSV-Parser/CsvTable.cs
-    startLine: 96
-  assemblies:
-  - csvparser
-  namespace: wan24.Data
-  summary: "\nRows as dictionaries\n"
-  example: []
-  syntax:
-    content: public IEnumerable<Dictionary<string, string>> AsDictionaries { get; }
-    parameters: []
-    return:
-      type: System.Collections.Generic.IEnumerable{System.Collections.Generic.Dictionary{System.String,System.String}}
-    content.vb: Public ReadOnly Property AsDictionaries As IEnumerable(Of Dictionary(Of String, String))
-  overload: wan24.Data.CsvTable.AsDictionaries*
-  modifiers.csharp:
-  - public
-  - get
-  modifiers.vb:
-  - Public
-  - ReadOnly
-- uid: wan24.Data.CsvTable.Mapping
-  commentId: P:wan24.Data.CsvTable.Mapping
-  id: Mapping
-  parent: wan24.Data.CsvTable
-  langs:
-  - csharp
-  - vb
-  name: Mapping
-  nameWithType: CsvTable.Mapping
-  fullName: wan24.Data.CsvTable.Mapping
-  type: Property
-  source:
-    remote:
-      path: CSV-Parser/CsvTable.cs
-      branch: main
-      repo: https://github.com/nd1012/CSV-Parser.git
-    id: Mapping
-    path: ../CSV-Parser/CsvTable.cs
-    startLine: 101
-  assemblies:
-  - csvparser
-  namespace: wan24.Data
-  summary: "\nRow &lt;-> object mapping\n"
-  example: []
-  syntax:
-    content: public Dictionary<int, CsvMapping> Mapping { get; set; }
-    parameters: []
-    return:
-      type: System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping}
-    content.vb: Public Property Mapping As Dictionary(Of Integer, CsvMapping)
-  overload: wan24.Data.CsvTable.Mapping*
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
-- uid: wan24.Data.CsvTable.CreateHeaders
-  commentId: M:wan24.Data.CsvTable.CreateHeaders
-  id: CreateHeaders
-  parent: wan24.Data.CsvTable
-  langs:
-  - csharp
-  - vb
-  name: CreateHeaders()
-  nameWithType: CsvTable.CreateHeaders()
-  fullName: wan24.Data.CsvTable.CreateHeaders()
-  type: Method
-  source:
-    remote:
-      path: CSV-Parser/CsvTable.cs
-      branch: main
-      repo: https://github.com/nd1012/CSV-Parser.git
-    id: CreateHeaders
-    path: ../CSV-Parser/CsvTable.cs
-    startLine: 107
-  assemblies:
-  - csvparser
-  namespace: wan24.Data
-  summary: "\nCreate column headers (0..n)\n"
-  example: []
-  syntax:
-    content: public CsvTable CreateHeaders()
-    return:
-      type: wan24.Data.CsvTable
-      description: This
-    content.vb: Public Function CreateHeaders As CsvTable
-  overload: wan24.Data.CsvTable.CreateHeaders*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: wan24.Data.CsvTable.AddColumn(System.String,System.Int32,System.Func{System.Int32,System.String})
-  commentId: M:wan24.Data.CsvTable.AddColumn(System.String,System.Int32,System.Func{System.Int32,System.String})
-  id: AddColumn(System.String,System.Int32,System.Func{System.Int32,System.String})
-  parent: wan24.Data.CsvTable
-  langs:
-  - csharp
-  - vb
-  name: AddColumn(String, Int32, Func<Int32, String>)
-  nameWithType: CsvTable.AddColumn(String, Int32, Func<Int32, String>)
-  fullName: wan24.Data.CsvTable.AddColumn(System.String, System.Int32, System.Func<System.Int32, System.String>)
-  type: Method
-  source:
-    remote:
-      path: CSV-Parser/CsvTable.cs
-      branch: main
-      repo: https://github.com/nd1012/CSV-Parser.git
-    id: AddColumn
-    path: ../CSV-Parser/CsvTable.cs
-    startLine: 121
-  assemblies:
-  - csvparser
-  namespace: wan24.Data
-  summary: "\nAdd a column\n"
-  example: []
-  syntax:
-    content: public CsvTable AddColumn(string header, int index = -1, Func<int, string> valueFactory = null)
-    parameters:
-    - id: header
-      type: System.String
-      description: Header
-    - id: index
-      type: System.Int32
-      description: Index
-    - id: valueFactory
-      type: System.Func{System.Int32,System.String}
-      description: Value factory
-    return:
-      type: wan24.Data.CsvTable
-      description: This
-    content.vb: Public Function AddColumn(header As String, index As Integer = -1, valueFactory As Func(Of Integer, String) = Nothing) As CsvTable
-  overload: wan24.Data.CsvTable.AddColumn*
-  nameWithType.vb: CsvTable.AddColumn(String, Int32, Func(Of Int32, String))
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-  fullName.vb: wan24.Data.CsvTable.AddColumn(System.String, System.Int32, System.Func(Of System.Int32, System.String))
-  name.vb: AddColumn(String, Int32, Func(Of Int32, String))
-- uid: wan24.Data.CsvTable.RemoveColumn(System.Int32)
-  commentId: M:wan24.Data.CsvTable.RemoveColumn(System.Int32)
-  id: RemoveColumn(System.Int32)
-  parent: wan24.Data.CsvTable
-  langs:
-  - csharp
-  - vb
-  name: RemoveColumn(Int32)
-  nameWithType: CsvTable.RemoveColumn(Int32)
-  fullName: wan24.Data.CsvTable.RemoveColumn(System.Int32)
-  type: Method
-  source:
-    remote:
-      path: CSV-Parser/CsvTable.cs
-      branch: main
-      repo: https://github.com/nd1012/CSV-Parser.git
-    id: RemoveColumn
-    path: ../CSV-Parser/CsvTable.cs
-    startLine: 150
-  assemblies:
-  - csvparser
-  namespace: wan24.Data
-  summary: "\nRemove a column\n"
-  example: []
-  syntax:
-    content: public CsvTable RemoveColumn(int index)
-    parameters:
-    - id: index
-      type: System.Int32
-      description: Index
-    return:
-      type: wan24.Data.CsvTable
-      description: This
-    content.vb: Public Function RemoveColumn(index As Integer) As CsvTable
-  overload: wan24.Data.CsvTable.RemoveColumn*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: wan24.Data.CsvTable.AddRow(System.Collections.Generic.IEnumerable{System.String})
-  commentId: M:wan24.Data.CsvTable.AddRow(System.Collections.Generic.IEnumerable{System.String})
-  id: AddRow(System.Collections.Generic.IEnumerable{System.String})
-  parent: wan24.Data.CsvTable
-  langs:
-  - csharp
-  - vb
-  name: AddRow(IEnumerable<String>)
-  nameWithType: CsvTable.AddRow(IEnumerable<String>)
-  fullName: wan24.Data.CsvTable.AddRow(System.Collections.Generic.IEnumerable<System.String>)
-  type: Method
-  source:
-    remote:
-      path: CSV-Parser/CsvTable.cs
-      branch: main
-      repo: https://github.com/nd1012/CSV-Parser.git
-    id: AddRow
-    path: ../CSV-Parser/CsvTable.cs
-    startLine: 171
-  assemblies:
-  - csvparser
-  namespace: wan24.Data
-  summary: "\nAdd a row\n"
-  example: []
-  syntax:
-    content: public CsvTable AddRow(IEnumerable<string> row)
-    parameters:
-    - id: row
-      type: System.Collections.Generic.IEnumerable{System.String}
-      description: Row
-    return:
-      type: wan24.Data.CsvTable
-      description: This
-    content.vb: Public Function AddRow(row As IEnumerable(Of String)) As CsvTable
-  overload: wan24.Data.CsvTable.AddRow*
-  nameWithType.vb: CsvTable.AddRow(IEnumerable(Of String))
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-  fullName.vb: wan24.Data.CsvTable.AddRow(System.Collections.Generic.IEnumerable(Of System.String))
-  name.vb: AddRow(IEnumerable(Of String))
-- uid: wan24.Data.CsvTable.Validate
-  commentId: M:wan24.Data.CsvTable.Validate
-  id: Validate
-  parent: wan24.Data.CsvTable
-  langs:
-  - csharp
-  - vb
-  name: Validate()
-  nameWithType: CsvTable.Validate()
-  fullName: wan24.Data.CsvTable.Validate()
-  type: Method
-  source:
-    remote:
-      path: CSV-Parser/CsvTable.cs
-      branch: main
-      repo: https://github.com/nd1012/CSV-Parser.git
-    id: Validate
-    path: ../CSV-Parser/CsvTable.cs
-    startLine: 187
-  assemblies:
-  - csvparser
-  namespace: wan24.Data
-  summary: "\nValidate the table and all rows (will throw an exception on error)\n"
-  example: []
-  syntax:
-    content: public CsvTable Validate()
-    return:
-      type: wan24.Data.CsvTable
-      description: This
-    content.vb: Public Function Validate As CsvTable
-  overload: wan24.Data.CsvTable.Validate*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: wan24.Data.CsvTable.Clear(System.Boolean)
-  commentId: M:wan24.Data.CsvTable.Clear(System.Boolean)
-  id: Clear(System.Boolean)
-  parent: wan24.Data.CsvTable
-  langs:
-  - csharp
-  - vb
-  name: Clear(Boolean)
-  nameWithType: CsvTable.Clear(Boolean)
-  fullName: wan24.Data.CsvTable.Clear(System.Boolean)
-  type: Method
-  source:
-    remote:
-      path: CSV-Parser/CsvTable.cs
-      branch: main
-      repo: https://github.com/nd1012/CSV-Parser.git
-    id: Clear
-    path: ../CSV-Parser/CsvTable.cs
-    startLine: 208
-  assemblies:
-  - csvparser
-  namespace: wan24.Data
-  summary: "\nClear the data\n"
-  example: []
-  syntax:
-    content: public CsvTable Clear(bool includingHeader = true)
-    parameters:
-    - id: includingHeader
-      type: System.Boolean
-      description: Including column headers?
-    return:
-      type: wan24.Data.CsvTable
-      description: This
-    content.vb: Public Function Clear(includingHeader As Boolean = True) As CsvTable
-  overload: wan24.Data.CsvTable.Clear*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: wan24.Data.CsvTable.AsDictionary(System.Int32)
-  commentId: M:wan24.Data.CsvTable.AsDictionary(System.Int32)
-  id: AsDictionary(System.Int32)
-  parent: wan24.Data.CsvTable
-  langs:
-  - csharp
-  - vb
-  name: AsDictionary(Int32)
-  nameWithType: CsvTable.AsDictionary(Int32)
-  fullName: wan24.Data.CsvTable.AsDictionary(System.Int32)
-  type: Method
-  source:
-    remote:
-      path: CSV-Parser/CsvTable.cs
-      branch: main
-      repo: https://github.com/nd1012/CSV-Parser.git
-    id: AsDictionary
-    path: ../CSV-Parser/CsvTable.cs
-    startLine: 220
-  assemblies:
-  - csvparser
-  namespace: wan24.Data
-  summary: "\nGet a row as dictionary\n"
-  example: []
-  syntax:
-    content: public Dictionary<string, string> AsDictionary(int index)
-    parameters:
-    - id: index
-      type: System.Int32
-      description: Index
-    return:
-      type: System.Collections.Generic.Dictionary{System.String,System.String}
-      description: Dictionary
-    content.vb: Public Function AsDictionary(index As Integer) As Dictionary(Of String, String)
-  overload: wan24.Data.CsvTable.AsDictionary*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: wan24.Data.CsvTable.AsObject``1(System.Int32)
-  commentId: M:wan24.Data.CsvTable.AsObject``1(System.Int32)
-  id: AsObject``1(System.Int32)
-  parent: wan24.Data.CsvTable
-  langs:
-  - csharp
-  - vb
-  name: AsObject<T>(Int32)
-  nameWithType: CsvTable.AsObject<T>(Int32)
-  fullName: wan24.Data.CsvTable.AsObject<T>(System.Int32)
-  type: Method
-  source:
-    remote:
-      path: CSV-Parser/CsvTable.cs
-      branch: main
-      repo: https://github.com/nd1012/CSV-Parser.git
-    id: AsObject
-    path: ../CSV-Parser/CsvTable.cs
-    startLine: 229
-  assemblies:
-  - csvparser
-  namespace: wan24.Data
-  summary: "\nGet a row as object\n"
-  example: []
-  syntax:
-    content: >-
-      public T AsObject<T>(int index)
-          where T : new()
-    parameters:
-    - id: index
-      type: System.Int32
-      description: Index
-    typeParameters:
-    - id: T
-      description: Object type
-    return:
-      type: '{T}'
-      description: Object
-    content.vb: Public Function AsObject(Of T As New)(index As Integer) As T
-  overload: wan24.Data.CsvTable.AsObject*
-  nameWithType.vb: CsvTable.AsObject(Of T)(Int32)
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-  fullName.vb: wan24.Data.CsvTable.AsObject(Of T)(System.Int32)
-  name.vb: AsObject(Of T)(Int32)
-- uid: wan24.Data.CsvTable.AsObjects``1(System.Int32)
-  commentId: M:wan24.Data.CsvTable.AsObjects``1(System.Int32)
-  id: AsObjects``1(System.Int32)
-  parent: wan24.Data.CsvTable
-  langs:
-  - csharp
-  - vb
-  name: AsObjects<T>(Int32)
-  nameWithType: CsvTable.AsObjects<T>(Int32)
-  fullName: wan24.Data.CsvTable.AsObjects<T>(System.Int32)
-  type: Method
-  source:
-    remote:
-      path: CSV-Parser/CsvTable.cs
-      branch: main
-      repo: https://github.com/nd1012/CSV-Parser.git
-    id: AsObjects
-    path: ../CSV-Parser/CsvTable.cs
-    startLine: 242
-  assemblies:
-  - csvparser
-  namespace: wan24.Data
-  summary: "\nGet rows as object\n"
-  example: []
-  syntax:
-    content: >-
-      public IEnumerable<T> AsObjects<T>(int index)
-          where T : new()
-    parameters:
-    - id: index
-      type: System.Int32
-      description: Index
-    typeParameters:
-    - id: T
-      description: Object type
-    return:
-      type: System.Collections.Generic.IEnumerable{{T}}
-      description: Object
-    content.vb: Public Function AsObjects(Of T As New)(index As Integer) As IEnumerable(Of T)
-  overload: wan24.Data.CsvTable.AsObjects*
-  nameWithType.vb: CsvTable.AsObjects(Of T)(Int32)
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-  fullName.vb: wan24.Data.CsvTable.AsObjects(Of T)(System.Int32)
-  name.vb: AsObjects(Of T)(Int32)
-- uid: wan24.Data.CsvTable.AsObject``1(System.Int32,``0)
-  commentId: M:wan24.Data.CsvTable.AsObject``1(System.Int32,``0)
-  id: AsObject``1(System.Int32,``0)
-  parent: wan24.Data.CsvTable
-  langs:
-  - csharp
-  - vb
-  name: AsObject<T>(Int32, T)
-  nameWithType: CsvTable.AsObject<T>(Int32, T)
-  fullName: wan24.Data.CsvTable.AsObject<T>(System.Int32, T)
-  type: Method
-  source:
-    remote:
-      path: CSV-Parser/CsvTable.cs
-      branch: main
-      repo: https://github.com/nd1012/CSV-Parser.git
-    id: AsObject
-    path: ../CSV-Parser/CsvTable.cs
-    startLine: 256
-  assemblies:
-  - csvparser
-  namespace: wan24.Data
-  summary: "\nGet a row as object\n"
-  example: []
-  syntax:
-    content: public T AsObject<T>(int index, T obj)
-    parameters:
-    - id: index
-      type: System.Int32
-      description: Index
-    - id: obj
-      type: '{T}'
-      description: Object
-    typeParameters:
-    - id: T
-      description: Object type
-    return:
-      type: '{T}'
-      description: Object
-    content.vb: Public Function AsObject(Of T)(index As Integer, obj As T) As T
-  overload: wan24.Data.CsvTable.AsObject*
-  nameWithType.vb: CsvTable.AsObject(Of T)(Int32, T)
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-  fullName.vb: wan24.Data.CsvTable.AsObject(Of T)(System.Int32, T)
-  name.vb: AsObject(Of T)(Int32, T)
-- uid: wan24.Data.CsvTable.AddObjects``1(``0[])
-  commentId: M:wan24.Data.CsvTable.AddObjects``1(``0[])
-  id: AddObjects``1(``0[])
-  parent: wan24.Data.CsvTable
-  langs:
-  - csharp
-  - vb
-  name: AddObjects<T>(T[])
-  nameWithType: CsvTable.AddObjects<T>(T[])
-  fullName: wan24.Data.CsvTable.AddObjects<T>(T[])
-  type: Method
-  source:
-    remote:
-      path: CSV-Parser/CsvTable.cs
-      branch: main
-      repo: https://github.com/nd1012/CSV-Parser.git
-    id: AddObjects
-    path: ../CSV-Parser/CsvTable.cs
-    startLine: 270
-  assemblies:
-  - csvparser
-  namespace: wan24.Data
-  summary: "\nAdd rows from objects\n"
-  example: []
-  syntax:
-    content: public CsvTable AddObjects<T>(params T[] objs)
-    parameters:
-    - id: objs
-      type: '{T}[]'
-      description: Objects
-    typeParameters:
-    - id: T
-      description: Object type
-    return:
-      type: wan24.Data.CsvTable
-      description: This
-    content.vb: Public Function AddObjects(Of T)(ParamArray objs As T()) As CsvTable
-  overload: wan24.Data.CsvTable.AddObjects*
-  nameWithType.vb: CsvTable.AddObjects(Of T)(T())
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-  fullName.vb: wan24.Data.CsvTable.AddObjects(Of T)(T())
-  name.vb: AddObjects(Of T)(T())
 - uid: wan24.Data.CsvTable.GetEnumerator
   commentId: M:wan24.Data.CsvTable.GetEnumerator
   id: GetEnumerator
@@ -986,7 +829,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: GetEnumerator
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 279
+    startLine: 93
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -1021,7 +864,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Clone
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 282
+    startLine: 96
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -1056,7 +899,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ToString
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 300
+    startLine: 115
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -1105,7 +948,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: System.Collections.IEnumerable.GetEnumerator
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 313
+    startLine: 129
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -1120,6 +963,516 @@ items:
   - System.Collections.IEnumerable.GetEnumerator
   nameWithType.vb: CsvTable.System.Collections.IEnumerable.GetEnumerator()
   name.vb: System.Collections.IEnumerable.GetEnumerator()
+- uid: wan24.Data.CsvTable.AsDictionaries
+  commentId: P:wan24.Data.CsvTable.AsDictionaries
+  id: AsDictionaries
+  parent: wan24.Data.CsvTable
+  langs:
+  - csharp
+  - vb
+  name: AsDictionaries
+  nameWithType: CsvTable.AsDictionaries
+  fullName: wan24.Data.CsvTable.AsDictionaries
+  type: Property
+  source:
+    remote:
+      path: CSV-Parser/CsvTable.Dictionary.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: AsDictionaries
+    path: ../CSV-Parser/CsvTable.Dictionary.cs
+    startLine: 12
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nRows as dictionaries\n"
+  example: []
+  syntax:
+    content: public IEnumerable<Dictionary<string, string>> AsDictionaries { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{System.Collections.Generic.Dictionary{System.String,System.String}}
+    content.vb: Public ReadOnly Property AsDictionaries As IEnumerable(Of Dictionary(Of String, String))
+  overload: wan24.Data.CsvTable.AsDictionaries*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: wan24.Data.CsvTable.AsDictionary(System.Int32)
+  commentId: M:wan24.Data.CsvTable.AsDictionary(System.Int32)
+  id: AsDictionary(System.Int32)
+  parent: wan24.Data.CsvTable
+  langs:
+  - csharp
+  - vb
+  name: AsDictionary(Int32)
+  nameWithType: CsvTable.AsDictionary(Int32)
+  fullName: wan24.Data.CsvTable.AsDictionary(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvTable.Dictionary.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: AsDictionary
+    path: ../CSV-Parser/CsvTable.Dictionary.cs
+    startLine: 19
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nGet a row as dictionary\n"
+  example: []
+  syntax:
+    content: public Dictionary<string, string> AsDictionary(int index)
+    parameters:
+    - id: index
+      type: System.Int32
+      description: Index
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,System.String}
+      description: Dictionary
+    content.vb: Public Function AsDictionary(index As Integer) As Dictionary(Of String, String)
+  overload: wan24.Data.CsvTable.AsDictionary*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: wan24.Data.CsvTable.Mapping
+  commentId: P:wan24.Data.CsvTable.Mapping
+  id: Mapping
+  parent: wan24.Data.CsvTable
+  langs:
+  - csharp
+  - vb
+  name: Mapping
+  nameWithType: CsvTable.Mapping
+  fullName: wan24.Data.CsvTable.Mapping
+  type: Property
+  source:
+    remote:
+      path: CSV-Parser/CsvTable.Map.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: Mapping
+    path: ../CSV-Parser/CsvTable.Map.cs
+    startLine: 12
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nRow &lt;-> object mapping\n"
+  example: []
+  syntax:
+    content: public Dictionary<int, CsvMapping> Mapping { get; set; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping}
+    content.vb: Public Property Mapping As Dictionary(Of Integer, CsvMapping)
+  overload: wan24.Data.CsvTable.Mapping*
+  modifiers.csharp:
+  - public
+  - get
+  - set
+  modifiers.vb:
+  - Public
+- uid: wan24.Data.CsvTable.Objects
+  commentId: P:wan24.Data.CsvTable.Objects
+  id: Objects
+  parent: wan24.Data.CsvTable
+  langs:
+  - csharp
+  - vb
+  name: Objects
+  nameWithType: CsvTable.Objects
+  fullName: wan24.Data.CsvTable.Objects
+  type: Property
+  source:
+    remote:
+      path: CSV-Parser/CsvTable.Map.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: Objects
+    path: ../CSV-Parser/CsvTable.Map.cs
+    startLine: 17
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nEnumerate trough objects\n"
+  example: []
+  syntax:
+    content: public IEnumerable<object> Objects { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{System.Object}
+    content.vb: Public ReadOnly Property Objects As IEnumerable(Of Object)
+  overload: wan24.Data.CsvTable.Objects*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: wan24.Data.CsvTable.AsObject``1(System.Int32,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  commentId: M:wan24.Data.CsvTable.AsObject``1(System.Int32,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  id: AsObject``1(System.Int32,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  parent: wan24.Data.CsvTable
+  langs:
+  - csharp
+  - vb
+  name: AsObject<T>(Int32, Dictionary<Int32, CsvMapping>)
+  nameWithType: CsvTable.AsObject<T>(Int32, Dictionary<Int32, CsvMapping>)
+  fullName: wan24.Data.CsvTable.AsObject<T>(System.Int32, System.Collections.Generic.Dictionary<System.Int32, wan24.Data.CsvMapping>)
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvTable.Map.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: AsObject
+    path: ../CSV-Parser/CsvTable.Map.cs
+    startLine: 32
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nGet a row as object\n"
+  example: []
+  syntax:
+    content: >-
+      public T AsObject<T>(int index, Dictionary<int, CsvMapping> mapping = null)
+          where T : new()
+    parameters:
+    - id: index
+      type: System.Int32
+      description: Index
+    - id: mapping
+      type: System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping}
+      description: Override mapping
+    typeParameters:
+    - id: T
+      description: Object type
+    return:
+      type: '{T}'
+      description: Object
+    content.vb: Public Function AsObject(Of T As New)(index As Integer, mapping As Dictionary(Of Integer, CsvMapping) = Nothing) As T
+  overload: wan24.Data.CsvTable.AsObject*
+  nameWithType.vb: CsvTable.AsObject(Of T)(Int32, Dictionary(Of Int32, CsvMapping))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: wan24.Data.CsvTable.AsObject(Of T)(System.Int32, System.Collections.Generic.Dictionary(Of System.Int32, wan24.Data.CsvMapping))
+  name.vb: AsObject(Of T)(Int32, Dictionary(Of Int32, CsvMapping))
+- uid: wan24.Data.CsvTable.AsObjects``1(System.Int32,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  commentId: M:wan24.Data.CsvTable.AsObjects``1(System.Int32,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  id: AsObjects``1(System.Int32,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  parent: wan24.Data.CsvTable
+  langs:
+  - csharp
+  - vb
+  name: AsObjects<T>(Int32, Dictionary<Int32, CsvMapping>)
+  nameWithType: CsvTable.AsObjects<T>(Int32, Dictionary<Int32, CsvMapping>)
+  fullName: wan24.Data.CsvTable.AsObjects<T>(System.Int32, System.Collections.Generic.Dictionary<System.Int32, wan24.Data.CsvMapping>)
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvTable.Map.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: AsObjects
+    path: ../CSV-Parser/CsvTable.Map.cs
+    startLine: 45
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nGet rows as object\n"
+  example: []
+  syntax:
+    content: >-
+      public IEnumerable<T> AsObjects<T>(int index, Dictionary<int, CsvMapping> mapping = null)
+          where T : new()
+    parameters:
+    - id: index
+      type: System.Int32
+      description: Index
+    - id: mapping
+      type: System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping}
+      description: Override mapping
+    typeParameters:
+    - id: T
+      description: Object type
+    return:
+      type: System.Collections.Generic.IEnumerable{{T}}
+      description: Object
+    content.vb: Public Function AsObjects(Of T As New)(index As Integer, mapping As Dictionary(Of Integer, CsvMapping) = Nothing) As IEnumerable(Of T)
+  overload: wan24.Data.CsvTable.AsObjects*
+  nameWithType.vb: CsvTable.AsObjects(Of T)(Int32, Dictionary(Of Int32, CsvMapping))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: wan24.Data.CsvTable.AsObjects(Of T)(System.Int32, System.Collections.Generic.Dictionary(Of System.Int32, wan24.Data.CsvMapping))
+  name.vb: AsObjects(Of T)(Int32, Dictionary(Of Int32, CsvMapping))
+- uid: wan24.Data.CsvTable.AsObject``1(System.Int32,``0,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  commentId: M:wan24.Data.CsvTable.AsObject``1(System.Int32,``0,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  id: AsObject``1(System.Int32,``0,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  parent: wan24.Data.CsvTable
+  langs:
+  - csharp
+  - vb
+  name: AsObject<T>(Int32, T, Dictionary<Int32, CsvMapping>)
+  nameWithType: CsvTable.AsObject<T>(Int32, T, Dictionary<Int32, CsvMapping>)
+  fullName: wan24.Data.CsvTable.AsObject<T>(System.Int32, T, System.Collections.Generic.Dictionary<System.Int32, wan24.Data.CsvMapping>)
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvTable.Map.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: AsObject
+    path: ../CSV-Parser/CsvTable.Map.cs
+    startLine: 59
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nGet a row as object\n"
+  example: []
+  syntax:
+    content: public T AsObject<T>(int index, T obj, Dictionary<int, CsvMapping> mapping = null)
+    parameters:
+    - id: index
+      type: System.Int32
+      description: Index
+    - id: obj
+      type: '{T}'
+      description: Object
+    - id: mapping
+      type: System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping}
+      description: Override mapping
+    typeParameters:
+    - id: T
+      description: Object type
+    return:
+      type: '{T}'
+      description: Object
+    content.vb: Public Function AsObject(Of T)(index As Integer, obj As T, mapping As Dictionary(Of Integer, CsvMapping) = Nothing) As T
+  overload: wan24.Data.CsvTable.AsObject*
+  nameWithType.vb: CsvTable.AsObject(Of T)(Int32, T, Dictionary(Of Int32, CsvMapping))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: wan24.Data.CsvTable.AsObject(Of T)(System.Int32, T, System.Collections.Generic.Dictionary(Of System.Int32, wan24.Data.CsvMapping))
+  name.vb: AsObject(Of T)(Int32, T, Dictionary(Of Int32, CsvMapping))
+- uid: wan24.Data.CsvTable.AsObject(System.Int32)
+  commentId: M:wan24.Data.CsvTable.AsObject(System.Int32)
+  id: AsObject(System.Int32)
+  parent: wan24.Data.CsvTable
+  langs:
+  - csharp
+  - vb
+  name: AsObject(Int32)
+  nameWithType: CsvTable.AsObject(Int32)
+  fullName: wan24.Data.CsvTable.AsObject(System.Int32)
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvTable.Map.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: AsObject
+    path: ../CSV-Parser/CsvTable.Map.cs
+    startLine: 71
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nGet an object from an object row (having the object type in the first field)\n"
+  example: []
+  syntax:
+    content: public object AsObject(int index)
+    parameters:
+    - id: index
+      type: System.Int32
+      description: Index
+    return:
+      type: System.Object
+      description: Object or <xref uid="langword_csharp_null" name="null" href=""></xref>
+    content.vb: Public Function AsObject(index As Integer) As Object
+  overload: wan24.Data.CsvTable.AsObject*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: wan24.Data.CsvTable.AddObjects``1(``0[])
+  commentId: M:wan24.Data.CsvTable.AddObjects``1(``0[])
+  id: AddObjects``1(``0[])
+  parent: wan24.Data.CsvTable
+  langs:
+  - csharp
+  - vb
+  name: AddObjects<T>(T[])
+  nameWithType: CsvTable.AddObjects<T>(T[])
+  fullName: wan24.Data.CsvTable.AddObjects<T>(T[])
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvTable.Map.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: AddObjects
+    path: ../CSV-Parser/CsvTable.Map.cs
+    startLine: 79
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nAdd rows from objects\n"
+  example: []
+  syntax:
+    content: public CsvTable AddObjects<T>(params T[] objs)
+    parameters:
+    - id: objs
+      type: '{T}[]'
+      description: Objects
+    typeParameters:
+    - id: T
+      description: Object type
+    return:
+      type: wan24.Data.CsvTable
+      description: This
+    content.vb: Public Function AddObjects(Of T)(ParamArray objs As T()) As CsvTable
+  overload: wan24.Data.CsvTable.AddObjects*
+  nameWithType.vb: CsvTable.AddObjects(Of T)(T())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: wan24.Data.CsvTable.AddObjects(Of T)(T())
+  name.vb: AddObjects(Of T)(T())
+- uid: wan24.Data.CsvTable.AddObjects``1(System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping},``0[])
+  commentId: M:wan24.Data.CsvTable.AddObjects``1(System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping},``0[])
+  id: AddObjects``1(System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping},``0[])
+  parent: wan24.Data.CsvTable
+  langs:
+  - csharp
+  - vb
+  name: AddObjects<T>(Dictionary<Int32, CsvMapping>, T[])
+  nameWithType: CsvTable.AddObjects<T>(Dictionary<Int32, CsvMapping>, T[])
+  fullName: wan24.Data.CsvTable.AddObjects<T>(System.Collections.Generic.Dictionary<System.Int32, wan24.Data.CsvMapping>, T[])
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvTable.Map.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: AddObjects
+    path: ../CSV-Parser/CsvTable.Map.cs
+    startLine: 93
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nAdd rows from objects\n"
+  example: []
+  syntax:
+    content: public CsvTable AddObjects<T>(Dictionary<int, CsvMapping> mapping, params T[] objs)
+    parameters:
+    - id: mapping
+      type: System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping}
+      description: Override mapping
+    - id: objs
+      type: '{T}[]'
+      description: Objects
+    typeParameters:
+    - id: T
+      description: Object type
+    return:
+      type: wan24.Data.CsvTable
+      description: This
+    content.vb: Public Function AddObjects(Of T)(mapping As Dictionary(Of Integer, CsvMapping), ParamArray objs As T()) As CsvTable
+  overload: wan24.Data.CsvTable.AddObjects*
+  nameWithType.vb: CsvTable.AddObjects(Of T)(Dictionary(Of Int32, CsvMapping), T())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: wan24.Data.CsvTable.AddObjects(Of T)(System.Collections.Generic.Dictionary(Of System.Int32, wan24.Data.CsvMapping), T())
+  name.vb: AddObjects(Of T)(Dictionary(Of Int32, CsvMapping), T())
+- uid: wan24.Data.CsvTable.AddObjects(System.Object[])
+  commentId: M:wan24.Data.CsvTable.AddObjects(System.Object[])
+  id: AddObjects(System.Object[])
+  parent: wan24.Data.CsvTable
+  langs:
+  - csharp
+  - vb
+  name: AddObjects(Object[])
+  nameWithType: CsvTable.AddObjects(Object[])
+  fullName: wan24.Data.CsvTable.AddObjects(System.Object[])
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvTable.Map.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: AddObjects
+    path: ../CSV-Parser/CsvTable.Map.cs
+    startLine: 105
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nAdd rows from objects with the type names in the first field\n"
+  example: []
+  syntax:
+    content: public CsvTable AddObjects(params object[] objs)
+    parameters:
+    - id: objs
+      type: System.Object[]
+      description: Objects
+    return:
+      type: wan24.Data.CsvTable
+      description: This
+    content.vb: Public Function AddObjects(ParamArray objs As Object()) As CsvTable
+  overload: wan24.Data.CsvTable.AddObjects*
+  nameWithType.vb: CsvTable.AddObjects(Object())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: wan24.Data.CsvTable.AddObjects(System.Object())
+  name.vb: AddObjects(Object())
+- uid: wan24.Data.CsvTable.CreateMapping
+  commentId: M:wan24.Data.CsvTable.CreateMapping
+  id: CreateMapping
+  parent: wan24.Data.CsvTable
+  langs:
+  - csharp
+  - vb
+  name: CreateMapping()
+  nameWithType: CsvTable.CreateMapping()
+  fullName: wan24.Data.CsvTable.CreateMapping()
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvTable.Map.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: CreateMapping
+    path: ../CSV-Parser/CsvTable.Map.cs
+    startLine: 116
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nCreate a mapping from the column headers (supports string properties only, will set the <code>Mapping</code> property)\n"
+  example: []
+  syntax:
+    content: public CsvTable CreateMapping()
+    return:
+      type: wan24.Data.CsvTable
+      description: This
+    content.vb: Public Function CreateMapping As CsvTable
+  overload: wan24.Data.CsvTable.CreateMapping*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
 references:
 - uid: wan24.Data
   commentId: N:wan24.Data
@@ -1533,6 +1886,259 @@ references:
   name: System.Collections
   nameWithType: System.Collections
   fullName: System.Collections
+- uid: wan24.Data.CsvTable.CreateHeaders*
+  commentId: Overload:wan24.Data.CsvTable.CreateHeaders
+  name: CreateHeaders
+  nameWithType: CsvTable.CreateHeaders
+  fullName: wan24.Data.CsvTable.CreateHeaders
+- uid: wan24.Data.CsvTable
+  commentId: T:wan24.Data.CsvTable
+  parent: wan24.Data
+  name: CsvTable
+  nameWithType: CsvTable
+  fullName: wan24.Data.CsvTable
+- uid: wan24.Data.CsvTable.AddColumn*
+  commentId: Overload:wan24.Data.CsvTable.AddColumn
+  name: AddColumn
+  nameWithType: CsvTable.AddColumn
+  fullName: wan24.Data.CsvTable.AddColumn
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: System.Func{System.Int32,System.String}
+  commentId: T:System.Func{System.Int32,System.String}
+  parent: System
+  definition: System.Func`2
+  name: Func<Int32, String>
+  nameWithType: Func<Int32, String>
+  fullName: System.Func<System.Int32, System.String>
+  nameWithType.vb: Func(Of Int32, String)
+  fullName.vb: System.Func(Of System.Int32, System.String)
+  name.vb: Func(Of Int32, String)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: wan24.Data.CsvTable.RemoveColumn*
+  commentId: Overload:wan24.Data.CsvTable.RemoveColumn
+  name: RemoveColumn
+  nameWithType: CsvTable.RemoveColumn
+  fullName: wan24.Data.CsvTable.RemoveColumn
+- uid: wan24.Data.CsvTable.MoveColumn*
+  commentId: Overload:wan24.Data.CsvTable.MoveColumn
+  name: MoveColumn
+  nameWithType: CsvTable.MoveColumn
+  fullName: wan24.Data.CsvTable.MoveColumn
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: wan24.Data.CsvTable.SwapColumn*
+  commentId: Overload:wan24.Data.CsvTable.SwapColumn
+  name: SwapColumn
+  nameWithType: CsvTable.SwapColumn
+  fullName: wan24.Data.CsvTable.SwapColumn
+- uid: wan24.Data.CsvTable.ReorderColumns*
+  commentId: Overload:wan24.Data.CsvTable.ReorderColumns
+  name: ReorderColumns
+  nameWithType: CsvTable.ReorderColumns
+  fullName: wan24.Data.CsvTable.ReorderColumns
+- uid: System.Int32[]
+  isExternal: true
+  name: Int32[]
+  nameWithType: Int32[]
+  fullName: System.Int32[]
+  nameWithType.vb: Int32()
+  fullName.vb: System.Int32()
+  name.vb: Int32()
+  spec.csharp:
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: wan24.Data.CsvTable.AddRow*
+  commentId: Overload:wan24.Data.CsvTable.AddRow
+  name: AddRow
+  nameWithType: CsvTable.AddRow
+  fullName: wan24.Data.CsvTable.AddRow
+- uid: System.Collections.Generic.IEnumerable{System.String}
+  commentId: T:System.Collections.Generic.IEnumerable{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<String>
+  nameWithType: IEnumerable<String>
+  fullName: System.Collections.Generic.IEnumerable<System.String>
+  nameWithType.vb: IEnumerable(Of String)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.String)
+  name.vb: IEnumerable(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: wan24.Data.CsvTable.Validate*
+  commentId: Overload:wan24.Data.CsvTable.Validate
+  name: Validate
+  nameWithType: CsvTable.Validate
+  fullName: wan24.Data.CsvTable.Validate
+- uid: wan24.Data.CsvTable.Clear*
+  commentId: Overload:wan24.Data.CsvTable.Clear
+  name: Clear
+  nameWithType: CsvTable.Clear
+  fullName: wan24.Data.CsvTable.Clear
 - uid: wan24.Data.CsvTable.#ctor*
   commentId: Overload:wan24.Data.CsvTable.#ctor
   name: CsvTable
@@ -1629,50 +2235,6 @@ references:
     name: Char
     nameWithType: Char
     fullName: System.Char
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Collections.Generic.IEnumerable{System.String}
-  commentId: T:System.Collections.Generic.IEnumerable{System.String}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.IEnumerable`1
-  name: IEnumerable<String>
-  nameWithType: IEnumerable<String>
-  fullName: System.Collections.Generic.IEnumerable<System.String>
-  nameWithType.vb: IEnumerable(Of String)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of System.String)
-  name.vb: IEnumerable(Of String)
-  spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
     isExternal: true
   - name: )
     nameWithType: )
@@ -1787,13 +2349,6 @@ references:
   name: Item
   nameWithType: CsvTable.Item
   fullName: wan24.Data.CsvTable.Item
-- uid: System.Int32
-  commentId: T:System.Int32
-  parent: System
-  isExternal: true
-  name: Int32
-  nameWithType: Int32
-  fullName: System.Int32
 - uid: System.String[]
   isExternal: true
   name: String[]
@@ -1825,13 +2380,6 @@ references:
   name: HasHeader
   nameWithType: CsvTable.HasHeader
   fullName: wan24.Data.CsvTable.HasHeader
-- uid: System.Boolean
-  commentId: T:System.Boolean
-  parent: System
-  isExternal: true
-  name: Boolean
-  nameWithType: Boolean
-  fullName: System.Boolean
 - uid: wan24.Data.CsvTable.FieldDelimiter*
   commentId: Overload:wan24.Data.CsvTable.FieldDelimiter
   name: FieldDelimiter
@@ -1995,513 +2543,6 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: wan24.Data.CsvTable.AsDictionaries*
-  commentId: Overload:wan24.Data.CsvTable.AsDictionaries
-  name: AsDictionaries
-  nameWithType: CsvTable.AsDictionaries
-  fullName: wan24.Data.CsvTable.AsDictionaries
-- uid: System.Collections.Generic.IEnumerable{System.Collections.Generic.Dictionary{System.String,System.String}}
-  commentId: T:System.Collections.Generic.IEnumerable{System.Collections.Generic.Dictionary{System.String,System.String}}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.IEnumerable`1
-  name: IEnumerable<Dictionary<String, String>>
-  nameWithType: IEnumerable<Dictionary<String, String>>
-  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.Dictionary<System.String, System.String>>
-  nameWithType.vb: IEnumerable(Of Dictionary(Of String, String))
-  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Collections.Generic.Dictionary(Of System.String, System.String))
-  name.vb: IEnumerable(Of Dictionary(Of String, String))
-  spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    nameWithType: Dictionary
-    fullName: System.Collections.Generic.Dictionary
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    nameWithType: Dictionary
-    fullName: System.Collections.Generic.Dictionary
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: wan24.Data.CsvTable.Mapping*
-  commentId: Overload:wan24.Data.CsvTable.Mapping
-  name: Mapping
-  nameWithType: CsvTable.Mapping
-  fullName: wan24.Data.CsvTable.Mapping
-- uid: System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping}
-  commentId: T:System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.Dictionary`2
-  name: Dictionary<Int32, CsvMapping>
-  nameWithType: Dictionary<Int32, CsvMapping>
-  fullName: System.Collections.Generic.Dictionary<System.Int32, wan24.Data.CsvMapping>
-  nameWithType.vb: Dictionary(Of Int32, CsvMapping)
-  fullName.vb: System.Collections.Generic.Dictionary(Of System.Int32, wan24.Data.CsvMapping)
-  name.vb: Dictionary(Of Int32, CsvMapping)
-  spec.csharp:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    nameWithType: Dictionary
-    fullName: System.Collections.Generic.Dictionary
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: System.Int32
-    name: Int32
-    nameWithType: Int32
-    fullName: System.Int32
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: wan24.Data.CsvMapping
-    name: CsvMapping
-    nameWithType: CsvMapping
-    fullName: wan24.Data.CsvMapping
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    nameWithType: Dictionary
-    fullName: System.Collections.Generic.Dictionary
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: System.Int32
-    name: Int32
-    nameWithType: Int32
-    fullName: System.Int32
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: wan24.Data.CsvMapping
-    name: CsvMapping
-    nameWithType: CsvMapping
-    fullName: wan24.Data.CsvMapping
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Collections.Generic.Dictionary`2
-  commentId: T:System.Collections.Generic.Dictionary`2
-  isExternal: true
-  name: Dictionary<TKey, TValue>
-  nameWithType: Dictionary<TKey, TValue>
-  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
-  nameWithType.vb: Dictionary(Of TKey, TValue)
-  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
-  name.vb: Dictionary(Of TKey, TValue)
-  spec.csharp:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    nameWithType: Dictionary
-    fullName: System.Collections.Generic.Dictionary
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: TKey
-    nameWithType: TKey
-    fullName: TKey
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - name: TValue
-    nameWithType: TValue
-    fullName: TValue
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    nameWithType: Dictionary
-    fullName: System.Collections.Generic.Dictionary
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: TKey
-    nameWithType: TKey
-    fullName: TKey
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - name: TValue
-    nameWithType: TValue
-    fullName: TValue
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: wan24.Data.CsvTable.CreateHeaders*
-  commentId: Overload:wan24.Data.CsvTable.CreateHeaders
-  name: CreateHeaders
-  nameWithType: CsvTable.CreateHeaders
-  fullName: wan24.Data.CsvTable.CreateHeaders
-- uid: wan24.Data.CsvTable
-  commentId: T:wan24.Data.CsvTable
-  parent: wan24.Data
-  name: CsvTable
-  nameWithType: CsvTable
-  fullName: wan24.Data.CsvTable
-- uid: wan24.Data.CsvTable.AddColumn*
-  commentId: Overload:wan24.Data.CsvTable.AddColumn
-  name: AddColumn
-  nameWithType: CsvTable.AddColumn
-  fullName: wan24.Data.CsvTable.AddColumn
-- uid: System.String
-  commentId: T:System.String
-  parent: System
-  isExternal: true
-  name: String
-  nameWithType: String
-  fullName: System.String
-- uid: System.Func{System.Int32,System.String}
-  commentId: T:System.Func{System.Int32,System.String}
-  parent: System
-  definition: System.Func`2
-  name: Func<Int32, String>
-  nameWithType: Func<Int32, String>
-  fullName: System.Func<System.Int32, System.String>
-  nameWithType.vb: Func(Of Int32, String)
-  fullName.vb: System.Func(Of System.Int32, System.String)
-  name.vb: Func(Of Int32, String)
-  spec.csharp:
-  - uid: System.Func`2
-    name: Func
-    nameWithType: Func
-    fullName: System.Func
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: System.Int32
-    name: Int32
-    nameWithType: Int32
-    fullName: System.Int32
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Func`2
-    name: Func
-    nameWithType: Func
-    fullName: System.Func
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: System.Int32
-    name: Int32
-    nameWithType: Int32
-    fullName: System.Int32
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Func`2
-  commentId: T:System.Func`2
-  isExternal: true
-  name: Func<T, TResult>
-  nameWithType: Func<T, TResult>
-  fullName: System.Func<T, TResult>
-  nameWithType.vb: Func(Of T, TResult)
-  fullName.vb: System.Func(Of T, TResult)
-  name.vb: Func(Of T, TResult)
-  spec.csharp:
-  - uid: System.Func`2
-    name: Func
-    nameWithType: Func
-    fullName: System.Func
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - name: TResult
-    nameWithType: TResult
-    fullName: TResult
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Func`2
-    name: Func
-    nameWithType: Func
-    fullName: System.Func
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - name: TResult
-    nameWithType: TResult
-    fullName: TResult
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: wan24.Data.CsvTable.RemoveColumn*
-  commentId: Overload:wan24.Data.CsvTable.RemoveColumn
-  name: RemoveColumn
-  nameWithType: CsvTable.RemoveColumn
-  fullName: wan24.Data.CsvTable.RemoveColumn
-- uid: wan24.Data.CsvTable.AddRow*
-  commentId: Overload:wan24.Data.CsvTable.AddRow
-  name: AddRow
-  nameWithType: CsvTable.AddRow
-  fullName: wan24.Data.CsvTable.AddRow
-- uid: wan24.Data.CsvTable.Validate*
-  commentId: Overload:wan24.Data.CsvTable.Validate
-  name: Validate
-  nameWithType: CsvTable.Validate
-  fullName: wan24.Data.CsvTable.Validate
-- uid: wan24.Data.CsvTable.Clear*
-  commentId: Overload:wan24.Data.CsvTable.Clear
-  name: Clear
-  nameWithType: CsvTable.Clear
-  fullName: wan24.Data.CsvTable.Clear
-- uid: wan24.Data.CsvTable.AsDictionary*
-  commentId: Overload:wan24.Data.CsvTable.AsDictionary
-  name: AsDictionary
-  nameWithType: CsvTable.AsDictionary
-  fullName: wan24.Data.CsvTable.AsDictionary
-- uid: System.Collections.Generic.Dictionary{System.String,System.String}
-  commentId: T:System.Collections.Generic.Dictionary{System.String,System.String}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.Dictionary`2
-  name: Dictionary<String, String>
-  nameWithType: Dictionary<String, String>
-  fullName: System.Collections.Generic.Dictionary<System.String, System.String>
-  nameWithType.vb: Dictionary(Of String, String)
-  fullName.vb: System.Collections.Generic.Dictionary(Of System.String, System.String)
-  name.vb: Dictionary(Of String, String)
-  spec.csharp:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    nameWithType: Dictionary
-    fullName: System.Collections.Generic.Dictionary
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.Dictionary`2
-    name: Dictionary
-    nameWithType: Dictionary
-    fullName: System.Collections.Generic.Dictionary
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: wan24.Data.CsvTable.AsObject*
-  commentId: Overload:wan24.Data.CsvTable.AsObject
-  name: AsObject
-  nameWithType: CsvTable.AsObject
-  fullName: wan24.Data.CsvTable.AsObject
-- uid: '{T}'
-  commentId: '!:T'
-  definition: T
-  name: T
-  nameWithType: T
-  fullName: T
-- uid: T
-  name: T
-  nameWithType: T
-  fullName: T
-- uid: wan24.Data.CsvTable.AsObjects*
-  commentId: Overload:wan24.Data.CsvTable.AsObjects
-  name: AsObjects
-  nameWithType: CsvTable.AsObjects
-  fullName: wan24.Data.CsvTable.AsObjects
-- uid: System.Collections.Generic.IEnumerable{{T}}
-  commentId: T:System.Collections.Generic.IEnumerable{``0}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.IEnumerable`1
-  name: IEnumerable<T>
-  nameWithType: IEnumerable<T>
-  fullName: System.Collections.Generic.IEnumerable<T>
-  nameWithType.vb: IEnumerable(Of T)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
-  name.vb: IEnumerable(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: wan24.Data.CsvTable.AddObjects*
-  commentId: Overload:wan24.Data.CsvTable.AddObjects
-  name: AddObjects
-  nameWithType: CsvTable.AddObjects
-  fullName: wan24.Data.CsvTable.AddObjects
-- uid: '{T}[]'
-  isExternal: true
-  name: T[]
-  nameWithType: T[]
-  fullName: T[]
-  nameWithType.vb: T()
-  fullName.vb: T()
-  name.vb: T()
-  spec.csharp:
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: '[]'
-    nameWithType: '[]'
-    fullName: '[]'
-  spec.vb:
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: ()
-    nameWithType: ()
-    fullName: ()
 - uid: wan24.Data.CsvTable.GetEnumerator*
   commentId: Overload:wan24.Data.CsvTable.GetEnumerator
   name: GetEnumerator
@@ -2747,3 +2788,436 @@ references:
   name: IEnumerator
   nameWithType: IEnumerator
   fullName: System.Collections.IEnumerator
+- uid: wan24.Data.CsvTable.AsDictionaries*
+  commentId: Overload:wan24.Data.CsvTable.AsDictionaries
+  name: AsDictionaries
+  nameWithType: CsvTable.AsDictionaries
+  fullName: wan24.Data.CsvTable.AsDictionaries
+- uid: System.Collections.Generic.IEnumerable{System.Collections.Generic.Dictionary{System.String,System.String}}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Collections.Generic.Dictionary{System.String,System.String}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<Dictionary<String, String>>
+  nameWithType: IEnumerable<Dictionary<String, String>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.Dictionary<System.String, System.String>>
+  nameWithType.vb: IEnumerable(Of Dictionary(Of String, String))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Collections.Generic.Dictionary(Of System.String, System.String))
+  name.vb: IEnumerable(Of Dictionary(Of String, String))
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: wan24.Data.CsvTable.AsDictionary*
+  commentId: Overload:wan24.Data.CsvTable.AsDictionary
+  name: AsDictionary
+  nameWithType: CsvTable.AsDictionary
+  fullName: wan24.Data.CsvTable.AsDictionary
+- uid: System.Collections.Generic.Dictionary{System.String,System.String}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  name: Dictionary<String, String>
+  nameWithType: Dictionary<String, String>
+  fullName: System.Collections.Generic.Dictionary<System.String, System.String>
+  nameWithType.vb: Dictionary(Of String, String)
+  fullName.vb: System.Collections.Generic.Dictionary(Of System.String, System.String)
+  name.vb: Dictionary(Of String, String)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.Dictionary`2
+  commentId: T:System.Collections.Generic.Dictionary`2
+  isExternal: true
+  name: Dictionary<TKey, TValue>
+  nameWithType: Dictionary<TKey, TValue>
+  fullName: System.Collections.Generic.Dictionary<TKey, TValue>
+  nameWithType.vb: Dictionary(Of TKey, TValue)
+  fullName.vb: System.Collections.Generic.Dictionary(Of TKey, TValue)
+  name.vb: Dictionary(Of TKey, TValue)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TKey
+    nameWithType: TKey
+    fullName: TKey
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TValue
+    nameWithType: TValue
+    fullName: TValue
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: wan24.Data.CsvTable.Mapping*
+  commentId: Overload:wan24.Data.CsvTable.Mapping
+  name: Mapping
+  nameWithType: CsvTable.Mapping
+  fullName: wan24.Data.CsvTable.Mapping
+- uid: System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping}
+  commentId: T:System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  name: Dictionary<Int32, CsvMapping>
+  nameWithType: Dictionary<Int32, CsvMapping>
+  fullName: System.Collections.Generic.Dictionary<System.Int32, wan24.Data.CsvMapping>
+  nameWithType.vb: Dictionary(Of Int32, CsvMapping)
+  fullName.vb: System.Collections.Generic.Dictionary(Of System.Int32, wan24.Data.CsvMapping)
+  name.vb: Dictionary(Of Int32, CsvMapping)
+  spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: wan24.Data.CsvMapping
+    name: CsvMapping
+    nameWithType: CsvMapping
+    fullName: wan24.Data.CsvMapping
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int32
+    name: Int32
+    nameWithType: Int32
+    fullName: System.Int32
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: wan24.Data.CsvMapping
+    name: CsvMapping
+    nameWithType: CsvMapping
+    fullName: wan24.Data.CsvMapping
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: wan24.Data.CsvTable.Objects*
+  commentId: Overload:wan24.Data.CsvTable.Objects
+  name: Objects
+  nameWithType: CsvTable.Objects
+  fullName: wan24.Data.CsvTable.Objects
+- uid: System.Collections.Generic.IEnumerable{System.Object}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Object}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<Object>
+  nameWithType: IEnumerable<Object>
+  fullName: System.Collections.Generic.IEnumerable<System.Object>
+  nameWithType.vb: IEnumerable(Of Object)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Object)
+  name.vb: IEnumerable(Of Object)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: wan24.Data.CsvTable.AsObject*
+  commentId: Overload:wan24.Data.CsvTable.AsObject
+  name: AsObject
+  nameWithType: CsvTable.AsObject
+  fullName: wan24.Data.CsvTable.AsObject
+- uid: '{T}'
+  commentId: '!:T'
+  definition: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: T
+  name: T
+  nameWithType: T
+  fullName: T
+- uid: wan24.Data.CsvTable.AsObjects*
+  commentId: Overload:wan24.Data.CsvTable.AsObjects
+  name: AsObjects
+  nameWithType: CsvTable.AsObjects
+  fullName: wan24.Data.CsvTable.AsObjects
+- uid: System.Collections.Generic.IEnumerable{{T}}
+  commentId: T:System.Collections.Generic.IEnumerable{``0}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: wan24.Data.CsvTable.AddObjects*
+  commentId: Overload:wan24.Data.CsvTable.AddObjects
+  name: AddObjects
+  nameWithType: CsvTable.AddObjects
+  fullName: wan24.Data.CsvTable.AddObjects
+- uid: '{T}[]'
+  isExternal: true
+  name: T[]
+  nameWithType: T[]
+  fullName: T[]
+  nameWithType.vb: T()
+  fullName.vb: T()
+  name.vb: T()
+  spec.csharp:
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: System.Object[]
+  isExternal: true
+  name: Object[]
+  nameWithType: Object[]
+  fullName: System.Object[]
+  nameWithType.vb: Object()
+  fullName.vb: System.Object()
+  name.vb: Object()
+  spec.csharp:
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: wan24.Data.CsvTable.CreateMapping*
+  commentId: Overload:wan24.Data.CsvTable.CreateMapping
+  name: CreateMapping
+  nameWithType: CsvTable.CreateMapping
+  fullName: wan24.Data.CsvTable.CreateMapping

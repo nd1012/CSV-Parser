@@ -5,6 +5,8 @@ items:
   id: wan24.Data
   children:
   - wan24.Data.CsvMapping
+  - wan24.Data.CsvMappingAttribute
+  - wan24.Data.CsvMappings
   - wan24.Data.CsvParser
   - wan24.Data.CsvStream
   - wan24.Data.CsvTable
@@ -20,9 +22,21 @@ items:
 references:
 - uid: wan24.Data.CsvMapping
   commentId: T:wan24.Data.CsvMapping
+  parent: wan24.Data
   name: CsvMapping
   nameWithType: CsvMapping
   fullName: wan24.Data.CsvMapping
+- uid: wan24.Data.CsvMappingAttribute
+  commentId: T:wan24.Data.CsvMappingAttribute
+  name: CsvMappingAttribute
+  nameWithType: CsvMappingAttribute
+  fullName: wan24.Data.CsvMappingAttribute
+- uid: wan24.Data.CsvMappings
+  commentId: T:wan24.Data.CsvMappings
+  parent: wan24.Data
+  name: CsvMappings
+  nameWithType: CsvMappings
+  fullName: wan24.Data.CsvMappings
 - uid: wan24.Data.CsvParser
   commentId: T:wan24.Data.CsvParser
   name: CsvParser

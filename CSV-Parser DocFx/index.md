@@ -54,6 +54,7 @@ The resulting CSV table object holds the parsed table data:
 - `CountRows`: row count
 - `Header`: column headers
 - `Rows`: row data
+- `Objects`: objects from rows having their type name in the first field
 - `AsDictionaries`: rows as dictionaries (having the headers as key)
 - `Mapping`: row <-> object mapping
 
@@ -62,6 +63,9 @@ The overloaded `ToString` method would create CSV table data from a CSV table. O
 - `CreateHeaders`: create automatic headers (0..n)
 - `AddColumn`: add/insert a column (optional using a field value factory)
 - `RemoveColumn`: remove a column
+- `MoveColumn`: move a column to another position
+- `SwapColumn`: swap two columns
+- `ReorderColumns`: apply a new column order
 - `AddRow`: add a validated row
 - `Validate`: validate the CSV table
 - `Clear`: clear row (and header) data
@@ -70,10 +74,11 @@ The overloaded `ToString` method would create CSV table data from a CSV table. O
 - `AsObject`: get a row mapped as/to an object
 - `AsObjects`: enumerate all rows as objects
 - `AddObjects`: map objects to a new row
+- `CreateMapping`: create a mapping from the column headers
 
 ### Reading/writing CSV data from/to a stream
 
-For memory saving stream usage, you might want to use the `CsvStream`:
+For memory saving stream operations, you might want to use the `CsvStream`:
 
 ```cs
 // Reading
@@ -97,9 +102,16 @@ using(CsvStream csv = new CsvStream(File.OpenWrite(@"path\to\data.csv")))
 
 Find all methods as asynchronous versions, having the `Async` postfix.
 
+For working with dictionaries, you can use the property `AsDictionaries` or the methods `ReadDictionary` and `ReadDictionaryAsync`.
+
+Per default when reading a header/row, the size is limited to 80KB. To adjust this value, you can modify these values at construction time:
+
+- `bufferSize`: Read buffer size in bytes (= maximum header/row size (default: 80KB))
+- `chunkSize`: Chunk size in bytes (how many bytes to read before trying to match a header/row from the buffer (default: 4KB))
+
 ### Reading/writing objects
 
-In order to be able to read/write objects, you need to define a mapping. This mapping is responsible for telling the CSV-Parser from which property to get a row field value, and to which property to write a field value from a row. The mapping also supports value factories which can convert a value.
+In order to be able to read/write objects, you need to define a mapping. This mapping is responsible for telling the CSV-Parser from which property to get a row field value, and to which property to write a field value from a row. The mapping also supports value factories which can convert a value, and value validation.
 
 ```cs
 Dictionary<int,CsvMapping> mapping = CsvParser.CreateMapping(
@@ -108,13 +120,62 @@ Dictionary<int,CsvMapping> mapping = CsvParser.CreateMapping(
 		Field = 0,
 		PropertyName = "AnyProperty",
 		ObjectValueFactory = ...,// Convert from string to property value (optional)
-		RowValueFactory = ...// Convert from property value to string (optional)
+		RowValueFactory = ...,// Convert from property value to string (optional)
+		PreValidation = ...,// Validate a string value from the CSV data
+		PostValidation = ...// Validate a converted value before setting it as object property value
 	},
 	...
 );
 ```
 
-Set this mapping to the `Mapping` property of a `CsvTable`, give it to the `CsvStream` constructor or as parameter to one of the `CsvParser` mapping methods.
+Set this mapping to the `Mapping` property of a `CsvTable`, give it to the `CsvStream` constructor, or as parameter to one of the object mapping methods, if available.
+
+For value conversion, `CsvParser.ObjectValueFactories` and `CsvParser.RowValueFactories` offer default converter functions for these types:
+
+- `bool`
+- `int`
+- `float`
+- `char`
+- `byte[]`
+
+You can extend them with any type.
+
+If you want to use the same mapping for the same type everytime when no other mapping was given, you can add a prepared mapping to `CsvParser.TypeMappings`.
+
+In an object you may use the `CsvMappingAttribute` attribute for properties that should be mapped:
+
+```cs
+[CsvMapping(0)]
+public string PropertyName { get; }
+```
+
+The attribute parameter is the index of the related CSV column. Then, for creating a mapping for your object, use `CsvParser.CreateMapping` without parameters. The returned mapping will be stored in the `CsvParser.TypeMappings`.
+
+Actually CSV is used to store a table. Each row has a fixed number of fields, maybe a header row is present. But you can use CSV also for storing mixed data - for example different objects:
+
+```cs
+// Assumed all used types are working with CsvMappingAttribute, 
+// or mapping are prepared in CsvParser.TypeMappings already
+
+// Writing objects
+using(CsvStream csv = new CsvStream(FileStream.OpenWrite('objects.csv)))
+{
+	csv.WriteObjectRows(anyObjectInstance, anotherTypeInstance);
+}
+
+// Reading objects
+using(CsvStream csv = new CsvStream(FileStream.OpenRead('objects.csv)))
+{
+	anyObjectInstance = csv.ReadObjectRow() as AnyType;
+	anotherTypeInstance = csv.ReadObjectRow() as AnotherType;
+}
+```
+
+**NOTE**: The field mapping needs to count from field index zero, because the mapper will get the row without the first field that contains the type name! This ensures that you can re-use the mapping everywhere.
+
+Using the streams `ObjectRows` property you can also enumerate trough objects from a CSV file.
+
+`CsvTable` implements `AsObject`, `AddObjects` and `Objects` for this purpose.
 
 ### Ignore errors in CSV data
 
@@ -125,3 +186,5 @@ CsvParser.IgnoreErrors = true;
 ```
 
 This setting will also ignore `null` headers/values, and if using `ToString` when a string delimiter is required to produce valid CSV data.
+
+**WARNING**: Ignoring errors may cause unknown failures and produce invalid CSV data!

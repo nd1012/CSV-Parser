@@ -8,6 +8,7 @@ items:
   - wan24.Data.CsvStream.#ctor(System.IO.Stream,System.Char,System.Nullable{System.Char},System.Int32,System.Int32,System.Boolean,System.Text.Encoding,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
   - wan24.Data.CsvStream.#ctor(System.IO.Stream,System.Collections.Generic.IEnumerable{System.String},System.Char,System.Nullable{System.Char},System.Int32,System.Int32,System.Boolean,System.Text.Encoding,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
   - wan24.Data.CsvStream.#ctor(System.IO.Stream,wan24.Data.CsvTable,System.Int32,System.Int32,System.Boolean,System.Text.Encoding,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  - wan24.Data.CsvStream.AsDictionaries
   - wan24.Data.CsvStream.BaseStream
   - wan24.Data.CsvStream.CanRead
   - wan24.Data.CsvStream.CanSeek
@@ -22,15 +23,22 @@ items:
   - wan24.Data.CsvStream.LeaveOpen
   - wan24.Data.CsvStream.Length
   - wan24.Data.CsvStream.Mapping
+  - wan24.Data.CsvStream.ObjectRows
+  - wan24.Data.CsvStream.PeekField
+  - wan24.Data.CsvStream.PeekFieldAsync
   - wan24.Data.CsvStream.Position
   - wan24.Data.CsvStream.Read(System.Byte[],System.Int32,System.Int32)
+  - wan24.Data.CsvStream.ReadDictionary
+  - wan24.Data.CsvStream.ReadDictionaryAsync
   - wan24.Data.CsvStream.ReadHeader
   - wan24.Data.CsvStream.ReadHeaderAsync
-  - wan24.Data.CsvStream.ReadObject``1
-  - wan24.Data.CsvStream.ReadObject``1(``0)
-  - wan24.Data.CsvStream.ReadObjectAsync``1
-  - wan24.Data.CsvStream.ReadObjectAsync``1(``0)
-  - wan24.Data.CsvStream.ReadObjects``1
+  - wan24.Data.CsvStream.ReadObject``1(``0,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  - wan24.Data.CsvStream.ReadObject``1(System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  - wan24.Data.CsvStream.ReadObjectAsync``1(``0,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  - wan24.Data.CsvStream.ReadObjectAsync``1(System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  - wan24.Data.CsvStream.ReadObjectRow
+  - wan24.Data.CsvStream.ReadObjectRowAsync
+  - wan24.Data.CsvStream.ReadObjects``1(System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
   - wan24.Data.CsvStream.ReadRow
   - wan24.Data.CsvStream.ReadRowAsync
   - wan24.Data.CsvStream.Rows
@@ -43,8 +51,11 @@ items:
   - wan24.Data.CsvStream.Write(System.Byte[],System.Int32,System.Int32)
   - wan24.Data.CsvStream.WriteHeader(System.Collections.Generic.IEnumerable{System.String})
   - wan24.Data.CsvStream.WriteHeaderAsync(System.Collections.Generic.IEnumerable{System.String})
+  - wan24.Data.CsvStream.WriteObjectRows(System.Object[])
+  - wan24.Data.CsvStream.WriteObjectRowsAsync(System.Object[])
   - wan24.Data.CsvStream.WriteObjects``1(``0[])
   - wan24.Data.CsvStream.WriteObjectsAsync``1(``0[])
+  - wan24.Data.CsvStream.WriteObjectsAsync``1(System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping},``0[])
   - wan24.Data.CsvStream.WriteRows(System.Collections.Generic.IEnumerable{System.String}[])
   - wan24.Data.CsvStream.WriteRowsAsync(System.Collections.Generic.IEnumerable{System.String}[])
   langs:
@@ -56,12 +67,12 @@ items:
   type: Class
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: CSV-Parser/CsvStream.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CsvStream
-    path: ../CSV-Parser/CsvStream.cs
-    startLine: 12
+    path: ../CSV-Parser/CsvStream.Map.cs
+    startLine: 10
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -122,6 +133,568 @@ items:
   modifiers.vb:
   - Public
   - Class
+- uid: wan24.Data.CsvStream.Rows
+  commentId: P:wan24.Data.CsvStream.Rows
+  id: Rows
+  parent: wan24.Data.CsvStream
+  langs:
+  - csharp
+  - vb
+  name: Rows
+  nameWithType: CsvStream.Rows
+  fullName: wan24.Data.CsvStream.Rows
+  type: Property
+  source:
+    remote:
+      path: CSV-Parser/CsvStream.Common.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: Rows
+    path: ../CSV-Parser/CsvStream.Common.cs
+    startLine: 36
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nEnumerable rows\n"
+  example: []
+  syntax:
+    content: public IEnumerable<string[]> Rows { get; }
+    parameters: []
+    return:
+      type: System.Collections.Generic.IEnumerable{System.String[]}
+    content.vb: Public ReadOnly Property Rows As IEnumerable(Of String())
+  overload: wan24.Data.CsvStream.Rows*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: wan24.Data.CsvStream.WriteHeader(System.Collections.Generic.IEnumerable{System.String})
+  commentId: M:wan24.Data.CsvStream.WriteHeader(System.Collections.Generic.IEnumerable{System.String})
+  id: WriteHeader(System.Collections.Generic.IEnumerable{System.String})
+  parent: wan24.Data.CsvStream
+  langs:
+  - csharp
+  - vb
+  name: WriteHeader(IEnumerable<String>)
+  nameWithType: CsvStream.WriteHeader(IEnumerable<String>)
+  fullName: wan24.Data.CsvStream.WriteHeader(System.Collections.Generic.IEnumerable<System.String>)
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvStream.Common.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: WriteHeader
+    path: ../CSV-Parser/CsvStream.Common.cs
+    startLine: 50
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nWrite the header\n"
+  example: []
+  syntax:
+    content: public CsvStream WriteHeader(IEnumerable<string> header = null)
+    parameters:
+    - id: header
+      type: System.Collections.Generic.IEnumerable{System.String}
+      description: Header
+    return:
+      type: wan24.Data.CsvStream
+      description: This
+    content.vb: Public Function WriteHeader(header As IEnumerable(Of String) = Nothing) As CsvStream
+  overload: wan24.Data.CsvStream.WriteHeader*
+  nameWithType.vb: CsvStream.WriteHeader(IEnumerable(Of String))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: wan24.Data.CsvStream.WriteHeader(System.Collections.Generic.IEnumerable(Of System.String))
+  name.vb: WriteHeader(IEnumerable(Of String))
+- uid: wan24.Data.CsvStream.WriteRows(System.Collections.Generic.IEnumerable{System.String}[])
+  commentId: M:wan24.Data.CsvStream.WriteRows(System.Collections.Generic.IEnumerable{System.String}[])
+  id: WriteRows(System.Collections.Generic.IEnumerable{System.String}[])
+  parent: wan24.Data.CsvStream
+  langs:
+  - csharp
+  - vb
+  name: WriteRows(IEnumerable<String>[])
+  nameWithType: CsvStream.WriteRows(IEnumerable<String>[])
+  fullName: wan24.Data.CsvStream.WriteRows(System.Collections.Generic.IEnumerable<System.String>[])
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvStream.Common.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: WriteRows
+    path: ../CSV-Parser/CsvStream.Common.cs
+    startLine: 79
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nWrite rows\n"
+  example: []
+  syntax:
+    content: public CsvStream WriteRows(params IEnumerable<string>[] rows)
+    parameters:
+    - id: rows
+      type: System.Collections.Generic.IEnumerable{System.String}[]
+      description: Rows
+    return:
+      type: wan24.Data.CsvStream
+      description: This
+    content.vb: Public Function WriteRows(ParamArray rows As IEnumerable(Of String)()) As CsvStream
+  overload: wan24.Data.CsvStream.WriteRows*
+  nameWithType.vb: CsvStream.WriteRows(IEnumerable(Of String)())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: wan24.Data.CsvStream.WriteRows(System.Collections.Generic.IEnumerable(Of System.String)())
+  name.vb: WriteRows(IEnumerable(Of String)())
+- uid: wan24.Data.CsvStream.ReadHeader
+  commentId: M:wan24.Data.CsvStream.ReadHeader
+  id: ReadHeader
+  parent: wan24.Data.CsvStream
+  langs:
+  - csharp
+  - vb
+  name: ReadHeader()
+  nameWithType: CsvStream.ReadHeader()
+  fullName: wan24.Data.CsvStream.ReadHeader()
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvStream.Common.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: ReadHeader
+    path: ../CSV-Parser/CsvStream.Common.cs
+    startLine: 108
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nRead the header\n"
+  example: []
+  syntax:
+    content: public string[] ReadHeader()
+    return:
+      type: System.String[]
+      description: Column headers
+    content.vb: Public Function ReadHeader As String()
+  overload: wan24.Data.CsvStream.ReadHeader*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: wan24.Data.CsvStream.SkipHeader
+  commentId: M:wan24.Data.CsvStream.SkipHeader
+  id: SkipHeader
+  parent: wan24.Data.CsvStream
+  langs:
+  - csharp
+  - vb
+  name: SkipHeader()
+  nameWithType: CsvStream.SkipHeader()
+  fullName: wan24.Data.CsvStream.SkipHeader()
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvStream.Common.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: SkipHeader
+    path: ../CSV-Parser/CsvStream.Common.cs
+    startLine: 138
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nSkip the header line\n"
+  example: []
+  syntax:
+    content: public CsvStream SkipHeader()
+    return:
+      type: wan24.Data.CsvStream
+      description: This
+    content.vb: Public Function SkipHeader As CsvStream
+  overload: wan24.Data.CsvStream.SkipHeader*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: wan24.Data.CsvStream.PeekField
+  commentId: M:wan24.Data.CsvStream.PeekField
+  id: PeekField
+  parent: wan24.Data.CsvStream
+  langs:
+  - csharp
+  - vb
+  name: PeekField()
+  nameWithType: CsvStream.PeekField()
+  fullName: wan24.Data.CsvStream.PeekField()
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvStream.Common.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: PeekField
+    path: ../CSV-Parser/CsvStream.Common.cs
+    startLine: 150
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nPeek the first field of the next row\n"
+  example: []
+  syntax:
+    content: public string PeekField()
+    return:
+      type: System.String
+      description: Field or <xref uid="langword_csharp_null" name="null" href=""></xref>
+    content.vb: Public Function PeekField As String
+  overload: wan24.Data.CsvStream.PeekField*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: wan24.Data.CsvStream.ReadRow
+  commentId: M:wan24.Data.CsvStream.ReadRow
+  id: ReadRow
+  parent: wan24.Data.CsvStream
+  langs:
+  - csharp
+  - vb
+  name: ReadRow()
+  nameWithType: CsvStream.ReadRow()
+  fullName: wan24.Data.CsvStream.ReadRow()
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvStream.Common.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: ReadRow
+    path: ../CSV-Parser/CsvStream.Common.cs
+    startLine: 181
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nRead a row\n"
+  example: []
+  syntax:
+    content: public string[] ReadRow()
+    return:
+      type: System.String[]
+      description: Row or <xref uid="langword_csharp_null" name="null" href=""></xref>
+    content.vb: Public Function ReadRow As String()
+  overload: wan24.Data.CsvStream.ReadRow*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: wan24.Data.CsvStream.WriteHeaderAsync(System.Collections.Generic.IEnumerable{System.String})
+  commentId: M:wan24.Data.CsvStream.WriteHeaderAsync(System.Collections.Generic.IEnumerable{System.String})
+  id: WriteHeaderAsync(System.Collections.Generic.IEnumerable{System.String})
+  parent: wan24.Data.CsvStream
+  langs:
+  - csharp
+  - vb
+  name: WriteHeaderAsync(IEnumerable<String>)
+  nameWithType: CsvStream.WriteHeaderAsync(IEnumerable<String>)
+  fullName: wan24.Data.CsvStream.WriteHeaderAsync(System.Collections.Generic.IEnumerable<System.String>)
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvStream.Common.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: WriteHeaderAsync
+    path: ../CSV-Parser/CsvStream.Common.cs
+    startLine: 211
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nWrite the header\n"
+  example: []
+  syntax:
+    content: public async Task<CsvStream> WriteHeaderAsync(IEnumerable<string> header = null)
+    parameters:
+    - id: header
+      type: System.Collections.Generic.IEnumerable{System.String}
+      description: Header
+    return:
+      type: System.Threading.Tasks.Task{wan24.Data.CsvStream}
+      description: This
+    content.vb: Public Function WriteHeaderAsync(header As IEnumerable(Of String) = Nothing) As Task(Of CsvStream)
+  overload: wan24.Data.CsvStream.WriteHeaderAsync*
+  nameWithType.vb: CsvStream.WriteHeaderAsync(IEnumerable(Of String))
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+  fullName.vb: wan24.Data.CsvStream.WriteHeaderAsync(System.Collections.Generic.IEnumerable(Of System.String))
+  name.vb: WriteHeaderAsync(IEnumerable(Of String))
+- uid: wan24.Data.CsvStream.WriteRowsAsync(System.Collections.Generic.IEnumerable{System.String}[])
+  commentId: M:wan24.Data.CsvStream.WriteRowsAsync(System.Collections.Generic.IEnumerable{System.String}[])
+  id: WriteRowsAsync(System.Collections.Generic.IEnumerable{System.String}[])
+  parent: wan24.Data.CsvStream
+  langs:
+  - csharp
+  - vb
+  name: WriteRowsAsync(IEnumerable<String>[])
+  nameWithType: CsvStream.WriteRowsAsync(IEnumerable<String>[])
+  fullName: wan24.Data.CsvStream.WriteRowsAsync(System.Collections.Generic.IEnumerable<System.String>[])
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvStream.Common.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: WriteRowsAsync
+    path: ../CSV-Parser/CsvStream.Common.cs
+    startLine: 240
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nWrite rows\n"
+  example: []
+  syntax:
+    content: public async Task<CsvStream> WriteRowsAsync(params IEnumerable<string>[] rows)
+    parameters:
+    - id: rows
+      type: System.Collections.Generic.IEnumerable{System.String}[]
+      description: Rows
+    return:
+      type: System.Threading.Tasks.Task{wan24.Data.CsvStream}
+      description: This
+    content.vb: Public Function WriteRowsAsync(ParamArray rows As IEnumerable(Of String)()) As Task(Of CsvStream)
+  overload: wan24.Data.CsvStream.WriteRowsAsync*
+  nameWithType.vb: CsvStream.WriteRowsAsync(IEnumerable(Of String)())
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+  fullName.vb: wan24.Data.CsvStream.WriteRowsAsync(System.Collections.Generic.IEnumerable(Of System.String)())
+  name.vb: WriteRowsAsync(IEnumerable(Of String)())
+- uid: wan24.Data.CsvStream.ReadHeaderAsync
+  commentId: M:wan24.Data.CsvStream.ReadHeaderAsync
+  id: ReadHeaderAsync
+  parent: wan24.Data.CsvStream
+  langs:
+  - csharp
+  - vb
+  name: ReadHeaderAsync()
+  nameWithType: CsvStream.ReadHeaderAsync()
+  fullName: wan24.Data.CsvStream.ReadHeaderAsync()
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvStream.Common.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: ReadHeaderAsync
+    path: ../CSV-Parser/CsvStream.Common.cs
+    startLine: 269
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nRead the header\n"
+  example: []
+  syntax:
+    content: public async Task<string[]> ReadHeaderAsync()
+    return:
+      type: System.Threading.Tasks.Task{System.String[]}
+      description: Column headers
+    content.vb: Public Function ReadHeaderAsync As Task(Of String())
+  overload: wan24.Data.CsvStream.ReadHeaderAsync*
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+- uid: wan24.Data.CsvStream.PeekFieldAsync
+  commentId: M:wan24.Data.CsvStream.PeekFieldAsync
+  id: PeekFieldAsync
+  parent: wan24.Data.CsvStream
+  langs:
+  - csharp
+  - vb
+  name: PeekFieldAsync()
+  nameWithType: CsvStream.PeekFieldAsync()
+  fullName: wan24.Data.CsvStream.PeekFieldAsync()
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvStream.Common.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: PeekFieldAsync
+    path: ../CSV-Parser/CsvStream.Common.cs
+    startLine: 299
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nPeek the first field of the next row\n"
+  example: []
+  syntax:
+    content: public async Task<string> PeekFieldAsync()
+    return:
+      type: System.Threading.Tasks.Task{System.String}
+      description: Field or <xref uid="langword_csharp_null" name="null" href=""></xref>
+    content.vb: Public Function PeekFieldAsync As Task(Of String)
+  overload: wan24.Data.CsvStream.PeekFieldAsync*
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+- uid: wan24.Data.CsvStream.ReadRowAsync
+  commentId: M:wan24.Data.CsvStream.ReadRowAsync
+  id: ReadRowAsync
+  parent: wan24.Data.CsvStream
+  langs:
+  - csharp
+  - vb
+  name: ReadRowAsync()
+  nameWithType: CsvStream.ReadRowAsync()
+  fullName: wan24.Data.CsvStream.ReadRowAsync()
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvStream.Common.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: ReadRowAsync
+    path: ../CSV-Parser/CsvStream.Common.cs
+    startLine: 330
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nRead a row\n"
+  example: []
+  syntax:
+    content: public async Task<string[]> ReadRowAsync()
+    return:
+      type: System.Threading.Tasks.Task{System.String[]}
+      description: Row or <xref uid="langword_csharp_null" name="null" href=""></xref>
+    content.vb: Public Function ReadRowAsync As Task(Of String())
+  overload: wan24.Data.CsvStream.ReadRowAsync*
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+- uid: wan24.Data.CsvStream.SkipHeaderAsync
+  commentId: M:wan24.Data.CsvStream.SkipHeaderAsync
+  id: SkipHeaderAsync
+  parent: wan24.Data.CsvStream
+  langs:
+  - csharp
+  - vb
+  name: SkipHeaderAsync()
+  nameWithType: CsvStream.SkipHeaderAsync()
+  fullName: wan24.Data.CsvStream.SkipHeaderAsync()
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvStream.Common.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: SkipHeaderAsync
+    path: ../CSV-Parser/CsvStream.Common.cs
+    startLine: 359
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nSkip the header line\n"
+  example: []
+  syntax:
+    content: public async Task<CsvStream> SkipHeaderAsync()
+    return:
+      type: System.Threading.Tasks.Task{wan24.Data.CsvStream}
+      description: This
+    content.vb: Public Function SkipHeaderAsync As Task(Of CsvStream)
+  overload: wan24.Data.CsvStream.SkipHeaderAsync*
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+- uid: wan24.Data.CsvStream.CountRows
+  commentId: M:wan24.Data.CsvStream.CountRows
+  id: CountRows
+  parent: wan24.Data.CsvStream
+  langs:
+  - csharp
+  - vb
+  name: CountRows()
+  nameWithType: CsvStream.CountRows()
+  fullName: wan24.Data.CsvStream.CountRows()
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvStream.Count.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: CountRows
+    path: ../CSV-Parser/CsvStream.Count.cs
+    startLine: 13
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nGet the row count (will reset the stream offset)\n"
+  example: []
+  syntax:
+    content: public long CountRows()
+    return:
+      type: System.Int64
+      description: Row count
+    content.vb: Public Function CountRows As Long
+  overload: wan24.Data.CsvStream.CountRows*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: wan24.Data.CsvStream.CountRowsAsync
+  commentId: M:wan24.Data.CsvStream.CountRowsAsync
+  id: CountRowsAsync
+  parent: wan24.Data.CsvStream
+  langs:
+  - csharp
+  - vb
+  name: CountRowsAsync()
+  nameWithType: CsvStream.CountRowsAsync()
+  fullName: wan24.Data.CsvStream.CountRowsAsync()
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvStream.Count.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: CountRowsAsync
+    path: ../CSV-Parser/CsvStream.Count.cs
+    startLine: 31
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nGet the row count (will reset the stream offset)\n"
+  example: []
+  syntax:
+    content: public async Task<long> CountRowsAsync()
+    return:
+      type: System.Threading.Tasks.Task{System.Int64}
+      description: Row count
+    content.vb: Public Function CountRowsAsync As Task(Of Long)
+  overload: wan24.Data.CsvStream.CountRowsAsync*
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
 - uid: wan24.Data.CsvStream.#ctor(System.IO.Stream,System.Char,System.Nullable{System.Char},System.Int32,System.Int32,System.Boolean,System.Text.Encoding,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
   commentId: M:wan24.Data.CsvStream.#ctor(System.IO.Stream,System.Char,System.Nullable{System.Char},System.Int32,System.Int32,System.Boolean,System.Text.Encoding,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
   id: '#ctor(System.IO.Stream,System.Char,System.Nullable{System.Char},System.Int32,System.Int32,System.Boolean,System.Text.Encoding,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})'
@@ -140,7 +713,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: .ctor
     path: ../CSV-Parser/CsvStream.cs
-    startLine: 50
+    startLine: 30
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -200,7 +773,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: .ctor
     path: ../CSV-Parser/CsvStream.cs
-    startLine: 84
+    startLine: 68
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -257,7 +830,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: .ctor
     path: ../CSV-Parser/CsvStream.cs
-    startLine: 108
+    startLine: 106
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -320,7 +893,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: StringEncoding
     path: ../CSV-Parser/CsvStream.cs
-    startLine: 128
+    startLine: 139
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -333,43 +906,6 @@ items:
       type: System.Text.Encoding
     content.vb: Public ReadOnly Property StringEncoding As Encoding
   overload: wan24.Data.CsvStream.StringEncoding*
-  modifiers.csharp:
-  - public
-  - get
-  modifiers.vb:
-  - Public
-  - ReadOnly
-- uid: wan24.Data.CsvStream.Mapping
-  commentId: P:wan24.Data.CsvStream.Mapping
-  id: Mapping
-  parent: wan24.Data.CsvStream
-  langs:
-  - csharp
-  - vb
-  name: Mapping
-  nameWithType: CsvStream.Mapping
-  fullName: wan24.Data.CsvStream.Mapping
-  type: Property
-  source:
-    remote:
-      path: CSV-Parser/CsvStream.cs
-      branch: main
-      repo: https://github.com/nd1012/CSV-Parser.git
-    id: Mapping
-    path: ../CSV-Parser/CsvStream.cs
-    startLine: 133
-  assemblies:
-  - csvparser
-  namespace: wan24.Data
-  summary: "\nObject mapping\n"
-  example: []
-  syntax:
-    content: public Dictionary<int, CsvMapping> Mapping { get; }
-    parameters: []
-    return:
-      type: System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping}
-    content.vb: Public ReadOnly Property Mapping As Dictionary(Of Integer, CsvMapping)
-  overload: wan24.Data.CsvStream.Mapping*
   modifiers.csharp:
   - public
   - get
@@ -394,7 +930,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: BaseStream
     path: ../CSV-Parser/CsvStream.cs
-    startLine: 138
+    startLine: 144
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -431,7 +967,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: LeaveOpen
     path: ../CSV-Parser/CsvStream.cs
-    startLine: 143
+    startLine: 149
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -468,7 +1004,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: FieldDelimiter
     path: ../CSV-Parser/CsvStream.cs
-    startLine: 148
+    startLine: 154
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -505,7 +1041,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: StringDelimiter
     path: ../CSV-Parser/CsvStream.cs
-    startLine: 153
+    startLine: 159
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -542,7 +1078,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Header
     path: ../CSV-Parser/CsvStream.cs
-    startLine: 158
+    startLine: 164
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -579,7 +1115,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ColumnCount
     path: ../CSV-Parser/CsvStream.cs
-    startLine: 163
+    startLine: 169
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -598,43 +1134,6 @@ items:
   - set
   modifiers.vb:
   - Public
-- uid: wan24.Data.CsvStream.Rows
-  commentId: P:wan24.Data.CsvStream.Rows
-  id: Rows
-  parent: wan24.Data.CsvStream
-  langs:
-  - csharp
-  - vb
-  name: Rows
-  nameWithType: CsvStream.Rows
-  fullName: wan24.Data.CsvStream.Rows
-  type: Property
-  source:
-    remote:
-      path: CSV-Parser/CsvStream.cs
-      branch: main
-      repo: https://github.com/nd1012/CSV-Parser.git
-    id: Rows
-    path: ../CSV-Parser/CsvStream.cs
-    startLine: 183
-  assemblies:
-  - csvparser
-  namespace: wan24.Data
-  summary: "\nEnumerable rows\n"
-  example: []
-  syntax:
-    content: public IEnumerable<string[]> Rows { get; }
-    parameters: []
-    return:
-      type: System.Collections.Generic.IEnumerable{System.String[]}
-    content.vb: Public ReadOnly Property Rows As IEnumerable(Of String())
-  overload: wan24.Data.CsvStream.Rows*
-  modifiers.csharp:
-  - public
-  - get
-  modifiers.vb:
-  - Public
-  - ReadOnly
 - uid: wan24.Data.CsvStream.CanRead
   commentId: P:wan24.Data.CsvStream.CanRead
   id: CanRead
@@ -653,7 +1152,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CanRead
     path: ../CSV-Parser/CsvStream.cs
-    startLine: 193
+    startLine: 187
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -692,7 +1191,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CanSeek
     path: ../CSV-Parser/CsvStream.cs
-    startLine: 196
+    startLine: 190
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -731,7 +1230,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CanWrite
     path: ../CSV-Parser/CsvStream.cs
-    startLine: 199
+    startLine: 193
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -770,7 +1269,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Length
     path: ../CSV-Parser/CsvStream.cs
-    startLine: 202
+    startLine: 196
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -809,7 +1308,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Position
     path: ../CSV-Parser/CsvStream.cs
-    startLine: 205
+    startLine: 199
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -848,7 +1347,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Flush
     path: ../CSV-Parser/CsvStream.cs
-    startLine: 208
+    startLine: 202
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -882,7 +1381,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Read
     path: ../CSV-Parser/CsvStream.cs
-    startLine: 211
+    startLine: 205
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -928,7 +1427,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Seek
     path: ../CSV-Parser/CsvStream.cs
-    startLine: 214
+    startLine: 208
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -969,7 +1468,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: SetLength
     path: ../CSV-Parser/CsvStream.cs
-    startLine: 217
+    startLine: 211
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -1006,7 +1505,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Write
     path: ../CSV-Parser/CsvStream.cs
-    startLine: 220
+    startLine: 214
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -1050,7 +1549,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Close
     path: ../CSV-Parser/CsvStream.cs
-    startLine: 223
+    startLine: 217
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -1066,460 +1565,188 @@ items:
   modifiers.vb:
   - Public
   - Overrides
-- uid: wan24.Data.CsvStream.WriteHeader(System.Collections.Generic.IEnumerable{System.String})
-  commentId: M:wan24.Data.CsvStream.WriteHeader(System.Collections.Generic.IEnumerable{System.String})
-  id: WriteHeader(System.Collections.Generic.IEnumerable{System.String})
+- uid: wan24.Data.CsvStream.AsDictionaries
+  commentId: P:wan24.Data.CsvStream.AsDictionaries
+  id: AsDictionaries
   parent: wan24.Data.CsvStream
   langs:
   - csharp
   - vb
-  name: WriteHeader(IEnumerable<String>)
-  nameWithType: CsvStream.WriteHeader(IEnumerable<String>)
-  fullName: wan24.Data.CsvStream.WriteHeader(System.Collections.Generic.IEnumerable<System.String>)
-  type: Method
+  name: AsDictionaries
+  nameWithType: CsvStream.AsDictionaries
+  fullName: wan24.Data.CsvStream.AsDictionaries
+  type: Property
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: CSV-Parser/CsvStream.Dictionary.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
-    id: WriteHeader
-    path: ../CSV-Parser/CsvStream.cs
-    startLine: 236
+    id: AsDictionaries
+    path: ../CSV-Parser/CsvStream.Dictionary.cs
+    startLine: 14
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nWrite the header\n"
+  summary: "\nRows as dictionaries\n"
   example: []
   syntax:
-    content: public CsvStream WriteHeader(IEnumerable<string> header = null)
-    parameters:
-    - id: header
-      type: System.Collections.Generic.IEnumerable{System.String}
-      description: Header
+    content: public IEnumerable<Dictionary<string, string>> AsDictionaries { get; }
+    parameters: []
     return:
-      type: wan24.Data.CsvStream
-      description: This
-    content.vb: Public Function WriteHeader(header As IEnumerable(Of String) = Nothing) As CsvStream
-  overload: wan24.Data.CsvStream.WriteHeader*
-  nameWithType.vb: CsvStream.WriteHeader(IEnumerable(Of String))
+      type: System.Collections.Generic.IEnumerable{System.Collections.Generic.Dictionary{System.String,System.String}}
+    content.vb: Public ReadOnly Property AsDictionaries As IEnumerable(Of Dictionary(Of String, String))
+  overload: wan24.Data.CsvStream.AsDictionaries*
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+- uid: wan24.Data.CsvStream.ReadDictionary
+  commentId: M:wan24.Data.CsvStream.ReadDictionary
+  id: ReadDictionary
+  parent: wan24.Data.CsvStream
+  langs:
+  - csharp
+  - vb
+  name: ReadDictionary()
+  nameWithType: CsvStream.ReadDictionary()
+  fullName: wan24.Data.CsvStream.ReadDictionary()
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvStream.Dictionary.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: ReadDictionary
+    path: ../CSV-Parser/CsvStream.Dictionary.cs
+    startLine: 26
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nGet a row as dictionary\n"
+  example: []
+  syntax:
+    content: public Dictionary<string, string> ReadDictionary()
+    return:
+      type: System.Collections.Generic.Dictionary{System.String,System.String}
+      description: Dictionary or <xref uid="langword_csharp_null" name="null" href=""></xref>
+    content.vb: Public Function ReadDictionary As Dictionary(Of String, String)
+  overload: wan24.Data.CsvStream.ReadDictionary*
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: wan24.Data.CsvStream.WriteHeader(System.Collections.Generic.IEnumerable(Of System.String))
-  name.vb: WriteHeader(IEnumerable(Of String))
-- uid: wan24.Data.CsvStream.WriteRows(System.Collections.Generic.IEnumerable{System.String}[])
-  commentId: M:wan24.Data.CsvStream.WriteRows(System.Collections.Generic.IEnumerable{System.String}[])
-  id: WriteRows(System.Collections.Generic.IEnumerable{System.String}[])
+- uid: wan24.Data.CsvStream.ReadDictionaryAsync
+  commentId: M:wan24.Data.CsvStream.ReadDictionaryAsync
+  id: ReadDictionaryAsync
   parent: wan24.Data.CsvStream
   langs:
   - csharp
   - vb
-  name: WriteRows(IEnumerable<String>[])
-  nameWithType: CsvStream.WriteRows(IEnumerable<String>[])
-  fullName: wan24.Data.CsvStream.WriteRows(System.Collections.Generic.IEnumerable<System.String>[])
+  name: ReadDictionaryAsync()
+  nameWithType: CsvStream.ReadDictionaryAsync()
+  fullName: wan24.Data.CsvStream.ReadDictionaryAsync()
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: CSV-Parser/CsvStream.Dictionary.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
-    id: WriteRows
-    path: ../CSV-Parser/CsvStream.cs
-    startLine: 265
+    id: ReadDictionaryAsync
+    path: ../CSV-Parser/CsvStream.Dictionary.cs
+    startLine: 37
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nWrite rows\n"
+  summary: "\nGet a row as dictionary\n"
   example: []
   syntax:
-    content: public CsvStream WriteRows(params IEnumerable<string>[] rows)
-    parameters:
-    - id: rows
-      type: System.Collections.Generic.IEnumerable{System.String}[]
-      description: Rows
+    content: public async Task<Dictionary<string, string>> ReadDictionaryAsync()
     return:
-      type: wan24.Data.CsvStream
-      description: This
-    content.vb: Public Function WriteRows(ParamArray rows As IEnumerable(Of String)()) As CsvStream
-  overload: wan24.Data.CsvStream.WriteRows*
-  nameWithType.vb: CsvStream.WriteRows(IEnumerable(Of String)())
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-  fullName.vb: wan24.Data.CsvStream.WriteRows(System.Collections.Generic.IEnumerable(Of System.String)())
-  name.vb: WriteRows(IEnumerable(Of String)())
-- uid: wan24.Data.CsvStream.ReadHeader
-  commentId: M:wan24.Data.CsvStream.ReadHeader
-  id: ReadHeader
-  parent: wan24.Data.CsvStream
-  langs:
-  - csharp
-  - vb
-  name: ReadHeader()
-  nameWithType: CsvStream.ReadHeader()
-  fullName: wan24.Data.CsvStream.ReadHeader()
-  type: Method
-  source:
-    remote:
-      path: CSV-Parser/CsvStream.cs
-      branch: main
-      repo: https://github.com/nd1012/CSV-Parser.git
-    id: ReadHeader
-    path: ../CSV-Parser/CsvStream.cs
-    startLine: 294
-  assemblies:
-  - csvparser
-  namespace: wan24.Data
-  summary: "\nRead the header\n"
-  example: []
-  syntax:
-    content: public string[] ReadHeader()
-    return:
-      type: System.String[]
-      description: Column headers
-    content.vb: Public Function ReadHeader As String()
-  overload: wan24.Data.CsvStream.ReadHeader*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: wan24.Data.CsvStream.SkipHeader
-  commentId: M:wan24.Data.CsvStream.SkipHeader
-  id: SkipHeader
-  parent: wan24.Data.CsvStream
-  langs:
-  - csharp
-  - vb
-  name: SkipHeader()
-  nameWithType: CsvStream.SkipHeader()
-  fullName: wan24.Data.CsvStream.SkipHeader()
-  type: Method
-  source:
-    remote:
-      path: CSV-Parser/CsvStream.cs
-      branch: main
-      repo: https://github.com/nd1012/CSV-Parser.git
-    id: SkipHeader
-    path: ../CSV-Parser/CsvStream.cs
-    startLine: 324
-  assemblies:
-  - csvparser
-  namespace: wan24.Data
-  summary: "\nSkip the header line\n"
-  example: []
-  syntax:
-    content: public CsvStream SkipHeader()
-    return:
-      type: wan24.Data.CsvStream
-      description: This
-    content.vb: Public Function SkipHeader As CsvStream
-  overload: wan24.Data.CsvStream.SkipHeader*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: wan24.Data.CsvStream.ReadRow
-  commentId: M:wan24.Data.CsvStream.ReadRow
-  id: ReadRow
-  parent: wan24.Data.CsvStream
-  langs:
-  - csharp
-  - vb
-  name: ReadRow()
-  nameWithType: CsvStream.ReadRow()
-  fullName: wan24.Data.CsvStream.ReadRow()
-  type: Method
-  source:
-    remote:
-      path: CSV-Parser/CsvStream.cs
-      branch: main
-      repo: https://github.com/nd1012/CSV-Parser.git
-    id: ReadRow
-    path: ../CSV-Parser/CsvStream.cs
-    startLine: 336
-  assemblies:
-  - csvparser
-  namespace: wan24.Data
-  summary: "\nRead a row\n"
-  example: []
-  syntax:
-    content: public string[] ReadRow()
-    return:
-      type: System.String[]
-      description: Row or <xref uid="langword_csharp_null" name="null" href=""></xref>
-    content.vb: Public Function ReadRow As String()
-  overload: wan24.Data.CsvStream.ReadRow*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: wan24.Data.CsvStream.WriteHeaderAsync(System.Collections.Generic.IEnumerable{System.String})
-  commentId: M:wan24.Data.CsvStream.WriteHeaderAsync(System.Collections.Generic.IEnumerable{System.String})
-  id: WriteHeaderAsync(System.Collections.Generic.IEnumerable{System.String})
-  parent: wan24.Data.CsvStream
-  langs:
-  - csharp
-  - vb
-  name: WriteHeaderAsync(IEnumerable<String>)
-  nameWithType: CsvStream.WriteHeaderAsync(IEnumerable<String>)
-  fullName: wan24.Data.CsvStream.WriteHeaderAsync(System.Collections.Generic.IEnumerable<System.String>)
-  type: Method
-  source:
-    remote:
-      path: CSV-Parser/CsvStream.cs
-      branch: main
-      repo: https://github.com/nd1012/CSV-Parser.git
-    id: WriteHeaderAsync
-    path: ../CSV-Parser/CsvStream.cs
-    startLine: 366
-  assemblies:
-  - csvparser
-  namespace: wan24.Data
-  summary: "\nWrite the header\n"
-  example: []
-  syntax:
-    content: public async Task<CsvStream> WriteHeaderAsync(IEnumerable<string> header = null)
-    parameters:
-    - id: header
-      type: System.Collections.Generic.IEnumerable{System.String}
-      description: Header
-    return:
-      type: System.Threading.Tasks.Task{wan24.Data.CsvStream}
-      description: This
-    content.vb: Public Function WriteHeaderAsync(header As IEnumerable(Of String) = Nothing) As Task(Of CsvStream)
-  overload: wan24.Data.CsvStream.WriteHeaderAsync*
-  nameWithType.vb: CsvStream.WriteHeaderAsync(IEnumerable(Of String))
+      type: System.Threading.Tasks.Task{System.Collections.Generic.Dictionary{System.String,System.String}}
+      description: Dictionary or <xref uid="langword_csharp_null" name="null" href=""></xref>
+    content.vb: Public Function ReadDictionaryAsync As Task(Of Dictionary(Of String, String))
+  overload: wan24.Data.CsvStream.ReadDictionaryAsync*
   modifiers.csharp:
   - public
   - async
   modifiers.vb:
   - Public
-  fullName.vb: wan24.Data.CsvStream.WriteHeaderAsync(System.Collections.Generic.IEnumerable(Of System.String))
-  name.vb: WriteHeaderAsync(IEnumerable(Of String))
-- uid: wan24.Data.CsvStream.WriteRowsAsync(System.Collections.Generic.IEnumerable{System.String}[])
-  commentId: M:wan24.Data.CsvStream.WriteRowsAsync(System.Collections.Generic.IEnumerable{System.String}[])
-  id: WriteRowsAsync(System.Collections.Generic.IEnumerable{System.String}[])
+- uid: wan24.Data.CsvStream.Mapping
+  commentId: P:wan24.Data.CsvStream.Mapping
+  id: Mapping
   parent: wan24.Data.CsvStream
   langs:
   - csharp
   - vb
-  name: WriteRowsAsync(IEnumerable<String>[])
-  nameWithType: CsvStream.WriteRowsAsync(IEnumerable<String>[])
-  fullName: wan24.Data.CsvStream.WriteRowsAsync(System.Collections.Generic.IEnumerable<System.String>[])
-  type: Method
+  name: Mapping
+  nameWithType: CsvStream.Mapping
+  fullName: wan24.Data.CsvStream.Mapping
+  type: Property
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: CSV-Parser/CsvStream.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
-    id: WriteRowsAsync
-    path: ../CSV-Parser/CsvStream.cs
-    startLine: 395
+    id: Mapping
+    path: ../CSV-Parser/CsvStream.Map.cs
+    startLine: 15
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nWrite rows\n"
+  summary: "\nObject mapping\n"
   example: []
   syntax:
-    content: public async Task<CsvStream> WriteRowsAsync(params IEnumerable<string>[] rows)
-    parameters:
-    - id: rows
-      type: System.Collections.Generic.IEnumerable{System.String}[]
-      description: Rows
+    content: public Dictionary<int, CsvMapping> Mapping { get; }
+    parameters: []
     return:
-      type: System.Threading.Tasks.Task{wan24.Data.CsvStream}
-      description: This
-    content.vb: Public Function WriteRowsAsync(ParamArray rows As IEnumerable(Of String)()) As Task(Of CsvStream)
-  overload: wan24.Data.CsvStream.WriteRowsAsync*
-  nameWithType.vb: CsvStream.WriteRowsAsync(IEnumerable(Of String)())
+      type: System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping}
+    content.vb: Public ReadOnly Property Mapping As Dictionary(Of Integer, CsvMapping)
+  overload: wan24.Data.CsvStream.Mapping*
   modifiers.csharp:
   - public
-  - async
+  - get
   modifiers.vb:
   - Public
-  fullName.vb: wan24.Data.CsvStream.WriteRowsAsync(System.Collections.Generic.IEnumerable(Of System.String)())
-  name.vb: WriteRowsAsync(IEnumerable(Of String)())
-- uid: wan24.Data.CsvStream.ReadHeaderAsync
-  commentId: M:wan24.Data.CsvStream.ReadHeaderAsync
-  id: ReadHeaderAsync
+  - ReadOnly
+- uid: wan24.Data.CsvStream.ObjectRows
+  commentId: P:wan24.Data.CsvStream.ObjectRows
+  id: ObjectRows
   parent: wan24.Data.CsvStream
   langs:
   - csharp
   - vb
-  name: ReadHeaderAsync()
-  nameWithType: CsvStream.ReadHeaderAsync()
-  fullName: wan24.Data.CsvStream.ReadHeaderAsync()
-  type: Method
+  name: ObjectRows
+  nameWithType: CsvStream.ObjectRows
+  fullName: wan24.Data.CsvStream.ObjectRows
+  type: Property
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: CSV-Parser/CsvStream.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
-    id: ReadHeaderAsync
-    path: ../CSV-Parser/CsvStream.cs
-    startLine: 424
+    id: ObjectRows
+    path: ../CSV-Parser/CsvStream.Map.cs
+    startLine: 20
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nRead the header\n"
+  summary: "\nEnumerate object rows\n"
   example: []
   syntax:
-    content: public async Task<string[]> ReadHeaderAsync()
+    content: public IEnumerable<object> ObjectRows { get; }
+    parameters: []
     return:
-      type: System.Threading.Tasks.Task{System.String[]}
-      description: Column headers
-    content.vb: Public Function ReadHeaderAsync As Task(Of String())
-  overload: wan24.Data.CsvStream.ReadHeaderAsync*
+      type: System.Collections.Generic.IEnumerable{System.Object}
+    content.vb: Public ReadOnly Property ObjectRows As IEnumerable(Of Object)
+  overload: wan24.Data.CsvStream.ObjectRows*
   modifiers.csharp:
   - public
-  - async
+  - get
   modifiers.vb:
   - Public
-- uid: wan24.Data.CsvStream.ReadRowAsync
-  commentId: M:wan24.Data.CsvStream.ReadRowAsync
-  id: ReadRowAsync
-  parent: wan24.Data.CsvStream
-  langs:
-  - csharp
-  - vb
-  name: ReadRowAsync()
-  nameWithType: CsvStream.ReadRowAsync()
-  fullName: wan24.Data.CsvStream.ReadRowAsync()
-  type: Method
-  source:
-    remote:
-      path: CSV-Parser/CsvStream.cs
-      branch: main
-      repo: https://github.com/nd1012/CSV-Parser.git
-    id: ReadRowAsync
-    path: ../CSV-Parser/CsvStream.cs
-    startLine: 454
-  assemblies:
-  - csvparser
-  namespace: wan24.Data
-  summary: "\nRead a row\n"
-  example: []
-  syntax:
-    content: public async Task<string[]> ReadRowAsync()
-    return:
-      type: System.Threading.Tasks.Task{System.String[]}
-      description: Row or <xref uid="langword_csharp_null" name="null" href=""></xref>
-    content.vb: Public Function ReadRowAsync As Task(Of String())
-  overload: wan24.Data.CsvStream.ReadRowAsync*
-  modifiers.csharp:
-  - public
-  - async
-  modifiers.vb:
-  - Public
-- uid: wan24.Data.CsvStream.SkipHeaderAsync
-  commentId: M:wan24.Data.CsvStream.SkipHeaderAsync
-  id: SkipHeaderAsync
-  parent: wan24.Data.CsvStream
-  langs:
-  - csharp
-  - vb
-  name: SkipHeaderAsync()
-  nameWithType: CsvStream.SkipHeaderAsync()
-  fullName: wan24.Data.CsvStream.SkipHeaderAsync()
-  type: Method
-  source:
-    remote:
-      path: CSV-Parser/CsvStream.cs
-      branch: main
-      repo: https://github.com/nd1012/CSV-Parser.git
-    id: SkipHeaderAsync
-    path: ../CSV-Parser/CsvStream.cs
-    startLine: 483
-  assemblies:
-  - csvparser
-  namespace: wan24.Data
-  summary: "\nSkip the header line\n"
-  example: []
-  syntax:
-    content: public async Task<CsvStream> SkipHeaderAsync()
-    return:
-      type: System.Threading.Tasks.Task{wan24.Data.CsvStream}
-      description: This
-    content.vb: Public Function SkipHeaderAsync As Task(Of CsvStream)
-  overload: wan24.Data.CsvStream.SkipHeaderAsync*
-  modifiers.csharp:
-  - public
-  - async
-  modifiers.vb:
-  - Public
-- uid: wan24.Data.CsvStream.CountRows
-  commentId: M:wan24.Data.CsvStream.CountRows
-  id: CountRows
-  parent: wan24.Data.CsvStream
-  langs:
-  - csharp
-  - vb
-  name: CountRows()
-  nameWithType: CsvStream.CountRows()
-  fullName: wan24.Data.CsvStream.CountRows()
-  type: Method
-  source:
-    remote:
-      path: CSV-Parser/CsvStream.cs
-      branch: main
-      repo: https://github.com/nd1012/CSV-Parser.git
-    id: CountRows
-    path: ../CSV-Parser/CsvStream.cs
-    startLine: 495
-  assemblies:
-  - csvparser
-  namespace: wan24.Data
-  summary: "\nGet the row count (will reset the stream offset)\n"
-  example: []
-  syntax:
-    content: public long CountRows()
-    return:
-      type: System.Int64
-      description: Row count
-    content.vb: Public Function CountRows As Long
-  overload: wan24.Data.CsvStream.CountRows*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-- uid: wan24.Data.CsvStream.CountRowsAsync
-  commentId: M:wan24.Data.CsvStream.CountRowsAsync
-  id: CountRowsAsync
-  parent: wan24.Data.CsvStream
-  langs:
-  - csharp
-  - vb
-  name: CountRowsAsync()
-  nameWithType: CsvStream.CountRowsAsync()
-  fullName: wan24.Data.CsvStream.CountRowsAsync()
-  type: Method
-  source:
-    remote:
-      path: CSV-Parser/CsvStream.cs
-      branch: main
-      repo: https://github.com/nd1012/CSV-Parser.git
-    id: CountRowsAsync
-    path: ../CSV-Parser/CsvStream.cs
-    startLine: 513
-  assemblies:
-  - csvparser
-  namespace: wan24.Data
-  summary: "\nGet the row count (will reset the stream offset)\n"
-  example: []
-  syntax:
-    content: public async Task<long> CountRowsAsync()
-    return:
-      type: System.Threading.Tasks.Task{System.Int64}
-      description: Row count
-    content.vb: Public Function CountRowsAsync As Task(Of Long)
-  overload: wan24.Data.CsvStream.CountRowsAsync*
-  modifiers.csharp:
-  - public
-  - async
-  modifiers.vb:
-  - Public
+  - ReadOnly
 - uid: wan24.Data.CsvStream.WriteObjects``1(``0[])
   commentId: M:wan24.Data.CsvStream.WriteObjects``1(``0[])
   id: WriteObjects``1(``0[])
@@ -1533,12 +1760,12 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: CSV-Parser/CsvStream.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: WriteObjects
-    path: ../CSV-Parser/CsvStream.cs
-    startLine: 535
+    path: ../CSV-Parser/CsvStream.Map.cs
+    startLine: 34
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -1565,25 +1792,67 @@ items:
   - Public
   fullName.vb: wan24.Data.CsvStream.WriteObjects(Of T)(T())
   name.vb: WriteObjects(Of T)(T())
-- uid: wan24.Data.CsvStream.ReadObject``1
-  commentId: M:wan24.Data.CsvStream.ReadObject``1
-  id: ReadObject``1
+- uid: wan24.Data.CsvStream.WriteObjectRows(System.Object[])
+  commentId: M:wan24.Data.CsvStream.WriteObjectRows(System.Object[])
+  id: WriteObjectRows(System.Object[])
   parent: wan24.Data.CsvStream
   langs:
   - csharp
   - vb
-  name: ReadObject<T>()
-  nameWithType: CsvStream.ReadObject<T>()
-  fullName: wan24.Data.CsvStream.ReadObject<T>()
+  name: WriteObjectRows(Object[])
+  nameWithType: CsvStream.WriteObjectRows(Object[])
+  fullName: wan24.Data.CsvStream.WriteObjectRows(System.Object[])
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: CSV-Parser/CsvStream.Map.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: WriteObjectRows
+    path: ../CSV-Parser/CsvStream.Map.cs
+    startLine: 47
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nWrite \n"
+  example: []
+  syntax:
+    content: public CsvStream WriteObjectRows(params object[] objs)
+    parameters:
+    - id: objs
+      type: System.Object[]
+      description: Objects
+    return:
+      type: wan24.Data.CsvStream
+      description: This
+    content.vb: Public Function WriteObjectRows(ParamArray objs As Object()) As CsvStream
+  overload: wan24.Data.CsvStream.WriteObjectRows*
+  nameWithType.vb: CsvStream.WriteObjectRows(Object())
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: wan24.Data.CsvStream.WriteObjectRows(System.Object())
+  name.vb: WriteObjectRows(Object())
+- uid: wan24.Data.CsvStream.ReadObject``1(System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  commentId: M:wan24.Data.CsvStream.ReadObject``1(System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  id: ReadObject``1(System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  parent: wan24.Data.CsvStream
+  langs:
+  - csharp
+  - vb
+  name: ReadObject<T>(Dictionary<Int32, CsvMapping>)
+  nameWithType: CsvStream.ReadObject<T>(Dictionary<Int32, CsvMapping>)
+  fullName: wan24.Data.CsvStream.ReadObject<T>(System.Collections.Generic.Dictionary<System.Int32, wan24.Data.CsvMapping>)
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvStream.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ReadObject
-    path: ../CSV-Parser/CsvStream.cs
-    startLine: 549
+    path: ../CSV-Parser/CsvStream.Map.cs
+    startLine: 69
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -1591,87 +1860,94 @@ items:
   example: []
   syntax:
     content: >-
-      public T ReadObject<T>()
+      public T ReadObject<T>(Dictionary<int, CsvMapping> mapping = null)
           where T : new()
+    parameters:
+    - id: mapping
+      type: System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping}
+      description: Override mapping
     typeParameters:
     - id: T
       description: Object type
     return:
       type: '{T}'
       description: Object
-    content.vb: Public Function ReadObject(Of T As New) As T
+    content.vb: Public Function ReadObject(Of T As New)(mapping As Dictionary(Of Integer, CsvMapping) = Nothing) As T
   overload: wan24.Data.CsvStream.ReadObject*
-  nameWithType.vb: CsvStream.ReadObject(Of T)()
+  nameWithType.vb: CsvStream.ReadObject(Of T)(Dictionary(Of Int32, CsvMapping))
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: wan24.Data.CsvStream.ReadObject(Of T)()
-  name.vb: ReadObject(Of T)()
-- uid: wan24.Data.CsvStream.ReadObject``1(``0)
-  commentId: M:wan24.Data.CsvStream.ReadObject``1(``0)
-  id: ReadObject``1(``0)
+  fullName.vb: wan24.Data.CsvStream.ReadObject(Of T)(System.Collections.Generic.Dictionary(Of System.Int32, wan24.Data.CsvMapping))
+  name.vb: ReadObject(Of T)(Dictionary(Of Int32, CsvMapping))
+- uid: wan24.Data.CsvStream.ReadObject``1(``0,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  commentId: M:wan24.Data.CsvStream.ReadObject``1(``0,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  id: ReadObject``1(``0,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
   parent: wan24.Data.CsvStream
   langs:
   - csharp
   - vb
-  name: ReadObject<T>(T)
-  nameWithType: CsvStream.ReadObject<T>(T)
-  fullName: wan24.Data.CsvStream.ReadObject<T>(T)
+  name: ReadObject<T>(T, Dictionary<Int32, CsvMapping>)
+  nameWithType: CsvStream.ReadObject<T>(T, Dictionary<Int32, CsvMapping>)
+  fullName: wan24.Data.CsvStream.ReadObject<T>(T, System.Collections.Generic.Dictionary<System.Int32, wan24.Data.CsvMapping>)
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: CSV-Parser/CsvStream.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ReadObject
-    path: ../CSV-Parser/CsvStream.cs
-    startLine: 562
+    path: ../CSV-Parser/CsvStream.Map.cs
+    startLine: 82
   assemblies:
   - csvparser
   namespace: wan24.Data
   summary: "\nRead an object\n"
   example: []
   syntax:
-    content: public T ReadObject<T>(T obj)
+    content: public T ReadObject<T>(T obj, Dictionary<int, CsvMapping> mapping = null)
     parameters:
     - id: obj
       type: '{T}'
       description: Object
+    - id: mapping
+      type: System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping}
+      description: Override mapping
     typeParameters:
     - id: T
       description: Object type
     return:
       type: '{T}'
       description: Object
-    content.vb: Public Function ReadObject(Of T)(obj As T) As T
+    content.vb: Public Function ReadObject(Of T)(obj As T, mapping As Dictionary(Of Integer, CsvMapping) = Nothing) As T
   overload: wan24.Data.CsvStream.ReadObject*
-  nameWithType.vb: CsvStream.ReadObject(Of T)(T)
+  nameWithType.vb: CsvStream.ReadObject(Of T)(T, Dictionary(Of Int32, CsvMapping))
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: wan24.Data.CsvStream.ReadObject(Of T)(T)
-  name.vb: ReadObject(Of T)(T)
-- uid: wan24.Data.CsvStream.ReadObjects``1
-  commentId: M:wan24.Data.CsvStream.ReadObjects``1
-  id: ReadObjects``1
+  fullName.vb: wan24.Data.CsvStream.ReadObject(Of T)(T, System.Collections.Generic.Dictionary(Of System.Int32, wan24.Data.CsvMapping))
+  name.vb: ReadObject(Of T)(T, Dictionary(Of Int32, CsvMapping))
+- uid: wan24.Data.CsvStream.ReadObjects``1(System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  commentId: M:wan24.Data.CsvStream.ReadObjects``1(System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  id: ReadObjects``1(System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
   parent: wan24.Data.CsvStream
   langs:
   - csharp
   - vb
-  name: ReadObjects<T>()
-  nameWithType: CsvStream.ReadObjects<T>()
-  fullName: wan24.Data.CsvStream.ReadObjects<T>()
+  name: ReadObjects<T>(Dictionary<Int32, CsvMapping>)
+  nameWithType: CsvStream.ReadObjects<T>(Dictionary<Int32, CsvMapping>)
+  fullName: wan24.Data.CsvStream.ReadObjects<T>(System.Collections.Generic.Dictionary<System.Int32, wan24.Data.CsvMapping>)
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: CSV-Parser/CsvStream.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ReadObjects
-    path: ../CSV-Parser/CsvStream.cs
-    startLine: 574
+    path: ../CSV-Parser/CsvStream.Map.cs
+    startLine: 94
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -1679,23 +1955,62 @@ items:
   example: []
   syntax:
     content: >-
-      public IEnumerable<T> ReadObjects<T>()
+      public IEnumerable<T> ReadObjects<T>(Dictionary<int, CsvMapping> mapping = null)
           where T : new()
+    parameters:
+    - id: mapping
+      type: System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping}
+      description: Override mapping
     typeParameters:
     - id: T
       description: Object type
     return:
       type: System.Collections.Generic.IEnumerable{{T}}
       description: Objects
-    content.vb: Public Function ReadObjects(Of T As New) As IEnumerable(Of T)
+    content.vb: Public Function ReadObjects(Of T As New)(mapping As Dictionary(Of Integer, CsvMapping) = Nothing) As IEnumerable(Of T)
   overload: wan24.Data.CsvStream.ReadObjects*
-  nameWithType.vb: CsvStream.ReadObjects(Of T)()
+  nameWithType.vb: CsvStream.ReadObjects(Of T)(Dictionary(Of Int32, CsvMapping))
   modifiers.csharp:
   - public
   modifiers.vb:
   - Public
-  fullName.vb: wan24.Data.CsvStream.ReadObjects(Of T)()
-  name.vb: ReadObjects(Of T)()
+  fullName.vb: wan24.Data.CsvStream.ReadObjects(Of T)(System.Collections.Generic.Dictionary(Of System.Int32, wan24.Data.CsvMapping))
+  name.vb: ReadObjects(Of T)(Dictionary(Of Int32, CsvMapping))
+- uid: wan24.Data.CsvStream.ReadObjectRow
+  commentId: M:wan24.Data.CsvStream.ReadObjectRow
+  id: ReadObjectRow
+  parent: wan24.Data.CsvStream
+  langs:
+  - csharp
+  - vb
+  name: ReadObjectRow()
+  nameWithType: CsvStream.ReadObjectRow()
+  fullName: wan24.Data.CsvStream.ReadObjectRow()
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvStream.Map.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: ReadObjectRow
+    path: ../CSV-Parser/CsvStream.Map.cs
+    startLine: 104
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nRead an object row\n"
+  example: []
+  syntax:
+    content: public object ReadObjectRow()
+    return:
+      type: System.Object
+      description: Object
+    content.vb: Public Function ReadObjectRow As Object
+  overload: wan24.Data.CsvStream.ReadObjectRow*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
 - uid: wan24.Data.CsvStream.WriteObjectsAsync``1(``0[])
   commentId: M:wan24.Data.CsvStream.WriteObjectsAsync``1(``0[])
   id: WriteObjectsAsync``1(``0[])
@@ -1709,12 +2024,12 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: CSV-Parser/CsvStream.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: WriteObjectsAsync
-    path: ../CSV-Parser/CsvStream.cs
-    startLine: 587
+    path: ../CSV-Parser/CsvStream.Map.cs
+    startLine: 117
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -1742,25 +2057,117 @@ items:
   - Public
   fullName.vb: wan24.Data.CsvStream.WriteObjectsAsync(Of T)(T())
   name.vb: WriteObjectsAsync(Of T)(T())
-- uid: wan24.Data.CsvStream.ReadObjectAsync``1
-  commentId: M:wan24.Data.CsvStream.ReadObjectAsync``1
-  id: ReadObjectAsync``1
+- uid: wan24.Data.CsvStream.WriteObjectsAsync``1(System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping},``0[])
+  commentId: M:wan24.Data.CsvStream.WriteObjectsAsync``1(System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping},``0[])
+  id: WriteObjectsAsync``1(System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping},``0[])
   parent: wan24.Data.CsvStream
   langs:
   - csharp
   - vb
-  name: ReadObjectAsync<T>()
-  nameWithType: CsvStream.ReadObjectAsync<T>()
-  fullName: wan24.Data.CsvStream.ReadObjectAsync<T>()
+  name: WriteObjectsAsync<T>(Dictionary<Int32, CsvMapping>, T[])
+  nameWithType: CsvStream.WriteObjectsAsync<T>(Dictionary<Int32, CsvMapping>, T[])
+  fullName: wan24.Data.CsvStream.WriteObjectsAsync<T>(System.Collections.Generic.Dictionary<System.Int32, wan24.Data.CsvMapping>, T[])
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: CSV-Parser/CsvStream.Map.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: WriteObjectsAsync
+    path: ../CSV-Parser/CsvStream.Map.cs
+    startLine: 132
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nWrite objects\n"
+  example: []
+  syntax:
+    content: public async Task<CsvStream> WriteObjectsAsync<T>(Dictionary<int, CsvMapping> mapping, params T[] objs)
+    parameters:
+    - id: mapping
+      type: System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping}
+      description: Override mapping
+    - id: objs
+      type: '{T}[]'
+      description: Objects
+    typeParameters:
+    - id: T
+      description: Object type
+    return:
+      type: System.Threading.Tasks.Task{wan24.Data.CsvStream}
+      description: This
+    content.vb: Public Function WriteObjectsAsync(Of T)(mapping As Dictionary(Of Integer, CsvMapping), ParamArray objs As T()) As Task(Of CsvStream)
+  overload: wan24.Data.CsvStream.WriteObjectsAsync*
+  nameWithType.vb: CsvStream.WriteObjectsAsync(Of T)(Dictionary(Of Int32, CsvMapping), T())
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+  fullName.vb: wan24.Data.CsvStream.WriteObjectsAsync(Of T)(System.Collections.Generic.Dictionary(Of System.Int32, wan24.Data.CsvMapping), T())
+  name.vb: WriteObjectsAsync(Of T)(Dictionary(Of Int32, CsvMapping), T())
+- uid: wan24.Data.CsvStream.WriteObjectRowsAsync(System.Object[])
+  commentId: M:wan24.Data.CsvStream.WriteObjectRowsAsync(System.Object[])
+  id: WriteObjectRowsAsync(System.Object[])
+  parent: wan24.Data.CsvStream
+  langs:
+  - csharp
+  - vb
+  name: WriteObjectRowsAsync(Object[])
+  nameWithType: CsvStream.WriteObjectRowsAsync(Object[])
+  fullName: wan24.Data.CsvStream.WriteObjectRowsAsync(System.Object[])
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvStream.Map.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: WriteObjectRowsAsync
+    path: ../CSV-Parser/CsvStream.Map.cs
+    startLine: 145
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nWrite \n"
+  example: []
+  syntax:
+    content: public async Task<CsvStream> WriteObjectRowsAsync(params object[] objs)
+    parameters:
+    - id: objs
+      type: System.Object[]
+      description: Objects
+    return:
+      type: System.Threading.Tasks.Task{wan24.Data.CsvStream}
+      description: This
+    content.vb: Public Function WriteObjectRowsAsync(ParamArray objs As Object()) As Task(Of CsvStream)
+  overload: wan24.Data.CsvStream.WriteObjectRowsAsync*
+  nameWithType.vb: CsvStream.WriteObjectRowsAsync(Object())
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
+  fullName.vb: wan24.Data.CsvStream.WriteObjectRowsAsync(System.Object())
+  name.vb: WriteObjectRowsAsync(Object())
+- uid: wan24.Data.CsvStream.ReadObjectAsync``1(System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  commentId: M:wan24.Data.CsvStream.ReadObjectAsync``1(System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  id: ReadObjectAsync``1(System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  parent: wan24.Data.CsvStream
+  langs:
+  - csharp
+  - vb
+  name: ReadObjectAsync<T>(Dictionary<Int32, CsvMapping>)
+  nameWithType: CsvStream.ReadObjectAsync<T>(Dictionary<Int32, CsvMapping>)
+  fullName: wan24.Data.CsvStream.ReadObjectAsync<T>(System.Collections.Generic.Dictionary<System.Int32, wan24.Data.CsvMapping>)
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvStream.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ReadObjectAsync
-    path: ../CSV-Parser/CsvStream.cs
-    startLine: 601
+    path: ../CSV-Parser/CsvStream.Map.cs
+    startLine: 167
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -1768,70 +2175,113 @@ items:
   example: []
   syntax:
     content: >-
-      public async Task<T> ReadObjectAsync<T>()
+      public async Task<T> ReadObjectAsync<T>(Dictionary<int, CsvMapping> mapping = null)
           where T : new()
+    parameters:
+    - id: mapping
+      type: System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping}
+      description: Override mapping
     typeParameters:
     - id: T
       description: Object type
     return:
       type: System.Threading.Tasks.Task{{T}}
       description: Object
-    content.vb: Public Function ReadObjectAsync(Of T As New) As Task(Of T)
+    content.vb: Public Function ReadObjectAsync(Of T As New)(mapping As Dictionary(Of Integer, CsvMapping) = Nothing) As Task(Of T)
   overload: wan24.Data.CsvStream.ReadObjectAsync*
-  nameWithType.vb: CsvStream.ReadObjectAsync(Of T)()
+  nameWithType.vb: CsvStream.ReadObjectAsync(Of T)(Dictionary(Of Int32, CsvMapping))
   modifiers.csharp:
   - public
   - async
   modifiers.vb:
   - Public
-  fullName.vb: wan24.Data.CsvStream.ReadObjectAsync(Of T)()
-  name.vb: ReadObjectAsync(Of T)()
-- uid: wan24.Data.CsvStream.ReadObjectAsync``1(``0)
-  commentId: M:wan24.Data.CsvStream.ReadObjectAsync``1(``0)
-  id: ReadObjectAsync``1(``0)
+  fullName.vb: wan24.Data.CsvStream.ReadObjectAsync(Of T)(System.Collections.Generic.Dictionary(Of System.Int32, wan24.Data.CsvMapping))
+  name.vb: ReadObjectAsync(Of T)(Dictionary(Of Int32, CsvMapping))
+- uid: wan24.Data.CsvStream.ReadObjectAsync``1(``0,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  commentId: M:wan24.Data.CsvStream.ReadObjectAsync``1(``0,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  id: ReadObjectAsync``1(``0,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
   parent: wan24.Data.CsvStream
   langs:
   - csharp
   - vb
-  name: ReadObjectAsync<T>(T)
-  nameWithType: CsvStream.ReadObjectAsync<T>(T)
-  fullName: wan24.Data.CsvStream.ReadObjectAsync<T>(T)
+  name: ReadObjectAsync<T>(T, Dictionary<Int32, CsvMapping>)
+  nameWithType: CsvStream.ReadObjectAsync<T>(T, Dictionary<Int32, CsvMapping>)
+  fullName: wan24.Data.CsvStream.ReadObjectAsync<T>(T, System.Collections.Generic.Dictionary<System.Int32, wan24.Data.CsvMapping>)
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: CSV-Parser/CsvStream.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ReadObjectAsync
-    path: ../CSV-Parser/CsvStream.cs
-    startLine: 614
+    path: ../CSV-Parser/CsvStream.Map.cs
+    startLine: 180
   assemblies:
   - csvparser
   namespace: wan24.Data
   summary: "\nRead an object\n"
   example: []
   syntax:
-    content: public async Task<T> ReadObjectAsync<T>(T obj)
+    content: public async Task<T> ReadObjectAsync<T>(T obj, Dictionary<int, CsvMapping> mapping = null)
     parameters:
     - id: obj
       type: '{T}'
       description: Object
+    - id: mapping
+      type: System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping}
+      description: Override mapping
     typeParameters:
     - id: T
       description: Object type
     return:
       type: System.Threading.Tasks.Task{{T}}
       description: Object
-    content.vb: Public Function ReadObjectAsync(Of T)(obj As T) As Task(Of T)
+    content.vb: Public Function ReadObjectAsync(Of T)(obj As T, mapping As Dictionary(Of Integer, CsvMapping) = Nothing) As Task(Of T)
   overload: wan24.Data.CsvStream.ReadObjectAsync*
-  nameWithType.vb: CsvStream.ReadObjectAsync(Of T)(T)
+  nameWithType.vb: CsvStream.ReadObjectAsync(Of T)(T, Dictionary(Of Int32, CsvMapping))
   modifiers.csharp:
   - public
   - async
   modifiers.vb:
   - Public
-  fullName.vb: wan24.Data.CsvStream.ReadObjectAsync(Of T)(T)
-  name.vb: ReadObjectAsync(Of T)(T)
+  fullName.vb: wan24.Data.CsvStream.ReadObjectAsync(Of T)(T, System.Collections.Generic.Dictionary(Of System.Int32, wan24.Data.CsvMapping))
+  name.vb: ReadObjectAsync(Of T)(T, Dictionary(Of Int32, CsvMapping))
+- uid: wan24.Data.CsvStream.ReadObjectRowAsync
+  commentId: M:wan24.Data.CsvStream.ReadObjectRowAsync
+  id: ReadObjectRowAsync
+  parent: wan24.Data.CsvStream
+  langs:
+  - csharp
+  - vb
+  name: ReadObjectRowAsync()
+  nameWithType: CsvStream.ReadObjectRowAsync()
+  fullName: wan24.Data.CsvStream.ReadObjectRowAsync()
+  type: Method
+  source:
+    remote:
+      path: CSV-Parser/CsvStream.Map.cs
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: ReadObjectRowAsync
+    path: ../CSV-Parser/CsvStream.Map.cs
+    startLine: 190
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nRead an object row\n"
+  example: []
+  syntax:
+    content: public async Task<object> ReadObjectRowAsync()
+    return:
+      type: System.Threading.Tasks.Task{System.Object}
+      description: Object
+    content.vb: Public Function ReadObjectRowAsync As Task(Of Object)
+  overload: wan24.Data.CsvStream.ReadObjectRowAsync*
+  modifiers.csharp:
+  - public
+  - async
+  modifiers.vb:
+  - Public
 references:
 - uid: wan24.Data
   commentId: N:wan24.Data
@@ -3546,6 +3996,539 @@ references:
   name: System.IO
   nameWithType: System.IO
   fullName: System.IO
+- uid: wan24.Data.CsvStream.Rows*
+  commentId: Overload:wan24.Data.CsvStream.Rows
+  name: Rows
+  nameWithType: CsvStream.Rows
+  fullName: wan24.Data.CsvStream.Rows
+- uid: System.Collections.Generic.IEnumerable{System.String[]}
+  commentId: T:System.Collections.Generic.IEnumerable{System.String[]}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<String[]>
+  nameWithType: IEnumerable<String[]>
+  fullName: System.Collections.Generic.IEnumerable<System.String[]>
+  nameWithType.vb: IEnumerable(Of String())
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.String())
+  name.vb: IEnumerable(Of String())
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic.IEnumerable`1
+  commentId: T:System.Collections.Generic.IEnumerable`1
+  isExternal: true
+  name: IEnumerable<T>
+  nameWithType: IEnumerable<T>
+  fullName: System.Collections.Generic.IEnumerable<T>
+  nameWithType.vb: IEnumerable(Of T)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
+  name.vb: IEnumerable(Of T)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Collections.Generic
+  commentId: N:System.Collections.Generic
+  isExternal: true
+  name: System.Collections.Generic
+  nameWithType: System.Collections.Generic
+  fullName: System.Collections.Generic
+- uid: wan24.Data.CsvStream.WriteHeader*
+  commentId: Overload:wan24.Data.CsvStream.WriteHeader
+  name: WriteHeader
+  nameWithType: CsvStream.WriteHeader
+  fullName: wan24.Data.CsvStream.WriteHeader
+- uid: System.Collections.Generic.IEnumerable{System.String}
+  commentId: T:System.Collections.Generic.IEnumerable{System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<String>
+  nameWithType: IEnumerable<String>
+  fullName: System.Collections.Generic.IEnumerable<System.String>
+  nameWithType.vb: IEnumerable(Of String)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.String)
+  name.vb: IEnumerable(Of String)
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: wan24.Data.CsvStream
+  commentId: T:wan24.Data.CsvStream
+  parent: wan24.Data
+  name: CsvStream
+  nameWithType: CsvStream
+  fullName: wan24.Data.CsvStream
+- uid: wan24.Data.CsvStream.WriteRows*
+  commentId: Overload:wan24.Data.CsvStream.WriteRows
+  name: WriteRows
+  nameWithType: CsvStream.WriteRows
+  fullName: wan24.Data.CsvStream.WriteRows
+- uid: System.Collections.Generic.IEnumerable{System.String}[]
+  isExternal: true
+  name: IEnumerable<String>[]
+  nameWithType: IEnumerable<String>[]
+  fullName: System.Collections.Generic.IEnumerable<System.String>[]
+  nameWithType.vb: IEnumerable(Of String)()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.String)()
+  name.vb: IEnumerable(Of String)()
+  spec.csharp:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: wan24.Data.CsvStream.ReadHeader*
+  commentId: Overload:wan24.Data.CsvStream.ReadHeader
+  name: ReadHeader
+  nameWithType: CsvStream.ReadHeader
+  fullName: wan24.Data.CsvStream.ReadHeader
+- uid: System.String[]
+  isExternal: true
+  name: String[]
+  nameWithType: String[]
+  fullName: System.String[]
+  nameWithType.vb: String()
+  fullName.vb: System.String()
+  name.vb: String()
+  spec.csharp:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: wan24.Data.CsvStream.SkipHeader*
+  commentId: Overload:wan24.Data.CsvStream.SkipHeader
+  name: SkipHeader
+  nameWithType: CsvStream.SkipHeader
+  fullName: wan24.Data.CsvStream.SkipHeader
+- uid: wan24.Data.CsvStream.PeekField*
+  commentId: Overload:wan24.Data.CsvStream.PeekField
+  name: PeekField
+  nameWithType: CsvStream.PeekField
+  fullName: wan24.Data.CsvStream.PeekField
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: wan24.Data.CsvStream.ReadRow*
+  commentId: Overload:wan24.Data.CsvStream.ReadRow
+  name: ReadRow
+  nameWithType: CsvStream.ReadRow
+  fullName: wan24.Data.CsvStream.ReadRow
+- uid: wan24.Data.CsvStream.WriteHeaderAsync*
+  commentId: Overload:wan24.Data.CsvStream.WriteHeaderAsync
+  name: WriteHeaderAsync
+  nameWithType: CsvStream.WriteHeaderAsync
+  fullName: wan24.Data.CsvStream.WriteHeaderAsync
+- uid: System.Threading.Tasks.Task{wan24.Data.CsvStream}
+  commentId: T:System.Threading.Tasks.Task{wan24.Data.CsvStream}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<CsvStream>
+  nameWithType: Task<CsvStream>
+  fullName: System.Threading.Tasks.Task<wan24.Data.CsvStream>
+  nameWithType.vb: Task(Of CsvStream)
+  fullName.vb: System.Threading.Tasks.Task(Of wan24.Data.CsvStream)
+  name.vb: Task(Of CsvStream)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: wan24.Data.CsvStream
+    name: CsvStream
+    nameWithType: CsvStream
+    fullName: wan24.Data.CsvStream
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: wan24.Data.CsvStream
+    name: CsvStream
+    nameWithType: CsvStream
+    fullName: wan24.Data.CsvStream
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: wan24.Data.CsvStream.WriteRowsAsync*
+  commentId: Overload:wan24.Data.CsvStream.WriteRowsAsync
+  name: WriteRowsAsync
+  nameWithType: CsvStream.WriteRowsAsync
+  fullName: wan24.Data.CsvStream.WriteRowsAsync
+- uid: wan24.Data.CsvStream.ReadHeaderAsync*
+  commentId: Overload:wan24.Data.CsvStream.ReadHeaderAsync
+  name: ReadHeaderAsync
+  nameWithType: CsvStream.ReadHeaderAsync
+  fullName: wan24.Data.CsvStream.ReadHeaderAsync
+- uid: System.Threading.Tasks.Task{System.String[]}
+  commentId: T:System.Threading.Tasks.Task{System.String[]}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<String[]>
+  nameWithType: Task<String[]>
+  fullName: System.Threading.Tasks.Task<System.String[]>
+  nameWithType.vb: Task(Of String())
+  fullName.vb: System.Threading.Tasks.Task(Of System.String())
+  name.vb: Task(Of String())
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: wan24.Data.CsvStream.PeekFieldAsync*
+  commentId: Overload:wan24.Data.CsvStream.PeekFieldAsync
+  name: PeekFieldAsync
+  nameWithType: CsvStream.PeekFieldAsync
+  fullName: wan24.Data.CsvStream.PeekFieldAsync
+- uid: System.Threading.Tasks.Task{System.String}
+  commentId: T:System.Threading.Tasks.Task{System.String}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<String>
+  nameWithType: Task<String>
+  fullName: System.Threading.Tasks.Task<System.String>
+  nameWithType.vb: Task(Of String)
+  fullName.vb: System.Threading.Tasks.Task(Of System.String)
+  name.vb: Task(Of String)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: wan24.Data.CsvStream.ReadRowAsync*
+  commentId: Overload:wan24.Data.CsvStream.ReadRowAsync
+  name: ReadRowAsync
+  nameWithType: CsvStream.ReadRowAsync
+  fullName: wan24.Data.CsvStream.ReadRowAsync
+- uid: wan24.Data.CsvStream.SkipHeaderAsync*
+  commentId: Overload:wan24.Data.CsvStream.SkipHeaderAsync
+  name: SkipHeaderAsync
+  nameWithType: CsvStream.SkipHeaderAsync
+  fullName: wan24.Data.CsvStream.SkipHeaderAsync
+- uid: wan24.Data.CsvStream.CountRows*
+  commentId: Overload:wan24.Data.CsvStream.CountRows
+  name: CountRows
+  nameWithType: CsvStream.CountRows
+  fullName: wan24.Data.CsvStream.CountRows
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: wan24.Data.CsvStream.CountRowsAsync*
+  commentId: Overload:wan24.Data.CsvStream.CountRowsAsync
+  name: CountRowsAsync
+  nameWithType: CsvStream.CountRowsAsync
+  fullName: wan24.Data.CsvStream.CountRowsAsync
+- uid: System.Threading.Tasks.Task{System.Int64}
+  commentId: T:System.Threading.Tasks.Task{System.Int64}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Int64>
+  nameWithType: Task<Int64>
+  fullName: System.Threading.Tasks.Task<System.Int64>
+  nameWithType.vb: Task(Of Int64)
+  fullName.vb: System.Threading.Tasks.Task(Of System.Int64)
+  name.vb: Task(Of Int64)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
 - uid: wan24.Data.CsvStream.#ctor*
   commentId: Overload:wan24.Data.CsvStream.#ctor
   name: CsvStream
@@ -3777,111 +4760,17 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Collections.Generic
-  commentId: N:System.Collections.Generic
-  isExternal: true
-  name: System.Collections.Generic
-  nameWithType: System.Collections.Generic
-  fullName: System.Collections.Generic
 - uid: wan24.Data.CsvTable
   commentId: T:wan24.Data.CsvTable
   parent: wan24.Data
   name: CsvTable
   nameWithType: CsvTable
   fullName: wan24.Data.CsvTable
-- uid: System.Collections.Generic.IEnumerable{System.String}
-  commentId: T:System.Collections.Generic.IEnumerable{System.String}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.IEnumerable`1
-  name: IEnumerable<String>
-  nameWithType: IEnumerable<String>
-  fullName: System.Collections.Generic.IEnumerable<System.String>
-  nameWithType.vb: IEnumerable(Of String)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of System.String)
-  name.vb: IEnumerable(Of String)
-  spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Collections.Generic.IEnumerable`1
-  commentId: T:System.Collections.Generic.IEnumerable`1
-  isExternal: true
-  name: IEnumerable<T>
-  nameWithType: IEnumerable<T>
-  fullName: System.Collections.Generic.IEnumerable<T>
-  nameWithType.vb: IEnumerable(Of T)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of T)
-  name.vb: IEnumerable(Of T)
-  spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: T
-    nameWithType: T
-    fullName: T
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: wan24.Data.CsvStream.StringEncoding*
   commentId: Overload:wan24.Data.CsvStream.StringEncoding
   name: StringEncoding
   nameWithType: CsvStream.StringEncoding
   fullName: wan24.Data.CsvStream.StringEncoding
-- uid: wan24.Data.CsvStream.Mapping*
-  commentId: Overload:wan24.Data.CsvStream.Mapping
-  name: Mapping
-  nameWithType: CsvStream.Mapping
-  fullName: wan24.Data.CsvStream.Mapping
 - uid: wan24.Data.CsvStream.BaseStream*
   commentId: Overload:wan24.Data.CsvStream.BaseStream
   name: BaseStream
@@ -3912,61 +4801,6 @@ references:
   name: ColumnCount
   nameWithType: CsvStream.ColumnCount
   fullName: wan24.Data.CsvStream.ColumnCount
-- uid: wan24.Data.CsvStream.Rows*
-  commentId: Overload:wan24.Data.CsvStream.Rows
-  name: Rows
-  nameWithType: CsvStream.Rows
-  fullName: wan24.Data.CsvStream.Rows
-- uid: System.Collections.Generic.IEnumerable{System.String[]}
-  commentId: T:System.Collections.Generic.IEnumerable{System.String[]}
-  parent: System.Collections.Generic
-  definition: System.Collections.Generic.IEnumerable`1
-  name: IEnumerable<String[]>
-  nameWithType: IEnumerable<String[]>
-  fullName: System.Collections.Generic.IEnumerable<System.String[]>
-  nameWithType.vb: IEnumerable(Of String())
-  fullName.vb: System.Collections.Generic.IEnumerable(Of System.String())
-  name.vb: IEnumerable(Of String())
-  spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: '[]'
-    nameWithType: '[]'
-    fullName: '[]'
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1
-    name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
-    isExternal: true
-  - name: ()
-    nameWithType: ()
-    fullName: ()
-  - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.IO.Stream.CanRead
   commentId: P:System.IO.Stream.CanRead
   parent: System.IO.Stream
@@ -4015,13 +4849,6 @@ references:
   name: Length
   nameWithType: CsvStream.Length
   fullName: wan24.Data.CsvStream.Length
-- uid: System.Int64
-  commentId: T:System.Int64
-  parent: System
-  isExternal: true
-  name: Int64
-  nameWithType: Int64
-  fullName: System.Int64
 - uid: System.IO.Stream.Position
   commentId: P:System.IO.Stream.Position
   parent: System.IO.Stream
@@ -4421,30 +5248,21 @@ references:
   name: Close
   nameWithType: CsvStream.Close
   fullName: wan24.Data.CsvStream.Close
-- uid: wan24.Data.CsvStream.WriteHeader*
-  commentId: Overload:wan24.Data.CsvStream.WriteHeader
-  name: WriteHeader
-  nameWithType: CsvStream.WriteHeader
-  fullName: wan24.Data.CsvStream.WriteHeader
-- uid: wan24.Data.CsvStream
-  commentId: T:wan24.Data.CsvStream
-  parent: wan24.Data
-  name: CsvStream
-  nameWithType: CsvStream
-  fullName: wan24.Data.CsvStream
-- uid: wan24.Data.CsvStream.WriteRows*
-  commentId: Overload:wan24.Data.CsvStream.WriteRows
-  name: WriteRows
-  nameWithType: CsvStream.WriteRows
-  fullName: wan24.Data.CsvStream.WriteRows
-- uid: System.Collections.Generic.IEnumerable{System.String}[]
-  isExternal: true
-  name: IEnumerable<String>[]
-  nameWithType: IEnumerable<String>[]
-  fullName: System.Collections.Generic.IEnumerable<System.String>[]
-  nameWithType.vb: IEnumerable(Of String)()
-  fullName.vb: System.Collections.Generic.IEnumerable(Of System.String)()
-  name.vb: IEnumerable(Of String)()
+- uid: wan24.Data.CsvStream.AsDictionaries*
+  commentId: Overload:wan24.Data.CsvStream.AsDictionaries
+  name: AsDictionaries
+  nameWithType: CsvStream.AsDictionaries
+  fullName: wan24.Data.CsvStream.AsDictionaries
+- uid: System.Collections.Generic.IEnumerable{System.Collections.Generic.Dictionary{System.String,System.String}}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Collections.Generic.Dictionary{System.String,System.String}}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<Dictionary<String, String>>
+  nameWithType: IEnumerable<Dictionary<String, String>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.Dictionary<System.String, System.String>>
+  nameWithType.vb: IEnumerable(Of Dictionary(Of String, String))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Collections.Generic.Dictionary(Of System.String, System.String))
+  name.vb: IEnumerable(Of Dictionary(Of String, String))
   spec.csharp:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
@@ -4454,6 +5272,22 @@ references:
   - name: <
     nameWithType: <
     fullName: <
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
   - uid: System.String
     name: String
     nameWithType: String
@@ -4462,9 +5296,9 @@ references:
   - name: '>'
     nameWithType: '>'
     fullName: '>'
-  - name: '[]'
-    nameWithType: '[]'
-    fullName: '[]'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
   spec.vb:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
@@ -4474,6 +5308,22 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
   - uid: System.String
     name: String
     nameWithType: String
@@ -4482,65 +5332,89 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-  - name: ()
-    nameWithType: ()
-    fullName: ()
-- uid: wan24.Data.CsvStream.ReadHeader*
-  commentId: Overload:wan24.Data.CsvStream.ReadHeader
-  name: ReadHeader
-  nameWithType: CsvStream.ReadHeader
-  fullName: wan24.Data.CsvStream.ReadHeader
-- uid: System.String[]
-  isExternal: true
-  name: String[]
-  nameWithType: String[]
-  fullName: System.String[]
-  nameWithType.vb: String()
-  fullName.vb: System.String()
-  name.vb: String()
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: wan24.Data.CsvStream.ReadDictionary*
+  commentId: Overload:wan24.Data.CsvStream.ReadDictionary
+  name: ReadDictionary
+  nameWithType: CsvStream.ReadDictionary
+  fullName: wan24.Data.CsvStream.ReadDictionary
+- uid: System.Collections.Generic.Dictionary{System.String,System.String}
+  commentId: T:System.Collections.Generic.Dictionary{System.String,System.String}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.Dictionary`2
+  name: Dictionary<String, String>
+  nameWithType: Dictionary<String, String>
+  fullName: System.Collections.Generic.Dictionary<System.String, System.String>
+  nameWithType.vb: Dictionary(Of String, String)
+  fullName.vb: System.Collections.Generic.Dictionary(Of System.String, System.String)
+  name.vb: Dictionary(Of String, String)
   spec.csharp:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
   - uid: System.String
     name: String
     nameWithType: String
     fullName: System.String
     isExternal: true
-  - name: '[]'
-    nameWithType: '[]'
-    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
   spec.vb:
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
   - uid: System.String
     name: String
     nameWithType: String
     fullName: System.String
     isExternal: true
-  - name: ()
-    nameWithType: ()
-    fullName: ()
-- uid: wan24.Data.CsvStream.SkipHeader*
-  commentId: Overload:wan24.Data.CsvStream.SkipHeader
-  name: SkipHeader
-  nameWithType: CsvStream.SkipHeader
-  fullName: wan24.Data.CsvStream.SkipHeader
-- uid: wan24.Data.CsvStream.ReadRow*
-  commentId: Overload:wan24.Data.CsvStream.ReadRow
-  name: ReadRow
-  nameWithType: CsvStream.ReadRow
-  fullName: wan24.Data.CsvStream.ReadRow
-- uid: wan24.Data.CsvStream.WriteHeaderAsync*
-  commentId: Overload:wan24.Data.CsvStream.WriteHeaderAsync
-  name: WriteHeaderAsync
-  nameWithType: CsvStream.WriteHeaderAsync
-  fullName: wan24.Data.CsvStream.WriteHeaderAsync
-- uid: System.Threading.Tasks.Task{wan24.Data.CsvStream}
-  commentId: T:System.Threading.Tasks.Task{wan24.Data.CsvStream}
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: wan24.Data.CsvStream.ReadDictionaryAsync*
+  commentId: Overload:wan24.Data.CsvStream.ReadDictionaryAsync
+  name: ReadDictionaryAsync
+  nameWithType: CsvStream.ReadDictionaryAsync
+  fullName: wan24.Data.CsvStream.ReadDictionaryAsync
+- uid: System.Threading.Tasks.Task{System.Collections.Generic.Dictionary{System.String,System.String}}
+  commentId: T:System.Threading.Tasks.Task{System.Collections.Generic.Dictionary{System.String,System.String}}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
-  name: Task<CsvStream>
-  nameWithType: Task<CsvStream>
-  fullName: System.Threading.Tasks.Task<wan24.Data.CsvStream>
-  nameWithType.vb: Task(Of CsvStream)
-  fullName.vb: System.Threading.Tasks.Task(Of wan24.Data.CsvStream)
-  name.vb: Task(Of CsvStream)
+  name: Task<Dictionary<String, String>>
+  nameWithType: Task<Dictionary<String, String>>
+  fullName: System.Threading.Tasks.Task<System.Collections.Generic.Dictionary<System.String, System.String>>
+  nameWithType.vb: Task(Of Dictionary(Of String, String))
+  fullName.vb: System.Threading.Tasks.Task(Of System.Collections.Generic.Dictionary(Of System.String, System.String))
+  name.vb: Task(Of Dictionary(Of String, String))
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
@@ -4550,99 +5424,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: wan24.Data.CsvStream
-    name: CsvStream
-    nameWithType: CsvStream
-    fullName: wan24.Data.CsvStream
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    nameWithType: Task
-    fullName: System.Threading.Tasks.Task
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - uid: wan24.Data.CsvStream
-    name: CsvStream
-    nameWithType: CsvStream
-    fullName: wan24.Data.CsvStream
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Threading.Tasks.Task`1
-  commentId: T:System.Threading.Tasks.Task`1
-  isExternal: true
-  name: Task<TResult>
-  nameWithType: Task<TResult>
-  fullName: System.Threading.Tasks.Task<TResult>
-  nameWithType.vb: Task(Of TResult)
-  fullName.vb: System.Threading.Tasks.Task(Of TResult)
-  name.vb: Task(Of TResult)
-  spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    nameWithType: Task
-    fullName: System.Threading.Tasks.Task
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
-  - name: TResult
-    nameWithType: TResult
-    fullName: TResult
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
-  spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    nameWithType: Task
-    fullName: System.Threading.Tasks.Task
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
-  - name: TResult
-    nameWithType: TResult
-    fullName: TResult
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Threading.Tasks
-  commentId: N:System.Threading.Tasks
-  isExternal: true
-  name: System.Threading.Tasks
-  nameWithType: System.Threading.Tasks
-  fullName: System.Threading.Tasks
-- uid: wan24.Data.CsvStream.WriteRowsAsync*
-  commentId: Overload:wan24.Data.CsvStream.WriteRowsAsync
-  name: WriteRowsAsync
-  nameWithType: CsvStream.WriteRowsAsync
-  fullName: wan24.Data.CsvStream.WriteRowsAsync
-- uid: wan24.Data.CsvStream.ReadHeaderAsync*
-  commentId: Overload:wan24.Data.CsvStream.ReadHeaderAsync
-  name: ReadHeaderAsync
-  nameWithType: CsvStream.ReadHeaderAsync
-  fullName: wan24.Data.CsvStream.ReadHeaderAsync
-- uid: System.Threading.Tasks.Task{System.String[]}
-  commentId: T:System.Threading.Tasks.Task{System.String[]}
-  parent: System.Threading.Tasks
-  definition: System.Threading.Tasks.Task`1
-  name: Task<String[]>
-  nameWithType: Task<String[]>
-  fullName: System.Threading.Tasks.Task<System.String[]>
-  nameWithType.vb: Task(Of String())
-  fullName.vb: System.Threading.Tasks.Task(Of System.String())
-  name.vb: Task(Of String())
-  spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    nameWithType: Task
-    fullName: System.Threading.Tasks.Task
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
     isExternal: true
   - name: <
     nameWithType: <
@@ -4652,9 +5437,17 @@ references:
     nameWithType: String
     fullName: System.String
     isExternal: true
-  - name: '[]'
-    nameWithType: '[]'
-    fullName: '[]'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
   - name: '>'
     nameWithType: '>'
     fullName: '>'
@@ -4663,6 +5456,14 @@ references:
     name: Task
     nameWithType: Task
     fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Collections.Generic.Dictionary`2
+    name: Dictionary
+    nameWithType: Dictionary
+    fullName: System.Collections.Generic.Dictionary
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
@@ -4672,72 +5473,70 @@ references:
     nameWithType: String
     fullName: System.String
     isExternal: true
-  - name: ()
-    nameWithType: ()
-    fullName: ()
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.String
+    name: String
+    nameWithType: String
+    fullName: System.String
+    isExternal: true
   - name: )
     nameWithType: )
     fullName: )
-- uid: wan24.Data.CsvStream.ReadRowAsync*
-  commentId: Overload:wan24.Data.CsvStream.ReadRowAsync
-  name: ReadRowAsync
-  nameWithType: CsvStream.ReadRowAsync
-  fullName: wan24.Data.CsvStream.ReadRowAsync
-- uid: wan24.Data.CsvStream.SkipHeaderAsync*
-  commentId: Overload:wan24.Data.CsvStream.SkipHeaderAsync
-  name: SkipHeaderAsync
-  nameWithType: CsvStream.SkipHeaderAsync
-  fullName: wan24.Data.CsvStream.SkipHeaderAsync
-- uid: wan24.Data.CsvStream.CountRows*
-  commentId: Overload:wan24.Data.CsvStream.CountRows
-  name: CountRows
-  nameWithType: CsvStream.CountRows
-  fullName: wan24.Data.CsvStream.CountRows
-- uid: wan24.Data.CsvStream.CountRowsAsync*
-  commentId: Overload:wan24.Data.CsvStream.CountRowsAsync
-  name: CountRowsAsync
-  nameWithType: CsvStream.CountRowsAsync
-  fullName: wan24.Data.CsvStream.CountRowsAsync
-- uid: System.Threading.Tasks.Task{System.Int64}
-  commentId: T:System.Threading.Tasks.Task{System.Int64}
-  parent: System.Threading.Tasks
-  definition: System.Threading.Tasks.Task`1
-  name: Task<Int64>
-  nameWithType: Task<Int64>
-  fullName: System.Threading.Tasks.Task<System.Int64>
-  nameWithType.vb: Task(Of Int64)
-  fullName.vb: System.Threading.Tasks.Task(Of System.Int64)
-  name.vb: Task(Of Int64)
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: wan24.Data.CsvStream.Mapping*
+  commentId: Overload:wan24.Data.CsvStream.Mapping
+  name: Mapping
+  nameWithType: CsvStream.Mapping
+  fullName: wan24.Data.CsvStream.Mapping
+- uid: wan24.Data.CsvStream.ObjectRows*
+  commentId: Overload:wan24.Data.CsvStream.ObjectRows
+  name: ObjectRows
+  nameWithType: CsvStream.ObjectRows
+  fullName: wan24.Data.CsvStream.ObjectRows
+- uid: System.Collections.Generic.IEnumerable{System.Object}
+  commentId: T:System.Collections.Generic.IEnumerable{System.Object}
+  parent: System.Collections.Generic
+  definition: System.Collections.Generic.IEnumerable`1
+  name: IEnumerable<Object>
+  nameWithType: IEnumerable<Object>
+  fullName: System.Collections.Generic.IEnumerable<System.Object>
+  nameWithType.vb: IEnumerable(Of Object)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Object)
+  name.vb: IEnumerable(Of Object)
   spec.csharp:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    nameWithType: Task
-    fullName: System.Threading.Tasks.Task
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: <
     nameWithType: <
     fullName: <
-  - uid: System.Int64
-    name: Int64
-    nameWithType: Int64
-    fullName: System.Int64
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
     isExternal: true
   - name: '>'
     nameWithType: '>'
     fullName: '>'
   spec.vb:
-  - uid: System.Threading.Tasks.Task`1
-    name: Task
-    nameWithType: Task
-    fullName: System.Threading.Tasks.Task
+  - uid: System.Collections.Generic.IEnumerable`1
+    name: IEnumerable
+    nameWithType: IEnumerable
+    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: System.Int64
-    name: Int64
-    nameWithType: Int64
-    fullName: System.Int64
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
     isExternal: true
   - name: )
     nameWithType: )
@@ -4766,6 +5565,37 @@ references:
   - name: T
     nameWithType: T
     fullName: T
+  - name: ()
+    nameWithType: ()
+    fullName: ()
+- uid: wan24.Data.CsvStream.WriteObjectRows*
+  commentId: Overload:wan24.Data.CsvStream.WriteObjectRows
+  name: WriteObjectRows
+  nameWithType: CsvStream.WriteObjectRows
+  fullName: wan24.Data.CsvStream.WriteObjectRows
+- uid: System.Object[]
+  isExternal: true
+  name: Object[]
+  nameWithType: Object[]
+  fullName: System.Object[]
+  nameWithType.vb: Object()
+  fullName.vb: System.Object()
+  name.vb: Object()
+  spec.csharp:
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '[]'
+    nameWithType: '[]'
+    fullName: '[]'
+  spec.vb:
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
   - name: ()
     nameWithType: ()
     fullName: ()
@@ -4829,11 +5659,21 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: wan24.Data.CsvStream.ReadObjectRow*
+  commentId: Overload:wan24.Data.CsvStream.ReadObjectRow
+  name: ReadObjectRow
+  nameWithType: CsvStream.ReadObjectRow
+  fullName: wan24.Data.CsvStream.ReadObjectRow
 - uid: wan24.Data.CsvStream.WriteObjectsAsync*
   commentId: Overload:wan24.Data.CsvStream.WriteObjectsAsync
   name: WriteObjectsAsync
   nameWithType: CsvStream.WriteObjectsAsync
   fullName: wan24.Data.CsvStream.WriteObjectsAsync
+- uid: wan24.Data.CsvStream.WriteObjectRowsAsync*
+  commentId: Overload:wan24.Data.CsvStream.WriteObjectRowsAsync
+  name: WriteObjectRowsAsync
+  nameWithType: CsvStream.WriteObjectRowsAsync
+  fullName: wan24.Data.CsvStream.WriteObjectRowsAsync
 - uid: wan24.Data.CsvStream.ReadObjectAsync*
   commentId: Overload:wan24.Data.CsvStream.ReadObjectAsync
   name: ReadObjectAsync
@@ -4876,6 +5716,55 @@ references:
   - name: T
     nameWithType: T
     fullName: T
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: wan24.Data.CsvStream.ReadObjectRowAsync*
+  commentId: Overload:wan24.Data.CsvStream.ReadObjectRowAsync
+  name: ReadObjectRowAsync
+  nameWithType: CsvStream.ReadObjectRowAsync
+  fullName: wan24.Data.CsvStream.ReadObjectRowAsync
+- uid: System.Threading.Tasks.Task{System.Object}
+  commentId: T:System.Threading.Tasks.Task{System.Object}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<Object>
+  nameWithType: Task<Object>
+  fullName: System.Threading.Tasks.Task<System.Object>
+  nameWithType.vb: Task(Of Object)
+  fullName.vb: System.Threading.Tasks.Task(Of System.Object)
+  name.vb: Task(Of Object)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
   - name: )
     nameWithType: )
     fullName: )
