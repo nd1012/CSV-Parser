@@ -188,3 +188,19 @@ CsvParser.IgnoreErrors = true;
 This setting will also ignore `null` headers/values, and if using `ToString` when a string delimiter is required to produce valid CSV data.
 
 **WARNING**: Ignoring errors may cause unknown failures and produce invalid CSV data!
+
+## Good to know
+
+Even more lightweight versions of this library are available on request. These can come optional without
+
+- dictionary methods
+- object mapping
+- stream support (and CSV writing support)
+
+That would reduce the functionality to this minimum, which may be enough for supporting a nice CSV import interface only:
+
+- CSV parsing
+- CSV header parsing
+- CSV file row counting
+
+The resulting DLL file would be smaller than 30KB, if all extended features are excluded.
