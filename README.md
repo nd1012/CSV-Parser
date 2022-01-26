@@ -158,13 +158,13 @@ Actually CSV is used to store a table. Each row has a fixed number of fields, ma
 // or mapping are prepared in CsvParser.TypeMappings already
 
 // Writing objects
-using(CsvStream csv = new CsvStream(FileStream.OpenWrite('objects.csv)))
+using(CsvStream csv = new CsvStream(FileStream.OpenWrite('objects.csv')))
 {
 	csv.WriteObjectRows(anyObjectInstance, anotherTypeInstance);
 }
 
 // Reading objects
-using(CsvStream csv = new CsvStream(FileStream.OpenRead('objects.csv)))
+using(CsvStream csv = new CsvStream(FileStream.OpenRead('objects.csv')))
 {
 	anyObjectInstance = csv.ReadObjectRow() as AnyType;
 	anotherTypeInstance = csv.ReadObjectRow() as AnotherType;
