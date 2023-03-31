@@ -16,7 +16,7 @@ items:
   type: Class
   source:
     remote:
-      path: CSV-Parser/CsvMappingAttribute.cs
+      path: src/CSV-Parser/CsvMappingAttribute.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CsvMappingAttribute
@@ -97,7 +97,7 @@ items:
   type: Constructor
   source:
     remote:
-      path: CSV-Parser/CsvMappingAttribute.cs
+      path: src/CSV-Parser/CsvMappingAttribute.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: .ctor
@@ -133,7 +133,7 @@ items:
   type: Property
   source:
     remote:
-      path: CSV-Parser/CsvMappingAttribute.cs
+      path: src/CSV-Parser/CsvMappingAttribute.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Field

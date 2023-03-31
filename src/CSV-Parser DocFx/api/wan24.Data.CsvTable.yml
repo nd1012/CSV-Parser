@@ -48,7 +48,7 @@ items:
   type: Class
   source:
     remote:
-      path: CSV-Parser/CsvTable.Map.cs
+      path: src/CSV-Parser/CsvTable.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CsvTable
@@ -97,7 +97,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvTable.Common.cs
+      path: src/CSV-Parser/CsvTable.Common.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CreateHeaders
@@ -132,7 +132,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvTable.Common.cs
+      path: src/CSV-Parser/CsvTable.Common.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: AddColumn
@@ -180,7 +180,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvTable.Common.cs
+      path: src/CSV-Parser/CsvTable.Common.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: RemoveColumn
@@ -219,7 +219,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvTable.Common.cs
+      path: src/CSV-Parser/CsvTable.Common.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: MoveColumn
@@ -264,7 +264,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvTable.Common.cs
+      path: src/CSV-Parser/CsvTable.Common.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: SwapColumn
@@ -309,7 +309,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvTable.Common.cs
+      path: src/CSV-Parser/CsvTable.Common.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ReorderColumns
@@ -354,7 +354,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvTable.Common.cs
+      path: src/CSV-Parser/CsvTable.Common.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: AddRow
@@ -396,7 +396,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvTable.Common.cs
+      path: src/CSV-Parser/CsvTable.Common.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Validate
@@ -431,7 +431,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvTable.Common.cs
+      path: src/CSV-Parser/CsvTable.Common.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Clear
@@ -470,7 +470,7 @@ items:
   type: Constructor
   source:
     remote:
-      path: CSV-Parser/CsvTable.cs
+      path: src/CSV-Parser/CsvTable.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: .ctor
@@ -521,7 +521,7 @@ items:
   type: Property
   source:
     remote:
-      path: CSV-Parser/CsvTable.cs
+      path: src/CSV-Parser/CsvTable.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: this[]
@@ -565,7 +565,7 @@ items:
   type: Property
   source:
     remote:
-      path: CSV-Parser/CsvTable.cs
+      path: src/CSV-Parser/CsvTable.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: HasHeader
@@ -602,7 +602,7 @@ items:
   type: Property
   source:
     remote:
-      path: CSV-Parser/CsvTable.cs
+      path: src/CSV-Parser/CsvTable.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: FieldDelimiter
@@ -639,7 +639,7 @@ items:
   type: Property
   source:
     remote:
-      path: CSV-Parser/CsvTable.cs
+      path: src/CSV-Parser/CsvTable.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: StringDelimiter
@@ -676,7 +676,7 @@ items:
   type: Property
   source:
     remote:
-      path: CSV-Parser/CsvTable.cs
+      path: src/CSV-Parser/CsvTable.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CountColumns
@@ -713,7 +713,7 @@ items:
   type: Property
   source:
     remote:
-      path: CSV-Parser/CsvTable.cs
+      path: src/CSV-Parser/CsvTable.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CountRows
@@ -750,7 +750,7 @@ items:
   type: Property
   source:
     remote:
-      path: CSV-Parser/CsvTable.cs
+      path: src/CSV-Parser/CsvTable.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Header
@@ -787,7 +787,7 @@ items:
   type: Property
   source:
     remote:
-      path: CSV-Parser/CsvTable.cs
+      path: src/CSV-Parser/CsvTable.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Rows
@@ -824,7 +824,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvTable.cs
+      path: src/CSV-Parser/CsvTable.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: GetEnumerator
@@ -859,7 +859,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvTable.cs
+      path: src/CSV-Parser/CsvTable.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Clone
@@ -894,7 +894,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvTable.cs
+      path: src/CSV-Parser/CsvTable.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ToString
@@ -943,7 +943,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvTable.cs
+      path: src/CSV-Parser/CsvTable.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: System.Collections.IEnumerable.GetEnumerator
@@ -976,7 +976,7 @@ items:
   type: Property
   source:
     remote:
-      path: CSV-Parser/CsvTable.Dictionary.cs
+      path: src/CSV-Parser/CsvTable.Dictionary.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: AsDictionaries
@@ -1013,7 +1013,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvTable.Dictionary.cs
+      path: src/CSV-Parser/CsvTable.Dictionary.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: AsDictionary
@@ -1052,7 +1052,7 @@ items:
   type: Property
   source:
     remote:
-      path: CSV-Parser/CsvTable.Map.cs
+      path: src/CSV-Parser/CsvTable.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Mapping
@@ -1089,7 +1089,7 @@ items:
   type: Property
   source:
     remote:
-      path: CSV-Parser/CsvTable.Map.cs
+      path: src/CSV-Parser/CsvTable.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Objects
@@ -1126,7 +1126,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvTable.Map.cs
+      path: src/CSV-Parser/CsvTable.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: AsObject
@@ -1176,7 +1176,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvTable.Map.cs
+      path: src/CSV-Parser/CsvTable.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: AsObjects
@@ -1226,7 +1226,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvTable.Map.cs
+      path: src/CSV-Parser/CsvTable.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: AsObject
@@ -1277,7 +1277,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvTable.Map.cs
+      path: src/CSV-Parser/CsvTable.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: AsObject
@@ -1316,7 +1316,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvTable.Map.cs
+      path: src/CSV-Parser/CsvTable.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: AddObjects
@@ -1361,7 +1361,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvTable.Map.cs
+      path: src/CSV-Parser/CsvTable.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: AddObjects
@@ -1409,7 +1409,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvTable.Map.cs
+      path: src/CSV-Parser/CsvTable.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: AddObjects
@@ -1451,7 +1451,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvTable.Map.cs
+      path: src/CSV-Parser/CsvTable.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CreateMapping

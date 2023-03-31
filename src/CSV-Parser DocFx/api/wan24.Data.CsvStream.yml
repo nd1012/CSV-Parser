@@ -67,7 +67,7 @@ items:
   type: Class
   source:
     remote:
-      path: CSV-Parser/CsvStream.Map.cs
+      path: src/CSV-Parser/CsvStream.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CsvStream
@@ -146,7 +146,7 @@ items:
   type: Property
   source:
     remote:
-      path: CSV-Parser/CsvStream.Common.cs
+      path: src/CSV-Parser/CsvStream.Common.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Rows
@@ -183,7 +183,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.Common.cs
+      path: src/CSV-Parser/CsvStream.Common.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: WriteHeader
@@ -225,7 +225,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.Common.cs
+      path: src/CSV-Parser/CsvStream.Common.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: WriteRows
@@ -267,7 +267,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.Common.cs
+      path: src/CSV-Parser/CsvStream.Common.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ReadHeader
@@ -302,7 +302,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.Common.cs
+      path: src/CSV-Parser/CsvStream.Common.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: SkipHeader
@@ -337,7 +337,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.Common.cs
+      path: src/CSV-Parser/CsvStream.Common.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: PeekField
@@ -372,7 +372,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.Common.cs
+      path: src/CSV-Parser/CsvStream.Common.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ReadRow
@@ -407,7 +407,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.Common.cs
+      path: src/CSV-Parser/CsvStream.Common.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: WriteHeaderAsync
@@ -450,7 +450,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.Common.cs
+      path: src/CSV-Parser/CsvStream.Common.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: WriteRowsAsync
@@ -493,7 +493,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.Common.cs
+      path: src/CSV-Parser/CsvStream.Common.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ReadHeaderAsync
@@ -529,7 +529,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.Common.cs
+      path: src/CSV-Parser/CsvStream.Common.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: PeekFieldAsync
@@ -565,7 +565,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.Common.cs
+      path: src/CSV-Parser/CsvStream.Common.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ReadRowAsync
@@ -601,7 +601,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.Common.cs
+      path: src/CSV-Parser/CsvStream.Common.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: SkipHeaderAsync
@@ -637,7 +637,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.Count.cs
+      path: src/CSV-Parser/CsvStream.Count.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CountRows
@@ -672,7 +672,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.Count.cs
+      path: src/CSV-Parser/CsvStream.Count.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CountRowsAsync
@@ -708,7 +708,7 @@ items:
   type: Constructor
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: src/CSV-Parser/CsvStream.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: .ctor
@@ -768,7 +768,7 @@ items:
   type: Constructor
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: src/CSV-Parser/CsvStream.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: .ctor
@@ -825,7 +825,7 @@ items:
   type: Constructor
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: src/CSV-Parser/CsvStream.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: .ctor
@@ -888,7 +888,7 @@ items:
   type: Property
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: src/CSV-Parser/CsvStream.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: StringEncoding
@@ -925,7 +925,7 @@ items:
   type: Property
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: src/CSV-Parser/CsvStream.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: BaseStream
@@ -962,7 +962,7 @@ items:
   type: Property
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: src/CSV-Parser/CsvStream.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: LeaveOpen
@@ -999,7 +999,7 @@ items:
   type: Property
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: src/CSV-Parser/CsvStream.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: FieldDelimiter
@@ -1036,7 +1036,7 @@ items:
   type: Property
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: src/CSV-Parser/CsvStream.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: StringDelimiter
@@ -1073,7 +1073,7 @@ items:
   type: Property
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: src/CSV-Parser/CsvStream.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Header
@@ -1110,7 +1110,7 @@ items:
   type: Property
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: src/CSV-Parser/CsvStream.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ColumnCount
@@ -1147,7 +1147,7 @@ items:
   type: Property
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: src/CSV-Parser/CsvStream.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CanRead
@@ -1186,7 +1186,7 @@ items:
   type: Property
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: src/CSV-Parser/CsvStream.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CanSeek
@@ -1225,7 +1225,7 @@ items:
   type: Property
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: src/CSV-Parser/CsvStream.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CanWrite
@@ -1264,7 +1264,7 @@ items:
   type: Property
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: src/CSV-Parser/CsvStream.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Length
@@ -1303,7 +1303,7 @@ items:
   type: Property
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: src/CSV-Parser/CsvStream.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Position
@@ -1342,7 +1342,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: src/CSV-Parser/CsvStream.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Flush
@@ -1376,7 +1376,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: src/CSV-Parser/CsvStream.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Read
@@ -1422,7 +1422,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: src/CSV-Parser/CsvStream.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Seek
@@ -1463,7 +1463,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: src/CSV-Parser/CsvStream.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: SetLength
@@ -1500,7 +1500,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: src/CSV-Parser/CsvStream.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Write
@@ -1544,7 +1544,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.cs
+      path: src/CSV-Parser/CsvStream.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Close
@@ -1578,7 +1578,7 @@ items:
   type: Property
   source:
     remote:
-      path: CSV-Parser/CsvStream.Dictionary.cs
+      path: src/CSV-Parser/CsvStream.Dictionary.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: AsDictionaries
@@ -1615,7 +1615,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.Dictionary.cs
+      path: src/CSV-Parser/CsvStream.Dictionary.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ReadDictionary
@@ -1650,7 +1650,7 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.Dictionary.cs
+      path: src/CSV-Parser/CsvStream.Dictionary.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ReadDictionaryAsync
@@ -1686,7 +1686,7 @@ items:
   type: Property
   source:
     remote:
-      path: CSV-Parser/CsvStream.Map.cs
+      path: src/CSV-Parser/CsvStream.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Mapping
@@ -1723,7 +1723,7 @@ items:
   type: Property
   source:
     remote:
-      path: CSV-Parser/CsvStream.Map.cs
+      path: src/CSV-Parser/CsvStream.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ObjectRows
@@ -1760,12 +1760,12 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.Map.cs
+      path: src/CSV-Parser/CsvStream.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: WriteObjects
     path: ../CSV-Parser/CsvStream.Map.cs
-    startLine: 34
+    startLine: 35
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -1805,12 +1805,12 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.Map.cs
+      path: src/CSV-Parser/CsvStream.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: WriteObjectRows
     path: ../CSV-Parser/CsvStream.Map.cs
-    startLine: 47
+    startLine: 48
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -1847,12 +1847,12 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.Map.cs
+      path: src/CSV-Parser/CsvStream.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ReadObject
     path: ../CSV-Parser/CsvStream.Map.cs
-    startLine: 69
+    startLine: 71
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -1894,12 +1894,12 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.Map.cs
+      path: src/CSV-Parser/CsvStream.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ReadObject
     path: ../CSV-Parser/CsvStream.Map.cs
-    startLine: 82
+    startLine: 84
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -1942,12 +1942,12 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.Map.cs
+      path: src/CSV-Parser/CsvStream.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ReadObjects
     path: ../CSV-Parser/CsvStream.Map.cs
-    startLine: 94
+    startLine: 96
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -1989,12 +1989,12 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.Map.cs
+      path: src/CSV-Parser/CsvStream.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ReadObjectRow
     path: ../CSV-Parser/CsvStream.Map.cs
-    startLine: 104
+    startLine: 106
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -2024,12 +2024,12 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.Map.cs
+      path: src/CSV-Parser/CsvStream.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: WriteObjectsAsync
     path: ../CSV-Parser/CsvStream.Map.cs
-    startLine: 117
+    startLine: 120
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -2070,12 +2070,12 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.Map.cs
+      path: src/CSV-Parser/CsvStream.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: WriteObjectsAsync
     path: ../CSV-Parser/CsvStream.Map.cs
-    startLine: 132
+    startLine: 135
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -2119,12 +2119,12 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.Map.cs
+      path: src/CSV-Parser/CsvStream.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: WriteObjectRowsAsync
     path: ../CSV-Parser/CsvStream.Map.cs
-    startLine: 145
+    startLine: 148
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -2162,12 +2162,12 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.Map.cs
+      path: src/CSV-Parser/CsvStream.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ReadObjectAsync
     path: ../CSV-Parser/CsvStream.Map.cs
-    startLine: 167
+    startLine: 171
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -2210,12 +2210,12 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.Map.cs
+      path: src/CSV-Parser/CsvStream.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ReadObjectAsync
     path: ../CSV-Parser/CsvStream.Map.cs
-    startLine: 180
+    startLine: 184
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -2259,12 +2259,12 @@ items:
   type: Method
   source:
     remote:
-      path: CSV-Parser/CsvStream.Map.cs
+      path: src/CSV-Parser/CsvStream.Map.cs
       branch: main
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ReadObjectRowAsync
     path: ../CSV-Parser/CsvStream.Map.cs
-    startLine: 190
+    startLine: 194
   assemblies:
   - csvparser
   namespace: wan24.Data

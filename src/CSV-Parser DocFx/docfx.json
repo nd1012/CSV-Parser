@@ -4,7 +4,10 @@
       "src": [
         {
           "files": [
-            "CSV-Parser/**.csproj"
+            "**.csproj"
+          ],
+          "exclude": [
+            "**/*Tests.csproj"
           ],
           "src": ".."
         }
@@ -47,7 +50,7 @@
         ]
       }
     ],
-    "dest": "../docs/",
+    "dest": "../../docs/",
     "globalMetadataFiles": [],
     "globalMetadata": {
       "_appTitle": "CSV-Parser",

@@ -18,8 +18,11 @@
     <PackageTags>csv,rfc4180</PackageTags>
     <NeutralLanguage>en-001</NeutralLanguage>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <AssemblyVersion>1.1.0</AssemblyVersion>
-    <FileVersion>1.1.0</FileVersion>
+    <AssemblyVersion>1.2.0</AssemblyVersion>
+    <FileVersion>1.2.0</FileVersion>
+    <Title>RFC 4180-like CSV parser</Title>
+    <Version>1.2.0</Version>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -34,10 +37,18 @@
     <None Update="LICENSE">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Include="LICENSE">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
   </ItemGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent" Condition="'$(OS)' == 'Windows_NT'">
+    <Exec Command="copy /Y &quot;$(ProjectDir)..\..\README.md&quot; &quot;$(ProjectDir)README.md&quot;&#xD;&#xA;" />
+  </Target>
 
 </Project>
