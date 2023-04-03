@@ -2,6 +2,11 @@
 
 A lightweight .NET Standard 2.0 CSV table (RFC 4180-like) parser.
 
+## How to get it
+
+CSV-Parser is available as 
+(NuGet package "CSV-Parser")[https://www.nuget.org/packages/CSV-Parser/].
+
 ## Usage
 
 Parse a file example:
