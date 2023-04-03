@@ -15,7 +15,7 @@ namespace wan24.Data
         /// <summary>
         /// Is closed?
         /// </summary>
-        private bool Closed = false;
+        protected bool Closed = false;
 
         /// <summary>
         /// Constructor
@@ -162,7 +162,7 @@ namespace wan24.Data
         /// <summary>
         /// Column headers
         /// </summary>
-        public IEnumerable<string> Header { get; private set; }
+        public IEnumerable<string> Header { get; protected set; }
 
         /// <summary>
         /// Number of columns
@@ -197,22 +197,46 @@ namespace wan24.Data
         public override long Length => BaseStream.Length;
 
         /// <inheritdoc/>
-        public override long Position { get => BaseStream.Position; set => BaseStream.Position = value; }
+        public override long Position
+        {
+            get => BaseStream.Position;
+            set
+            {
+                BaseStream.Position = value;
+                ResetBuffer();
+            }
+        }
 
         /// <inheritdoc/>
         public override void Flush() => BaseStream.Flush();
 
         /// <inheritdoc/>
-        public override int Read(byte[] buffer, int offset, int count) => BaseStream.Read(buffer, offset, count);
+        public override int Read(byte[] buffer, int offset, int count)
+        {
+            ResetBuffer();
+            return BaseStream.Read(buffer, offset, count);
+        }
 
         /// <inheritdoc/>
-        public override long Seek(long offset, SeekOrigin origin) => BaseStream.Seek(offset, origin);
+        public override long Seek(long offset, SeekOrigin origin)
+        {
+            ResetBuffer();
+            return BaseStream.Seek(offset, origin);
+        }
 
         /// <inheritdoc/>
-        public override void SetLength(long value) => BaseStream.SetLength(value);
+        public override void SetLength(long value)
+        {
+            BaseStream.SetLength(value);
+            ResetBuffer();
+        }
 
         /// <inheritdoc/>
-        public override void Write(byte[] buffer, int offset, int count) => BaseStream.Write(buffer, offset, count);
+        public override void Write(byte[] buffer, int offset, int count)
+        {
+            BaseStream.Write(buffer, offset, count);
+            ResetBuffer();
+        }
 
         /// <inheritdoc/>
         public override void Close()

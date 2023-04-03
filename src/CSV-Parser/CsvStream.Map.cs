@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace wan24.Data
@@ -116,13 +117,14 @@ namespace wan24.Data
         /// Write objects
         /// </summary>
         /// <typeparam name="T">Object type</typeparam>
+        /// <param name="cancellationToken">Cancellation token</param>
         /// <param name="objs">Objects</param>
         /// <returns>This</returns>
-        public async Task<CsvStream> WriteObjectsAsync<T>(params T[] objs)
+        public async Task<CsvStream> WriteObjectsAsync<T>(CancellationToken cancellationToken, params T[] objs)
         {
             if (Closed) throw new ObjectDisposedException(GetType().FullName);
             if (objs == null) throw new ArgumentNullException(nameof(objs));
-            foreach (T obj in objs) await WriteRowsAsync(CsvParser.Unmap(obj, Mapping));
+            foreach (T obj in objs) await WriteRowsAsync(cancellationToken, CsvParser.Unmap(obj, Mapping)).ConfigureAwait(continueOnCapturedContext: false);
             return this;
         }
 
@@ -130,23 +132,25 @@ namespace wan24.Data
         /// Write objects
         /// </summary>
         /// <typeparam name="T">Object type</typeparam>
-        /// <param name="objs">Objects</param>
         /// <param name="mapping">Override mapping</param>
+        /// <param name="cancellationToken">Cancellation token</param>
+        /// <param name="objs">Objects</param>
         /// <returns>This</returns>
-        public async Task<CsvStream> WriteObjectsAsync<T>(Dictionary<int, CsvMapping> mapping, params T[] objs)
+        public async Task<CsvStream> WriteObjectsAsync<T>(Dictionary<int, CsvMapping> mapping, CancellationToken cancellationToken, params T[] objs)
         {
             if (Closed) throw new ObjectDisposedException(GetType().FullName);
             if (objs == null) throw new ArgumentNullException(nameof(objs));
-            foreach (T obj in objs) await WriteRowsAsync(CsvParser.Unmap(obj, mapping ?? Mapping));
+            foreach (T obj in objs) await WriteRowsAsync(cancellationToken, CsvParser.Unmap(obj, mapping ?? Mapping)).ConfigureAwait(continueOnCapturedContext: false);
             return this;
         }
 
         /// <summary>
         /// Write 
         /// </summary>
+        /// <param name="cancellationToken">Cancellation token</param>
         /// <param name="objs">Objects</param>
         /// <returns>This</returns>
-        public async Task<CsvStream> WriteObjectRowsAsync(params object[] objs)
+        public async Task<CsvStream> WriteObjectRowsAsync(CancellationToken cancellationToken, params object[] objs)
         {
             if (Closed) throw new ObjectDisposedException(GetType().FullName);
             if (objs == null) throw new ArgumentNullException(nameof(objs));
@@ -154,11 +158,11 @@ namespace wan24.Data
             foreach (object obj in objs)
                 if (obj == null)
                 {
-                    await WriteAsync(nl, 0, nl.Length);
+                    await WriteAsync(nl, 0, nl.Length, cancellationToken).ConfigureAwait(continueOnCapturedContext: false);
                 }
                 else
                 {
-                    await WriteRowsAsync(new string[] { obj.GetType().FullName }.Concat(CsvParser.Unmap(obj)).ToArray());
+                    await WriteRowsAsync(cancellationToken, new string[] { obj.GetType().FullName }.Concat(CsvParser.Unmap(obj)).ToArray()).ConfigureAwait(continueOnCapturedContext: false);
                 }
             return this;
         }
@@ -168,11 +172,12 @@ namespace wan24.Data
         /// </summary>
         /// <typeparam name="T">Object type</typeparam>
         /// <param name="mapping">Override mapping</param>
+        /// <param name="cancellationToken">Cancellation token</param>
         /// <returns>Object</returns>
-        public async Task<T> ReadObjectAsync<T>(Dictionary<int, CsvMapping> mapping = null) where T : new()
+        public async Task<T> ReadObjectAsync<T>(Dictionary<int, CsvMapping> mapping = null, CancellationToken cancellationToken = default) where T : new()
         {
             if (Closed) throw new ObjectDisposedException(GetType().FullName);
-            return CsvParser.Map<T>(await ReadRowAsync(), mapping ?? Mapping);
+            return CsvParser.Map<T>(await ReadRowAsync(cancellationToken).ConfigureAwait(continueOnCapturedContext: false), mapping ?? Mapping);
         }
 
         /// <summary>
@@ -181,22 +186,24 @@ namespace wan24.Data
         /// <typeparam name="T">Object type</typeparam>
         /// <param name="obj">Object</param>
         /// <param name="mapping">Override mapping</param>
+        /// <param name="cancellationToken">Cancellation token</param>
         /// <returns>Object</returns>
-        public async Task<T> ReadObjectAsync<T>(T obj, Dictionary<int, CsvMapping> mapping = null)
+        public async Task<T> ReadObjectAsync<T>(T obj, Dictionary<int, CsvMapping> mapping = null, CancellationToken cancellationToken = default)
         {
             if (Closed) throw new ObjectDisposedException(GetType().FullName);
-            return CsvParser.Map(await ReadRowAsync(), obj, mapping ?? Mapping);
+            return CsvParser.Map(await ReadRowAsync(cancellationToken).ConfigureAwait(continueOnCapturedContext: false), obj, mapping ?? Mapping);
         }
 
         /// <summary>
         /// Read an object row
         /// </summary>
+        /// <param name="cancellationToken">Cancellation token</param>
         /// <returns>Object</returns>
-        public async Task<object> ReadObjectRowAsync()
+        public async Task<object> ReadObjectRowAsync(CancellationToken cancellationToken = default)
         {
             if (Closed) throw new ObjectDisposedException(GetType().FullName);
-            string typeName = await PeekFieldAsync();
-            if (typeName == null) await ReadRowAsync();
+            string typeName = await PeekFieldAsync(cancellationToken).ConfigureAwait(continueOnCapturedContext: false);
+            if (typeName == null) await ReadRowAsync(cancellationToken).ConfigureAwait(continueOnCapturedContext: false);
             return typeName == null 
                 ? null 
                 : CsvParser.Map(Type.GetType(typeName) ?? throw new TypeInitializationException(typeName, null), (await ReadRowAsync()).Skip(1).ToArray());

@@ -117,11 +117,12 @@ namespace wan24.Data
         public CsvTable CreateMapping()
         {
             CsvMappings mapping = new CsvMappings();
-            for (int i = 0; i < Header.Count; i++) mapping[i] = new CsvMapping()
-            {
-                Field = i,
-                PropertyName = Header[i]
-            };
+            for (int i = 0; i < Header.Count; i++)
+                mapping[i] = new CsvMapping()
+                {
+                    Field = i,
+                    PropertyName = Header[i]
+                };
             Mapping = mapping;
             return this;
         }

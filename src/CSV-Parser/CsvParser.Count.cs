@@ -1,11 +1,13 @@
 ﻿using System.IO;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace wan24.Data
 {
     public static partial class CsvParser
     {
+#if !NO_STREAM
 		/// <summary>
 		/// Parse a file and determine the number of CSV table rows
 		/// </summary>
@@ -13,7 +15,7 @@ namespace wan24.Data
 		/// <param name="stringDelimiter">String delimiter</param>
 		/// <param name="encoding">String encoding</param>
 		/// <returns>Row count</returns>
-		public static int CountRowsFromFile(
+		public static long CountRowsFromFile(
 			string fileName,
 			char? stringDelimiter = '"',
 			Encoding encoding = null
@@ -26,13 +28,15 @@ namespace wan24.Data
 		/// <param name="fileName">Filename</param>
 		/// <param name="stringDelimiter">String delimiter</param>
 		/// <param name="encoding">String encoding</param>
+		/// <param name="cancellationToken">Cancellation token</param>
 		/// <returns>Row count</returns>
-		public static async Task<int> CountRowsFromFileAsync(
+		public static async Task<long> CountRowsFromFileAsync(
 			string fileName,
 			char? stringDelimiter = '"',
-			Encoding encoding = null
+			Encoding encoding = null,
+			CancellationToken cancellationToken = default
 			)
-			=> await CountRowsFromStreamAsync(File.OpenRead(fileName), stringDelimiter, encoding: encoding);
+			=> await CountRowsFromStreamAsync(File.OpenRead(fileName), stringDelimiter, encoding: encoding, cancellationToken: cancellationToken).ConfigureAwait(continueOnCapturedContext: false);
 
 		/// <summary>
 		/// Parse a stream and determine the number of CSV table rows
@@ -42,7 +46,7 @@ namespace wan24.Data
 		/// <param name="leaveOpen">Leave the stream open?</param>
 		/// <param name="encoding">String encoding</param>
 		/// <returns>Row count</returns>
-		public static int CountRowsFromStream(
+		public static long CountRowsFromStream(
 			Stream stream,
 			char? stringDelimiter = '"',
 			bool leaveOpen = false,
@@ -50,13 +54,8 @@ namespace wan24.Data
 			)
 		{
 			if (encoding == null) encoding = Encoding.Default;
-			using (var closeStream = leaveOpen ? null : stream)
-			{
-				byte[] buffer = new byte[stream.Length];
-				if (buffer.Length < 1) throw new InvalidDataException("No CSV data");
-				if (stream.Read(buffer, 0, buffer.Length) != buffer.Length) throw new IOException($"Failed to read {buffer.Length} bytes from stream");
-				return CountRowsFromString(encoding.GetString(buffer), stringDelimiter);
-			}
+			using (CsvStream csv = new CsvStream(stream, stringDelimiter: stringDelimiter, leaveOpen: leaveOpen, encoding: encoding))
+				return csv.CountRows();
 		}
 
 		/// <summary>
@@ -66,23 +65,21 @@ namespace wan24.Data
 		/// <param name="stringDelimiter">String delimiter</param>
 		/// <param name="leaveOpen">Leave the stream open?</param>
 		/// <param name="encoding">String encoding</param>
+		/// <param name="cancellationToken">Cancellation token</param>
 		/// <returns>Row count</returns>
-		public static async Task<int> CountRowsFromStreamAsync(
+		public static async Task<long> CountRowsFromStreamAsync(
 			Stream stream, char?
 			stringDelimiter = '"',
 			bool leaveOpen = false,
-			Encoding encoding = null
+			Encoding encoding = null,
+			CancellationToken cancellationToken = default
 			)
 		{
 			if (encoding == null) encoding = Encoding.Default;
-			using (var closeStream = leaveOpen ? null : stream)
-			{
-				byte[] buffer = new byte[stream.Length];
-				if (buffer.Length < 1) throw new InvalidDataException("No CSV data");
-				if (await stream.ReadAsync(buffer, 0, buffer.Length) != buffer.Length) throw new IOException($"Failed to read {buffer.Length} bytes from stream");
-				return CountRowsFromString(encoding.GetString(buffer), stringDelimiter);
-			}
+			using (CsvStream csv = new CsvStream(stream, stringDelimiter: stringDelimiter, leaveOpen: leaveOpen, encoding: encoding))
+				return await csv.CountRowsAsync(cancellationToken).ConfigureAwait(continueOnCapturedContext: false);
 		}
+#endif
 
 		/// <summary>
 		/// Parse a string and determine the number of CSV table rows
@@ -90,10 +87,10 @@ namespace wan24.Data
 		/// <param name="csv">CSV data</param>
 		/// <param name="stringDelimiter">String delimiter</param>
 		/// <returns>Row count</returns>
-		public static int CountRowsFromString(string csv, char? stringDelimiter = '"')
+		public static long CountRowsFromString(string csv, char? stringDelimiter = '"')
 		{
 			if (!csv.EndsWith("\n")) csv += "\n";
-			int res = 0;
+            long res = 0;
 			bool str = true;
 			foreach (char currentChar in csv)
 				if (currentChar == stringDelimiter)

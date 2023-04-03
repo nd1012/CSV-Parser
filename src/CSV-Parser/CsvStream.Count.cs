@@ -1,6 +1,7 @@
 ﻿#if !NO_STREAM
 using System;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace wan24.Data
@@ -8,7 +9,7 @@ namespace wan24.Data
     public partial class CsvStream
     {
         /// <summary>
-        /// Get the row count (will reset the stream offset)
+        /// Get the row count from the current position (will reset the stream offset to the original position)
         /// </summary>
         /// <returns>Row count</returns>
         public long CountRows()
@@ -26,17 +27,18 @@ namespace wan24.Data
         }
 
         /// <summary>
-        /// Get the row count (will reset the stream offset)
+        /// Get the row count from the current position (will reset the stream offset to the original position)
         /// </summary>
+        /// <param name="cancellationToken">Cancellation token</param>
         /// <returns>Row count</returns>
-        public async Task<long> CountRowsAsync()
+        public async Task<long> CountRowsAsync(CancellationToken cancellationToken = default)
         {
             if (Closed) throw new ObjectDisposedException(GetType().FullName);
             long offset = Position;
             try
             {
                 long res = 0;
-                for (; await ReadRowAsync() != null; res++) ;
+                for (; await ReadRowAsync(cancellationToken).ConfigureAwait(continueOnCapturedContext: false) != null; res++) ;
                 return res;
             }
             finally

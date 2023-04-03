@@ -244,7 +244,7 @@
     <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvParser_CountRowsFromFile_System_String_System_Nullable_System_Char__System_Text_Encoding_.md&amp;value=---%0Auid%3A%20wan24.Data.CsvParser.CountRowsFromFile(System.String%2CSystem.Nullable%7BSystem.Char%7D%2CSystem.Text.Encoding)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nd1012/CSV-Parser/blob/main/src/CSV-Parser/CsvParser.Count.cs/#L16">View Source</a>
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/src/CSV-Parser/CsvParser.Count.cs/#L18">View Source</a>
   </span>
   <a id="wan24_Data_CsvParser_CountRowsFromFile_" data-uid="wan24.Data.CsvParser.CountRowsFromFile*"></a>
   <h4 id="wan24_Data_CsvParser_CountRowsFromFile_System_String_System_Nullable_System_Char__System_Text_Encoding_" data-uid="wan24.Data.CsvParser.CountRowsFromFile(System.String,System.Nullable{System.Char},System.Text.Encoding)">CountRowsFromFile(String, Nullable&lt;Char&gt;, Encoding)</h4>
@@ -253,7 +253,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int CountRowsFromFile(string fileName, char? stringDelimiter = '&quot;', Encoding encoding = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static long CountRowsFromFile(string fileName, char? stringDelimiter = '&quot;', Encoding encoding = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -295,7 +295,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Int32</span></td>
+        <td><span class="xref">System.Int64</span></td>
         <td><p>Row count</p>
 </td>
       </tr>
@@ -303,19 +303,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvParser_CountRowsFromFileAsync_System_String_System_Nullable_System_Char__System_Text_Encoding_.md&amp;value=---%0Auid%3A%20wan24.Data.CsvParser.CountRowsFromFileAsync(System.String%2CSystem.Nullable%7BSystem.Char%7D%2CSystem.Text.Encoding)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvParser_CountRowsFromFileAsync_System_String_System_Nullable_System_Char__System_Text_Encoding_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20wan24.Data.CsvParser.CountRowsFromFileAsync(System.String%2CSystem.Nullable%7BSystem.Char%7D%2CSystem.Text.Encoding%2CSystem.Threading.CancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nd1012/CSV-Parser/blob/main/src/CSV-Parser/CsvParser.Count.cs/#L30">View Source</a>
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/src/CSV-Parser/CsvParser.Count.cs/#L33">View Source</a>
   </span>
   <a id="wan24_Data_CsvParser_CountRowsFromFileAsync_" data-uid="wan24.Data.CsvParser.CountRowsFromFileAsync*"></a>
-  <h4 id="wan24_Data_CsvParser_CountRowsFromFileAsync_System_String_System_Nullable_System_Char__System_Text_Encoding_" data-uid="wan24.Data.CsvParser.CountRowsFromFileAsync(System.String,System.Nullable{System.Char},System.Text.Encoding)">CountRowsFromFileAsync(String, Nullable&lt;Char&gt;, Encoding)</h4>
+  <h4 id="wan24_Data_CsvParser_CountRowsFromFileAsync_System_String_System_Nullable_System_Char__System_Text_Encoding_System_Threading_CancellationToken_" data-uid="wan24.Data.CsvParser.CountRowsFromFileAsync(System.String,System.Nullable{System.Char},System.Text.Encoding,System.Threading.CancellationToken)">CountRowsFromFileAsync(String, Nullable&lt;Char&gt;, Encoding, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Parse a file and determine the number of CSV table rows</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static async Task&lt;int&gt; CountRowsFromFileAsync(string fileName, char? stringDelimiter = '&quot;', Encoding encoding = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static async Task&lt;long&gt; CountRowsFromFileAsync(string fileName, char? stringDelimiter = '&quot;', Encoding encoding = null, CancellationToken cancellationToken = default(CancellationToken))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -345,6 +345,12 @@
         <td><p>String encoding</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>Cancellation token</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -357,7 +363,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
         <td><p>Row count</p>
 </td>
       </tr>
@@ -368,7 +374,7 @@
     <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvParser_CountRowsFromStream_System_IO_Stream_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_.md&amp;value=---%0Auid%3A%20wan24.Data.CsvParser.CountRowsFromStream(System.IO.Stream%2CSystem.Nullable%7BSystem.Char%7D%2CSystem.Boolean%2CSystem.Text.Encoding)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nd1012/CSV-Parser/blob/main/src/CSV-Parser/CsvParser.Count.cs/#L45">View Source</a>
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/src/CSV-Parser/CsvParser.Count.cs/#L49">View Source</a>
   </span>
   <a id="wan24_Data_CsvParser_CountRowsFromStream_" data-uid="wan24.Data.CsvParser.CountRowsFromStream*"></a>
   <h4 id="wan24_Data_CsvParser_CountRowsFromStream_System_IO_Stream_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_" data-uid="wan24.Data.CsvParser.CountRowsFromStream(System.IO.Stream,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)">CountRowsFromStream(Stream, Nullable&lt;Char&gt;, Boolean, Encoding)</h4>
@@ -377,7 +383,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int CountRowsFromStream(Stream stream, char? stringDelimiter = '&quot;', bool leaveOpen = false, Encoding encoding = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static long CountRowsFromStream(Stream stream, char? stringDelimiter = '&quot;', bool leaveOpen = false, Encoding encoding = null)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -425,7 +431,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Int32</span></td>
+        <td><span class="xref">System.Int64</span></td>
         <td><p>Row count</p>
 </td>
       </tr>
@@ -433,19 +439,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvParser_CountRowsFromStreamAsync_System_IO_Stream_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_.md&amp;value=---%0Auid%3A%20wan24.Data.CsvParser.CountRowsFromStreamAsync(System.IO.Stream%2CSystem.Nullable%7BSystem.Char%7D%2CSystem.Boolean%2CSystem.Text.Encoding)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvParser_CountRowsFromStreamAsync_System_IO_Stream_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20wan24.Data.CsvParser.CountRowsFromStreamAsync(System.IO.Stream%2CSystem.Nullable%7BSystem.Char%7D%2CSystem.Boolean%2CSystem.Text.Encoding%2CSystem.Threading.CancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
     <a href="https://github.com/nd1012/CSV-Parser/blob/main/src/CSV-Parser/CsvParser.Count.cs/#L70">View Source</a>
   </span>
   <a id="wan24_Data_CsvParser_CountRowsFromStreamAsync_" data-uid="wan24.Data.CsvParser.CountRowsFromStreamAsync*"></a>
-  <h4 id="wan24_Data_CsvParser_CountRowsFromStreamAsync_System_IO_Stream_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_" data-uid="wan24.Data.CsvParser.CountRowsFromStreamAsync(System.IO.Stream,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)">CountRowsFromStreamAsync(Stream, Nullable&lt;Char&gt;, Boolean, Encoding)</h4>
+  <h4 id="wan24_Data_CsvParser_CountRowsFromStreamAsync_System_IO_Stream_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_System_Threading_CancellationToken_" data-uid="wan24.Data.CsvParser.CountRowsFromStreamAsync(System.IO.Stream,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Threading.CancellationToken)">CountRowsFromStreamAsync(Stream, Nullable&lt;Char&gt;, Boolean, Encoding, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Parse a stream and determine the number of CSV table rows</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static async Task&lt;int&gt; CountRowsFromStreamAsync(Stream stream, char? stringDelimiter = '&quot;', bool leaveOpen = false, Encoding encoding = null)</code></pre>
+    <pre><code class="lang-csharp hljs">public static async Task&lt;long&gt; CountRowsFromStreamAsync(Stream stream, char? stringDelimiter = '&quot;', bool leaveOpen = false, Encoding encoding = null, CancellationToken cancellationToken = default(CancellationToken))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -481,6 +487,12 @@
         <td><p>String encoding</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>Cancellation token</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -493,7 +505,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int32</span>&gt;</td>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;<span class="xref">System.Int64</span>&gt;</td>
         <td><p>Row count</p>
 </td>
       </tr>
@@ -504,7 +516,7 @@
     <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvParser_CountRowsFromString_System_String_System_Nullable_System_Char__.md&amp;value=---%0Auid%3A%20wan24.Data.CsvParser.CountRowsFromString(System.String%2CSystem.Nullable%7BSystem.Char%7D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nd1012/CSV-Parser/blob/main/src/CSV-Parser/CsvParser.Count.cs/#L93">View Source</a>
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/src/CSV-Parser/CsvParser.Count.cs/#L90">View Source</a>
   </span>
   <a id="wan24_Data_CsvParser_CountRowsFromString_" data-uid="wan24.Data.CsvParser.CountRowsFromString*"></a>
   <h4 id="wan24_Data_CsvParser_CountRowsFromString_System_String_System_Nullable_System_Char__" data-uid="wan24.Data.CsvParser.CountRowsFromString(System.String,System.Nullable{System.Char})">CountRowsFromString(String, Nullable&lt;Char&gt;)</h4>
@@ -513,7 +525,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int CountRowsFromString(string csv, char? stringDelimiter = '&quot;')</code></pre>
+    <pre><code class="lang-csharp hljs">public static long CountRowsFromString(string csv, char? stringDelimiter = '&quot;')</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -549,7 +561,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Int32</span></td>
+        <td><span class="xref">System.Int64</span></td>
         <td><p>Row count</p>
 </td>
       </tr>
@@ -1125,7 +1137,7 @@
     <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvParser_ParseFile_System_String_System_Boolean_System_Char_System_Nullable_System_Char__System_Text_Encoding_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20wan24.Data.CsvParser.ParseFile(System.String%2CSystem.Boolean%2CSystem.Char%2CSystem.Nullable%7BSystem.Char%7D%2CSystem.Text.Encoding%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nd1012/CSV-Parser/blob/main/src/CSV-Parser/CsvParser.Parse.cs/#L24">View Source</a>
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/src/CSV-Parser/CsvParser.Parse.cs/#L25">View Source</a>
   </span>
   <a id="wan24_Data_CsvParser_ParseFile_" data-uid="wan24.Data.CsvParser.ParseFile*"></a>
   <h4 id="wan24_Data_CsvParser_ParseFile_System_String_System_Boolean_System_Char_System_Nullable_System_Char__System_Text_Encoding_System_Int32_System_Int32_" data-uid="wan24.Data.CsvParser.ParseFile(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32)">ParseFile(String, Boolean, Char, Nullable&lt;Char&gt;, Encoding, Int32, Int32)</h4>
@@ -1208,19 +1220,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvParser_ParseFileAsync_System_String_System_Boolean_System_Char_System_Nullable_System_Char__System_Text_Encoding_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20wan24.Data.CsvParser.ParseFileAsync(System.String%2CSystem.Boolean%2CSystem.Char%2CSystem.Nullable%7BSystem.Char%7D%2CSystem.Text.Encoding%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvParser_ParseFileAsync_System_String_System_Boolean_System_Char_System_Nullable_System_Char__System_Text_Encoding_System_Int32_System_Int32_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20wan24.Data.CsvParser.ParseFileAsync(System.String%2CSystem.Boolean%2CSystem.Char%2CSystem.Nullable%7BSystem.Char%7D%2CSystem.Text.Encoding%2CSystem.Int32%2CSystem.Int32%2CSystem.Threading.CancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nd1012/CSV-Parser/blob/main/src/CSV-Parser/CsvParser.Parse.cs/#L55">View Source</a>
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/src/CSV-Parser/CsvParser.Parse.cs/#L57">View Source</a>
   </span>
   <a id="wan24_Data_CsvParser_ParseFileAsync_" data-uid="wan24.Data.CsvParser.ParseFileAsync*"></a>
-  <h4 id="wan24_Data_CsvParser_ParseFileAsync_System_String_System_Boolean_System_Char_System_Nullable_System_Char__System_Text_Encoding_System_Int32_System_Int32_" data-uid="wan24.Data.CsvParser.ParseFileAsync(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32)">ParseFileAsync(String, Boolean, Char, Nullable&lt;Char&gt;, Encoding, Int32, Int32)</h4>
+  <h4 id="wan24_Data_CsvParser_ParseFileAsync_System_String_System_Boolean_System_Char_System_Nullable_System_Char__System_Text_Encoding_System_Int32_System_Int32_System_Threading_CancellationToken_" data-uid="wan24.Data.CsvParser.ParseFileAsync(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32,System.Threading.CancellationToken)">ParseFileAsync(String, Boolean, Char, Nullable&lt;Char&gt;, Encoding, Int32, Int32, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Parse a file</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static async Task&lt;CsvTable&gt; ParseFileAsync(string fileName, bool header = true, char fieldDelimiter = ',', char? stringDelimiter = '&quot;', Encoding encoding = null, int offset = 0, int limit = 0)</code></pre>
+    <pre><code class="lang-csharp hljs">public static async Task&lt;CsvTable&gt; ParseFileAsync(string fileName, bool header = true, char fieldDelimiter = ',', char? stringDelimiter = '&quot;', Encoding encoding = null, int offset = 0, int limit = 0, CancellationToken cancellationToken = default(CancellationToken))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1272,6 +1284,12 @@
         <td><span class="xref">System.Int32</span></td>
         <td><span class="parametername">limit</span></td>
         <td><p>Row limit</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>Cancellation token</p>
 </td>
       </tr>
     </tbody>
@@ -1691,7 +1709,7 @@
     <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvParser_ParseStream_System_IO_Stream_System_Boolean_System_Char_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20wan24.Data.CsvParser.ParseStream(System.IO.Stream%2CSystem.Boolean%2CSystem.Char%2CSystem.Nullable%7BSystem.Char%7D%2CSystem.Boolean%2CSystem.Text.Encoding%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nd1012/CSV-Parser/blob/main/src/CSV-Parser/CsvParser.Parse.cs/#L87">View Source</a>
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/src/CSV-Parser/CsvParser.Parse.cs/#L91">View Source</a>
   </span>
   <a id="wan24_Data_CsvParser_ParseStream_" data-uid="wan24.Data.CsvParser.ParseStream*"></a>
   <h4 id="wan24_Data_CsvParser_ParseStream_System_IO_Stream_System_Boolean_System_Char_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_System_Int32_System_Int32_" data-uid="wan24.Data.CsvParser.ParseStream(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32)">ParseStream(Stream, Boolean, Char, Nullable&lt;Char&gt;, Boolean, Encoding, Int32, Int32)</h4>
@@ -1780,19 +1798,19 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvParser_ParseStreamAsync_System_IO_Stream_System_Boolean_System_Char_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream%2CSystem.Boolean%2CSystem.Char%2CSystem.Nullable%7BSystem.Char%7D%2CSystem.Boolean%2CSystem.Text.Encoding%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvParser_ParseStreamAsync_System_IO_Stream_System_Boolean_System_Char_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_System_Int32_System_Int32_System_Threading_CancellationToken_.md&amp;value=---%0Auid%3A%20wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream%2CSystem.Boolean%2CSystem.Char%2CSystem.Nullable%7BSystem.Char%7D%2CSystem.Boolean%2CSystem.Text.Encoding%2CSystem.Int32%2CSystem.Int32%2CSystem.Threading.CancellationToken)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nd1012/CSV-Parser/blob/main/src/CSV-Parser/CsvParser.Parse.cs/#L118">View Source</a>
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/src/CSV-Parser/CsvParser.Parse.cs/#L123">View Source</a>
   </span>
   <a id="wan24_Data_CsvParser_ParseStreamAsync_" data-uid="wan24.Data.CsvParser.ParseStreamAsync*"></a>
-  <h4 id="wan24_Data_CsvParser_ParseStreamAsync_System_IO_Stream_System_Boolean_System_Char_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_System_Int32_System_Int32_" data-uid="wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32)">ParseStreamAsync(Stream, Boolean, Char, Nullable&lt;Char&gt;, Boolean, Encoding, Int32, Int32)</h4>
+  <h4 id="wan24_Data_CsvParser_ParseStreamAsync_System_IO_Stream_System_Boolean_System_Char_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_System_Int32_System_Int32_System_Threading_CancellationToken_" data-uid="wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32,System.Threading.CancellationToken)">ParseStreamAsync(Stream, Boolean, Char, Nullable&lt;Char&gt;, Boolean, Encoding, Int32, Int32, CancellationToken)</h4>
   <div class="markdown level1 summary"><p>Parse a stream</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static async Task&lt;CsvTable&gt; ParseStreamAsync(Stream stream, bool header = true, char fieldDelimiter = ',', char? stringDelimiter = '&quot;', bool leaveOpen = false, Encoding encoding = null, int offset = 0, int limit = 0)</code></pre>
+    <pre><code class="lang-csharp hljs">public static async Task&lt;CsvTable&gt; ParseStreamAsync(Stream stream, bool header = true, char fieldDelimiter = ',', char? stringDelimiter = '&quot;', bool leaveOpen = false, Encoding encoding = null, int offset = 0, int limit = 0, CancellationToken cancellationToken = default(CancellationToken))</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -1852,6 +1870,12 @@
         <td><p>Row limit</p>
 </td>
       </tr>
+      <tr>
+        <td><span class="xref">System.Threading.CancellationToken</span></td>
+        <td><span class="parametername">cancellationToken</span></td>
+        <td><p>Cancellation token</p>
+</td>
+      </tr>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
@@ -1875,7 +1899,7 @@
     <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvParser_ParseString_System_String_System_Boolean_System_Char_System_Nullable_System_Char__System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20wan24.Data.CsvParser.ParseString(System.String%2CSystem.Boolean%2CSystem.Char%2CSystem.Nullable%7BSystem.Char%7D%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/nd1012/CSV-Parser/blob/main/src/CSV-Parser/CsvParser.Parse.cs/#L156">View Source</a>
+    <a href="https://github.com/nd1012/CSV-Parser/blob/main/src/CSV-Parser/CsvParser.Parse.cs/#L165">View Source</a>
   </span>
   <a id="wan24_Data_CsvParser_ParseString_" data-uid="wan24.Data.CsvParser.ParseString*"></a>
   <h4 id="wan24_Data_CsvParser_ParseString_System_String_System_Boolean_System_Char_System_Nullable_System_Char__System_Int32_System_Int32_" data-uid="wan24.Data.CsvParser.ParseString(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Int32,System.Int32)">ParseString(String, Boolean, Char, Nullable&lt;Char&gt;, Int32, Int32)</h4>
@@ -2089,7 +2113,7 @@
                     <a href="https://github.com/nd1012/CSV-Parser/new/main/apiSpec/new?filename=wan24_Data_CsvParser.md&amp;value=---%0Auid%3A%20wan24.Data.CsvParser%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/nd1012/CSV-Parser/blob/main/src/CSV-Parser/CsvParser.Parse.cs/#L10" class="contribution-link">View Source</a>
+                    <a href="https://github.com/nd1012/CSV-Parser/blob/main/src/CSV-Parser/CsvParser.Parse.cs/#L11" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

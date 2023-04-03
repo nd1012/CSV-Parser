@@ -6,9 +6,9 @@ items:
   parent: wan24.Data
   children:
   - wan24.Data.CsvParser.CountRowsFromFile(System.String,System.Nullable{System.Char},System.Text.Encoding)
-  - wan24.Data.CsvParser.CountRowsFromFileAsync(System.String,System.Nullable{System.Char},System.Text.Encoding)
+  - wan24.Data.CsvParser.CountRowsFromFileAsync(System.String,System.Nullable{System.Char},System.Text.Encoding,System.Threading.CancellationToken)
   - wan24.Data.CsvParser.CountRowsFromStream(System.IO.Stream,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)
-  - wan24.Data.CsvParser.CountRowsFromStreamAsync(System.IO.Stream,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)
+  - wan24.Data.CsvParser.CountRowsFromStreamAsync(System.IO.Stream,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Threading.CancellationToken)
   - wan24.Data.CsvParser.CountRowsFromString(System.String,System.Nullable{System.Char})
   - wan24.Data.CsvParser.CreateMapping(System.Type)
   - wan24.Data.CsvParser.CreateMapping(wan24.Data.CsvMapping[])
@@ -22,14 +22,14 @@ items:
   - wan24.Data.CsvParser.Map``1(System.String[],System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
   - wan24.Data.CsvParser.ObjectValueFactories
   - wan24.Data.CsvParser.ParseFile(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32)
-  - wan24.Data.CsvParser.ParseFileAsync(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32)
+  - wan24.Data.CsvParser.ParseFileAsync(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32,System.Threading.CancellationToken)
   - wan24.Data.CsvParser.ParseHeaderFromFile(System.String,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32)
   - wan24.Data.CsvParser.ParseHeaderFromFileAsync(System.String,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32)
   - wan24.Data.CsvParser.ParseHeaderFromStream(System.IO.Stream,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32)
   - wan24.Data.CsvParser.ParseHeaderFromStreamAsync(System.IO.Stream,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32)
   - wan24.Data.CsvParser.ParseHeaderFromString(System.String,System.Char,System.Nullable{System.Char})
   - wan24.Data.CsvParser.ParseStream(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32)
-  - wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32)
+  - wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32,System.Threading.CancellationToken)
   - wan24.Data.CsvParser.ParseString(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Int32,System.Int32)
   - wan24.Data.CsvParser.RowValueFactories
   - wan24.Data.CsvParser.TypeMappings
@@ -49,7 +49,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CsvParser
     path: ../CSV-Parser/CsvParser.Parse.cs
-    startLine: 9
+    startLine: 10
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -93,14 +93,14 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CountRowsFromFile
     path: ../CSV-Parser/CsvParser.Count.cs
-    startLine: 15
+    startLine: 17
   assemblies:
   - csvparser
   namespace: wan24.Data
   summary: "\nParse a file and determine the number of CSV table rows\n"
   example: []
   syntax:
-    content: public static int CountRowsFromFile(string fileName, char? stringDelimiter = '"', Encoding encoding = null)
+    content: public static long CountRowsFromFile(string fileName, char? stringDelimiter = '"', Encoding encoding = null)
     parameters:
     - id: fileName
       type: System.String
@@ -112,9 +112,9 @@ items:
       type: System.Text.Encoding
       description: String encoding
     return:
-      type: System.Int32
+      type: System.Int64
       description: Row count
-    content.vb: Public Shared Function CountRowsFromFile(fileName As String, stringDelimiter As Char? = """"c, encoding As Encoding = Nothing) As Integer
+    content.vb: Public Shared Function CountRowsFromFile(fileName As String, stringDelimiter As Char? = """"c, encoding As Encoding = Nothing) As Long
   overload: wan24.Data.CsvParser.CountRowsFromFile*
   nameWithType.vb: CsvParser.CountRowsFromFile(String, Nullable(Of Char), Encoding)
   modifiers.csharp:
@@ -125,16 +125,16 @@ items:
   - Shared
   fullName.vb: wan24.Data.CsvParser.CountRowsFromFile(System.String, System.Nullable(Of System.Char), System.Text.Encoding)
   name.vb: CountRowsFromFile(String, Nullable(Of Char), Encoding)
-- uid: wan24.Data.CsvParser.CountRowsFromFileAsync(System.String,System.Nullable{System.Char},System.Text.Encoding)
-  commentId: M:wan24.Data.CsvParser.CountRowsFromFileAsync(System.String,System.Nullable{System.Char},System.Text.Encoding)
-  id: CountRowsFromFileAsync(System.String,System.Nullable{System.Char},System.Text.Encoding)
+- uid: wan24.Data.CsvParser.CountRowsFromFileAsync(System.String,System.Nullable{System.Char},System.Text.Encoding,System.Threading.CancellationToken)
+  commentId: M:wan24.Data.CsvParser.CountRowsFromFileAsync(System.String,System.Nullable{System.Char},System.Text.Encoding,System.Threading.CancellationToken)
+  id: CountRowsFromFileAsync(System.String,System.Nullable{System.Char},System.Text.Encoding,System.Threading.CancellationToken)
   parent: wan24.Data.CsvParser
   langs:
   - csharp
   - vb
-  name: CountRowsFromFileAsync(String, Nullable<Char>, Encoding)
-  nameWithType: CsvParser.CountRowsFromFileAsync(String, Nullable<Char>, Encoding)
-  fullName: wan24.Data.CsvParser.CountRowsFromFileAsync(System.String, System.Nullable<System.Char>, System.Text.Encoding)
+  name: CountRowsFromFileAsync(String, Nullable<Char>, Encoding, CancellationToken)
+  nameWithType: CsvParser.CountRowsFromFileAsync(String, Nullable<Char>, Encoding, CancellationToken)
+  fullName: wan24.Data.CsvParser.CountRowsFromFileAsync(System.String, System.Nullable<System.Char>, System.Text.Encoding, System.Threading.CancellationToken)
   type: Method
   source:
     remote:
@@ -143,14 +143,14 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CountRowsFromFileAsync
     path: ../CSV-Parser/CsvParser.Count.cs
-    startLine: 29
+    startLine: 32
   assemblies:
   - csvparser
   namespace: wan24.Data
   summary: "\nParse a file and determine the number of CSV table rows\n"
   example: []
   syntax:
-    content: public static async Task<int> CountRowsFromFileAsync(string fileName, char? stringDelimiter = '"', Encoding encoding = null)
+    content: public static async Task<long> CountRowsFromFileAsync(string fileName, char? stringDelimiter = '"', Encoding encoding = null, CancellationToken cancellationToken = default(CancellationToken))
     parameters:
     - id: fileName
       type: System.String
@@ -161,12 +161,15 @@ items:
     - id: encoding
       type: System.Text.Encoding
       description: String encoding
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token
     return:
-      type: System.Threading.Tasks.Task{System.Int32}
+      type: System.Threading.Tasks.Task{System.Int64}
       description: Row count
-    content.vb: Public Shared Function CountRowsFromFileAsync(fileName As String, stringDelimiter As Char? = """"c, encoding As Encoding = Nothing) As Task(Of Integer)
+    content.vb: Public Shared Function CountRowsFromFileAsync(fileName As String, stringDelimiter As Char? = """"c, encoding As Encoding = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of Long)
   overload: wan24.Data.CsvParser.CountRowsFromFileAsync*
-  nameWithType.vb: CsvParser.CountRowsFromFileAsync(String, Nullable(Of Char), Encoding)
+  nameWithType.vb: CsvParser.CountRowsFromFileAsync(String, Nullable(Of Char), Encoding, CancellationToken)
   modifiers.csharp:
   - public
   - static
@@ -174,8 +177,8 @@ items:
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: wan24.Data.CsvParser.CountRowsFromFileAsync(System.String, System.Nullable(Of System.Char), System.Text.Encoding)
-  name.vb: CountRowsFromFileAsync(String, Nullable(Of Char), Encoding)
+  fullName.vb: wan24.Data.CsvParser.CountRowsFromFileAsync(System.String, System.Nullable(Of System.Char), System.Text.Encoding, System.Threading.CancellationToken)
+  name.vb: CountRowsFromFileAsync(String, Nullable(Of Char), Encoding, CancellationToken)
 - uid: wan24.Data.CsvParser.CountRowsFromStream(System.IO.Stream,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)
   commentId: M:wan24.Data.CsvParser.CountRowsFromStream(System.IO.Stream,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)
   id: CountRowsFromStream(System.IO.Stream,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)
@@ -194,14 +197,14 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CountRowsFromStream
     path: ../CSV-Parser/CsvParser.Count.cs
-    startLine: 44
+    startLine: 48
   assemblies:
   - csvparser
   namespace: wan24.Data
   summary: "\nParse a stream and determine the number of CSV table rows\n"
   example: []
   syntax:
-    content: public static int CountRowsFromStream(Stream stream, char? stringDelimiter = '"', bool leaveOpen = false, Encoding encoding = null)
+    content: public static long CountRowsFromStream(Stream stream, char? stringDelimiter = '"', bool leaveOpen = false, Encoding encoding = null)
     parameters:
     - id: stream
       type: System.IO.Stream
@@ -216,9 +219,9 @@ items:
       type: System.Text.Encoding
       description: String encoding
     return:
-      type: System.Int32
+      type: System.Int64
       description: Row count
-    content.vb: Public Shared Function CountRowsFromStream(stream As Stream, stringDelimiter As Char? = """"c, leaveOpen As Boolean = False, encoding As Encoding = Nothing) As Integer
+    content.vb: Public Shared Function CountRowsFromStream(stream As Stream, stringDelimiter As Char? = """"c, leaveOpen As Boolean = False, encoding As Encoding = Nothing) As Long
   overload: wan24.Data.CsvParser.CountRowsFromStream*
   nameWithType.vb: CsvParser.CountRowsFromStream(Stream, Nullable(Of Char), Boolean, Encoding)
   modifiers.csharp:
@@ -229,16 +232,16 @@ items:
   - Shared
   fullName.vb: wan24.Data.CsvParser.CountRowsFromStream(System.IO.Stream, System.Nullable(Of System.Char), System.Boolean, System.Text.Encoding)
   name.vb: CountRowsFromStream(Stream, Nullable(Of Char), Boolean, Encoding)
-- uid: wan24.Data.CsvParser.CountRowsFromStreamAsync(System.IO.Stream,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)
-  commentId: M:wan24.Data.CsvParser.CountRowsFromStreamAsync(System.IO.Stream,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)
-  id: CountRowsFromStreamAsync(System.IO.Stream,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)
+- uid: wan24.Data.CsvParser.CountRowsFromStreamAsync(System.IO.Stream,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Threading.CancellationToken)
+  commentId: M:wan24.Data.CsvParser.CountRowsFromStreamAsync(System.IO.Stream,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Threading.CancellationToken)
+  id: CountRowsFromStreamAsync(System.IO.Stream,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Threading.CancellationToken)
   parent: wan24.Data.CsvParser
   langs:
   - csharp
   - vb
-  name: CountRowsFromStreamAsync(Stream, Nullable<Char>, Boolean, Encoding)
-  nameWithType: CsvParser.CountRowsFromStreamAsync(Stream, Nullable<Char>, Boolean, Encoding)
-  fullName: wan24.Data.CsvParser.CountRowsFromStreamAsync(System.IO.Stream, System.Nullable<System.Char>, System.Boolean, System.Text.Encoding)
+  name: CountRowsFromStreamAsync(Stream, Nullable<Char>, Boolean, Encoding, CancellationToken)
+  nameWithType: CsvParser.CountRowsFromStreamAsync(Stream, Nullable<Char>, Boolean, Encoding, CancellationToken)
+  fullName: wan24.Data.CsvParser.CountRowsFromStreamAsync(System.IO.Stream, System.Nullable<System.Char>, System.Boolean, System.Text.Encoding, System.Threading.CancellationToken)
   type: Method
   source:
     remote:
@@ -254,7 +257,7 @@ items:
   summary: "\nParse a stream and determine the number of CSV table rows\n"
   example: []
   syntax:
-    content: public static async Task<int> CountRowsFromStreamAsync(Stream stream, char? stringDelimiter = '"', bool leaveOpen = false, Encoding encoding = null)
+    content: public static async Task<long> CountRowsFromStreamAsync(Stream stream, char? stringDelimiter = '"', bool leaveOpen = false, Encoding encoding = null, CancellationToken cancellationToken = default(CancellationToken))
     parameters:
     - id: stream
       type: System.IO.Stream
@@ -268,12 +271,15 @@ items:
     - id: encoding
       type: System.Text.Encoding
       description: String encoding
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token
     return:
-      type: System.Threading.Tasks.Task{System.Int32}
+      type: System.Threading.Tasks.Task{System.Int64}
       description: Row count
-    content.vb: Public Shared Function CountRowsFromStreamAsync(stream As Stream, stringDelimiter As Char? = """"c, leaveOpen As Boolean = False, encoding As Encoding = Nothing) As Task(Of Integer)
+    content.vb: Public Shared Function CountRowsFromStreamAsync(stream As Stream, stringDelimiter As Char? = """"c, leaveOpen As Boolean = False, encoding As Encoding = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of Long)
   overload: wan24.Data.CsvParser.CountRowsFromStreamAsync*
-  nameWithType.vb: CsvParser.CountRowsFromStreamAsync(Stream, Nullable(Of Char), Boolean, Encoding)
+  nameWithType.vb: CsvParser.CountRowsFromStreamAsync(Stream, Nullable(Of Char), Boolean, Encoding, CancellationToken)
   modifiers.csharp:
   - public
   - static
@@ -281,8 +287,8 @@ items:
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: wan24.Data.CsvParser.CountRowsFromStreamAsync(System.IO.Stream, System.Nullable(Of System.Char), System.Boolean, System.Text.Encoding)
-  name.vb: CountRowsFromStreamAsync(Stream, Nullable(Of Char), Boolean, Encoding)
+  fullName.vb: wan24.Data.CsvParser.CountRowsFromStreamAsync(System.IO.Stream, System.Nullable(Of System.Char), System.Boolean, System.Text.Encoding, System.Threading.CancellationToken)
+  name.vb: CountRowsFromStreamAsync(Stream, Nullable(Of Char), Boolean, Encoding, CancellationToken)
 - uid: wan24.Data.CsvParser.CountRowsFromString(System.String,System.Nullable{System.Char})
   commentId: M:wan24.Data.CsvParser.CountRowsFromString(System.String,System.Nullable{System.Char})
   id: CountRowsFromString(System.String,System.Nullable{System.Char})
@@ -301,14 +307,14 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CountRowsFromString
     path: ../CSV-Parser/CsvParser.Count.cs
-    startLine: 92
+    startLine: 89
   assemblies:
   - csvparser
   namespace: wan24.Data
   summary: "\nParse a string and determine the number of CSV table rows\n"
   example: []
   syntax:
-    content: public static int CountRowsFromString(string csv, char? stringDelimiter = '"')
+    content: public static long CountRowsFromString(string csv, char? stringDelimiter = '"')
     parameters:
     - id: csv
       type: System.String
@@ -317,9 +323,9 @@ items:
       type: System.Nullable{System.Char}
       description: String delimiter
     return:
-      type: System.Int32
+      type: System.Int64
       description: Row count
-    content.vb: Public Shared Function CountRowsFromString(csv As String, stringDelimiter As Char? = """"c) As Integer
+    content.vb: Public Shared Function CountRowsFromString(csv As String, stringDelimiter As Char? = """"c) As Long
   overload: wan24.Data.CsvParser.CountRowsFromString*
   nameWithType.vb: CsvParser.CountRowsFromString(String, Nullable(Of Char))
   modifiers.csharp:
@@ -1337,7 +1343,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ParseFile
     path: ../CSV-Parser/CsvParser.Parse.cs
-    startLine: 23
+    startLine: 24
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -1381,16 +1387,16 @@ items:
   - Shared
   fullName.vb: wan24.Data.CsvParser.ParseFile(System.String, System.Boolean, System.Char, System.Nullable(Of System.Char), System.Text.Encoding, System.Int32, System.Int32)
   name.vb: ParseFile(String, Boolean, Char, Nullable(Of Char), Encoding, Int32, Int32)
-- uid: wan24.Data.CsvParser.ParseFileAsync(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32)
-  commentId: M:wan24.Data.CsvParser.ParseFileAsync(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32)
-  id: ParseFileAsync(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32)
+- uid: wan24.Data.CsvParser.ParseFileAsync(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32,System.Threading.CancellationToken)
+  commentId: M:wan24.Data.CsvParser.ParseFileAsync(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32,System.Threading.CancellationToken)
+  id: ParseFileAsync(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32,System.Threading.CancellationToken)
   parent: wan24.Data.CsvParser
   langs:
   - csharp
   - vb
-  name: ParseFileAsync(String, Boolean, Char, Nullable<Char>, Encoding, Int32, Int32)
-  nameWithType: CsvParser.ParseFileAsync(String, Boolean, Char, Nullable<Char>, Encoding, Int32, Int32)
-  fullName: wan24.Data.CsvParser.ParseFileAsync(System.String, System.Boolean, System.Char, System.Nullable<System.Char>, System.Text.Encoding, System.Int32, System.Int32)
+  name: ParseFileAsync(String, Boolean, Char, Nullable<Char>, Encoding, Int32, Int32, CancellationToken)
+  nameWithType: CsvParser.ParseFileAsync(String, Boolean, Char, Nullable<Char>, Encoding, Int32, Int32, CancellationToken)
+  fullName: wan24.Data.CsvParser.ParseFileAsync(System.String, System.Boolean, System.Char, System.Nullable<System.Char>, System.Text.Encoding, System.Int32, System.Int32, System.Threading.CancellationToken)
   type: Method
   source:
     remote:
@@ -1399,14 +1405,14 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ParseFileAsync
     path: ../CSV-Parser/CsvParser.Parse.cs
-    startLine: 54
+    startLine: 56
   assemblies:
   - csvparser
   namespace: wan24.Data
   summary: "\nParse a file\n"
   example: []
   syntax:
-    content: public static async Task<CsvTable> ParseFileAsync(string fileName, bool header = true, char fieldDelimiter = ',', char? stringDelimiter = '"', Encoding encoding = null, int offset = 0, int limit = 0)
+    content: public static async Task<CsvTable> ParseFileAsync(string fileName, bool header = true, char fieldDelimiter = ',', char? stringDelimiter = '"', Encoding encoding = null, int offset = 0, int limit = 0, CancellationToken cancellationToken = default(CancellationToken))
     parameters:
     - id: fileName
       type: System.String
@@ -1429,12 +1435,15 @@ items:
     - id: limit
       type: System.Int32
       description: Row limit
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token
     return:
       type: System.Threading.Tasks.Task{wan24.Data.CsvTable}
       description: CSV table
-    content.vb: Public Shared Function ParseFileAsync(fileName As String, header As Boolean = True, fieldDelimiter As Char = ","c, stringDelimiter As Char? = """"c, encoding As Encoding = Nothing, offset As Integer = 0, limit As Integer = 0) As Task(Of CsvTable)
+    content.vb: Public Shared Function ParseFileAsync(fileName As String, header As Boolean = True, fieldDelimiter As Char = ","c, stringDelimiter As Char? = """"c, encoding As Encoding = Nothing, offset As Integer = 0, limit As Integer = 0, cancellationToken As CancellationToken = Nothing) As Task(Of CsvTable)
   overload: wan24.Data.CsvParser.ParseFileAsync*
-  nameWithType.vb: CsvParser.ParseFileAsync(String, Boolean, Char, Nullable(Of Char), Encoding, Int32, Int32)
+  nameWithType.vb: CsvParser.ParseFileAsync(String, Boolean, Char, Nullable(Of Char), Encoding, Int32, Int32, CancellationToken)
   modifiers.csharp:
   - public
   - static
@@ -1442,8 +1451,8 @@ items:
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: wan24.Data.CsvParser.ParseFileAsync(System.String, System.Boolean, System.Char, System.Nullable(Of System.Char), System.Text.Encoding, System.Int32, System.Int32)
-  name.vb: ParseFileAsync(String, Boolean, Char, Nullable(Of Char), Encoding, Int32, Int32)
+  fullName.vb: wan24.Data.CsvParser.ParseFileAsync(System.String, System.Boolean, System.Char, System.Nullable(Of System.Char), System.Text.Encoding, System.Int32, System.Int32, System.Threading.CancellationToken)
+  name.vb: ParseFileAsync(String, Boolean, Char, Nullable(Of Char), Encoding, Int32, Int32, CancellationToken)
 - uid: wan24.Data.CsvParser.ParseStream(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32)
   commentId: M:wan24.Data.CsvParser.ParseStream(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32)
   id: ParseStream(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32)
@@ -1462,7 +1471,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ParseStream
     path: ../CSV-Parser/CsvParser.Parse.cs
-    startLine: 86
+    startLine: 90
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -1509,16 +1518,16 @@ items:
   - Shared
   fullName.vb: wan24.Data.CsvParser.ParseStream(System.IO.Stream, System.Boolean, System.Char, System.Nullable(Of System.Char), System.Boolean, System.Text.Encoding, System.Int32, System.Int32)
   name.vb: ParseStream(Stream, Boolean, Char, Nullable(Of Char), Boolean, Encoding, Int32, Int32)
-- uid: wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32)
-  commentId: M:wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32)
-  id: ParseStreamAsync(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32)
+- uid: wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32,System.Threading.CancellationToken)
+  commentId: M:wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32,System.Threading.CancellationToken)
+  id: ParseStreamAsync(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32,System.Threading.CancellationToken)
   parent: wan24.Data.CsvParser
   langs:
   - csharp
   - vb
-  name: ParseStreamAsync(Stream, Boolean, Char, Nullable<Char>, Boolean, Encoding, Int32, Int32)
-  nameWithType: CsvParser.ParseStreamAsync(Stream, Boolean, Char, Nullable<Char>, Boolean, Encoding, Int32, Int32)
-  fullName: wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream, System.Boolean, System.Char, System.Nullable<System.Char>, System.Boolean, System.Text.Encoding, System.Int32, System.Int32)
+  name: ParseStreamAsync(Stream, Boolean, Char, Nullable<Char>, Boolean, Encoding, Int32, Int32, CancellationToken)
+  nameWithType: CsvParser.ParseStreamAsync(Stream, Boolean, Char, Nullable<Char>, Boolean, Encoding, Int32, Int32, CancellationToken)
+  fullName: wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream, System.Boolean, System.Char, System.Nullable<System.Char>, System.Boolean, System.Text.Encoding, System.Int32, System.Int32, System.Threading.CancellationToken)
   type: Method
   source:
     remote:
@@ -1527,14 +1536,14 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ParseStreamAsync
     path: ../CSV-Parser/CsvParser.Parse.cs
-    startLine: 117
+    startLine: 122
   assemblies:
   - csvparser
   namespace: wan24.Data
   summary: "\nParse a stream\n"
   example: []
   syntax:
-    content: public static async Task<CsvTable> ParseStreamAsync(Stream stream, bool header = true, char fieldDelimiter = ',', char? stringDelimiter = '"', bool leaveOpen = false, Encoding encoding = null, int offset = 0, int limit = 0)
+    content: public static async Task<CsvTable> ParseStreamAsync(Stream stream, bool header = true, char fieldDelimiter = ',', char? stringDelimiter = '"', bool leaveOpen = false, Encoding encoding = null, int offset = 0, int limit = 0, CancellationToken cancellationToken = default(CancellationToken))
     parameters:
     - id: stream
       type: System.IO.Stream
@@ -1560,12 +1569,15 @@ items:
     - id: limit
       type: System.Int32
       description: Row limit
+    - id: cancellationToken
+      type: System.Threading.CancellationToken
+      description: Cancellation token
     return:
       type: System.Threading.Tasks.Task{wan24.Data.CsvTable}
       description: CSV table
-    content.vb: Public Shared Function ParseStreamAsync(stream As Stream, header As Boolean = True, fieldDelimiter As Char = ","c, stringDelimiter As Char? = """"c, leaveOpen As Boolean = False, encoding As Encoding = Nothing, offset As Integer = 0, limit As Integer = 0) As Task(Of CsvTable)
+    content.vb: Public Shared Function ParseStreamAsync(stream As Stream, header As Boolean = True, fieldDelimiter As Char = ","c, stringDelimiter As Char? = """"c, leaveOpen As Boolean = False, encoding As Encoding = Nothing, offset As Integer = 0, limit As Integer = 0, cancellationToken As CancellationToken = Nothing) As Task(Of CsvTable)
   overload: wan24.Data.CsvParser.ParseStreamAsync*
-  nameWithType.vb: CsvParser.ParseStreamAsync(Stream, Boolean, Char, Nullable(Of Char), Boolean, Encoding, Int32, Int32)
+  nameWithType.vb: CsvParser.ParseStreamAsync(Stream, Boolean, Char, Nullable(Of Char), Boolean, Encoding, Int32, Int32, CancellationToken)
   modifiers.csharp:
   - public
   - static
@@ -1573,8 +1585,8 @@ items:
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream, System.Boolean, System.Char, System.Nullable(Of System.Char), System.Boolean, System.Text.Encoding, System.Int32, System.Int32)
-  name.vb: ParseStreamAsync(Stream, Boolean, Char, Nullable(Of Char), Boolean, Encoding, Int32, Int32)
+  fullName.vb: wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream, System.Boolean, System.Char, System.Nullable(Of System.Char), System.Boolean, System.Text.Encoding, System.Int32, System.Int32, System.Threading.CancellationToken)
+  name.vb: ParseStreamAsync(Stream, Boolean, Char, Nullable(Of Char), Boolean, Encoding, Int32, Int32, CancellationToken)
 - uid: wan24.Data.CsvParser.ParseString(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Int32,System.Int32)
   commentId: M:wan24.Data.CsvParser.ParseString(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Int32,System.Int32)
   id: ParseString(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Int32,System.Int32)
@@ -1593,7 +1605,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ParseString
     path: ../CSV-Parser/CsvParser.Parse.cs
-    startLine: 155
+    startLine: 164
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -1995,13 +2007,13 @@ references:
   name: Encoding
   nameWithType: Encoding
   fullName: System.Text.Encoding
-- uid: System.Int32
-  commentId: T:System.Int32
+- uid: System.Int64
+  commentId: T:System.Int64
   parent: System
   isExternal: true
-  name: Int32
-  nameWithType: Int32
-  fullName: System.Int32
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
 - uid: System.Nullable`1
   commentId: T:System.Nullable`1
   isExternal: true
@@ -2052,16 +2064,23 @@ references:
   name: CountRowsFromFileAsync
   nameWithType: CsvParser.CountRowsFromFileAsync
   fullName: wan24.Data.CsvParser.CountRowsFromFileAsync
-- uid: System.Threading.Tasks.Task{System.Int32}
-  commentId: T:System.Threading.Tasks.Task{System.Int32}
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  parent: System.Threading
+  isExternal: true
+  name: CancellationToken
+  nameWithType: CancellationToken
+  fullName: System.Threading.CancellationToken
+- uid: System.Threading.Tasks.Task{System.Int64}
+  commentId: T:System.Threading.Tasks.Task{System.Int64}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
-  name: Task<Int32>
-  nameWithType: Task<Int32>
-  fullName: System.Threading.Tasks.Task<System.Int32>
-  nameWithType.vb: Task(Of Int32)
-  fullName.vb: System.Threading.Tasks.Task(Of System.Int32)
-  name.vb: Task(Of Int32)
+  name: Task<Int64>
+  nameWithType: Task<Int64>
+  fullName: System.Threading.Tasks.Task<System.Int64>
+  nameWithType.vb: Task(Of Int64)
+  fullName.vb: System.Threading.Tasks.Task(Of System.Int64)
+  name.vb: Task(Of Int64)
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
@@ -2071,10 +2090,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: System.Int32
-    name: Int32
-    nameWithType: Int32
-    fullName: System.Int32
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
     isExternal: true
   - name: '>'
     nameWithType: '>'
@@ -2088,14 +2107,20 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: System.Int32
-    name: Int32
-    nameWithType: Int32
-    fullName: System.Int32
+  - uid: System.Int64
+    name: Int64
+    nameWithType: Int64
+    fullName: System.Int64
     isExternal: true
   - name: )
     nameWithType: )
     fullName: )
+- uid: System.Threading
+  commentId: N:System.Threading
+  isExternal: true
+  name: System.Threading
+  nameWithType: System.Threading
+  fullName: System.Threading
 - uid: System.Threading.Tasks.Task`1
   commentId: T:System.Threading.Tasks.Task`1
   isExternal: true
@@ -2303,6 +2328,13 @@ references:
   name: ParseHeaderFromFile
   nameWithType: CsvParser.ParseHeaderFromFile
   fullName: wan24.Data.CsvParser.ParseHeaderFromFile
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
 - uid: System.String[]
   isExternal: true
   name: String[]

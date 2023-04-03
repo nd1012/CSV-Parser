@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace wan24.Data
@@ -27,19 +28,18 @@ namespace wan24.Data
         public Dictionary<string, string> ReadDictionary()
         {
             if (ColumnCount < 1) throw new InvalidOperationException("No columns");
-            string[] row = ReadRow();
-            return row == null ? null : ToDictionary(row);
+            return ReadRow() is string[] row ? ToDictionary(row) : null;
         }
 
         /// <summary>
         /// Get a row as dictionary
         /// </summary>
+        /// <param name="cancellationToken">Cancellation token</param>
         /// <returns>Dictionary or <see langword="null"/></returns>
-        public async Task<Dictionary<string, string>> ReadDictionaryAsync()
+        public async Task<Dictionary<string, string>> ReadDictionaryAsync(CancellationToken cancellationToken = default)
         {
             if (ColumnCount < 1) throw new InvalidOperationException("No columns");
-            string[] row = await ReadRowAsync();
-            return row == null ? null : ToDictionary(row);
+            return await ReadRowAsync(cancellationToken).ConfigureAwait(continueOnCapturedContext: false) is string[] row ? ToDictionary(row) : null;
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace wan24.Data
         /// </summary>
         /// <param name="row">Row</param>
         /// <returns>Dictionary</returns>
-        private Dictionary<string, string> ToDictionary(string[] row)
+        protected Dictionary<string, string> ToDictionary(string[] row)
         {
             Dictionary<string, string> res = new Dictionary<string, string>(ColumnCount);
             string[] header = Header.ToArray();

@@ -37,11 +37,13 @@ namespace CSV_Parser_Tests
             CompareTable(table);
 
             // Parse stream
-            table = CsvParser.ParseStream(new MemoryStream(Encoding.Default.GetBytes(csvData)));
+            using (MemoryStream ms = new(Encoding.Default.GetBytes(csvData)))
+                table = CsvParser.ParseStream(ms);
             CompareTable(table);
 
             // Parse stream with row offset and limit
-            table = CsvParser.ParseStream(new MemoryStream(Encoding.Default.GetBytes(csvData)), offset: 1, limit: 1);
+            using (MemoryStream ms = new(Encoding.Default.GetBytes(csvData)))
+                table = CsvParser.ParseStream(ms, offset: 1, limit: 1);
             CompareHeader(table.Header.ToArray());
             Assert.AreEqual(table.CountRows, 1);
             CompareRow(1, table.Rows[0]);
@@ -51,7 +53,8 @@ namespace CSV_Parser_Tests
             CompareHeader(header);
 
             // Parse header from stream
-            header = CsvParser.ParseHeaderFromStream(new MemoryStream(Encoding.Default.GetBytes(csvData)), leaveOpen: false);
+            using (MemoryStream ms = new(Encoding.Default.GetBytes(csvData)))
+                header = CsvParser.ParseHeaderFromStream(ms, leaveOpen: false);
             CompareHeader(header);
 
             // Count rows from string
@@ -68,10 +71,12 @@ namespace CSV_Parser_Tests
         public async Task CsvParserAsync_Test()
         {
             // Parse stream
-            CompareTable(await CsvParser.ParseStreamAsync(new MemoryStream(Encoding.Default.GetBytes(Data.ToString(true)))));
+            using (MemoryStream ms = new(Encoding.Default.GetBytes(Data.ToString(true))))
+                CompareTable(await CsvParser.ParseStreamAsync(ms));
 
             // Parse header from stream
-            CompareHeader(await CsvParser.ParseHeaderFromStreamAsync(new MemoryStream(Encoding.Default.GetBytes(Data.ToString(true))), leaveOpen: false));
+            using (MemoryStream ms = new(Encoding.Default.GetBytes(Data.ToString(true))))
+                CompareHeader(await CsvParser.ParseHeaderFromStreamAsync(ms, leaveOpen: false));
 
             //TODO Mapping
             //TODO Object rows

@@ -526,7 +526,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: this[]
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 52
+    startLine: 43
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -570,7 +570,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: HasHeader
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 60
+    startLine: 51
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -607,7 +607,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: FieldDelimiter
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 65
+    startLine: 56
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -644,7 +644,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: StringDelimiter
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 70
+    startLine: 61
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -681,7 +681,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CountColumns
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 75
+    startLine: 66
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -718,7 +718,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CountRows
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 80
+    startLine: 71
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -755,7 +755,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Header
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 85
+    startLine: 76
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -792,7 +792,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Rows
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 90
+    startLine: 81
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -829,7 +829,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: GetEnumerator
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 93
+    startLine: 84
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -864,7 +864,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Clone
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 96
+    startLine: 87
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -899,7 +899,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ToString
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 115
+    startLine: 101
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -948,7 +948,7 @@ items:
       repo: https://github.com/nd1012/CSV-Parser.git
     id: System.Collections.IEnumerable.GetEnumerator
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 129
+    startLine: 115
   assemblies:
   - csvparser
   namespace: wan24.Data

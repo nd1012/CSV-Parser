@@ -30,19 +30,10 @@ namespace wan24.Data
             HasHeader = hasHeader ?? header != null;
             FieldDelimiter = fieldDelimiter;
             StringDelimiter = stringDelimiter;
-            if (header?.Any() ?? false) Header.AddRange(header);
-            if (!(rows?.Any() ?? false)) return;
-            if (CountColumns < 1) Header = Enumerable.Range(0, rows.First().Count()).Select(i => i.ToString()).ToList();
-            Rows = (rows as List<string[]>) ?? (rows as string[][])?.ToList() ?? new List<string[]>(rows.Count());
-            if (Rows.Count > 0) return;
-            string[] r;
-            foreach (IEnumerable<string> row in rows)
-            {
-                r = row as string[] ?? row.ToArray();
-                if (!CsvParser.IgnoreErrors && r.Length != CountColumns)
-                    throw new InvalidDataException($"Row at index #{CountRows} has {r.Length} columns ({CountColumns} expected)");
-                Rows.Add(r);
-            }
+            if (header != null) Header.AddRange(header);
+            if (rows == null) return;
+            if (CountColumns < 1) Header = Enumerable.Range(0, rows.FirstOrDefault()?.Count() ?? 0).Select(i => i.ToString()).ToList();
+            Rows = (rows as List<string[]>) ?? (rows as string[][])?.ToList() ?? new List<string[]>(from row in rows select row.ToArray());
         }
 
         /// <summary>
@@ -94,16 +85,11 @@ namespace wan24.Data
         public IEnumerator<string[]> GetEnumerator() => Rows.GetEnumerator();
 
         /// <inheritdoc/>
-        public object Clone()
+        public object Clone() => new CsvTable(HasHeader, FieldDelimiter, StringDelimiter)
         {
-            CsvTable res = new CsvTable(HasHeader, FieldDelimiter, StringDelimiter)
-            {
-                Header = new List<string>(Header),
-                Rows = new List<string[]>(CountRows)
-            };
-            res.Rows.AddRange(from row in Rows select row.ToArray());
-            return res;
-        }
+            Header = new List<string>(Header),
+            Rows = new List<string[]>(Rows)
+        };
 
 #if !NO_STREAM
         /// <summary>
@@ -118,7 +104,7 @@ namespace wan24.Data
             if (fieldDelimiter == null) fieldDelimiter = FieldDelimiter;
             if (header == null && stringDelimiter == null) stringDelimiter = StringDelimiter;
             using (MemoryStream ms = new MemoryStream())
-            using (CsvStream csv = new CsvStream(ms, Header, (char)fieldDelimiter, stringDelimiter))
+            using (CsvStream csv = new CsvStream(ms, Header, fieldDelimiter.Value, stringDelimiter))
             {
                 foreach (string[] row in Rows) csv.WriteRows(row);
                 return csv.StringEncoding.GetString(ms.ToArray());

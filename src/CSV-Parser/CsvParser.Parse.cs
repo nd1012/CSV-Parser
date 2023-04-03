@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace wan24.Data
@@ -51,6 +52,7 @@ namespace wan24.Data
 		/// <param name="encoding">String encoding</param>
 		/// <param name="offset">Row offset</param>
 		/// <param name="limit">Row limit</param>
+		/// <param name="cancellationToken">Cancellation token</param>
 		/// <returns>CSV table</returns>
 		public static async Task<CsvTable> ParseFileAsync(
 			string fileName,
@@ -59,7 +61,8 @@ namespace wan24.Data
 			char? stringDelimiter = '"',
 			Encoding encoding = null,
 			int offset = 0,
-			int limit = 0
+			int limit = 0,
+			CancellationToken cancellationToken = default
 			)
 			=> await ParseStreamAsync(
 				File.OpenRead(fileName),
@@ -69,8 +72,9 @@ namespace wan24.Data
 				leaveOpen: false,
 				encoding,
 				offset,
-				limit
-				);
+				limit,
+				cancellationToken
+				).ConfigureAwait(continueOnCapturedContext: false);
 
 		/// <summary>
 		/// Parse a stream
@@ -99,23 +103,24 @@ namespace wan24.Data
 			using (CsvStream csv = new CsvStream(stream, fieldDelimiter, stringDelimiter, leaveOpen: leaveOpen, encoding: encoding))
 			{
 				if (header) columns = csv.ReadHeader();
-				return new CsvTable(hasHeader: header, fieldDelimiter, stringDelimiter, columns, limit < 1 ? csv.Rows.Skip(offset) : csv.Rows.Skip(offset).Take(limit));
+				return new CsvTable(hasHeader: header, fieldDelimiter, stringDelimiter, columns, limit < 1 ? csv.Rows.Skip(offset).ToArray() : csv.Rows.Skip(offset).Take(limit).ToArray());
 			}
 		}
 
-		/// <summary>
-		/// Parse a stream
-		/// </summary>
-		/// <param name="stream">Stream</param>
-		/// <param name="header">Column headers in the first row?</param>
-		/// <param name="fieldDelimiter">Field delimiter</param>
-		/// <param name="stringDelimiter">String delimiter</param>
-		/// <param name="leaveOpen">Leave the stream open?</param>
-		/// <param name="encoding">String encoding</param>
-		/// <param name="offset">Row offset</param>
-		/// <param name="limit">Row limit</param>
-		/// <returns>CSV table</returns>
-		public static async Task<CsvTable> ParseStreamAsync(
+        /// <summary>
+        /// Parse a stream
+        /// </summary>
+        /// <param name="stream">Stream</param>
+        /// <param name="header">Column headers in the first row?</param>
+        /// <param name="fieldDelimiter">Field delimiter</param>
+        /// <param name="stringDelimiter">String delimiter</param>
+        /// <param name="leaveOpen">Leave the stream open?</param>
+        /// <param name="encoding">String encoding</param>
+        /// <param name="offset">Row offset</param>
+        /// <param name="limit">Row limit</param>
+        /// <param name="cancellationToken">Cancellation token</param>
+        /// <returns>CSV table</returns>
+        public static async Task<CsvTable> ParseStreamAsync(
 			Stream stream,
 			bool header = true,
 			char fieldDelimiter = ',',
@@ -123,7 +128,8 @@ namespace wan24.Data
 			bool leaveOpen = false,
 			Encoding encoding = null,
 			int offset = 0,
-			int limit = 0
+			int limit = 0,
+			CancellationToken cancellationToken = default
 			)
 		{
 			string[] columns = null;
@@ -131,12 +137,15 @@ namespace wan24.Data
 			int current = 0;
 			using (CsvStream csv = new CsvStream(stream, fieldDelimiter, stringDelimiter, leaveOpen: leaveOpen, encoding: encoding))
 			{
-				if (header) columns = csv.ReadHeader();
-				for (string[] row = await csv.ReadRowAsync(); row != null; row = await csv.ReadRowAsync(), current++)
+				if (header) columns = await csv.ReadHeaderAsync(cancellationToken).ConfigureAwait(continueOnCapturedContext: false);
+				for (
+					string[] row = await csv.ReadRowAsync(cancellationToken).ConfigureAwait(continueOnCapturedContext: false);
+					row != null;
+					row = await csv.ReadRowAsync(cancellationToken).ConfigureAwait(continueOnCapturedContext: false), current++)
 				{
 					if (current < offset) continue;
 					rows.Add(row);
-					if (rows.Count >= limit) break;
+					if (limit > 0 && rows.Count >= limit) break;
 				}
 				return new CsvTable(hasHeader: header, fieldDelimiter, stringDelimiter, columns, rows);
 			}
@@ -162,7 +171,7 @@ namespace wan24.Data
 			int limit = 0
 			)
 		{
-			if (!csv.EndsWith("\n")) csv += "\n";
+			if (csv.Length < 1 || csv[csv.Length - 1] != '\n') csv = $"{csv}\n";
 			if (offset > -1) offset++;
 			char? prev = null, c;
 			List<string> row = new List<string>() { string.Empty };
@@ -186,15 +195,10 @@ namespace wan24.Data
 				{
 					if (prev == '\r') row[col] = row[col].Substring(0, row[col].Length - 1);
 					if (res.CountColumns < 1)
-						if (!header)
-						{
-							res.Header.AddRange(Enumerable.Range(0, row.Count).Select(i => i.ToString()));
-						}
-						else
-						{
-							res.Header.AddRange(row);
-							row.Clear();
-						}
+					{
+						res.Header.AddRange(header ? row : Enumerable.Range(0, row.Count).Select(i => i.ToString()));
+						if (header) row.Clear();
+					}
 					if (row.Count > 0)
 					{
 						if (!IgnoreErrors && row.Count != res.CountColumns)
