@@ -23,7 +23,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvMapping.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CsvMapping
     path: ../CSV-Parser/CsvMapping.cs
@@ -70,7 +70,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvMapping.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: .ctor
     path: ../CSV-Parser/CsvMapping.cs
@@ -102,7 +102,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvMapping.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Field
     path: ../CSV-Parser/CsvMapping.cs
@@ -139,7 +139,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvMapping.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: PropertyName
     path: ../CSV-Parser/CsvMapping.cs
@@ -176,7 +176,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvMapping.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ObjectValueFactory
     path: ../CSV-Parser/CsvMapping.cs
@@ -213,7 +213,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvMapping.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: RowValueFactory
     path: ../CSV-Parser/CsvMapping.cs
@@ -250,7 +250,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvMapping.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: PreValidation
     path: ../CSV-Parser/CsvMapping.cs
@@ -287,7 +287,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvMapping.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: PostValidation
     path: ../CSV-Parser/CsvMapping.cs
@@ -324,7 +324,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvMapping.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Clone
     path: ../CSV-Parser/CsvMapping.cs

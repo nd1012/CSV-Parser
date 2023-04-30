@@ -142,6 +142,7 @@
   "wan24.Data.CsvTable.HasHeader": "wan24.Data.CsvTable.yml",
   "wan24.Data.CsvTable.Header": "wan24.Data.CsvTable.yml",
   "wan24.Data.CsvTable.Item(System.Int32)": "wan24.Data.CsvTable.yml",
+  "wan24.Data.CsvTable.Item(System.Int32,System.String)": "wan24.Data.CsvTable.yml",
   "wan24.Data.CsvTable.Mapping": "wan24.Data.CsvTable.yml",
   "wan24.Data.CsvTable.MoveColumn(System.Int32,System.Int32,System.Boolean)": "wan24.Data.CsvTable.yml",
   "wan24.Data.CsvTable.Objects": "wan24.Data.CsvTable.yml",

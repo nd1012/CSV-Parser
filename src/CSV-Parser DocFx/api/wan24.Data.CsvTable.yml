@@ -28,6 +28,7 @@ items:
   - wan24.Data.CsvTable.HasHeader
   - wan24.Data.CsvTable.Header
   - wan24.Data.CsvTable.Item(System.Int32)
+  - wan24.Data.CsvTable.Item(System.Int32,System.String)
   - wan24.Data.CsvTable.Mapping
   - wan24.Data.CsvTable.MoveColumn(System.Int32,System.Int32,System.Boolean)
   - wan24.Data.CsvTable.Objects
@@ -49,7 +50,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Map.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CsvTable
     path: ../CSV-Parser/CsvTable.Map.cs
@@ -98,7 +99,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Common.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CreateHeaders
     path: ../CSV-Parser/CsvTable.Common.cs
@@ -133,7 +134,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Common.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: AddColumn
     path: ../CSV-Parser/CsvTable.Common.cs
@@ -181,7 +182,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Common.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: RemoveColumn
     path: ../CSV-Parser/CsvTable.Common.cs
@@ -220,7 +221,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Common.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: MoveColumn
     path: ../CSV-Parser/CsvTable.Common.cs
@@ -265,7 +266,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Common.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: SwapColumn
     path: ../CSV-Parser/CsvTable.Common.cs
@@ -310,7 +311,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Common.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ReorderColumns
     path: ../CSV-Parser/CsvTable.Common.cs
@@ -355,7 +356,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Common.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: AddRow
     path: ../CSV-Parser/CsvTable.Common.cs
@@ -397,7 +398,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Common.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Validate
     path: ../CSV-Parser/CsvTable.Common.cs
@@ -432,7 +433,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Common.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Clear
     path: ../CSV-Parser/CsvTable.Common.cs
@@ -471,7 +472,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: .ctor
     path: ../CSV-Parser/CsvTable.cs
@@ -522,7 +523,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: this[]
     path: ../CSV-Parser/CsvTable.cs
@@ -552,6 +553,53 @@ items:
   - ReadOnly
   fullName.vb: wan24.Data.CsvTable.Item(System.Int32)
   name.vb: Item(Int32)
+- uid: wan24.Data.CsvTable.Item(System.Int32,System.String)
+  commentId: P:wan24.Data.CsvTable.Item(System.Int32,System.String)
+  id: Item(System.Int32,System.String)
+  parent: wan24.Data.CsvTable
+  langs:
+  - csharp
+  - vb
+  name: Item[Int32, String]
+  nameWithType: CsvTable.Item[Int32, String]
+  fullName: wan24.Data.CsvTable.Item[System.Int32, System.String]
+  type: Property
+  source:
+    remote:
+      path: src/CSV-Parser/CsvTable.cs
+      branch: dev
+      repo: https://github.com/nd1012/CSV-Parser.git
+    id: this[]
+    path: ../CSV-Parser/CsvTable.cs
+    startLine: 54
+  assemblies:
+  - csvparser
+  namespace: wan24.Data
+  summary: "\nGet a field ow a row\n"
+  example: []
+  syntax:
+    content: public string this[int index, string header] { get; }
+    parameters:
+    - id: index
+      type: System.Int32
+      description: Row index
+    - id: header
+      type: System.String
+      description: Field header name
+    return:
+      type: System.String
+      description: Field value
+    content.vb: Public ReadOnly Property Item(index As Integer, header As String) As String
+  overload: wan24.Data.CsvTable.Item*
+  nameWithType.vb: CsvTable.Item(Int32, String)
+  modifiers.csharp:
+  - public
+  - get
+  modifiers.vb:
+  - Public
+  - ReadOnly
+  fullName.vb: wan24.Data.CsvTable.Item(System.Int32, System.String)
+  name.vb: Item(Int32, String)
 - uid: wan24.Data.CsvTable.HasHeader
   commentId: P:wan24.Data.CsvTable.HasHeader
   id: HasHeader
@@ -566,11 +614,11 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: HasHeader
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 51
+    startLine: 69
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -603,11 +651,11 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: FieldDelimiter
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 56
+    startLine: 74
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -640,11 +688,11 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: StringDelimiter
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 61
+    startLine: 79
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -677,11 +725,11 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CountColumns
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 66
+    startLine: 84
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -714,11 +762,11 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CountRows
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 71
+    startLine: 89
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -751,11 +799,11 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Header
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 76
+    startLine: 94
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -788,11 +836,11 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Rows
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 81
+    startLine: 99
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -825,11 +873,11 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: GetEnumerator
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 84
+    startLine: 102
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -860,11 +908,11 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Clone
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 87
+    startLine: 105
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -895,11 +943,11 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ToString
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 101
+    startLine: 119
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -944,11 +992,11 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: System.Collections.IEnumerable.GetEnumerator
     path: ../CSV-Parser/CsvTable.cs
-    startLine: 115
+    startLine: 133
   assemblies:
   - csvparser
   namespace: wan24.Data
@@ -977,7 +1025,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Dictionary.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: AsDictionaries
     path: ../CSV-Parser/CsvTable.Dictionary.cs
@@ -1014,7 +1062,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Dictionary.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: AsDictionary
     path: ../CSV-Parser/CsvTable.Dictionary.cs
@@ -1053,7 +1101,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Map.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Mapping
     path: ../CSV-Parser/CsvTable.Map.cs
@@ -1090,7 +1138,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Map.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Objects
     path: ../CSV-Parser/CsvTable.Map.cs
@@ -1127,7 +1175,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Map.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: AsObject
     path: ../CSV-Parser/CsvTable.Map.cs
@@ -1177,7 +1225,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Map.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: AsObjects
     path: ../CSV-Parser/CsvTable.Map.cs
@@ -1227,7 +1275,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Map.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: AsObject
     path: ../CSV-Parser/CsvTable.Map.cs
@@ -1278,7 +1326,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Map.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: AsObject
     path: ../CSV-Parser/CsvTable.Map.cs
@@ -1317,7 +1365,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Map.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: AddObjects
     path: ../CSV-Parser/CsvTable.Map.cs
@@ -1362,7 +1410,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Map.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: AddObjects
     path: ../CSV-Parser/CsvTable.Map.cs
@@ -1410,7 +1458,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Map.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: AddObjects
     path: ../CSV-Parser/CsvTable.Map.cs
@@ -1452,7 +1500,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Map.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CreateMapping
     path: ../CSV-Parser/CsvTable.Map.cs
