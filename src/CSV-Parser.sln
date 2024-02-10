@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSV-Parser", "CSV-Parser\CS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSV-Parser Tests", "CSV-Parser Tests\CSV-Parser Tests.csproj", "{27AFEBBE-85FF-4FE4-A08C-1C71845F7768}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSV-Parser DocFx", "CSV-Parser DocFx\CSV-Parser DocFx.csproj", "{7E82D34A-C66D-47A6-8F01-47DD956044F2}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,8 +21,6 @@ Global
 		{27AFEBBE-85FF-4FE4-A08C-1C71845F7768}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{27AFEBBE-85FF-4FE4-A08C-1C71845F7768}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{27AFEBBE-85FF-4FE4-A08C-1C71845F7768}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7E82D34A-C66D-47A6-8F01-47DD956044F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7E82D34A-C66D-47A6-8F01-47DD956044F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
