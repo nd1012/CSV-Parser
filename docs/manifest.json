@@ -1,6 +1,5 @@
 {
-  "homepages": [],
-  "source_base_path": "D:/P/CSV-Parser/src/CSV-Parser DocFx",
+  "source_base_path": "/home/runner/work/CSV-Parser/CSV-Parser/src/CSV-Parser DocFx",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -8,11 +7,9 @@
       "source_relative_path": "README.md",
       "output": {
         ".html": {
-          "relative_path": "README.html",
-          "hash": "9W+EZhiK/J54v27EnEt/+2mz5LrGVnK6DmRshNItR6M="
+          "relative_path": "README.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -20,11 +17,9 @@
       "source_relative_path": "api/index.md",
       "output": {
         ".html": {
-          "relative_path": "api/index.html",
-          "hash": "yPnCPYaTSRy3BJNWfzTO7jwjE1CH1bMhfcps7Oqg7YM="
+          "relative_path": "api/index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -32,11 +27,12 @@
       "source_relative_path": "api/toc.yml",
       "output": {
         ".html": {
-          "relative_path": "api/toc.html",
-          "hash": "GcCzA46/bEH9Nh2cHzypvqjgKbVuvdMI1YZXF8Gr7oU="
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -44,11 +40,9 @@
       "source_relative_path": "api/wan24.Data.CsvMapping.yml",
       "output": {
         ".html": {
-          "relative_path": "api/wan24.Data.CsvMapping.html",
-          "hash": "txQUVIu03gQaMPm/vwsHrc+udilasiCXPH821HCU/g0="
+          "relative_path": "api/wan24.Data.CsvMapping.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -56,11 +50,9 @@
       "source_relative_path": "api/wan24.Data.CsvMappingAttribute.yml",
       "output": {
         ".html": {
-          "relative_path": "api/wan24.Data.CsvMappingAttribute.html",
-          "hash": "IdoS8uxmcYbqa3Hk6SrWcxIHms2m//OUQwG1hpw86mE="
+          "relative_path": "api/wan24.Data.CsvMappingAttribute.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -68,11 +60,9 @@
       "source_relative_path": "api/wan24.Data.CsvMappings.yml",
       "output": {
         ".html": {
-          "relative_path": "api/wan24.Data.CsvMappings.html",
-          "hash": "HVJLc67fEXIQ2St+3PqUgabs+0iyAP6n0lF6nKN7Evg="
+          "relative_path": "api/wan24.Data.CsvMappings.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -80,11 +70,9 @@
       "source_relative_path": "api/wan24.Data.CsvParser.yml",
       "output": {
         ".html": {
-          "relative_path": "api/wan24.Data.CsvParser.html",
-          "hash": "fAwuL//MSF3uqWIi99aX933cq66yz0SZDjJ2mPZzM2Q="
+          "relative_path": "api/wan24.Data.CsvParser.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -92,11 +80,9 @@
       "source_relative_path": "api/wan24.Data.CsvStream.yml",
       "output": {
         ".html": {
-          "relative_path": "api/wan24.Data.CsvStream.html",
-          "hash": "jzhtg2v/ilw9odrBgNaJDi1TXyiR+PXwRKZbomdvAs4="
+          "relative_path": "api/wan24.Data.CsvStream.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -104,11 +90,9 @@
       "source_relative_path": "api/wan24.Data.CsvTable.yml",
       "output": {
         ".html": {
-          "relative_path": "api/wan24.Data.CsvTable.html",
-          "hash": "7n3U/9FT9ZelEk+2FcO7vv4HR0IOD0oQf5Xdx/klEG8="
+          "relative_path": "api/wan24.Data.CsvTable.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -116,35 +100,9 @@
       "source_relative_path": "api/wan24.Data.yml",
       "output": {
         ".html": {
-          "relative_path": "api/wan24.Data.html",
-          "hash": "Iwwxg2OQhxQA2OQjf9WaDrn74MZ1lg0poFKKl27EjBw="
+          "relative_path": "api/wan24.Data.html"
         }
       },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "articles/intro.md",
-      "output": {
-        ".html": {
-          "relative_path": "articles/intro.html",
-          "hash": "TbaGGEcrT7EYSIz3QHKHV6MnFh4hy24H9Ofr32Vk0II="
-        }
-      },
-      "is_incremental": false,
-      "version": ""
-    },
-    {
-      "type": "Toc",
-      "source_relative_path": "articles/toc.md",
-      "output": {
-        ".html": {
-          "relative_path": "articles/toc.html",
-          "hash": "BlPxk5mtl2kgfcZUgkEguqiSAR/EUyUTT4EdebwkQvs="
-        }
-      },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -152,11 +110,9 @@
       "source_relative_path": "index.md",
       "output": {
         ".html": {
-          "relative_path": "index.html",
-          "hash": "U9kx/T4s66vzgugeySDUDBCNAghLO1CouWIonzHy1cc="
+          "relative_path": "index.html"
         }
       },
-      "is_incremental": false,
       "version": ""
     },
     {
@@ -164,58 +120,15 @@
       "source_relative_path": "toc.yml",
       "output": {
         ".html": {
-          "relative_path": "toc.html",
-          "hash": "1PUyxJsccgkdEKhPrIm0B8sVtdyjHO9ArtgqhaqM9JM="
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
         }
       },
-      "is_incremental": false,
       "version": ""
     }
   ],
-  "incremental_info": [
-    {
-      "status": {
-        "can_incremental": false,
-        "details": "Disable incremental build by force rebuild option.",
-        "incrementalPhase": "build",
-        "total_file_count": 0,
-        "skipped_file_count": 0,
-        "full_build_reason_code": "ForceRebuild"
-      },
-      "processors": {
-        "ConceptualDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 4,
-          "skipped_file_count": 0
-        },
-        "ManagedReferenceDocumentProcessor": {
-          "can_incremental": false,
-          "incrementalPhase": "build",
-          "total_file_count": 7,
-          "skipped_file_count": 0
-        },
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        }
-      }
-    },
-    {
-      "status": {
-        "can_incremental": false,
-        "details": "Cannot support incremental post processing, the reason is: it's disabled.",
-        "incrementalPhase": "postProcessing",
-        "total_file_count": 0,
-        "skipped_file_count": 0
-      },
-      "processors": {}
-    }
-  ],
-  "version_info": {},
   "groups": [
     {
       "xrefmap": "xrefmap.yml"

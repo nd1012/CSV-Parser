@@ -23,21 +23,19 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvMapping.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: CsvMapping
     path: ../CSV-Parser/CsvMapping.cs
     startLine: 8
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nCSV mapping\n"
+  summary: CSV mapping
   example: []
   syntax:
     content: 'public class CsvMapping : ICloneable'
-    content.vb: >-
-      Public Class CsvMapping
-          Implements ICloneable
+    content.vb: Public Class CsvMapping Implements ICloneable
   inheritance:
   - System.Object
   implements:
@@ -50,12 +48,6 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-  modifiers.csharp:
-  - public
-  - class
-  modifiers.vb:
-  - Public
-  - Class
 - uid: wan24.Data.CsvMapping.#ctor
   commentId: M:wan24.Data.CsvMapping.#ctor
   id: '#ctor'
@@ -70,24 +62,23 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvMapping.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: .ctor
     path: ../CSV-Parser/CsvMapping.cs
     startLine: 13
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nConstructor\n"
+  summary: Constructor
   example: []
   syntax:
     content: public CsvMapping()
-    content.vb: Public Sub New
+    content.vb: Public Sub New()
   overload: wan24.Data.CsvMapping.#ctor*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
+  nameWithType.vb: CsvMapping.New()
+  fullName.vb: wan24.Data.CsvMapping.New()
+  name.vb: New()
 - uid: wan24.Data.CsvMapping.Field
   commentId: P:wan24.Data.CsvMapping.Field
   id: Field
@@ -102,15 +93,15 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvMapping.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: Field
     path: ../CSV-Parser/CsvMapping.cs
     startLine: 18
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nField index\n"
+  summary: Field index
   example: []
   syntax:
     content: public int Field { get; set; }
@@ -119,12 +110,6 @@ items:
       type: System.Int32
     content.vb: Public Property Field As Integer
   overload: wan24.Data.CsvMapping.Field*
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
 - uid: wan24.Data.CsvMapping.PropertyName
   commentId: P:wan24.Data.CsvMapping.PropertyName
   id: PropertyName
@@ -139,15 +124,15 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvMapping.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: PropertyName
     path: ../CSV-Parser/CsvMapping.cs
     startLine: 23
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nProperty name\n"
+  summary: Property name
   example: []
   syntax:
     content: public string PropertyName { get; set; }
@@ -156,12 +141,6 @@ items:
       type: System.String
     content.vb: Public Property PropertyName As String
   overload: wan24.Data.CsvMapping.PropertyName*
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
 - uid: wan24.Data.CsvMapping.ObjectValueFactory
   commentId: P:wan24.Data.CsvMapping.ObjectValueFactory
   id: ObjectValueFactory
@@ -176,15 +155,15 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvMapping.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: ObjectValueFactory
     path: ../CSV-Parser/CsvMapping.cs
     startLine: 28
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nObject value factory\n"
+  summary: Object value factory
   example: []
   syntax:
     content: public Func<string, object> ObjectValueFactory { get; set; }
@@ -193,12 +172,6 @@ items:
       type: System.Func{System.String,System.Object}
     content.vb: Public Property ObjectValueFactory As Func(Of String, Object)
   overload: wan24.Data.CsvMapping.ObjectValueFactory*
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
 - uid: wan24.Data.CsvMapping.RowValueFactory
   commentId: P:wan24.Data.CsvMapping.RowValueFactory
   id: RowValueFactory
@@ -213,15 +186,15 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvMapping.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: RowValueFactory
     path: ../CSV-Parser/CsvMapping.cs
     startLine: 33
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nRow value factory\n"
+  summary: Row value factory
   example: []
   syntax:
     content: public Func<object, string> RowValueFactory { get; set; }
@@ -230,12 +203,6 @@ items:
       type: System.Func{System.Object,System.String}
     content.vb: Public Property RowValueFactory As Func(Of Object, String)
   overload: wan24.Data.CsvMapping.RowValueFactory*
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
 - uid: wan24.Data.CsvMapping.PreValidation
   commentId: P:wan24.Data.CsvMapping.PreValidation
   id: PreValidation
@@ -250,15 +217,15 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvMapping.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: PreValidation
     path: ../CSV-Parser/CsvMapping.cs
     startLine: 38
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nField value pre-validation\n"
+  summary: Field value pre-validation
   example: []
   syntax:
     content: public Func<string, bool> PreValidation { get; set; }
@@ -267,12 +234,6 @@ items:
       type: System.Func{System.String,System.Boolean}
     content.vb: Public Property PreValidation As Func(Of String, Boolean)
   overload: wan24.Data.CsvMapping.PreValidation*
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
 - uid: wan24.Data.CsvMapping.PostValidation
   commentId: P:wan24.Data.CsvMapping.PostValidation
   id: PostValidation
@@ -287,15 +248,15 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvMapping.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: PostValidation
     path: ../CSV-Parser/CsvMapping.cs
     startLine: 43
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nField value post-validation\n"
+  summary: Field value post-validation
   example: []
   syntax:
     content: public Func<object, bool> PostValidation { get; set; }
@@ -304,12 +265,6 @@ items:
       type: System.Func{System.Object,System.Boolean}
     content.vb: Public Property PostValidation As Func(Of Object, Boolean)
   overload: wan24.Data.CsvMapping.PostValidation*
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
 - uid: wan24.Data.CsvMapping.Clone
   commentId: M:wan24.Data.CsvMapping.Clone
   id: Clone
@@ -324,8 +279,8 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvMapping.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: Clone
     path: ../CSV-Parser/CsvMapping.cs
     startLine: 46
@@ -337,31 +292,49 @@ items:
     content: public object Clone()
     return:
       type: System.Object
-    content.vb: Public Function Clone As Object
+    content.vb: Public Function Clone() As Object
   overload: wan24.Data.CsvMapping.Clone*
   implements:
   - System.ICloneable.Clone
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
 references:
 - uid: wan24.Data
   commentId: N:wan24.Data
+  href: wan24.html
   name: wan24.Data
   nameWithType: wan24.Data
   fullName: wan24.Data
+  spec.csharp:
+  - uid: wan24
+    name: wan24
+    href: wan24.html
+  - name: .
+  - uid: wan24.Data
+    name: Data
+    href: wan24.Data.html
+  spec.vb:
+  - uid: wan24
+    name: wan24
+    href: wan24.html
+  - name: .
+  - uid: wan24.Data
+    name: Data
+    href: wan24.Data.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
   isExternal: true
-  name: Object
-  nameWithType: Object
-  fullName: System.Object
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
 - uid: System.ICloneable
   commentId: T:System.ICloneable
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icloneable
   name: ICloneable
   nameWithType: ICloneable
   fullName: System.ICloneable
@@ -369,294 +342,240 @@ references:
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
   isExternal: true
-  name: Equals(Object)
-  nameWithType: Object.Equals(Object)
-  fullName: System.Object.Equals(System.Object)
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
   spec.csharp:
   - uid: System.Object.Equals(System.Object)
     name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
   - name: (
-    nameWithType: (
-    fullName: (
   - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
+    name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-    nameWithType: )
-    fullName: )
   spec.vb:
   - uid: System.Object.Equals(System.Object)
     name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
   - name: (
-    nameWithType: (
-    fullName: (
   - uid: System.Object
     name: Object
-    nameWithType: Object
-    fullName: System.Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Object.Equals(System.Object,System.Object)
   commentId: M:System.Object.Equals(System.Object,System.Object)
   parent: System.Object
   isExternal: true
-  name: Equals(Object, Object)
-  nameWithType: Object.Equals(Object, Object)
-  fullName: System.Object.Equals(System.Object, System.Object)
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
   spec.csharp:
   - uid: System.Object.Equals(System.Object,System.Object)
     name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
   - name: (
-    nameWithType: (
-    fullName: (
   - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
+    name: object
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
   - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
+    name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-    nameWithType: )
-    fullName: )
   spec.vb:
   - uid: System.Object.Equals(System.Object,System.Object)
     name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
   - name: (
-    nameWithType: (
-    fullName: (
   - uid: System.Object
     name: Object
-    nameWithType: Object
-    fullName: System.Object
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
   - uid: System.Object
     name: Object
-    nameWithType: Object
-    fullName: System.Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Object.GetHashCode
   commentId: M:System.Object.GetHashCode
   parent: System.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
   name: GetHashCode()
-  nameWithType: Object.GetHashCode()
-  fullName: System.Object.GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
   spec.csharp:
   - uid: System.Object.GetHashCode
     name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
   - name: (
-    nameWithType: (
-    fullName: (
   - name: )
-    nameWithType: )
-    fullName: )
   spec.vb:
   - uid: System.Object.GetHashCode
     name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
   - name: (
-    nameWithType: (
-    fullName: (
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Object.GetType
   commentId: M:System.Object.GetType
   parent: System.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
   name: GetType()
-  nameWithType: Object.GetType()
-  fullName: System.Object.GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
   spec.csharp:
   - uid: System.Object.GetType
     name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
   - name: (
-    nameWithType: (
-    fullName: (
   - name: )
-    nameWithType: )
-    fullName: )
   spec.vb:
   - uid: System.Object.GetType
     name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
   - name: (
-    nameWithType: (
-    fullName: (
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Object.MemberwiseClone
   commentId: M:System.Object.MemberwiseClone
   parent: System.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
   name: MemberwiseClone()
-  nameWithType: Object.MemberwiseClone()
-  fullName: System.Object.MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
   spec.csharp:
   - uid: System.Object.MemberwiseClone
     name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
   - name: (
-    nameWithType: (
-    fullName: (
   - name: )
-    nameWithType: )
-    fullName: )
   spec.vb:
   - uid: System.Object.MemberwiseClone
     name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
   - name: (
-    nameWithType: (
-    fullName: (
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Object.ReferenceEquals(System.Object,System.Object)
   commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
   parent: System.Object
   isExternal: true
-  name: ReferenceEquals(Object, Object)
-  nameWithType: Object.ReferenceEquals(Object, Object)
-  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
   spec.csharp:
   - uid: System.Object.ReferenceEquals(System.Object,System.Object)
     name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
   - name: (
-    nameWithType: (
-    fullName: (
   - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
+    name: object
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
   - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
+    name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-    nameWithType: )
-    fullName: )
   spec.vb:
   - uid: System.Object.ReferenceEquals(System.Object,System.Object)
     name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
   - name: (
-    nameWithType: (
-    fullName: (
   - uid: System.Object
     name: Object
-    nameWithType: Object
-    fullName: System.Object
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
   - uid: System.Object
     name: Object
-    nameWithType: Object
-    fullName: System.Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Object.ToString
   commentId: M:System.Object.ToString
   parent: System.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   name: ToString()
-  nameWithType: Object.ToString()
-  fullName: System.Object.ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
   spec.csharp:
   - uid: System.Object.ToString
     name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
-    nameWithType: (
-    fullName: (
   - name: )
-    nameWithType: )
-    fullName: )
   spec.vb:
   - uid: System.Object.ToString
     name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
-    nameWithType: (
-    fullName: (
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
 - uid: wan24.Data.CsvMapping.#ctor*
   commentId: Overload:wan24.Data.CsvMapping.#ctor
+  href: wan24.Data.CsvMapping.html#wan24_Data_CsvMapping__ctor
   name: CsvMapping
   nameWithType: CsvMapping.CsvMapping
   fullName: wan24.Data.CsvMapping.CsvMapping
+  nameWithType.vb: CsvMapping.New
+  fullName.vb: wan24.Data.CsvMapping.New
+  name.vb: New
 - uid: wan24.Data.CsvMapping.Field*
   commentId: Overload:wan24.Data.CsvMapping.Field
+  href: wan24.Data.CsvMapping.html#wan24_Data_CsvMapping_Field
   name: Field
   nameWithType: CsvMapping.Field
   fullName: wan24.Data.CsvMapping.Field
@@ -664,11 +583,16 @@ references:
   commentId: T:System.Int32
   parent: System
   isExternal: true
-  name: Int32
-  nameWithType: Int32
-  fullName: System.Int32
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
 - uid: wan24.Data.CsvMapping.PropertyName*
   commentId: Overload:wan24.Data.CsvMapping.PropertyName
+  href: wan24.Data.CsvMapping.html#wan24_Data_CsvMapping_PropertyName
   name: PropertyName
   nameWithType: CsvMapping.PropertyName
   fullName: wan24.Data.CsvMapping.PropertyName
@@ -676,11 +600,16 @@ references:
   commentId: T:System.String
   parent: System
   isExternal: true
-  name: String
-  nameWithType: String
-  fullName: System.String
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
 - uid: wan24.Data.CsvMapping.ObjectValueFactory*
   commentId: Overload:wan24.Data.CsvMapping.ObjectValueFactory
+  href: wan24.Data.CsvMapping.html#wan24_Data_CsvMapping_ObjectValueFactory
   name: ObjectValueFactory
   nameWithType: CsvMapping.ObjectValueFactory
   fullName: wan24.Data.CsvMapping.ObjectValueFactory
@@ -688,65 +617,53 @@ references:
   commentId: T:System.Func{System.String,System.Object}
   parent: System
   definition: System.Func`2
-  name: Func<String, Object>
-  nameWithType: Func<String, Object>
-  fullName: System.Func<System.String, System.Object>
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<string, object>
+  nameWithType: Func<string, object>
+  fullName: System.Func<string, object>
   nameWithType.vb: Func(Of String, Object)
-  fullName.vb: System.Func(Of System.String, System.Object)
+  fullName.vb: System.Func(Of String, Object)
   name.vb: Func(Of String, Object)
   spec.csharp:
   - uid: System.Func`2
     name: Func
-    nameWithType: Func
-    fullName: System.Func
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
   - name: <
-    nameWithType: <
-    fullName: <
   - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
+    name: string
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
   - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
+    name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Func`2
     name: Func
-    nameWithType: Func
-    fullName: System.Func
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
   - uid: System.String
     name: String
-    nameWithType: String
-    fullName: System.String
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
   - uid: System.Object
     name: Object
-    nameWithType: Object
-    fullName: System.Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Func`2
   commentId: T:System.Func`2
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
   name: Func<T, TResult>
   nameWithType: Func<T, TResult>
   fullName: System.Func<T, TResult>
@@ -756,47 +673,30 @@ references:
   spec.csharp:
   - uid: System.Func`2
     name: Func
-    nameWithType: Func
-    fullName: System.Func
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
   - name: <
-    nameWithType: <
-    fullName: <
   - name: T
-    nameWithType: T
-    fullName: T
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+  - name: ','
+  - name: " "
   - name: TResult
-    nameWithType: TResult
-    fullName: TResult
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Func`2
     name: Func
-    nameWithType: Func
-    fullName: System.Func
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
   - name: T
-    nameWithType: T
-    fullName: T
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+  - name: ','
+  - name: " "
   - name: TResult
-    nameWithType: TResult
-    fullName: TResult
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: wan24.Data.CsvMapping.RowValueFactory*
   commentId: Overload:wan24.Data.CsvMapping.RowValueFactory
+  href: wan24.Data.CsvMapping.html#wan24_Data_CsvMapping_RowValueFactory
   name: RowValueFactory
   nameWithType: CsvMapping.RowValueFactory
   fullName: wan24.Data.CsvMapping.RowValueFactory
@@ -804,64 +704,52 @@ references:
   commentId: T:System.Func{System.Object,System.String}
   parent: System
   definition: System.Func`2
-  name: Func<Object, String>
-  nameWithType: Func<Object, String>
-  fullName: System.Func<System.Object, System.String>
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<object, string>
+  nameWithType: Func<object, string>
+  fullName: System.Func<object, string>
   nameWithType.vb: Func(Of Object, String)
-  fullName.vb: System.Func(Of System.Object, System.String)
+  fullName.vb: System.Func(Of Object, String)
   name.vb: Func(Of Object, String)
   spec.csharp:
   - uid: System.Func`2
     name: Func
-    nameWithType: Func
-    fullName: System.Func
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
   - name: <
-    nameWithType: <
-    fullName: <
   - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
+    name: object
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
   - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
+    name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Func`2
     name: Func
-    nameWithType: Func
-    fullName: System.Func
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
   - uid: System.Object
     name: Object
-    nameWithType: Object
-    fullName: System.Object
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
   - uid: System.String
     name: String
-    nameWithType: String
-    fullName: System.String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: wan24.Data.CsvMapping.PreValidation*
   commentId: Overload:wan24.Data.CsvMapping.PreValidation
+  href: wan24.Data.CsvMapping.html#wan24_Data_CsvMapping_PreValidation
   name: PreValidation
   nameWithType: CsvMapping.PreValidation
   fullName: wan24.Data.CsvMapping.PreValidation
@@ -869,64 +757,52 @@ references:
   commentId: T:System.Func{System.String,System.Boolean}
   parent: System
   definition: System.Func`2
-  name: Func<String, Boolean>
-  nameWithType: Func<String, Boolean>
-  fullName: System.Func<System.String, System.Boolean>
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<string, bool>
+  nameWithType: Func<string, bool>
+  fullName: System.Func<string, bool>
   nameWithType.vb: Func(Of String, Boolean)
-  fullName.vb: System.Func(Of System.String, System.Boolean)
+  fullName.vb: System.Func(Of String, Boolean)
   name.vb: Func(Of String, Boolean)
   spec.csharp:
   - uid: System.Func`2
     name: Func
-    nameWithType: Func
-    fullName: System.Func
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
   - name: <
-    nameWithType: <
-    fullName: <
   - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
+    name: string
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
   - uid: System.Boolean
-    name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
+    name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Func`2
     name: Func
-    nameWithType: Func
-    fullName: System.Func
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
   - uid: System.String
     name: String
-    nameWithType: String
-    fullName: System.String
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
   - uid: System.Boolean
     name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: wan24.Data.CsvMapping.PostValidation*
   commentId: Overload:wan24.Data.CsvMapping.PostValidation
+  href: wan24.Data.CsvMapping.html#wan24_Data_CsvMapping_PostValidation
   name: PostValidation
   nameWithType: CsvMapping.PostValidation
   fullName: wan24.Data.CsvMapping.PostValidation
@@ -934,64 +810,52 @@ references:
   commentId: T:System.Func{System.Object,System.Boolean}
   parent: System
   definition: System.Func`2
-  name: Func<Object, Boolean>
-  nameWithType: Func<Object, Boolean>
-  fullName: System.Func<System.Object, System.Boolean>
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<object, bool>
+  nameWithType: Func<object, bool>
+  fullName: System.Func<object, bool>
   nameWithType.vb: Func(Of Object, Boolean)
-  fullName.vb: System.Func(Of System.Object, System.Boolean)
+  fullName.vb: System.Func(Of Object, Boolean)
   name.vb: Func(Of Object, Boolean)
   spec.csharp:
   - uid: System.Func`2
     name: Func
-    nameWithType: Func
-    fullName: System.Func
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
   - name: <
-    nameWithType: <
-    fullName: <
   - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
+    name: object
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
   - uid: System.Boolean
-    name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
+    name: bool
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Func`2
     name: Func
-    nameWithType: Func
-    fullName: System.Func
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
   - uid: System.Object
     name: Object
-    nameWithType: Object
-    fullName: System.Object
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
   - uid: System.Boolean
     name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: wan24.Data.CsvMapping.Clone*
   commentId: Overload:wan24.Data.CsvMapping.Clone
+  href: wan24.Data.CsvMapping.html#wan24_Data_CsvMapping_Clone
   name: Clone
   nameWithType: CsvMapping.Clone
   fullName: wan24.Data.CsvMapping.Clone
@@ -999,30 +863,21 @@ references:
   commentId: M:System.ICloneable.Clone
   parent: System.ICloneable
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icloneable.clone
   name: Clone()
   nameWithType: ICloneable.Clone()
   fullName: System.ICloneable.Clone()
   spec.csharp:
   - uid: System.ICloneable.Clone
     name: Clone
-    nameWithType: ICloneable.Clone
-    fullName: System.ICloneable.Clone
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icloneable.clone
   - name: (
-    nameWithType: (
-    fullName: (
   - name: )
-    nameWithType: )
-    fullName: )
   spec.vb:
   - uid: System.ICloneable.Clone
     name: Clone
-    nameWithType: ICloneable.Clone
-    fullName: System.ICloneable.Clone
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icloneable.clone
   - name: (
-    nameWithType: (
-    fullName: (
   - name: )
-    nameWithType: )
-    fullName: )

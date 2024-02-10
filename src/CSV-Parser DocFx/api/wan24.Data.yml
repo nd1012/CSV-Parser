@@ -23,39 +23,62 @@ references:
 - uid: wan24.Data.CsvMapping
   commentId: T:wan24.Data.CsvMapping
   parent: wan24.Data
+  href: wan24.Data.CsvMapping.html
   name: CsvMapping
   nameWithType: CsvMapping
   fullName: wan24.Data.CsvMapping
 - uid: wan24.Data.CsvMappingAttribute
   commentId: T:wan24.Data.CsvMappingAttribute
+  href: wan24.Data.CsvMappingAttribute.html
   name: CsvMappingAttribute
   nameWithType: CsvMappingAttribute
   fullName: wan24.Data.CsvMappingAttribute
 - uid: wan24.Data.CsvMappings
   commentId: T:wan24.Data.CsvMappings
   parent: wan24.Data
+  href: wan24.Data.CsvMappings.html
   name: CsvMappings
   nameWithType: CsvMappings
   fullName: wan24.Data.CsvMappings
 - uid: wan24.Data.CsvParser
   commentId: T:wan24.Data.CsvParser
+  href: wan24.Data.CsvParser.html
   name: CsvParser
   nameWithType: CsvParser
   fullName: wan24.Data.CsvParser
 - uid: wan24.Data.CsvStream
   commentId: T:wan24.Data.CsvStream
   parent: wan24.Data
+  href: wan24.Data.CsvStream.html
   name: CsvStream
   nameWithType: CsvStream
   fullName: wan24.Data.CsvStream
 - uid: wan24.Data.CsvTable
   commentId: T:wan24.Data.CsvTable
   parent: wan24.Data
+  href: wan24.Data.CsvTable.html
   name: CsvTable
   nameWithType: CsvTable
   fullName: wan24.Data.CsvTable
 - uid: wan24.Data
   commentId: N:wan24.Data
+  href: wan24.html
   name: wan24.Data
   nameWithType: wan24.Data
   fullName: wan24.Data
+  spec.csharp:
+  - uid: wan24
+    name: wan24
+    href: wan24.html
+  - name: .
+  - uid: wan24.Data
+    name: Data
+    href: wan24.Data.html
+  spec.vb:
+  - uid: wan24
+    name: wan24
+    href: wan24.html
+  - name: .
+  - uid: wan24.Data
+    name: Data
+    href: wan24.Data.html

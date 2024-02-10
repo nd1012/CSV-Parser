@@ -18,8 +18,8 @@ items:
   - wan24.Data.CsvParser.EnumerateString(System.String,System.Char,System.Nullable{System.Char})
   - wan24.Data.CsvParser.IgnoreErrors
   - wan24.Data.CsvParser.Map(System.Type,System.String[],System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
-  - wan24.Data.CsvParser.Map``1(System.String[],``0,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
   - wan24.Data.CsvParser.Map``1(System.String[],System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  - wan24.Data.CsvParser.Map``1(System.String[],``0,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
   - wan24.Data.CsvParser.ObjectValueFactories
   - wan24.Data.CsvParser.ParseFile(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32)
   - wan24.Data.CsvParser.ParseFileAsync(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32,System.Threading.CancellationToken)
@@ -45,15 +45,15 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Parse.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: CsvParser
     path: ../CSV-Parser/CsvParser.Parse.cs
     startLine: 10
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nCSV parser\n"
+  summary: CSV parser
   example: []
   syntax:
     content: public static class CsvParser
@@ -68,13 +68,6 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-  modifiers.csharp:
-  - public
-  - static
-  - class
-  modifiers.vb:
-  - Public
-  - Module
 - uid: wan24.Data.CsvParser.CountRowsFromFile(System.String,System.Nullable{System.Char},System.Text.Encoding)
   commentId: M:wan24.Data.CsvParser.CountRowsFromFile(System.String,System.Nullable{System.Char},System.Text.Encoding)
   id: CountRowsFromFile(System.String,System.Nullable{System.Char},System.Text.Encoding)
@@ -82,22 +75,22 @@ items:
   langs:
   - csharp
   - vb
-  name: CountRowsFromFile(String, Nullable<Char>, Encoding)
-  nameWithType: CsvParser.CountRowsFromFile(String, Nullable<Char>, Encoding)
-  fullName: wan24.Data.CsvParser.CountRowsFromFile(System.String, System.Nullable<System.Char>, System.Text.Encoding)
+  name: CountRowsFromFile(string, char?, Encoding)
+  nameWithType: CsvParser.CountRowsFromFile(string, char?, Encoding)
+  fullName: wan24.Data.CsvParser.CountRowsFromFile(string, char?, System.Text.Encoding)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Count.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: CountRowsFromFile
     path: ../CSV-Parser/CsvParser.Count.cs
     startLine: 17
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nParse a file and determine the number of CSV table rows\n"
+  summary: Parse a file and determine the number of CSV table rows
   example: []
   syntax:
     content: public static long CountRowsFromFile(string fileName, char? stringDelimiter = '"', Encoding encoding = null)
@@ -114,17 +107,11 @@ items:
     return:
       type: System.Int64
       description: Row count
-    content.vb: Public Shared Function CountRowsFromFile(fileName As String, stringDelimiter As Char? = """"c, encoding As Encoding = Nothing) As Long
+    content.vb: Public Shared Function CountRowsFromFile(fileName As String, stringDelimiter As Char? = """c, encoding As Encoding = Nothing) As Long
   overload: wan24.Data.CsvParser.CountRowsFromFile*
-  nameWithType.vb: CsvParser.CountRowsFromFile(String, Nullable(Of Char), Encoding)
-  modifiers.csharp:
-  - public
-  - static
-  modifiers.vb:
-  - Public
-  - Shared
-  fullName.vb: wan24.Data.CsvParser.CountRowsFromFile(System.String, System.Nullable(Of System.Char), System.Text.Encoding)
-  name.vb: CountRowsFromFile(String, Nullable(Of Char), Encoding)
+  nameWithType.vb: CsvParser.CountRowsFromFile(String, Char?, Encoding)
+  fullName.vb: wan24.Data.CsvParser.CountRowsFromFile(String, Char?, System.Text.Encoding)
+  name.vb: CountRowsFromFile(String, Char?, Encoding)
 - uid: wan24.Data.CsvParser.CountRowsFromFileAsync(System.String,System.Nullable{System.Char},System.Text.Encoding,System.Threading.CancellationToken)
   commentId: M:wan24.Data.CsvParser.CountRowsFromFileAsync(System.String,System.Nullable{System.Char},System.Text.Encoding,System.Threading.CancellationToken)
   id: CountRowsFromFileAsync(System.String,System.Nullable{System.Char},System.Text.Encoding,System.Threading.CancellationToken)
@@ -132,25 +119,25 @@ items:
   langs:
   - csharp
   - vb
-  name: CountRowsFromFileAsync(String, Nullable<Char>, Encoding, CancellationToken)
-  nameWithType: CsvParser.CountRowsFromFileAsync(String, Nullable<Char>, Encoding, CancellationToken)
-  fullName: wan24.Data.CsvParser.CountRowsFromFileAsync(System.String, System.Nullable<System.Char>, System.Text.Encoding, System.Threading.CancellationToken)
+  name: CountRowsFromFileAsync(string, char?, Encoding, CancellationToken)
+  nameWithType: CsvParser.CountRowsFromFileAsync(string, char?, Encoding, CancellationToken)
+  fullName: wan24.Data.CsvParser.CountRowsFromFileAsync(string, char?, System.Text.Encoding, System.Threading.CancellationToken)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Count.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: CountRowsFromFileAsync
     path: ../CSV-Parser/CsvParser.Count.cs
     startLine: 32
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nParse a file and determine the number of CSV table rows\n"
+  summary: Parse a file and determine the number of CSV table rows
   example: []
   syntax:
-    content: public static async Task<long> CountRowsFromFileAsync(string fileName, char? stringDelimiter = '"', Encoding encoding = null, CancellationToken cancellationToken = default(CancellationToken))
+    content: public static Task<long> CountRowsFromFileAsync(string fileName, char? stringDelimiter = '"', Encoding encoding = null, CancellationToken cancellationToken = default)
     parameters:
     - id: fileName
       type: System.String
@@ -167,18 +154,11 @@ items:
     return:
       type: System.Threading.Tasks.Task{System.Int64}
       description: Row count
-    content.vb: Public Shared Function CountRowsFromFileAsync(fileName As String, stringDelimiter As Char? = """"c, encoding As Encoding = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of Long)
+    content.vb: Public Shared Function CountRowsFromFileAsync(fileName As String, stringDelimiter As Char? = """c, encoding As Encoding = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of Long)
   overload: wan24.Data.CsvParser.CountRowsFromFileAsync*
-  nameWithType.vb: CsvParser.CountRowsFromFileAsync(String, Nullable(Of Char), Encoding, CancellationToken)
-  modifiers.csharp:
-  - public
-  - static
-  - async
-  modifiers.vb:
-  - Public
-  - Shared
-  fullName.vb: wan24.Data.CsvParser.CountRowsFromFileAsync(System.String, System.Nullable(Of System.Char), System.Text.Encoding, System.Threading.CancellationToken)
-  name.vb: CountRowsFromFileAsync(String, Nullable(Of Char), Encoding, CancellationToken)
+  nameWithType.vb: CsvParser.CountRowsFromFileAsync(String, Char?, Encoding, CancellationToken)
+  fullName.vb: wan24.Data.CsvParser.CountRowsFromFileAsync(String, Char?, System.Text.Encoding, System.Threading.CancellationToken)
+  name.vb: CountRowsFromFileAsync(String, Char?, Encoding, CancellationToken)
 - uid: wan24.Data.CsvParser.CountRowsFromStream(System.IO.Stream,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)
   commentId: M:wan24.Data.CsvParser.CountRowsFromStream(System.IO.Stream,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)
   id: CountRowsFromStream(System.IO.Stream,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)
@@ -186,22 +166,22 @@ items:
   langs:
   - csharp
   - vb
-  name: CountRowsFromStream(Stream, Nullable<Char>, Boolean, Encoding)
-  nameWithType: CsvParser.CountRowsFromStream(Stream, Nullable<Char>, Boolean, Encoding)
-  fullName: wan24.Data.CsvParser.CountRowsFromStream(System.IO.Stream, System.Nullable<System.Char>, System.Boolean, System.Text.Encoding)
+  name: CountRowsFromStream(Stream, char?, bool, Encoding)
+  nameWithType: CsvParser.CountRowsFromStream(Stream, char?, bool, Encoding)
+  fullName: wan24.Data.CsvParser.CountRowsFromStream(System.IO.Stream, char?, bool, System.Text.Encoding)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Count.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: CountRowsFromStream
     path: ../CSV-Parser/CsvParser.Count.cs
     startLine: 48
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nParse a stream and determine the number of CSV table rows\n"
+  summary: Parse a stream and determine the number of CSV table rows
   example: []
   syntax:
     content: public static long CountRowsFromStream(Stream stream, char? stringDelimiter = '"', bool leaveOpen = false, Encoding encoding = null)
@@ -221,17 +201,11 @@ items:
     return:
       type: System.Int64
       description: Row count
-    content.vb: Public Shared Function CountRowsFromStream(stream As Stream, stringDelimiter As Char? = """"c, leaveOpen As Boolean = False, encoding As Encoding = Nothing) As Long
+    content.vb: Public Shared Function CountRowsFromStream(stream As Stream, stringDelimiter As Char? = """c, leaveOpen As Boolean = False, encoding As Encoding = Nothing) As Long
   overload: wan24.Data.CsvParser.CountRowsFromStream*
-  nameWithType.vb: CsvParser.CountRowsFromStream(Stream, Nullable(Of Char), Boolean, Encoding)
-  modifiers.csharp:
-  - public
-  - static
-  modifiers.vb:
-  - Public
-  - Shared
-  fullName.vb: wan24.Data.CsvParser.CountRowsFromStream(System.IO.Stream, System.Nullable(Of System.Char), System.Boolean, System.Text.Encoding)
-  name.vb: CountRowsFromStream(Stream, Nullable(Of Char), Boolean, Encoding)
+  nameWithType.vb: CsvParser.CountRowsFromStream(Stream, Char?, Boolean, Encoding)
+  fullName.vb: wan24.Data.CsvParser.CountRowsFromStream(System.IO.Stream, Char?, Boolean, System.Text.Encoding)
+  name.vb: CountRowsFromStream(Stream, Char?, Boolean, Encoding)
 - uid: wan24.Data.CsvParser.CountRowsFromStreamAsync(System.IO.Stream,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Threading.CancellationToken)
   commentId: M:wan24.Data.CsvParser.CountRowsFromStreamAsync(System.IO.Stream,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Threading.CancellationToken)
   id: CountRowsFromStreamAsync(System.IO.Stream,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Threading.CancellationToken)
@@ -239,25 +213,25 @@ items:
   langs:
   - csharp
   - vb
-  name: CountRowsFromStreamAsync(Stream, Nullable<Char>, Boolean, Encoding, CancellationToken)
-  nameWithType: CsvParser.CountRowsFromStreamAsync(Stream, Nullable<Char>, Boolean, Encoding, CancellationToken)
-  fullName: wan24.Data.CsvParser.CountRowsFromStreamAsync(System.IO.Stream, System.Nullable<System.Char>, System.Boolean, System.Text.Encoding, System.Threading.CancellationToken)
+  name: CountRowsFromStreamAsync(Stream, char?, bool, Encoding, CancellationToken)
+  nameWithType: CsvParser.CountRowsFromStreamAsync(Stream, char?, bool, Encoding, CancellationToken)
+  fullName: wan24.Data.CsvParser.CountRowsFromStreamAsync(System.IO.Stream, char?, bool, System.Text.Encoding, System.Threading.CancellationToken)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Count.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: CountRowsFromStreamAsync
     path: ../CSV-Parser/CsvParser.Count.cs
     startLine: 69
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nParse a stream and determine the number of CSV table rows\n"
+  summary: Parse a stream and determine the number of CSV table rows
   example: []
   syntax:
-    content: public static async Task<long> CountRowsFromStreamAsync(Stream stream, char? stringDelimiter = '"', bool leaveOpen = false, Encoding encoding = null, CancellationToken cancellationToken = default(CancellationToken))
+    content: public static Task<long> CountRowsFromStreamAsync(Stream stream, char? stringDelimiter = '"', bool leaveOpen = false, Encoding encoding = null, CancellationToken cancellationToken = default)
     parameters:
     - id: stream
       type: System.IO.Stream
@@ -277,18 +251,11 @@ items:
     return:
       type: System.Threading.Tasks.Task{System.Int64}
       description: Row count
-    content.vb: Public Shared Function CountRowsFromStreamAsync(stream As Stream, stringDelimiter As Char? = """"c, leaveOpen As Boolean = False, encoding As Encoding = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of Long)
+    content.vb: Public Shared Function CountRowsFromStreamAsync(stream As Stream, stringDelimiter As Char? = """c, leaveOpen As Boolean = False, encoding As Encoding = Nothing, cancellationToken As CancellationToken = Nothing) As Task(Of Long)
   overload: wan24.Data.CsvParser.CountRowsFromStreamAsync*
-  nameWithType.vb: CsvParser.CountRowsFromStreamAsync(Stream, Nullable(Of Char), Boolean, Encoding, CancellationToken)
-  modifiers.csharp:
-  - public
-  - static
-  - async
-  modifiers.vb:
-  - Public
-  - Shared
-  fullName.vb: wan24.Data.CsvParser.CountRowsFromStreamAsync(System.IO.Stream, System.Nullable(Of System.Char), System.Boolean, System.Text.Encoding, System.Threading.CancellationToken)
-  name.vb: CountRowsFromStreamAsync(Stream, Nullable(Of Char), Boolean, Encoding, CancellationToken)
+  nameWithType.vb: CsvParser.CountRowsFromStreamAsync(Stream, Char?, Boolean, Encoding, CancellationToken)
+  fullName.vb: wan24.Data.CsvParser.CountRowsFromStreamAsync(System.IO.Stream, Char?, Boolean, System.Text.Encoding, System.Threading.CancellationToken)
+  name.vb: CountRowsFromStreamAsync(Stream, Char?, Boolean, Encoding, CancellationToken)
 - uid: wan24.Data.CsvParser.CountRowsFromString(System.String,System.Nullable{System.Char})
   commentId: M:wan24.Data.CsvParser.CountRowsFromString(System.String,System.Nullable{System.Char})
   id: CountRowsFromString(System.String,System.Nullable{System.Char})
@@ -296,22 +263,22 @@ items:
   langs:
   - csharp
   - vb
-  name: CountRowsFromString(String, Nullable<Char>)
-  nameWithType: CsvParser.CountRowsFromString(String, Nullable<Char>)
-  fullName: wan24.Data.CsvParser.CountRowsFromString(System.String, System.Nullable<System.Char>)
+  name: CountRowsFromString(string, char?)
+  nameWithType: CsvParser.CountRowsFromString(string, char?)
+  fullName: wan24.Data.CsvParser.CountRowsFromString(string, char?)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Count.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: CountRowsFromString
     path: ../CSV-Parser/CsvParser.Count.cs
     startLine: 89
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nParse a string and determine the number of CSV table rows\n"
+  summary: Parse a string and determine the number of CSV table rows
   example: []
   syntax:
     content: public static long CountRowsFromString(string csv, char? stringDelimiter = '"')
@@ -325,17 +292,11 @@ items:
     return:
       type: System.Int64
       description: Row count
-    content.vb: Public Shared Function CountRowsFromString(csv As String, stringDelimiter As Char? = """"c) As Long
+    content.vb: Public Shared Function CountRowsFromString(csv As String, stringDelimiter As Char? = """c) As Long
   overload: wan24.Data.CsvParser.CountRowsFromString*
-  nameWithType.vb: CsvParser.CountRowsFromString(String, Nullable(Of Char))
-  modifiers.csharp:
-  - public
-  - static
-  modifiers.vb:
-  - Public
-  - Shared
-  fullName.vb: wan24.Data.CsvParser.CountRowsFromString(System.String, System.Nullable(Of System.Char))
-  name.vb: CountRowsFromString(String, Nullable(Of Char))
+  nameWithType.vb: CsvParser.CountRowsFromString(String, Char?)
+  fullName.vb: wan24.Data.CsvParser.CountRowsFromString(String, Char?)
+  name.vb: CountRowsFromString(String, Char?)
 - uid: wan24.Data.CsvParser.IgnoreErrors
   commentId: P:wan24.Data.CsvParser.IgnoreErrors
   id: IgnoreErrors
@@ -350,15 +311,15 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: IgnoreErrors
     path: ../CSV-Parser/CsvParser.cs
     startLine: 10
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nIgnore errors?\n"
+  summary: Ignore errors?
   example: []
   syntax:
     content: public static bool IgnoreErrors { get; set; }
@@ -367,14 +328,6 @@ items:
       type: System.Boolean
     content.vb: Public Shared Property IgnoreErrors As Boolean
   overload: wan24.Data.CsvParser.IgnoreErrors*
-  modifiers.csharp:
-  - public
-  - static
-  - get
-  - set
-  modifiers.vb:
-  - Public
-  - Shared
 - uid: wan24.Data.CsvParser.EnumerateFile(System.String,System.Char,System.Nullable{System.Char},System.Text.Encoding)
   commentId: M:wan24.Data.CsvParser.EnumerateFile(System.String,System.Char,System.Nullable{System.Char},System.Text.Encoding)
   id: EnumerateFile(System.String,System.Char,System.Nullable{System.Char},System.Text.Encoding)
@@ -382,22 +335,22 @@ items:
   langs:
   - csharp
   - vb
-  name: EnumerateFile(String, Char, Nullable<Char>, Encoding)
-  nameWithType: CsvParser.EnumerateFile(String, Char, Nullable<Char>, Encoding)
-  fullName: wan24.Data.CsvParser.EnumerateFile(System.String, System.Char, System.Nullable<System.Char>, System.Text.Encoding)
+  name: EnumerateFile(string, char, char?, Encoding)
+  nameWithType: CsvParser.EnumerateFile(string, char, char?, Encoding)
+  fullName: wan24.Data.CsvParser.EnumerateFile(string, char, char?, System.Text.Encoding)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Enumerate.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: EnumerateFile
     path: ../CSV-Parser/CsvParser.Enumerate.cs
     startLine: 17
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nParse a file and enumerate the rows\n"
+  summary: Parse a file and enumerate the rows
   example: []
   syntax:
     content: public static IEnumerable<string[]> EnumerateFile(string fileName, char fieldDelimiter = ',', char? stringDelimiter = '"', Encoding encoding = null)
@@ -417,17 +370,11 @@ items:
     return:
       type: System.Collections.Generic.IEnumerable{System.String[]}
       description: CSV table
-    content.vb: Public Shared Function EnumerateFile(fileName As String, fieldDelimiter As Char = ","c, stringDelimiter As Char? = """"c, encoding As Encoding = Nothing) As IEnumerable(Of String())
+    content.vb: Public Shared Function EnumerateFile(fileName As String, fieldDelimiter As Char = ","c, stringDelimiter As Char? = """c, encoding As Encoding = Nothing) As IEnumerable(Of String())
   overload: wan24.Data.CsvParser.EnumerateFile*
-  nameWithType.vb: CsvParser.EnumerateFile(String, Char, Nullable(Of Char), Encoding)
-  modifiers.csharp:
-  - public
-  - static
-  modifiers.vb:
-  - Public
-  - Shared
-  fullName.vb: wan24.Data.CsvParser.EnumerateFile(System.String, System.Char, System.Nullable(Of System.Char), System.Text.Encoding)
-  name.vb: EnumerateFile(String, Char, Nullable(Of Char), Encoding)
+  nameWithType.vb: CsvParser.EnumerateFile(String, Char, Char?, Encoding)
+  fullName.vb: wan24.Data.CsvParser.EnumerateFile(String, Char, Char?, System.Text.Encoding)
+  name.vb: EnumerateFile(String, Char, Char?, Encoding)
 - uid: wan24.Data.CsvParser.EnumerateStream(System.IO.Stream,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)
   commentId: M:wan24.Data.CsvParser.EnumerateStream(System.IO.Stream,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)
   id: EnumerateStream(System.IO.Stream,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding)
@@ -435,22 +382,22 @@ items:
   langs:
   - csharp
   - vb
-  name: EnumerateStream(Stream, Char, Nullable<Char>, Boolean, Encoding)
-  nameWithType: CsvParser.EnumerateStream(Stream, Char, Nullable<Char>, Boolean, Encoding)
-  fullName: wan24.Data.CsvParser.EnumerateStream(System.IO.Stream, System.Char, System.Nullable<System.Char>, System.Boolean, System.Text.Encoding)
+  name: EnumerateStream(Stream, char, char?, bool, Encoding)
+  nameWithType: CsvParser.EnumerateStream(Stream, char, char?, bool, Encoding)
+  fullName: wan24.Data.CsvParser.EnumerateStream(System.IO.Stream, char, char?, bool, System.Text.Encoding)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Enumerate.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: EnumerateStream
     path: ../CSV-Parser/CsvParser.Enumerate.cs
     startLine: 34
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nParse a stream\n"
+  summary: Parse a stream
   example: []
   syntax:
     content: public static IEnumerable<string[]> EnumerateStream(Stream stream, char fieldDelimiter = ',', char? stringDelimiter = '"', bool leaveOpen = false, Encoding encoding = null)
@@ -473,17 +420,11 @@ items:
     return:
       type: System.Collections.Generic.IEnumerable{System.String[]}
       description: CSV table
-    content.vb: Public Shared Function EnumerateStream(stream As Stream, fieldDelimiter As Char = ","c, stringDelimiter As Char? = """"c, leaveOpen As Boolean = False, encoding As Encoding = Nothing) As IEnumerable(Of String())
+    content.vb: Public Shared Function EnumerateStream(stream As Stream, fieldDelimiter As Char = ","c, stringDelimiter As Char? = """c, leaveOpen As Boolean = False, encoding As Encoding = Nothing) As IEnumerable(Of String())
   overload: wan24.Data.CsvParser.EnumerateStream*
-  nameWithType.vb: CsvParser.EnumerateStream(Stream, Char, Nullable(Of Char), Boolean, Encoding)
-  modifiers.csharp:
-  - public
-  - static
-  modifiers.vb:
-  - Public
-  - Shared
-  fullName.vb: wan24.Data.CsvParser.EnumerateStream(System.IO.Stream, System.Char, System.Nullable(Of System.Char), System.Boolean, System.Text.Encoding)
-  name.vb: EnumerateStream(Stream, Char, Nullable(Of Char), Boolean, Encoding)
+  nameWithType.vb: CsvParser.EnumerateStream(Stream, Char, Char?, Boolean, Encoding)
+  fullName.vb: wan24.Data.CsvParser.EnumerateStream(System.IO.Stream, Char, Char?, Boolean, System.Text.Encoding)
+  name.vb: EnumerateStream(Stream, Char, Char?, Boolean, Encoding)
 - uid: wan24.Data.CsvParser.EnumerateString(System.String,System.Char,System.Nullable{System.Char})
   commentId: M:wan24.Data.CsvParser.EnumerateString(System.String,System.Char,System.Nullable{System.Char})
   id: EnumerateString(System.String,System.Char,System.Nullable{System.Char})
@@ -491,22 +432,22 @@ items:
   langs:
   - csharp
   - vb
-  name: EnumerateString(String, Char, Nullable<Char>)
-  nameWithType: CsvParser.EnumerateString(String, Char, Nullable<Char>)
-  fullName: wan24.Data.CsvParser.EnumerateString(System.String, System.Char, System.Nullable<System.Char>)
+  name: EnumerateString(string, char, char?)
+  nameWithType: CsvParser.EnumerateString(string, char, char?)
+  fullName: wan24.Data.CsvParser.EnumerateString(string, char, char?)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Enumerate.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: EnumerateString
     path: ../CSV-Parser/CsvParser.Enumerate.cs
     startLine: 55
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nParse a string\n"
+  summary: Parse a string
   example: []
   syntax:
     content: public static IEnumerable<string[]> EnumerateString(string csv, char fieldDelimiter = ',', char? stringDelimiter = '"')
@@ -523,17 +464,11 @@ items:
     return:
       type: System.Collections.Generic.IEnumerable{System.String[]}
       description: CSV table
-    content.vb: Public Shared Function EnumerateString(csv As String, fieldDelimiter As Char = ","c, stringDelimiter As Char? = """"c) As IEnumerable(Of String())
+    content.vb: Public Shared Function EnumerateString(csv As String, fieldDelimiter As Char = ","c, stringDelimiter As Char? = """c) As IEnumerable(Of String())
   overload: wan24.Data.CsvParser.EnumerateString*
-  nameWithType.vb: CsvParser.EnumerateString(String, Char, Nullable(Of Char))
-  modifiers.csharp:
-  - public
-  - static
-  modifiers.vb:
-  - Public
-  - Shared
-  fullName.vb: wan24.Data.CsvParser.EnumerateString(System.String, System.Char, System.Nullable(Of System.Char))
-  name.vb: EnumerateString(String, Char, Nullable(Of Char))
+  nameWithType.vb: CsvParser.EnumerateString(String, Char, Char?)
+  fullName.vb: wan24.Data.CsvParser.EnumerateString(String, Char, Char?)
+  name.vb: EnumerateString(String, Char, Char?)
 - uid: wan24.Data.CsvParser.ParseHeaderFromFile(System.String,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32)
   commentId: M:wan24.Data.CsvParser.ParseHeaderFromFile(System.String,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32)
   id: ParseHeaderFromFile(System.String,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32)
@@ -541,22 +476,22 @@ items:
   langs:
   - csharp
   - vb
-  name: ParseHeaderFromFile(String, Char, Nullable<Char>, Encoding, Int32, Int32)
-  nameWithType: CsvParser.ParseHeaderFromFile(String, Char, Nullable<Char>, Encoding, Int32, Int32)
-  fullName: wan24.Data.CsvParser.ParseHeaderFromFile(System.String, System.Char, System.Nullable<System.Char>, System.Text.Encoding, System.Int32, System.Int32)
+  name: ParseHeaderFromFile(string, char, char?, Encoding, int, int)
+  nameWithType: CsvParser.ParseHeaderFromFile(string, char, char?, Encoding, int, int)
+  fullName: wan24.Data.CsvParser.ParseHeaderFromFile(string, char, char?, System.Text.Encoding, int, int)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Header.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: ParseHeaderFromFile
     path: ../CSV-Parser/CsvParser.Header.cs
     startLine: 20
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nParse a file and return the column headers\n"
+  summary: Parse a file and return the column headers
   example: []
   syntax:
     content: public static string[] ParseHeaderFromFile(string fileName, char fieldDelimiter = ',', char? stringDelimiter = '"', Encoding encoding = null, int bufferSize = 81920, int chunkSize = 4096)
@@ -581,18 +516,12 @@ items:
       description: Chunk size in bytes
     return:
       type: System.String[]
-      description: Column headers or <xref uid="langword_csharp_null" name="null" href=""></xref>, if none
-    content.vb: Public Shared Function ParseHeaderFromFile(fileName As String, fieldDelimiter As Char = ","c, stringDelimiter As Char? = """"c, encoding As Encoding = Nothing, bufferSize As Integer = 81920, chunkSize As Integer = 4096) As String()
+      description: Column headers or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>, if none
+    content.vb: Public Shared Function ParseHeaderFromFile(fileName As String, fieldDelimiter As Char = ","c, stringDelimiter As Char? = """c, encoding As Encoding = Nothing, bufferSize As Integer = 81920, chunkSize As Integer = 4096) As String()
   overload: wan24.Data.CsvParser.ParseHeaderFromFile*
-  nameWithType.vb: CsvParser.ParseHeaderFromFile(String, Char, Nullable(Of Char), Encoding, Int32, Int32)
-  modifiers.csharp:
-  - public
-  - static
-  modifiers.vb:
-  - Public
-  - Shared
-  fullName.vb: wan24.Data.CsvParser.ParseHeaderFromFile(System.String, System.Char, System.Nullable(Of System.Char), System.Text.Encoding, System.Int32, System.Int32)
-  name.vb: ParseHeaderFromFile(String, Char, Nullable(Of Char), Encoding, Int32, Int32)
+  nameWithType.vb: CsvParser.ParseHeaderFromFile(String, Char, Char?, Encoding, Integer, Integer)
+  fullName.vb: wan24.Data.CsvParser.ParseHeaderFromFile(String, Char, Char?, System.Text.Encoding, Integer, Integer)
+  name.vb: ParseHeaderFromFile(String, Char, Char?, Encoding, Integer, Integer)
 - uid: wan24.Data.CsvParser.ParseHeaderFromFileAsync(System.String,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32)
   commentId: M:wan24.Data.CsvParser.ParseHeaderFromFileAsync(System.String,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32)
   id: ParseHeaderFromFileAsync(System.String,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32)
@@ -600,25 +529,25 @@ items:
   langs:
   - csharp
   - vb
-  name: ParseHeaderFromFileAsync(String, Char, Nullable<Char>, Encoding, Int32, Int32)
-  nameWithType: CsvParser.ParseHeaderFromFileAsync(String, Char, Nullable<Char>, Encoding, Int32, Int32)
-  fullName: wan24.Data.CsvParser.ParseHeaderFromFileAsync(System.String, System.Char, System.Nullable<System.Char>, System.Text.Encoding, System.Int32, System.Int32)
+  name: ParseHeaderFromFileAsync(string, char, char?, Encoding, int, int)
+  nameWithType: CsvParser.ParseHeaderFromFileAsync(string, char, char?, Encoding, int, int)
+  fullName: wan24.Data.CsvParser.ParseHeaderFromFileAsync(string, char, char?, System.Text.Encoding, int, int)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Header.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: ParseHeaderFromFileAsync
     path: ../CSV-Parser/CsvParser.Header.cs
     startLine: 47
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nParse a file and return the column headers\n"
+  summary: Parse a file and return the column headers
   example: []
   syntax:
-    content: public static async Task<string[]> ParseHeaderFromFileAsync(string fileName, char fieldDelimiter = ',', char? stringDelimiter = '"', Encoding encoding = null, int bufferSize = 81920, int chunkSize = 4096)
+    content: public static Task<string[]> ParseHeaderFromFileAsync(string fileName, char fieldDelimiter = ',', char? stringDelimiter = '"', Encoding encoding = null, int bufferSize = 81920, int chunkSize = 4096)
     parameters:
     - id: fileName
       type: System.String
@@ -640,19 +569,12 @@ items:
       description: Chunk size in bytes
     return:
       type: System.Threading.Tasks.Task{System.String[]}
-      description: Column headers or <xref uid="langword_csharp_null" name="null" href=""></xref>, if none
-    content.vb: Public Shared Function ParseHeaderFromFileAsync(fileName As String, fieldDelimiter As Char = ","c, stringDelimiter As Char? = """"c, encoding As Encoding = Nothing, bufferSize As Integer = 81920, chunkSize As Integer = 4096) As Task(Of String())
+      description: Column headers or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>, if none
+    content.vb: Public Shared Function ParseHeaderFromFileAsync(fileName As String, fieldDelimiter As Char = ","c, stringDelimiter As Char? = """c, encoding As Encoding = Nothing, bufferSize As Integer = 81920, chunkSize As Integer = 4096) As Task(Of String())
   overload: wan24.Data.CsvParser.ParseHeaderFromFileAsync*
-  nameWithType.vb: CsvParser.ParseHeaderFromFileAsync(String, Char, Nullable(Of Char), Encoding, Int32, Int32)
-  modifiers.csharp:
-  - public
-  - static
-  - async
-  modifiers.vb:
-  - Public
-  - Shared
-  fullName.vb: wan24.Data.CsvParser.ParseHeaderFromFileAsync(System.String, System.Char, System.Nullable(Of System.Char), System.Text.Encoding, System.Int32, System.Int32)
-  name.vb: ParseHeaderFromFileAsync(String, Char, Nullable(Of Char), Encoding, Int32, Int32)
+  nameWithType.vb: CsvParser.ParseHeaderFromFileAsync(String, Char, Char?, Encoding, Integer, Integer)
+  fullName.vb: wan24.Data.CsvParser.ParseHeaderFromFileAsync(String, Char, Char?, System.Text.Encoding, Integer, Integer)
+  name.vb: ParseHeaderFromFileAsync(String, Char, Char?, Encoding, Integer, Integer)
 - uid: wan24.Data.CsvParser.ParseHeaderFromStream(System.IO.Stream,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32)
   commentId: M:wan24.Data.CsvParser.ParseHeaderFromStream(System.IO.Stream,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32)
   id: ParseHeaderFromStream(System.IO.Stream,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32)
@@ -660,22 +582,22 @@ items:
   langs:
   - csharp
   - vb
-  name: ParseHeaderFromStream(Stream, Char, Nullable<Char>, Boolean, Encoding, Int32, Int32)
-  nameWithType: CsvParser.ParseHeaderFromStream(Stream, Char, Nullable<Char>, Boolean, Encoding, Int32, Int32)
-  fullName: wan24.Data.CsvParser.ParseHeaderFromStream(System.IO.Stream, System.Char, System.Nullable<System.Char>, System.Boolean, System.Text.Encoding, System.Int32, System.Int32)
+  name: ParseHeaderFromStream(Stream, char, char?, bool, Encoding, int, int)
+  nameWithType: CsvParser.ParseHeaderFromStream(Stream, char, char?, bool, Encoding, int, int)
+  fullName: wan24.Data.CsvParser.ParseHeaderFromStream(System.IO.Stream, char, char?, bool, System.Text.Encoding, int, int)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Header.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: ParseHeaderFromStream
     path: ../CSV-Parser/CsvParser.Header.cs
     startLine: 75
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nParse a stream and return the column headers\n"
+  summary: Parse a stream and return the column headers
   example: []
   syntax:
     content: public static string[] ParseHeaderFromStream(Stream stream, char fieldDelimiter = ',', char? stringDelimiter = '"', bool leaveOpen = true, Encoding encoding = null, int bufferSize = 81920, int chunkSize = 4096)
@@ -703,18 +625,12 @@ items:
       description: Chunk size in bytes
     return:
       type: System.String[]
-      description: Column headers or <xref uid="langword_csharp_null" name="null" href=""></xref>, if none
-    content.vb: Public Shared Function ParseHeaderFromStream(stream As Stream, fieldDelimiter As Char = ","c, stringDelimiter As Char? = """"c, leaveOpen As Boolean = True, encoding As Encoding = Nothing, bufferSize As Integer = 81920, chunkSize As Integer = 4096) As String()
+      description: Column headers or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>, if none
+    content.vb: Public Shared Function ParseHeaderFromStream(stream As Stream, fieldDelimiter As Char = ","c, stringDelimiter As Char? = """c, leaveOpen As Boolean = True, encoding As Encoding = Nothing, bufferSize As Integer = 81920, chunkSize As Integer = 4096) As String()
   overload: wan24.Data.CsvParser.ParseHeaderFromStream*
-  nameWithType.vb: CsvParser.ParseHeaderFromStream(Stream, Char, Nullable(Of Char), Boolean, Encoding, Int32, Int32)
-  modifiers.csharp:
-  - public
-  - static
-  modifiers.vb:
-  - Public
-  - Shared
-  fullName.vb: wan24.Data.CsvParser.ParseHeaderFromStream(System.IO.Stream, System.Char, System.Nullable(Of System.Char), System.Boolean, System.Text.Encoding, System.Int32, System.Int32)
-  name.vb: ParseHeaderFromStream(Stream, Char, Nullable(Of Char), Boolean, Encoding, Int32, Int32)
+  nameWithType.vb: CsvParser.ParseHeaderFromStream(Stream, Char, Char?, Boolean, Encoding, Integer, Integer)
+  fullName.vb: wan24.Data.CsvParser.ParseHeaderFromStream(System.IO.Stream, Char, Char?, Boolean, System.Text.Encoding, Integer, Integer)
+  name.vb: ParseHeaderFromStream(Stream, Char, Char?, Boolean, Encoding, Integer, Integer)
 - uid: wan24.Data.CsvParser.ParseHeaderFromStreamAsync(System.IO.Stream,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32)
   commentId: M:wan24.Data.CsvParser.ParseHeaderFromStreamAsync(System.IO.Stream,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32)
   id: ParseHeaderFromStreamAsync(System.IO.Stream,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32)
@@ -722,25 +638,25 @@ items:
   langs:
   - csharp
   - vb
-  name: ParseHeaderFromStreamAsync(Stream, Char, Nullable<Char>, Boolean, Encoding, Int32, Int32)
-  nameWithType: CsvParser.ParseHeaderFromStreamAsync(Stream, Char, Nullable<Char>, Boolean, Encoding, Int32, Int32)
-  fullName: wan24.Data.CsvParser.ParseHeaderFromStreamAsync(System.IO.Stream, System.Char, System.Nullable<System.Char>, System.Boolean, System.Text.Encoding, System.Int32, System.Int32)
+  name: ParseHeaderFromStreamAsync(Stream, char, char?, bool, Encoding, int, int)
+  nameWithType: CsvParser.ParseHeaderFromStreamAsync(Stream, char, char?, bool, Encoding, int, int)
+  fullName: wan24.Data.CsvParser.ParseHeaderFromStreamAsync(System.IO.Stream, char, char?, bool, System.Text.Encoding, int, int)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Header.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: ParseHeaderFromStreamAsync
     path: ../CSV-Parser/CsvParser.Header.cs
     startLine: 99
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nParse a stream and return the column headers\n"
+  summary: Parse a stream and return the column headers
   example: []
   syntax:
-    content: public static async Task<string[]> ParseHeaderFromStreamAsync(Stream stream, char fieldDelimiter = ',', char? stringDelimiter = '"', bool leaveOpen = true, Encoding encoding = null, int bufferSize = 81920, int chunkSize = 4096)
+    content: public static Task<string[]> ParseHeaderFromStreamAsync(Stream stream, char fieldDelimiter = ',', char? stringDelimiter = '"', bool leaveOpen = true, Encoding encoding = null, int bufferSize = 81920, int chunkSize = 4096)
     parameters:
     - id: stream
       type: System.IO.Stream
@@ -765,19 +681,12 @@ items:
       description: Chunk size in bytes
     return:
       type: System.Threading.Tasks.Task{System.String[]}
-      description: Column headers or <xref uid="langword_csharp_null" name="null" href=""></xref>, if none
-    content.vb: Public Shared Function ParseHeaderFromStreamAsync(stream As Stream, fieldDelimiter As Char = ","c, stringDelimiter As Char? = """"c, leaveOpen As Boolean = True, encoding As Encoding = Nothing, bufferSize As Integer = 81920, chunkSize As Integer = 4096) As Task(Of String())
+      description: Column headers or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>, if none
+    content.vb: Public Shared Function ParseHeaderFromStreamAsync(stream As Stream, fieldDelimiter As Char = ","c, stringDelimiter As Char? = """c, leaveOpen As Boolean = True, encoding As Encoding = Nothing, bufferSize As Integer = 81920, chunkSize As Integer = 4096) As Task(Of String())
   overload: wan24.Data.CsvParser.ParseHeaderFromStreamAsync*
-  nameWithType.vb: CsvParser.ParseHeaderFromStreamAsync(Stream, Char, Nullable(Of Char), Boolean, Encoding, Int32, Int32)
-  modifiers.csharp:
-  - public
-  - static
-  - async
-  modifiers.vb:
-  - Public
-  - Shared
-  fullName.vb: wan24.Data.CsvParser.ParseHeaderFromStreamAsync(System.IO.Stream, System.Char, System.Nullable(Of System.Char), System.Boolean, System.Text.Encoding, System.Int32, System.Int32)
-  name.vb: ParseHeaderFromStreamAsync(Stream, Char, Nullable(Of Char), Boolean, Encoding, Int32, Int32)
+  nameWithType.vb: CsvParser.ParseHeaderFromStreamAsync(Stream, Char, Char?, Boolean, Encoding, Integer, Integer)
+  fullName.vb: wan24.Data.CsvParser.ParseHeaderFromStreamAsync(System.IO.Stream, Char, Char?, Boolean, System.Text.Encoding, Integer, Integer)
+  name.vb: ParseHeaderFromStreamAsync(Stream, Char, Char?, Boolean, Encoding, Integer, Integer)
 - uid: wan24.Data.CsvParser.ParseHeaderFromString(System.String,System.Char,System.Nullable{System.Char})
   commentId: M:wan24.Data.CsvParser.ParseHeaderFromString(System.String,System.Char,System.Nullable{System.Char})
   id: ParseHeaderFromString(System.String,System.Char,System.Nullable{System.Char})
@@ -785,22 +694,22 @@ items:
   langs:
   - csharp
   - vb
-  name: ParseHeaderFromString(String, Char, Nullable<Char>)
-  nameWithType: CsvParser.ParseHeaderFromString(String, Char, Nullable<Char>)
-  fullName: wan24.Data.CsvParser.ParseHeaderFromString(System.String, System.Char, System.Nullable<System.Char>)
+  name: ParseHeaderFromString(string, char, char?)
+  nameWithType: CsvParser.ParseHeaderFromString(string, char, char?)
+  fullName: wan24.Data.CsvParser.ParseHeaderFromString(string, char, char?)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Header.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: ParseHeaderFromString
     path: ../CSV-Parser/CsvParser.Header.cs
     startLine: 120
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nParse a string and return the column headers\n"
+  summary: Parse a string and return the column headers
   example: []
   syntax:
     content: public static string[] ParseHeaderFromString(string csv, char fieldDelimiter = ',', char? stringDelimiter = '"')
@@ -816,18 +725,12 @@ items:
       description: String delimiter
     return:
       type: System.String[]
-      description: Column headers or <xref uid="langword_csharp_null" name="null" href=""></xref>, if none
-    content.vb: Public Shared Function ParseHeaderFromString(csv As String, fieldDelimiter As Char = ","c, stringDelimiter As Char? = """"c) As String()
+      description: Column headers or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>, if none
+    content.vb: Public Shared Function ParseHeaderFromString(csv As String, fieldDelimiter As Char = ","c, stringDelimiter As Char? = """c) As String()
   overload: wan24.Data.CsvParser.ParseHeaderFromString*
-  nameWithType.vb: CsvParser.ParseHeaderFromString(String, Char, Nullable(Of Char))
-  modifiers.csharp:
-  - public
-  - static
-  modifiers.vb:
-  - Public
-  - Shared
-  fullName.vb: wan24.Data.CsvParser.ParseHeaderFromString(System.String, System.Char, System.Nullable(Of System.Char))
-  name.vb: ParseHeaderFromString(String, Char, Nullable(Of Char))
+  nameWithType.vb: CsvParser.ParseHeaderFromString(String, Char, Char?)
+  fullName.vb: wan24.Data.CsvParser.ParseHeaderFromString(String, Char, Char?)
+  name.vb: ParseHeaderFromString(String, Char, Char?)
 - uid: wan24.Data.CsvParser.ObjectValueFactories
   commentId: P:wan24.Data.CsvParser.ObjectValueFactories
   id: ObjectValueFactories
@@ -842,15 +745,15 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Map.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: ObjectValueFactories
     path: ../CSV-Parser/CsvParser.Map.cs
     startLine: 14
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nObject value factories\n"
+  summary: Object value factories
   example: []
   syntax:
     content: public static Dictionary<Type, Func<string, object>> ObjectValueFactories { get; }
@@ -859,14 +762,6 @@ items:
       type: System.Collections.Generic.Dictionary{System.Type,System.Func{System.String,System.Object}}
     content.vb: Public Shared ReadOnly Property ObjectValueFactories As Dictionary(Of Type, Func(Of String, Object))
   overload: wan24.Data.CsvParser.ObjectValueFactories*
-  modifiers.csharp:
-  - public
-  - static
-  - get
-  modifiers.vb:
-  - Public
-  - Shared
-  - ReadOnly
 - uid: wan24.Data.CsvParser.RowValueFactories
   commentId: P:wan24.Data.CsvParser.RowValueFactories
   id: RowValueFactories
@@ -881,15 +776,15 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Map.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: RowValueFactories
     path: ../CSV-Parser/CsvParser.Map.cs
     startLine: 26
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nRow value factories\n"
+  summary: Row value factories
   example: []
   syntax:
     content: public static Dictionary<Type, Func<object, string>> RowValueFactories { get; }
@@ -898,14 +793,6 @@ items:
       type: System.Collections.Generic.Dictionary{System.Type,System.Func{System.Object,System.String}}
     content.vb: Public Shared ReadOnly Property RowValueFactories As Dictionary(Of Type, Func(Of Object, String))
   overload: wan24.Data.CsvParser.RowValueFactories*
-  modifiers.csharp:
-  - public
-  - static
-  - get
-  modifiers.vb:
-  - Public
-  - Shared
-  - ReadOnly
 - uid: wan24.Data.CsvParser.TypeMappings
   commentId: P:wan24.Data.CsvParser.TypeMappings
   id: TypeMappings
@@ -920,15 +807,15 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Map.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: TypeMappings
     path: ../CSV-Parser/CsvParser.Map.cs
     startLine: 38
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nType mappings\n"
+  summary: Type mappings
   example: []
   syntax:
     content: public static Dictionary<Type, CsvMappings> TypeMappings { get; }
@@ -937,14 +824,6 @@ items:
       type: System.Collections.Generic.Dictionary{System.Type,wan24.Data.CsvMappings}
     content.vb: Public Shared ReadOnly Property TypeMappings As Dictionary(Of Type, CsvMappings)
   overload: wan24.Data.CsvParser.TypeMappings*
-  modifiers.csharp:
-  - public
-  - static
-  - get
-  modifiers.vb:
-  - Public
-  - Shared
-  - ReadOnly
 - uid: wan24.Data.CsvParser.CreateMapping(wan24.Data.CsvMapping[])
   commentId: M:wan24.Data.CsvParser.CreateMapping(wan24.Data.CsvMapping[])
   id: CreateMapping(wan24.Data.CsvMapping[])
@@ -952,22 +831,22 @@ items:
   langs:
   - csharp
   - vb
-  name: CreateMapping(CsvMapping[])
-  nameWithType: CsvParser.CreateMapping(CsvMapping[])
-  fullName: wan24.Data.CsvParser.CreateMapping(wan24.Data.CsvMapping[])
+  name: CreateMapping(params CsvMapping[])
+  nameWithType: CsvParser.CreateMapping(params CsvMapping[])
+  fullName: wan24.Data.CsvParser.CreateMapping(params wan24.Data.CsvMapping[])
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Map.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: CreateMapping
     path: ../CSV-Parser/CsvParser.Map.cs
     startLine: 45
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nCreate a mapping\n"
+  summary: Create a mapping
   example: []
   syntax:
     content: public static CsvMappings CreateMapping(params CsvMapping[] mappings)
@@ -980,15 +859,9 @@ items:
       description: Mapping
     content.vb: Public Shared Function CreateMapping(ParamArray mappings As CsvMapping()) As CsvMappings
   overload: wan24.Data.CsvParser.CreateMapping*
-  nameWithType.vb: CsvParser.CreateMapping(CsvMapping())
-  modifiers.csharp:
-  - public
-  - static
-  modifiers.vb:
-  - Public
-  - Shared
-  fullName.vb: wan24.Data.CsvParser.CreateMapping(wan24.Data.CsvMapping())
-  name.vb: CreateMapping(CsvMapping())
+  nameWithType.vb: CsvParser.CreateMapping(ParamArray CsvMapping())
+  fullName.vb: wan24.Data.CsvParser.CreateMapping(ParamArray wan24.Data.CsvMapping())
+  name.vb: CreateMapping(ParamArray CsvMapping())
 - uid: wan24.Data.CsvParser.CreateMapping``1
   commentId: M:wan24.Data.CsvParser.CreateMapping``1
   id: CreateMapping``1
@@ -1003,15 +876,15 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Map.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: CreateMapping
     path: ../CSV-Parser/CsvParser.Map.cs
     startLine: 58
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nCreate a mapping from an object which has properties using the <code>CsvMappingAttribute</code> (and store it to <code>TypeMappings</code>)\n"
+  summary: Create a mapping from an object which has properties using the <code>CsvMappingAttribute</code> (and store it to <code>TypeMappings</code>)
   example: []
   syntax:
     content: public static CsvMappings CreateMapping<T>()
@@ -1021,15 +894,9 @@ items:
     return:
       type: wan24.Data.CsvMappings
       description: Mapping
-    content.vb: Public Shared Function CreateMapping(Of T) As CsvMappings
+    content.vb: Public Shared Function CreateMapping(Of T)() As CsvMappings
   overload: wan24.Data.CsvParser.CreateMapping*
   nameWithType.vb: CsvParser.CreateMapping(Of T)()
-  modifiers.csharp:
-  - public
-  - static
-  modifiers.vb:
-  - Public
-  - Shared
   fullName.vb: wan24.Data.CsvParser.CreateMapping(Of T)()
   name.vb: CreateMapping(Of T)()
 - uid: wan24.Data.CsvParser.CreateMapping(System.Type)
@@ -1046,15 +913,15 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Map.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: CreateMapping
     path: ../CSV-Parser/CsvParser.Map.cs
     startLine: 65
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nCreate a mapping from an object which has properties using the <code>CsvMappingAttribute</code> (and store it to <code>TypeMappings</code>)\n"
+  summary: Create a mapping from an object which has properties using the <code>CsvMappingAttribute</code> (and store it to <code>TypeMappings</code>)
   example: []
   syntax:
     content: public static CsvMappings CreateMapping(Type type)
@@ -1067,12 +934,6 @@ items:
       description: Mapping
     content.vb: Public Shared Function CreateMapping(type As Type) As CsvMappings
   overload: wan24.Data.CsvParser.CreateMapping*
-  modifiers.csharp:
-  - public
-  - static
-  modifiers.vb:
-  - Public
-  - Shared
 - uid: wan24.Data.CsvParser.Map``1(System.String[],System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
   commentId: M:wan24.Data.CsvParser.Map``1(System.String[],System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
   id: Map``1(System.String[],System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
@@ -1080,27 +941,25 @@ items:
   langs:
   - csharp
   - vb
-  name: Map<T>(String[], Dictionary<Int32, CsvMapping>)
-  nameWithType: CsvParser.Map<T>(String[], Dictionary<Int32, CsvMapping>)
-  fullName: wan24.Data.CsvParser.Map<T>(System.String[], System.Collections.Generic.Dictionary<System.Int32, wan24.Data.CsvMapping>)
+  name: Map<T>(string[], Dictionary<int, CsvMapping>)
+  nameWithType: CsvParser.Map<T>(string[], Dictionary<int, CsvMapping>)
+  fullName: wan24.Data.CsvParser.Map<T>(string[], System.Collections.Generic.Dictionary<int, wan24.Data.CsvMapping>)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Map.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: Map
     path: ../CSV-Parser/CsvParser.Map.cs
     startLine: 94
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nMap a row to an object\n"
+  summary: Map a row to an object
   example: []
   syntax:
-    content: >-
-      public static T Map<T>(string[] row, Dictionary<int, CsvMapping> mapping = null)
-          where T : new()
+    content: 'public static T Map<T>(string[] row, Dictionary<int, CsvMapping> mapping = null) where T : new()'
     parameters:
     - id: row
       type: System.String[]
@@ -1116,15 +975,9 @@ items:
       description: Object
     content.vb: Public Shared Function Map(Of T As New)(row As String(), mapping As Dictionary(Of Integer, CsvMapping) = Nothing) As T
   overload: wan24.Data.CsvParser.Map*
-  nameWithType.vb: CsvParser.Map(Of T)(String(), Dictionary(Of Int32, CsvMapping))
-  modifiers.csharp:
-  - public
-  - static
-  modifiers.vb:
-  - Public
-  - Shared
-  fullName.vb: wan24.Data.CsvParser.Map(Of T)(System.String(), System.Collections.Generic.Dictionary(Of System.Int32, wan24.Data.CsvMapping))
-  name.vb: Map(Of T)(String(), Dictionary(Of Int32, CsvMapping))
+  nameWithType.vb: CsvParser.Map(Of T)(String(), Dictionary(Of Integer, CsvMapping))
+  fullName.vb: wan24.Data.CsvParser.Map(Of T)(String(), System.Collections.Generic.Dictionary(Of Integer, wan24.Data.CsvMapping))
+  name.vb: Map(Of T)(String(), Dictionary(Of Integer, CsvMapping))
 - uid: wan24.Data.CsvParser.Map(System.Type,System.String[],System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
   commentId: M:wan24.Data.CsvParser.Map(System.Type,System.String[],System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
   id: Map(System.Type,System.String[],System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
@@ -1132,22 +985,22 @@ items:
   langs:
   - csharp
   - vb
-  name: Map(Type, String[], Dictionary<Int32, CsvMapping>)
-  nameWithType: CsvParser.Map(Type, String[], Dictionary<Int32, CsvMapping>)
-  fullName: wan24.Data.CsvParser.Map(System.Type, System.String[], System.Collections.Generic.Dictionary<System.Int32, wan24.Data.CsvMapping>)
+  name: Map(Type, string[], Dictionary<int, CsvMapping>)
+  nameWithType: CsvParser.Map(Type, string[], Dictionary<int, CsvMapping>)
+  fullName: wan24.Data.CsvParser.Map(System.Type, string[], System.Collections.Generic.Dictionary<int, wan24.Data.CsvMapping>)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Map.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: Map
     path: ../CSV-Parser/CsvParser.Map.cs
     startLine: 103
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nMap a row to an object\n"
+  summary: Map a row to an object
   example: []
   syntax:
     content: public static object Map(Type type, string[] row, Dictionary<int, CsvMapping> mapping = null)
@@ -1166,15 +1019,9 @@ items:
       description: Object
     content.vb: Public Shared Function Map(type As Type, row As String(), mapping As Dictionary(Of Integer, CsvMapping) = Nothing) As Object
   overload: wan24.Data.CsvParser.Map*
-  nameWithType.vb: CsvParser.Map(Type, String(), Dictionary(Of Int32, CsvMapping))
-  modifiers.csharp:
-  - public
-  - static
-  modifiers.vb:
-  - Public
-  - Shared
-  fullName.vb: wan24.Data.CsvParser.Map(System.Type, System.String(), System.Collections.Generic.Dictionary(Of System.Int32, wan24.Data.CsvMapping))
-  name.vb: Map(Type, String(), Dictionary(Of Int32, CsvMapping))
+  nameWithType.vb: CsvParser.Map(Type, String(), Dictionary(Of Integer, CsvMapping))
+  fullName.vb: wan24.Data.CsvParser.Map(System.Type, String(), System.Collections.Generic.Dictionary(Of Integer, wan24.Data.CsvMapping))
+  name.vb: Map(Type, String(), Dictionary(Of Integer, CsvMapping))
 - uid: wan24.Data.CsvParser.Map``1(System.String[],``0,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
   commentId: M:wan24.Data.CsvParser.Map``1(System.String[],``0,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
   id: Map``1(System.String[],``0,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
@@ -1182,22 +1029,22 @@ items:
   langs:
   - csharp
   - vb
-  name: Map<T>(String[], T, Dictionary<Int32, CsvMapping>)
-  nameWithType: CsvParser.Map<T>(String[], T, Dictionary<Int32, CsvMapping>)
-  fullName: wan24.Data.CsvParser.Map<T>(System.String[], T, System.Collections.Generic.Dictionary<System.Int32, wan24.Data.CsvMapping>)
+  name: Map<T>(string[], T, Dictionary<int, CsvMapping>)
+  nameWithType: CsvParser.Map<T>(string[], T, Dictionary<int, CsvMapping>)
+  fullName: wan24.Data.CsvParser.Map<T>(string[], T, System.Collections.Generic.Dictionary<int, wan24.Data.CsvMapping>)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Map.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: Map
     path: ../CSV-Parser/CsvParser.Map.cs
     startLine: 129
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nMap a row to an object\n"
+  summary: Map a row to an object
   example: []
   syntax:
     content: public static T Map<T>(string[] row, T obj, Dictionary<int, CsvMapping> mapping = null)
@@ -1219,15 +1066,9 @@ items:
       description: Object
     content.vb: Public Shared Function Map(Of T)(row As String(), obj As T, mapping As Dictionary(Of Integer, CsvMapping) = Nothing) As T
   overload: wan24.Data.CsvParser.Map*
-  nameWithType.vb: CsvParser.Map(Of T)(String(), T, Dictionary(Of Int32, CsvMapping))
-  modifiers.csharp:
-  - public
-  - static
-  modifiers.vb:
-  - Public
-  - Shared
-  fullName.vb: wan24.Data.CsvParser.Map(Of T)(System.String(), T, System.Collections.Generic.Dictionary(Of System.Int32, wan24.Data.CsvMapping))
-  name.vb: Map(Of T)(String(), T, Dictionary(Of Int32, CsvMapping))
+  nameWithType.vb: CsvParser.Map(Of T)(String(), T, Dictionary(Of Integer, CsvMapping))
+  fullName.vb: wan24.Data.CsvParser.Map(Of T)(String(), T, System.Collections.Generic.Dictionary(Of Integer, wan24.Data.CsvMapping))
+  name.vb: Map(Of T)(String(), T, Dictionary(Of Integer, CsvMapping))
 - uid: wan24.Data.CsvParser.Unmap``1(``0,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
   commentId: M:wan24.Data.CsvParser.Unmap``1(``0,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
   id: Unmap``1(``0,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
@@ -1235,22 +1076,22 @@ items:
   langs:
   - csharp
   - vb
-  name: Unmap<T>(T, Dictionary<Int32, CsvMapping>)
-  nameWithType: CsvParser.Unmap<T>(T, Dictionary<Int32, CsvMapping>)
-  fullName: wan24.Data.CsvParser.Unmap<T>(T, System.Collections.Generic.Dictionary<System.Int32, wan24.Data.CsvMapping>)
+  name: Unmap<T>(T, Dictionary<int, CsvMapping>)
+  nameWithType: CsvParser.Unmap<T>(T, Dictionary<int, CsvMapping>)
+  fullName: wan24.Data.CsvParser.Unmap<T>(T, System.Collections.Generic.Dictionary<int, wan24.Data.CsvMapping>)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Map.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: Unmap
     path: ../CSV-Parser/CsvParser.Map.cs
     startLine: 155
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nUnmap an object to a row\n"
+  summary: Unmap an object to a row
   example: []
   syntax:
     content: public static string[] Unmap<T>(T obj, Dictionary<int, CsvMapping> mapping = null)
@@ -1269,15 +1110,9 @@ items:
       description: Row
     content.vb: Public Shared Function Unmap(Of T)(obj As T, mapping As Dictionary(Of Integer, CsvMapping) = Nothing) As String()
   overload: wan24.Data.CsvParser.Unmap*
-  nameWithType.vb: CsvParser.Unmap(Of T)(T, Dictionary(Of Int32, CsvMapping))
-  modifiers.csharp:
-  - public
-  - static
-  modifiers.vb:
-  - Public
-  - Shared
-  fullName.vb: wan24.Data.CsvParser.Unmap(Of T)(T, System.Collections.Generic.Dictionary(Of System.Int32, wan24.Data.CsvMapping))
-  name.vb: Unmap(Of T)(T, Dictionary(Of Int32, CsvMapping))
+  nameWithType.vb: CsvParser.Unmap(Of T)(T, Dictionary(Of Integer, CsvMapping))
+  fullName.vb: wan24.Data.CsvParser.Unmap(Of T)(T, System.Collections.Generic.Dictionary(Of Integer, wan24.Data.CsvMapping))
+  name.vb: Unmap(Of T)(T, Dictionary(Of Integer, CsvMapping))
 - uid: wan24.Data.CsvParser.Unmap(System.Object,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
   commentId: M:wan24.Data.CsvParser.Unmap(System.Object,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
   id: Unmap(System.Object,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
@@ -1285,22 +1120,22 @@ items:
   langs:
   - csharp
   - vb
-  name: Unmap(Object, Dictionary<Int32, CsvMapping>)
-  nameWithType: CsvParser.Unmap(Object, Dictionary<Int32, CsvMapping>)
-  fullName: wan24.Data.CsvParser.Unmap(System.Object, System.Collections.Generic.Dictionary<System.Int32, wan24.Data.CsvMapping>)
+  name: Unmap(object, Dictionary<int, CsvMapping>)
+  nameWithType: CsvParser.Unmap(object, Dictionary<int, CsvMapping>)
+  fullName: wan24.Data.CsvParser.Unmap(object, System.Collections.Generic.Dictionary<int, wan24.Data.CsvMapping>)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Map.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: Unmap
     path: ../CSV-Parser/CsvParser.Map.cs
     startLine: 163
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nUnmap an object to a row\n"
+  summary: Unmap an object to a row
   example: []
   syntax:
     content: public static string[] Unmap(object obj, Dictionary<int, CsvMapping> mapping = null)
@@ -1316,15 +1151,9 @@ items:
       description: Row
     content.vb: Public Shared Function Unmap(obj As Object, mapping As Dictionary(Of Integer, CsvMapping) = Nothing) As String()
   overload: wan24.Data.CsvParser.Unmap*
-  nameWithType.vb: CsvParser.Unmap(Object, Dictionary(Of Int32, CsvMapping))
-  modifiers.csharp:
-  - public
-  - static
-  modifiers.vb:
-  - Public
-  - Shared
-  fullName.vb: wan24.Data.CsvParser.Unmap(System.Object, System.Collections.Generic.Dictionary(Of System.Int32, wan24.Data.CsvMapping))
-  name.vb: Unmap(Object, Dictionary(Of Int32, CsvMapping))
+  nameWithType.vb: CsvParser.Unmap(Object, Dictionary(Of Integer, CsvMapping))
+  fullName.vb: wan24.Data.CsvParser.Unmap(Object, System.Collections.Generic.Dictionary(Of Integer, wan24.Data.CsvMapping))
+  name.vb: Unmap(Object, Dictionary(Of Integer, CsvMapping))
 - uid: wan24.Data.CsvParser.ParseFile(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32)
   commentId: M:wan24.Data.CsvParser.ParseFile(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32)
   id: ParseFile(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32)
@@ -1332,22 +1161,22 @@ items:
   langs:
   - csharp
   - vb
-  name: ParseFile(String, Boolean, Char, Nullable<Char>, Encoding, Int32, Int32)
-  nameWithType: CsvParser.ParseFile(String, Boolean, Char, Nullable<Char>, Encoding, Int32, Int32)
-  fullName: wan24.Data.CsvParser.ParseFile(System.String, System.Boolean, System.Char, System.Nullable<System.Char>, System.Text.Encoding, System.Int32, System.Int32)
+  name: ParseFile(string, bool, char, char?, Encoding, int, int)
+  nameWithType: CsvParser.ParseFile(string, bool, char, char?, Encoding, int, int)
+  fullName: wan24.Data.CsvParser.ParseFile(string, bool, char, char?, System.Text.Encoding, int, int)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Parse.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: ParseFile
     path: ../CSV-Parser/CsvParser.Parse.cs
     startLine: 24
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nParse a file\n"
+  summary: Parse a file
   example: []
   syntax:
     content: public static CsvTable ParseFile(string fileName, bool header = true, char fieldDelimiter = ',', char? stringDelimiter = '"', Encoding encoding = null, int offset = 0, int limit = 0)
@@ -1376,17 +1205,11 @@ items:
     return:
       type: wan24.Data.CsvTable
       description: CSV table
-    content.vb: Public Shared Function ParseFile(fileName As String, header As Boolean = True, fieldDelimiter As Char = ","c, stringDelimiter As Char? = """"c, encoding As Encoding = Nothing, offset As Integer = 0, limit As Integer = 0) As CsvTable
+    content.vb: Public Shared Function ParseFile(fileName As String, header As Boolean = True, fieldDelimiter As Char = ","c, stringDelimiter As Char? = """c, encoding As Encoding = Nothing, offset As Integer = 0, limit As Integer = 0) As CsvTable
   overload: wan24.Data.CsvParser.ParseFile*
-  nameWithType.vb: CsvParser.ParseFile(String, Boolean, Char, Nullable(Of Char), Encoding, Int32, Int32)
-  modifiers.csharp:
-  - public
-  - static
-  modifiers.vb:
-  - Public
-  - Shared
-  fullName.vb: wan24.Data.CsvParser.ParseFile(System.String, System.Boolean, System.Char, System.Nullable(Of System.Char), System.Text.Encoding, System.Int32, System.Int32)
-  name.vb: ParseFile(String, Boolean, Char, Nullable(Of Char), Encoding, Int32, Int32)
+  nameWithType.vb: CsvParser.ParseFile(String, Boolean, Char, Char?, Encoding, Integer, Integer)
+  fullName.vb: wan24.Data.CsvParser.ParseFile(String, Boolean, Char, Char?, System.Text.Encoding, Integer, Integer)
+  name.vb: ParseFile(String, Boolean, Char, Char?, Encoding, Integer, Integer)
 - uid: wan24.Data.CsvParser.ParseFileAsync(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32,System.Threading.CancellationToken)
   commentId: M:wan24.Data.CsvParser.ParseFileAsync(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32,System.Threading.CancellationToken)
   id: ParseFileAsync(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Text.Encoding,System.Int32,System.Int32,System.Threading.CancellationToken)
@@ -1394,25 +1217,25 @@ items:
   langs:
   - csharp
   - vb
-  name: ParseFileAsync(String, Boolean, Char, Nullable<Char>, Encoding, Int32, Int32, CancellationToken)
-  nameWithType: CsvParser.ParseFileAsync(String, Boolean, Char, Nullable<Char>, Encoding, Int32, Int32, CancellationToken)
-  fullName: wan24.Data.CsvParser.ParseFileAsync(System.String, System.Boolean, System.Char, System.Nullable<System.Char>, System.Text.Encoding, System.Int32, System.Int32, System.Threading.CancellationToken)
+  name: ParseFileAsync(string, bool, char, char?, Encoding, int, int, CancellationToken)
+  nameWithType: CsvParser.ParseFileAsync(string, bool, char, char?, Encoding, int, int, CancellationToken)
+  fullName: wan24.Data.CsvParser.ParseFileAsync(string, bool, char, char?, System.Text.Encoding, int, int, System.Threading.CancellationToken)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Parse.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: ParseFileAsync
     path: ../CSV-Parser/CsvParser.Parse.cs
     startLine: 56
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nParse a file\n"
+  summary: Parse a file
   example: []
   syntax:
-    content: public static async Task<CsvTable> ParseFileAsync(string fileName, bool header = true, char fieldDelimiter = ',', char? stringDelimiter = '"', Encoding encoding = null, int offset = 0, int limit = 0, CancellationToken cancellationToken = default(CancellationToken))
+    content: public static Task<CsvTable> ParseFileAsync(string fileName, bool header = true, char fieldDelimiter = ',', char? stringDelimiter = '"', Encoding encoding = null, int offset = 0, int limit = 0, CancellationToken cancellationToken = default)
     parameters:
     - id: fileName
       type: System.String
@@ -1441,18 +1264,11 @@ items:
     return:
       type: System.Threading.Tasks.Task{wan24.Data.CsvTable}
       description: CSV table
-    content.vb: Public Shared Function ParseFileAsync(fileName As String, header As Boolean = True, fieldDelimiter As Char = ","c, stringDelimiter As Char? = """"c, encoding As Encoding = Nothing, offset As Integer = 0, limit As Integer = 0, cancellationToken As CancellationToken = Nothing) As Task(Of CsvTable)
+    content.vb: Public Shared Function ParseFileAsync(fileName As String, header As Boolean = True, fieldDelimiter As Char = ","c, stringDelimiter As Char? = """c, encoding As Encoding = Nothing, offset As Integer = 0, limit As Integer = 0, cancellationToken As CancellationToken = Nothing) As Task(Of CsvTable)
   overload: wan24.Data.CsvParser.ParseFileAsync*
-  nameWithType.vb: CsvParser.ParseFileAsync(String, Boolean, Char, Nullable(Of Char), Encoding, Int32, Int32, CancellationToken)
-  modifiers.csharp:
-  - public
-  - static
-  - async
-  modifiers.vb:
-  - Public
-  - Shared
-  fullName.vb: wan24.Data.CsvParser.ParseFileAsync(System.String, System.Boolean, System.Char, System.Nullable(Of System.Char), System.Text.Encoding, System.Int32, System.Int32, System.Threading.CancellationToken)
-  name.vb: ParseFileAsync(String, Boolean, Char, Nullable(Of Char), Encoding, Int32, Int32, CancellationToken)
+  nameWithType.vb: CsvParser.ParseFileAsync(String, Boolean, Char, Char?, Encoding, Integer, Integer, CancellationToken)
+  fullName.vb: wan24.Data.CsvParser.ParseFileAsync(String, Boolean, Char, Char?, System.Text.Encoding, Integer, Integer, System.Threading.CancellationToken)
+  name.vb: ParseFileAsync(String, Boolean, Char, Char?, Encoding, Integer, Integer, CancellationToken)
 - uid: wan24.Data.CsvParser.ParseStream(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32)
   commentId: M:wan24.Data.CsvParser.ParseStream(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32)
   id: ParseStream(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32)
@@ -1460,22 +1276,22 @@ items:
   langs:
   - csharp
   - vb
-  name: ParseStream(Stream, Boolean, Char, Nullable<Char>, Boolean, Encoding, Int32, Int32)
-  nameWithType: CsvParser.ParseStream(Stream, Boolean, Char, Nullable<Char>, Boolean, Encoding, Int32, Int32)
-  fullName: wan24.Data.CsvParser.ParseStream(System.IO.Stream, System.Boolean, System.Char, System.Nullable<System.Char>, System.Boolean, System.Text.Encoding, System.Int32, System.Int32)
+  name: ParseStream(Stream, bool, char, char?, bool, Encoding, int, int)
+  nameWithType: CsvParser.ParseStream(Stream, bool, char, char?, bool, Encoding, int, int)
+  fullName: wan24.Data.CsvParser.ParseStream(System.IO.Stream, bool, char, char?, bool, System.Text.Encoding, int, int)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Parse.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: ParseStream
     path: ../CSV-Parser/CsvParser.Parse.cs
     startLine: 90
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nParse a stream\n"
+  summary: Parse a stream
   example: []
   syntax:
     content: public static CsvTable ParseStream(Stream stream, bool header = true, char fieldDelimiter = ',', char? stringDelimiter = '"', bool leaveOpen = false, Encoding encoding = null, int offset = 0, int limit = 0)
@@ -1507,17 +1323,11 @@ items:
     return:
       type: wan24.Data.CsvTable
       description: CSV table
-    content.vb: Public Shared Function ParseStream(stream As Stream, header As Boolean = True, fieldDelimiter As Char = ","c, stringDelimiter As Char? = """"c, leaveOpen As Boolean = False, encoding As Encoding = Nothing, offset As Integer = 0, limit As Integer = 0) As CsvTable
+    content.vb: Public Shared Function ParseStream(stream As Stream, header As Boolean = True, fieldDelimiter As Char = ","c, stringDelimiter As Char? = """c, leaveOpen As Boolean = False, encoding As Encoding = Nothing, offset As Integer = 0, limit As Integer = 0) As CsvTable
   overload: wan24.Data.CsvParser.ParseStream*
-  nameWithType.vb: CsvParser.ParseStream(Stream, Boolean, Char, Nullable(Of Char), Boolean, Encoding, Int32, Int32)
-  modifiers.csharp:
-  - public
-  - static
-  modifiers.vb:
-  - Public
-  - Shared
-  fullName.vb: wan24.Data.CsvParser.ParseStream(System.IO.Stream, System.Boolean, System.Char, System.Nullable(Of System.Char), System.Boolean, System.Text.Encoding, System.Int32, System.Int32)
-  name.vb: ParseStream(Stream, Boolean, Char, Nullable(Of Char), Boolean, Encoding, Int32, Int32)
+  nameWithType.vb: CsvParser.ParseStream(Stream, Boolean, Char, Char?, Boolean, Encoding, Integer, Integer)
+  fullName.vb: wan24.Data.CsvParser.ParseStream(System.IO.Stream, Boolean, Char, Char?, Boolean, System.Text.Encoding, Integer, Integer)
+  name.vb: ParseStream(Stream, Boolean, Char, Char?, Boolean, Encoding, Integer, Integer)
 - uid: wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32,System.Threading.CancellationToken)
   commentId: M:wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32,System.Threading.CancellationToken)
   id: ParseStreamAsync(System.IO.Stream,System.Boolean,System.Char,System.Nullable{System.Char},System.Boolean,System.Text.Encoding,System.Int32,System.Int32,System.Threading.CancellationToken)
@@ -1525,25 +1335,25 @@ items:
   langs:
   - csharp
   - vb
-  name: ParseStreamAsync(Stream, Boolean, Char, Nullable<Char>, Boolean, Encoding, Int32, Int32, CancellationToken)
-  nameWithType: CsvParser.ParseStreamAsync(Stream, Boolean, Char, Nullable<Char>, Boolean, Encoding, Int32, Int32, CancellationToken)
-  fullName: wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream, System.Boolean, System.Char, System.Nullable<System.Char>, System.Boolean, System.Text.Encoding, System.Int32, System.Int32, System.Threading.CancellationToken)
+  name: ParseStreamAsync(Stream, bool, char, char?, bool, Encoding, int, int, CancellationToken)
+  nameWithType: CsvParser.ParseStreamAsync(Stream, bool, char, char?, bool, Encoding, int, int, CancellationToken)
+  fullName: wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream, bool, char, char?, bool, System.Text.Encoding, int, int, System.Threading.CancellationToken)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Parse.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: ParseStreamAsync
     path: ../CSV-Parser/CsvParser.Parse.cs
     startLine: 122
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nParse a stream\n"
+  summary: Parse a stream
   example: []
   syntax:
-    content: public static async Task<CsvTable> ParseStreamAsync(Stream stream, bool header = true, char fieldDelimiter = ',', char? stringDelimiter = '"', bool leaveOpen = false, Encoding encoding = null, int offset = 0, int limit = 0, CancellationToken cancellationToken = default(CancellationToken))
+    content: public static Task<CsvTable> ParseStreamAsync(Stream stream, bool header = true, char fieldDelimiter = ',', char? stringDelimiter = '"', bool leaveOpen = false, Encoding encoding = null, int offset = 0, int limit = 0, CancellationToken cancellationToken = default)
     parameters:
     - id: stream
       type: System.IO.Stream
@@ -1575,18 +1385,11 @@ items:
     return:
       type: System.Threading.Tasks.Task{wan24.Data.CsvTable}
       description: CSV table
-    content.vb: Public Shared Function ParseStreamAsync(stream As Stream, header As Boolean = True, fieldDelimiter As Char = ","c, stringDelimiter As Char? = """"c, leaveOpen As Boolean = False, encoding As Encoding = Nothing, offset As Integer = 0, limit As Integer = 0, cancellationToken As CancellationToken = Nothing) As Task(Of CsvTable)
+    content.vb: Public Shared Function ParseStreamAsync(stream As Stream, header As Boolean = True, fieldDelimiter As Char = ","c, stringDelimiter As Char? = """c, leaveOpen As Boolean = False, encoding As Encoding = Nothing, offset As Integer = 0, limit As Integer = 0, cancellationToken As CancellationToken = Nothing) As Task(Of CsvTable)
   overload: wan24.Data.CsvParser.ParseStreamAsync*
-  nameWithType.vb: CsvParser.ParseStreamAsync(Stream, Boolean, Char, Nullable(Of Char), Boolean, Encoding, Int32, Int32, CancellationToken)
-  modifiers.csharp:
-  - public
-  - static
-  - async
-  modifiers.vb:
-  - Public
-  - Shared
-  fullName.vb: wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream, System.Boolean, System.Char, System.Nullable(Of System.Char), System.Boolean, System.Text.Encoding, System.Int32, System.Int32, System.Threading.CancellationToken)
-  name.vb: ParseStreamAsync(Stream, Boolean, Char, Nullable(Of Char), Boolean, Encoding, Int32, Int32, CancellationToken)
+  nameWithType.vb: CsvParser.ParseStreamAsync(Stream, Boolean, Char, Char?, Boolean, Encoding, Integer, Integer, CancellationToken)
+  fullName.vb: wan24.Data.CsvParser.ParseStreamAsync(System.IO.Stream, Boolean, Char, Char?, Boolean, System.Text.Encoding, Integer, Integer, System.Threading.CancellationToken)
+  name.vb: ParseStreamAsync(Stream, Boolean, Char, Char?, Boolean, Encoding, Integer, Integer, CancellationToken)
 - uid: wan24.Data.CsvParser.ParseString(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Int32,System.Int32)
   commentId: M:wan24.Data.CsvParser.ParseString(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Int32,System.Int32)
   id: ParseString(System.String,System.Boolean,System.Char,System.Nullable{System.Char},System.Int32,System.Int32)
@@ -1594,22 +1397,22 @@ items:
   langs:
   - csharp
   - vb
-  name: ParseString(String, Boolean, Char, Nullable<Char>, Int32, Int32)
-  nameWithType: CsvParser.ParseString(String, Boolean, Char, Nullable<Char>, Int32, Int32)
-  fullName: wan24.Data.CsvParser.ParseString(System.String, System.Boolean, System.Char, System.Nullable<System.Char>, System.Int32, System.Int32)
+  name: ParseString(string, bool, char, char?, int, int)
+  nameWithType: CsvParser.ParseString(string, bool, char, char?, int, int)
+  fullName: wan24.Data.CsvParser.ParseString(string, bool, char, char?, int, int)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Parse.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: ParseString
     path: ../CSV-Parser/CsvParser.Parse.cs
     startLine: 164
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nParse a string\n"
+  summary: Parse a string
   example: []
   syntax:
     content: public static CsvTable ParseString(string csv, bool header = true, char fieldDelimiter = ',', char? stringDelimiter = '"', int offset = -1, int limit = 0)
@@ -1635,317 +1438,274 @@ items:
     return:
       type: wan24.Data.CsvTable
       description: CSV table
-    content.vb: Public Shared Function ParseString(csv As String, header As Boolean = True, fieldDelimiter As Char = ","c, stringDelimiter As Char? = """"c, offset As Integer = -1, limit As Integer = 0) As CsvTable
+    content.vb: Public Shared Function ParseString(csv As String, header As Boolean = True, fieldDelimiter As Char = ","c, stringDelimiter As Char? = """c, offset As Integer = -1, limit As Integer = 0) As CsvTable
   overload: wan24.Data.CsvParser.ParseString*
-  nameWithType.vb: CsvParser.ParseString(String, Boolean, Char, Nullable(Of Char), Int32, Int32)
-  modifiers.csharp:
-  - public
-  - static
-  modifiers.vb:
-  - Public
-  - Shared
-  fullName.vb: wan24.Data.CsvParser.ParseString(System.String, System.Boolean, System.Char, System.Nullable(Of System.Char), System.Int32, System.Int32)
-  name.vb: ParseString(String, Boolean, Char, Nullable(Of Char), Int32, Int32)
+  nameWithType.vb: CsvParser.ParseString(String, Boolean, Char, Char?, Integer, Integer)
+  fullName.vb: wan24.Data.CsvParser.ParseString(String, Boolean, Char, Char?, Integer, Integer)
+  name.vb: ParseString(String, Boolean, Char, Char?, Integer, Integer)
 references:
 - uid: wan24.Data
   commentId: N:wan24.Data
+  href: wan24.html
   name: wan24.Data
   nameWithType: wan24.Data
   fullName: wan24.Data
+  spec.csharp:
+  - uid: wan24
+    name: wan24
+    href: wan24.html
+  - name: .
+  - uid: wan24.Data
+    name: Data
+    href: wan24.Data.html
+  spec.vb:
+  - uid: wan24
+    name: wan24
+    href: wan24.html
+  - name: .
+  - uid: wan24.Data
+    name: Data
+    href: wan24.Data.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
   isExternal: true
-  name: Object
-  nameWithType: Object
-  fullName: System.Object
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
 - uid: System.Object.Equals(System.Object)
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
   isExternal: true
-  name: Equals(Object)
-  nameWithType: Object.Equals(Object)
-  fullName: System.Object.Equals(System.Object)
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
   spec.csharp:
   - uid: System.Object.Equals(System.Object)
     name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
   - name: (
-    nameWithType: (
-    fullName: (
   - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
+    name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-    nameWithType: )
-    fullName: )
   spec.vb:
   - uid: System.Object.Equals(System.Object)
     name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
   - name: (
-    nameWithType: (
-    fullName: (
   - uid: System.Object
     name: Object
-    nameWithType: Object
-    fullName: System.Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Object.Equals(System.Object,System.Object)
   commentId: M:System.Object.Equals(System.Object,System.Object)
   parent: System.Object
   isExternal: true
-  name: Equals(Object, Object)
-  nameWithType: Object.Equals(Object, Object)
-  fullName: System.Object.Equals(System.Object, System.Object)
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
   spec.csharp:
   - uid: System.Object.Equals(System.Object,System.Object)
     name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
   - name: (
-    nameWithType: (
-    fullName: (
   - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
+    name: object
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
   - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
+    name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-    nameWithType: )
-    fullName: )
   spec.vb:
   - uid: System.Object.Equals(System.Object,System.Object)
     name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
   - name: (
-    nameWithType: (
-    fullName: (
   - uid: System.Object
     name: Object
-    nameWithType: Object
-    fullName: System.Object
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
   - uid: System.Object
     name: Object
-    nameWithType: Object
-    fullName: System.Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Object.GetHashCode
   commentId: M:System.Object.GetHashCode
   parent: System.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
   name: GetHashCode()
-  nameWithType: Object.GetHashCode()
-  fullName: System.Object.GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
   spec.csharp:
   - uid: System.Object.GetHashCode
     name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
   - name: (
-    nameWithType: (
-    fullName: (
   - name: )
-    nameWithType: )
-    fullName: )
   spec.vb:
   - uid: System.Object.GetHashCode
     name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
   - name: (
-    nameWithType: (
-    fullName: (
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Object.GetType
   commentId: M:System.Object.GetType
   parent: System.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
   name: GetType()
-  nameWithType: Object.GetType()
-  fullName: System.Object.GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
   spec.csharp:
   - uid: System.Object.GetType
     name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
   - name: (
-    nameWithType: (
-    fullName: (
   - name: )
-    nameWithType: )
-    fullName: )
   spec.vb:
   - uid: System.Object.GetType
     name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
   - name: (
-    nameWithType: (
-    fullName: (
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Object.MemberwiseClone
   commentId: M:System.Object.MemberwiseClone
   parent: System.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
   name: MemberwiseClone()
-  nameWithType: Object.MemberwiseClone()
-  fullName: System.Object.MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
   spec.csharp:
   - uid: System.Object.MemberwiseClone
     name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
   - name: (
-    nameWithType: (
-    fullName: (
   - name: )
-    nameWithType: )
-    fullName: )
   spec.vb:
   - uid: System.Object.MemberwiseClone
     name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
   - name: (
-    nameWithType: (
-    fullName: (
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Object.ReferenceEquals(System.Object,System.Object)
   commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
   parent: System.Object
   isExternal: true
-  name: ReferenceEquals(Object, Object)
-  nameWithType: Object.ReferenceEquals(Object, Object)
-  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
   spec.csharp:
   - uid: System.Object.ReferenceEquals(System.Object,System.Object)
     name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
   - name: (
-    nameWithType: (
-    fullName: (
   - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
+    name: object
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
   - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
+    name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-    nameWithType: )
-    fullName: )
   spec.vb:
   - uid: System.Object.ReferenceEquals(System.Object,System.Object)
     name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
   - name: (
-    nameWithType: (
-    fullName: (
   - uid: System.Object
     name: Object
-    nameWithType: Object
-    fullName: System.Object
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
   - uid: System.Object
     name: Object
-    nameWithType: Object
-    fullName: System.Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Object.ToString
   commentId: M:System.Object.ToString
   parent: System.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   name: ToString()
-  nameWithType: Object.ToString()
-  fullName: System.Object.ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
   spec.csharp:
   - uid: System.Object.ToString
     name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
-    nameWithType: (
-    fullName: (
   - name: )
-    nameWithType: )
-    fullName: )
   spec.vb:
   - uid: System.Object.ToString
     name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
-    nameWithType: (
-    fullName: (
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
 - uid: wan24.Data.CsvParser.CountRowsFromFile*
   commentId: Overload:wan24.Data.CsvParser.CountRowsFromFile
+  href: wan24.Data.CsvParser.html#wan24_Data_CsvParser_CountRowsFromFile_System_String_System_Nullable_System_Char__System_Text_Encoding_
   name: CountRowsFromFile
   nameWithType: CsvParser.CountRowsFromFile
   fullName: wan24.Data.CsvParser.CountRowsFromFile
@@ -1953,57 +1713,41 @@ references:
   commentId: T:System.String
   parent: System
   isExternal: true
-  name: String
-  nameWithType: String
-  fullName: System.String
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
 - uid: System.Nullable{System.Char}
   commentId: T:System.Nullable{System.Char}
   parent: System
   definition: System.Nullable`1
-  name: Nullable<Char>
-  nameWithType: Nullable<Char>
-  fullName: System.Nullable<System.Char>
-  nameWithType.vb: Nullable(Of Char)
-  fullName.vb: System.Nullable(Of System.Char)
-  name.vb: Nullable(Of Char)
+  href: https://learn.microsoft.com/dotnet/api/system.char
+  name: char?
+  nameWithType: char?
+  fullName: char?
+  nameWithType.vb: Char?
+  fullName.vb: Char?
+  name.vb: Char?
   spec.csharp:
-  - uid: System.Nullable`1
-    name: Nullable
-    nameWithType: Nullable
-    fullName: System.Nullable
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
   - uid: System.Char
-    name: Char
-    nameWithType: Char
-    fullName: System.Char
+    name: char
     isExternal: true
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: '?'
   spec.vb:
-  - uid: System.Nullable`1
-    name: Nullable
-    nameWithType: Nullable
-    fullName: System.Nullable
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
   - uid: System.Char
     name: Char
-    nameWithType: Char
-    fullName: System.Char
     isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: '?'
 - uid: System.Text.Encoding
   commentId: T:System.Text.Encoding
   parent: System.Text
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.text.encoding
   name: Encoding
   nameWithType: Encoding
   fullName: System.Text.Encoding
@@ -2011,12 +1755,17 @@ references:
   commentId: T:System.Int64
   parent: System
   isExternal: true
-  name: Int64
-  nameWithType: Int64
-  fullName: System.Int64
+  href: https://learn.microsoft.com/dotnet/api/system.int64
+  name: long
+  nameWithType: long
+  fullName: long
+  nameWithType.vb: Long
+  fullName.vb: Long
+  name.vb: Long
 - uid: System.Nullable`1
   commentId: T:System.Nullable`1
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
   name: Nullable<T>
   nameWithType: Nullable<T>
   fullName: System.Nullable<T>
@@ -2026,41 +1775,51 @@ references:
   spec.csharp:
   - uid: System.Nullable`1
     name: Nullable
-    nameWithType: Nullable
-    fullName: System.Nullable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
   - name: <
-    nameWithType: <
-    fullName: <
   - name: T
-    nameWithType: T
-    fullName: T
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Nullable`1
     name: Nullable
-    nameWithType: Nullable
-    fullName: System.Nullable
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
   - name: T
-    nameWithType: T
-    fullName: T
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Text
   commentId: N:System.Text
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System.Text
   nameWithType: System.Text
   fullName: System.Text
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Text
+    name: Text
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Text
+    name: Text
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.text
 - uid: wan24.Data.CsvParser.CountRowsFromFileAsync*
   commentId: Overload:wan24.Data.CsvParser.CountRowsFromFileAsync
+  href: wan24.Data.CsvParser.html#wan24_Data_CsvParser_CountRowsFromFileAsync_System_String_System_Nullable_System_Char__System_Text_Encoding_System_Threading_CancellationToken_
   name: CountRowsFromFileAsync
   nameWithType: CsvParser.CountRowsFromFileAsync
   fullName: wan24.Data.CsvParser.CountRowsFromFileAsync
@@ -2068,6 +1827,7 @@ references:
   commentId: T:System.Threading.CancellationToken
   parent: System.Threading
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken
   name: CancellationToken
   nameWithType: CancellationToken
   fullName: System.Threading.CancellationToken
@@ -2075,55 +1835,68 @@ references:
   commentId: T:System.Threading.Tasks.Task{System.Int64}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
-  name: Task<Int64>
-  nameWithType: Task<Int64>
-  fullName: System.Threading.Tasks.Task<System.Int64>
-  nameWithType.vb: Task(Of Int64)
-  fullName.vb: System.Threading.Tasks.Task(Of System.Int64)
-  name.vb: Task(Of Int64)
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<long>
+  nameWithType: Task<long>
+  fullName: System.Threading.Tasks.Task<long>
+  nameWithType.vb: Task(Of Long)
+  fullName.vb: System.Threading.Tasks.Task(Of Long)
+  name.vb: Task(Of Long)
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
-    nameWithType: Task
-    fullName: System.Threading.Tasks.Task
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
-    nameWithType: <
-    fullName: <
   - uid: System.Int64
-    name: Int64
-    nameWithType: Int64
-    fullName: System.Int64
+    name: long
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int64
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
     name: Task
-    nameWithType: Task
-    fullName: System.Threading.Tasks.Task
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
   - uid: System.Int64
-    name: Int64
-    nameWithType: Int64
-    fullName: System.Int64
+    name: Long
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int64
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Threading
   commentId: N:System.Threading
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System.Threading
   nameWithType: System.Threading
   fullName: System.Threading
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
 - uid: System.Threading.Tasks.Task`1
   commentId: T:System.Threading.Tasks.Task`1
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   name: Task<TResult>
   nameWithType: Task<TResult>
   fullName: System.Threading.Tasks.Task<TResult>
@@ -2133,41 +1906,61 @@ references:
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
-    nameWithType: Task
-    fullName: System.Threading.Tasks.Task
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
-    nameWithType: <
-    fullName: <
   - name: TResult
-    nameWithType: TResult
-    fullName: TResult
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
     name: Task
-    nameWithType: Task
-    fullName: System.Threading.Tasks.Task
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
   - name: TResult
-    nameWithType: TResult
-    fullName: TResult
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Threading.Tasks
   commentId: N:System.Threading.Tasks
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System.Threading.Tasks
   nameWithType: System.Threading.Tasks
   fullName: System.Threading.Tasks
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Threading
+    name: Threading
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading
+  - name: .
+  - uid: System.Threading.Tasks
+    name: Tasks
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks
 - uid: wan24.Data.CsvParser.CountRowsFromStream*
   commentId: Overload:wan24.Data.CsvParser.CountRowsFromStream
+  href: wan24.Data.CsvParser.html#wan24_Data_CsvParser_CountRowsFromStream_System_IO_Stream_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_
   name: CountRowsFromStream
   nameWithType: CsvParser.CountRowsFromStream
   fullName: wan24.Data.CsvParser.CountRowsFromStream
@@ -2175,6 +1968,7 @@ references:
   commentId: T:System.IO.Stream
   parent: System.IO
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.io.stream
   name: Stream
   nameWithType: Stream
   fullName: System.IO.Stream
@@ -2182,32 +1976,61 @@ references:
   commentId: T:System.Boolean
   parent: System
   isExternal: true
-  name: Boolean
-  nameWithType: Boolean
-  fullName: System.Boolean
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
 - uid: System.IO
   commentId: N:System.IO
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System.IO
   nameWithType: System.IO
   fullName: System.IO
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.IO
+    name: IO
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.io
 - uid: wan24.Data.CsvParser.CountRowsFromStreamAsync*
   commentId: Overload:wan24.Data.CsvParser.CountRowsFromStreamAsync
+  href: wan24.Data.CsvParser.html#wan24_Data_CsvParser_CountRowsFromStreamAsync_System_IO_Stream_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_System_Threading_CancellationToken_
   name: CountRowsFromStreamAsync
   nameWithType: CsvParser.CountRowsFromStreamAsync
   fullName: wan24.Data.CsvParser.CountRowsFromStreamAsync
 - uid: wan24.Data.CsvParser.CountRowsFromString*
   commentId: Overload:wan24.Data.CsvParser.CountRowsFromString
+  href: wan24.Data.CsvParser.html#wan24_Data_CsvParser_CountRowsFromString_System_String_System_Nullable_System_Char__
   name: CountRowsFromString
   nameWithType: CsvParser.CountRowsFromString
   fullName: wan24.Data.CsvParser.CountRowsFromString
 - uid: wan24.Data.CsvParser.IgnoreErrors*
   commentId: Overload:wan24.Data.CsvParser.IgnoreErrors
+  href: wan24.Data.CsvParser.html#wan24_Data_CsvParser_IgnoreErrors
   name: IgnoreErrors
   nameWithType: CsvParser.IgnoreErrors
   fullName: wan24.Data.CsvParser.IgnoreErrors
 - uid: wan24.Data.CsvParser.EnumerateFile*
   commentId: Overload:wan24.Data.CsvParser.EnumerateFile
+  href: wan24.Data.CsvParser.html#wan24_Data_CsvParser_EnumerateFile_System_String_System_Char_System_Nullable_System_Char__System_Text_Encoding_
   name: EnumerateFile
   nameWithType: CsvParser.EnumerateFile
   fullName: wan24.Data.CsvParser.EnumerateFile
@@ -2215,62 +2038,56 @@ references:
   commentId: T:System.Char
   parent: System
   isExternal: true
-  name: Char
-  nameWithType: Char
-  fullName: System.Char
+  href: https://learn.microsoft.com/dotnet/api/system.char
+  name: char
+  nameWithType: char
+  fullName: char
+  nameWithType.vb: Char
+  fullName.vb: Char
+  name.vb: Char
 - uid: System.Collections.Generic.IEnumerable{System.String[]}
   commentId: T:System.Collections.Generic.IEnumerable{System.String[]}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerable`1
-  name: IEnumerable<String[]>
-  nameWithType: IEnumerable<String[]>
-  fullName: System.Collections.Generic.IEnumerable<System.String[]>
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<string[]>
+  nameWithType: IEnumerable<string[]>
+  fullName: System.Collections.Generic.IEnumerable<string[]>
   nameWithType.vb: IEnumerable(Of String())
-  fullName.vb: System.Collections.Generic.IEnumerable(Of System.String())
+  fullName.vb: System.Collections.Generic.IEnumerable(Of String())
   name.vb: IEnumerable(Of String())
   spec.csharp:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-    nameWithType: <
-    fullName: <
   - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
+    name: string
     isExternal: true
-  - name: '[]'
-    nameWithType: '[]'
-    fullName: '[]'
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
   - uid: System.String
     name: String
-    nameWithType: String
-    fullName: System.String
     isExternal: true
-  - name: ()
-    nameWithType: ()
-    fullName: ()
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
   - name: )
-    nameWithType: )
-    fullName: )
+  - name: )
 - uid: System.Collections.Generic.IEnumerable`1
   commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   name: IEnumerable<T>
   nameWithType: IEnumerable<T>
   fullName: System.Collections.Generic.IEnumerable<T>
@@ -2280,51 +2097,73 @@ references:
   spec.csharp:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-    nameWithType: <
-    fullName: <
   - name: T
-    nameWithType: T
-    fullName: T
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
   - name: T
-    nameWithType: T
-    fullName: T
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Collections.Generic
   commentId: N:System.Collections.Generic
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System.Collections.Generic
   nameWithType: System.Collections.Generic
   fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: wan24.Data.CsvParser.EnumerateStream*
   commentId: Overload:wan24.Data.CsvParser.EnumerateStream
+  href: wan24.Data.CsvParser.html#wan24_Data_CsvParser_EnumerateStream_System_IO_Stream_System_Char_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_
   name: EnumerateStream
   nameWithType: CsvParser.EnumerateStream
   fullName: wan24.Data.CsvParser.EnumerateStream
 - uid: wan24.Data.CsvParser.EnumerateString*
   commentId: Overload:wan24.Data.CsvParser.EnumerateString
+  href: wan24.Data.CsvParser.html#wan24_Data_CsvParser_EnumerateString_System_String_System_Char_System_Nullable_System_Char__
   name: EnumerateString
   nameWithType: CsvParser.EnumerateString
   fullName: wan24.Data.CsvParser.EnumerateString
 - uid: wan24.Data.CsvParser.ParseHeaderFromFile*
   commentId: Overload:wan24.Data.CsvParser.ParseHeaderFromFile
+  href: wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseHeaderFromFile_System_String_System_Char_System_Nullable_System_Char__System_Text_Encoding_System_Int32_System_Int32_
   name: ParseHeaderFromFile
   nameWithType: CsvParser.ParseHeaderFromFile
   fullName: wan24.Data.CsvParser.ParseHeaderFromFile
@@ -2332,37 +2171,39 @@ references:
   commentId: T:System.Int32
   parent: System
   isExternal: true
-  name: Int32
-  nameWithType: Int32
-  fullName: System.Int32
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
 - uid: System.String[]
   isExternal: true
-  name: String[]
-  nameWithType: String[]
-  fullName: System.String[]
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
   nameWithType.vb: String()
-  fullName.vb: System.String()
+  fullName.vb: String()
   name.vb: String()
   spec.csharp:
   - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
+    name: string
     isExternal: true
-  - name: '[]'
-    nameWithType: '[]'
-    fullName: '[]'
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
   spec.vb:
   - uid: System.String
     name: String
-    nameWithType: String
-    fullName: System.String
     isExternal: true
-  - name: ()
-    nameWithType: ()
-    fullName: ()
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
 - uid: wan24.Data.CsvParser.ParseHeaderFromFileAsync*
   commentId: Overload:wan24.Data.CsvParser.ParseHeaderFromFileAsync
+  href: wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseHeaderFromFileAsync_System_String_System_Char_System_Nullable_System_Char__System_Text_Encoding_System_Int32_System_Int32_
   name: ParseHeaderFromFileAsync
   nameWithType: CsvParser.ParseHeaderFromFileAsync
   fullName: wan24.Data.CsvParser.ParseHeaderFromFileAsync
@@ -2370,69 +2211,62 @@ references:
   commentId: T:System.Threading.Tasks.Task{System.String[]}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
-  name: Task<String[]>
-  nameWithType: Task<String[]>
-  fullName: System.Threading.Tasks.Task<System.String[]>
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  name: Task<string[]>
+  nameWithType: Task<string[]>
+  fullName: System.Threading.Tasks.Task<string[]>
   nameWithType.vb: Task(Of String())
-  fullName.vb: System.Threading.Tasks.Task(Of System.String())
+  fullName.vb: System.Threading.Tasks.Task(Of String())
   name.vb: Task(Of String())
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
-    nameWithType: Task
-    fullName: System.Threading.Tasks.Task
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
-    nameWithType: <
-    fullName: <
   - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
+    name: string
     isExternal: true
-  - name: '[]'
-    nameWithType: '[]'
-    fullName: '[]'
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
     name: Task
-    nameWithType: Task
-    fullName: System.Threading.Tasks.Task
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
   - uid: System.String
     name: String
-    nameWithType: String
-    fullName: System.String
     isExternal: true
-  - name: ()
-    nameWithType: ()
-    fullName: ()
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
   - name: )
-    nameWithType: )
-    fullName: )
+  - name: )
 - uid: wan24.Data.CsvParser.ParseHeaderFromStream*
   commentId: Overload:wan24.Data.CsvParser.ParseHeaderFromStream
+  href: wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseHeaderFromStream_System_IO_Stream_System_Char_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_System_Int32_System_Int32_
   name: ParseHeaderFromStream
   nameWithType: CsvParser.ParseHeaderFromStream
   fullName: wan24.Data.CsvParser.ParseHeaderFromStream
 - uid: wan24.Data.CsvParser.ParseHeaderFromStreamAsync*
   commentId: Overload:wan24.Data.CsvParser.ParseHeaderFromStreamAsync
+  href: wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseHeaderFromStreamAsync_System_IO_Stream_System_Char_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_System_Int32_System_Int32_
   name: ParseHeaderFromStreamAsync
   nameWithType: CsvParser.ParseHeaderFromStreamAsync
   fullName: wan24.Data.CsvParser.ParseHeaderFromStreamAsync
 - uid: wan24.Data.CsvParser.ParseHeaderFromString*
   commentId: Overload:wan24.Data.CsvParser.ParseHeaderFromString
+  href: wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseHeaderFromString_System_String_System_Char_System_Nullable_System_Char__
   name: ParseHeaderFromString
   nameWithType: CsvParser.ParseHeaderFromString
   fullName: wan24.Data.CsvParser.ParseHeaderFromString
 - uid: wan24.Data.CsvParser.ObjectValueFactories*
   commentId: Overload:wan24.Data.CsvParser.ObjectValueFactories
+  href: wan24.Data.CsvParser.html#wan24_Data_CsvParser_ObjectValueFactories
   name: ObjectValueFactories
   nameWithType: CsvParser.ObjectValueFactories
   fullName: wan24.Data.CsvParser.ObjectValueFactories
@@ -2440,103 +2274,79 @@ references:
   commentId: T:System.Collections.Generic.Dictionary{System.Type,System.Func{System.String,System.Object}}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.Dictionary`2
-  name: Dictionary<Type, Func<String, Object>>
-  nameWithType: Dictionary<Type, Func<String, Object>>
-  fullName: System.Collections.Generic.Dictionary<System.Type, System.Func<System.String, System.Object>>
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<Type, Func<string, object>>
+  nameWithType: Dictionary<Type, Func<string, object>>
+  fullName: System.Collections.Generic.Dictionary<System.Type, System.Func<string, object>>
   nameWithType.vb: Dictionary(Of Type, Func(Of String, Object))
-  fullName.vb: System.Collections.Generic.Dictionary(Of System.Type, System.Func(Of System.String, System.Object))
+  fullName.vb: System.Collections.Generic.Dictionary(Of System.Type, System.Func(Of String, Object))
   name.vb: Dictionary(Of Type, Func(Of String, Object))
   spec.csharp:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
-    nameWithType: Dictionary
-    fullName: System.Collections.Generic.Dictionary
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   - name: <
-    nameWithType: <
-    fullName: <
   - uid: System.Type
     name: Type
-    nameWithType: Type
-    fullName: System.Type
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
   - uid: System.Func`2
     name: Func
-    nameWithType: Func
-    fullName: System.Func
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
   - name: <
-    nameWithType: <
-    fullName: <
   - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
+    name: string
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
   - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
+    name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
-    nameWithType: Dictionary
-    fullName: System.Collections.Generic.Dictionary
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
   - uid: System.Type
     name: Type
-    nameWithType: Type
-    fullName: System.Type
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
   - uid: System.Func`2
     name: Func
-    nameWithType: Func
-    fullName: System.Func
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
   - uid: System.String
     name: String
-    nameWithType: String
-    fullName: System.String
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
   - uid: System.Object
     name: Object
-    nameWithType: Object
-    fullName: System.Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-    nameWithType: )
-    fullName: )
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Collections.Generic.Dictionary`2
   commentId: T:System.Collections.Generic.Dictionary`2
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   name: Dictionary<TKey, TValue>
   nameWithType: Dictionary<TKey, TValue>
   fullName: System.Collections.Generic.Dictionary<TKey, TValue>
@@ -2546,47 +2356,30 @@ references:
   spec.csharp:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
-    nameWithType: Dictionary
-    fullName: System.Collections.Generic.Dictionary
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   - name: <
-    nameWithType: <
-    fullName: <
   - name: TKey
-    nameWithType: TKey
-    fullName: TKey
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+  - name: ','
+  - name: " "
   - name: TValue
-    nameWithType: TValue
-    fullName: TValue
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
-    nameWithType: Dictionary
-    fullName: System.Collections.Generic.Dictionary
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
   - name: TKey
-    nameWithType: TKey
-    fullName: TKey
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+  - name: ','
+  - name: " "
   - name: TValue
-    nameWithType: TValue
-    fullName: TValue
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: wan24.Data.CsvParser.RowValueFactories*
   commentId: Overload:wan24.Data.CsvParser.RowValueFactories
+  href: wan24.Data.CsvParser.html#wan24_Data_CsvParser_RowValueFactories
   name: RowValueFactories
   nameWithType: CsvParser.RowValueFactories
   fullName: wan24.Data.CsvParser.RowValueFactories
@@ -2594,102 +2387,78 @@ references:
   commentId: T:System.Collections.Generic.Dictionary{System.Type,System.Func{System.Object,System.String}}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.Dictionary`2
-  name: Dictionary<Type, Func<Object, String>>
-  nameWithType: Dictionary<Type, Func<Object, String>>
-  fullName: System.Collections.Generic.Dictionary<System.Type, System.Func<System.Object, System.String>>
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<Type, Func<object, string>>
+  nameWithType: Dictionary<Type, Func<object, string>>
+  fullName: System.Collections.Generic.Dictionary<System.Type, System.Func<object, string>>
   nameWithType.vb: Dictionary(Of Type, Func(Of Object, String))
-  fullName.vb: System.Collections.Generic.Dictionary(Of System.Type, System.Func(Of System.Object, System.String))
+  fullName.vb: System.Collections.Generic.Dictionary(Of System.Type, System.Func(Of Object, String))
   name.vb: Dictionary(Of Type, Func(Of Object, String))
   spec.csharp:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
-    nameWithType: Dictionary
-    fullName: System.Collections.Generic.Dictionary
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   - name: <
-    nameWithType: <
-    fullName: <
   - uid: System.Type
     name: Type
-    nameWithType: Type
-    fullName: System.Type
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
   - uid: System.Func`2
     name: Func
-    nameWithType: Func
-    fullName: System.Func
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
   - name: <
-    nameWithType: <
-    fullName: <
   - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
+    name: object
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
   - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
+    name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
-    nameWithType: Dictionary
-    fullName: System.Collections.Generic.Dictionary
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
   - uid: System.Type
     name: Type
-    nameWithType: Type
-    fullName: System.Type
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
   - uid: System.Func`2
     name: Func
-    nameWithType: Func
-    fullName: System.Func
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
   - uid: System.Object
     name: Object
-    nameWithType: Object
-    fullName: System.Object
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
   - uid: System.String
     name: String
-    nameWithType: String
-    fullName: System.String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
-    nameWithType: )
-    fullName: )
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: wan24.Data.CsvParser.TypeMappings*
   commentId: Overload:wan24.Data.CsvParser.TypeMappings
+  href: wan24.Data.CsvParser.html#wan24_Data_CsvParser_TypeMappings
   name: TypeMappings
   nameWithType: CsvParser.TypeMappings
   fullName: wan24.Data.CsvParser.TypeMappings
@@ -2697,6 +2466,7 @@ references:
   commentId: T:System.Collections.Generic.Dictionary{System.Type,wan24.Data.CsvMappings}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.Dictionary`2
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   name: Dictionary<Type, CsvMappings>
   nameWithType: Dictionary<Type, CsvMappings>
   fullName: System.Collections.Generic.Dictionary<System.Type, wan24.Data.CsvMappings>
@@ -2706,58 +2476,46 @@ references:
   spec.csharp:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
-    nameWithType: Dictionary
-    fullName: System.Collections.Generic.Dictionary
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   - name: <
-    nameWithType: <
-    fullName: <
   - uid: System.Type
     name: Type
-    nameWithType: Type
-    fullName: System.Type
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
   - uid: wan24.Data.CsvMappings
     name: CsvMappings
-    nameWithType: CsvMappings
-    fullName: wan24.Data.CsvMappings
+    href: wan24.Data.CsvMappings.html
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
-    nameWithType: Dictionary
-    fullName: System.Collections.Generic.Dictionary
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
   - uid: System.Type
     name: Type
-    nameWithType: Type
-    fullName: System.Type
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.type
+  - name: ','
+  - name: " "
   - uid: wan24.Data.CsvMappings
     name: CsvMappings
-    nameWithType: CsvMappings
-    fullName: wan24.Data.CsvMappings
+    href: wan24.Data.CsvMappings.html
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: wan24.Data.CsvParser.CreateMapping*
   commentId: Overload:wan24.Data.CsvParser.CreateMapping
+  href: wan24.Data.CsvParser.html#wan24_Data_CsvParser_CreateMapping_wan24_Data_CsvMapping___
   name: CreateMapping
   nameWithType: CsvParser.CreateMapping
   fullName: wan24.Data.CsvParser.CreateMapping
 - uid: wan24.Data.CsvMapping[]
   isExternal: true
+  href: wan24.Data.CsvMapping.html
   name: CsvMapping[]
   nameWithType: CsvMapping[]
   fullName: wan24.Data.CsvMapping[]
@@ -2767,22 +2525,19 @@ references:
   spec.csharp:
   - uid: wan24.Data.CsvMapping
     name: CsvMapping
-    nameWithType: CsvMapping
-    fullName: wan24.Data.CsvMapping
-  - name: '[]'
-    nameWithType: '[]'
-    fullName: '[]'
+    href: wan24.Data.CsvMapping.html
+  - name: '['
+  - name: ']'
   spec.vb:
   - uid: wan24.Data.CsvMapping
     name: CsvMapping
-    nameWithType: CsvMapping
-    fullName: wan24.Data.CsvMapping
-  - name: ()
-    nameWithType: ()
-    fullName: ()
+    href: wan24.Data.CsvMapping.html
+  - name: (
+  - name: )
 - uid: wan24.Data.CsvMappings
   commentId: T:wan24.Data.CsvMappings
   parent: wan24.Data
+  href: wan24.Data.CsvMappings.html
   name: CsvMappings
   nameWithType: CsvMappings
   fullName: wan24.Data.CsvMappings
@@ -2790,11 +2545,13 @@ references:
   commentId: T:System.Type
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.type
   name: Type
   nameWithType: Type
   fullName: System.Type
 - uid: wan24.Data.CsvParser.Map*
   commentId: Overload:wan24.Data.CsvParser.Map
+  href: wan24.Data.CsvParser.html#wan24_Data_CsvParser_Map__1_System_String___System_Collections_Generic_Dictionary_System_Int32_wan24_Data_CsvMapping__
   name: Map
   nameWithType: CsvParser.Map
   fullName: wan24.Data.CsvParser.Map
@@ -2802,60 +2559,47 @@ references:
   commentId: T:System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.Dictionary`2
-  name: Dictionary<Int32, CsvMapping>
-  nameWithType: Dictionary<Int32, CsvMapping>
-  fullName: System.Collections.Generic.Dictionary<System.Int32, wan24.Data.CsvMapping>
-  nameWithType.vb: Dictionary(Of Int32, CsvMapping)
-  fullName.vb: System.Collections.Generic.Dictionary(Of System.Int32, wan24.Data.CsvMapping)
-  name.vb: Dictionary(Of Int32, CsvMapping)
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<int, CsvMapping>
+  nameWithType: Dictionary<int, CsvMapping>
+  fullName: System.Collections.Generic.Dictionary<int, wan24.Data.CsvMapping>
+  nameWithType.vb: Dictionary(Of Integer, CsvMapping)
+  fullName.vb: System.Collections.Generic.Dictionary(Of Integer, wan24.Data.CsvMapping)
+  name.vb: Dictionary(Of Integer, CsvMapping)
   spec.csharp:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
-    nameWithType: Dictionary
-    fullName: System.Collections.Generic.Dictionary
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   - name: <
-    nameWithType: <
-    fullName: <
   - uid: System.Int32
-    name: Int32
-    nameWithType: Int32
-    fullName: System.Int32
+    name: int
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
   - uid: wan24.Data.CsvMapping
     name: CsvMapping
-    nameWithType: CsvMapping
-    fullName: wan24.Data.CsvMapping
+    href: wan24.Data.CsvMapping.html
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
-    nameWithType: Dictionary
-    fullName: System.Collections.Generic.Dictionary
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
   - uid: System.Int32
-    name: Int32
-    nameWithType: Int32
-    fullName: System.Int32
+    name: Integer
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
   - uid: wan24.Data.CsvMapping
     name: CsvMapping
-    nameWithType: CsvMapping
-    fullName: wan24.Data.CsvMapping
+    href: wan24.Data.CsvMapping.html
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: '{T}'
   commentId: '!:T'
   definition: T
@@ -2868,22 +2612,26 @@ references:
   fullName: T
 - uid: wan24.Data.CsvParser.Unmap*
   commentId: Overload:wan24.Data.CsvParser.Unmap
+  href: wan24.Data.CsvParser.html#wan24_Data_CsvParser_Unmap__1___0_System_Collections_Generic_Dictionary_System_Int32_wan24_Data_CsvMapping__
   name: Unmap
   nameWithType: CsvParser.Unmap
   fullName: wan24.Data.CsvParser.Unmap
 - uid: wan24.Data.CsvParser.ParseFile*
   commentId: Overload:wan24.Data.CsvParser.ParseFile
+  href: wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseFile_System_String_System_Boolean_System_Char_System_Nullable_System_Char__System_Text_Encoding_System_Int32_System_Int32_
   name: ParseFile
   nameWithType: CsvParser.ParseFile
   fullName: wan24.Data.CsvParser.ParseFile
 - uid: wan24.Data.CsvTable
   commentId: T:wan24.Data.CsvTable
   parent: wan24.Data
+  href: wan24.Data.CsvTable.html
   name: CsvTable
   nameWithType: CsvTable
   fullName: wan24.Data.CsvTable
 - uid: wan24.Data.CsvParser.ParseFileAsync*
   commentId: Overload:wan24.Data.CsvParser.ParseFileAsync
+  href: wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseFileAsync_System_String_System_Boolean_System_Char_System_Nullable_System_Char__System_Text_Encoding_System_Int32_System_Int32_System_Threading_CancellationToken_
   name: ParseFileAsync
   nameWithType: CsvParser.ParseFileAsync
   fullName: wan24.Data.CsvParser.ParseFileAsync
@@ -2891,6 +2639,7 @@ references:
   commentId: T:System.Threading.Tasks.Task{wan24.Data.CsvTable}
   parent: System.Threading.Tasks
   definition: System.Threading.Tasks.Task`1
+  href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   name: Task<CsvTable>
   nameWithType: Task<CsvTable>
   fullName: System.Threading.Tasks.Task<wan24.Data.CsvTable>
@@ -2900,47 +2649,40 @@ references:
   spec.csharp:
   - uid: System.Threading.Tasks.Task`1
     name: Task
-    nameWithType: Task
-    fullName: System.Threading.Tasks.Task
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
   - name: <
-    nameWithType: <
-    fullName: <
   - uid: wan24.Data.CsvTable
     name: CsvTable
-    nameWithType: CsvTable
-    fullName: wan24.Data.CsvTable
+    href: wan24.Data.CsvTable.html
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Threading.Tasks.Task`1
     name: Task
-    nameWithType: Task
-    fullName: System.Threading.Tasks.Task
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.threading.tasks.task-1
+  - name: (
+  - name: Of
+  - name: " "
   - uid: wan24.Data.CsvTable
     name: CsvTable
-    nameWithType: CsvTable
-    fullName: wan24.Data.CsvTable
+    href: wan24.Data.CsvTable.html
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: wan24.Data.CsvParser.ParseStream*
   commentId: Overload:wan24.Data.CsvParser.ParseStream
+  href: wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseStream_System_IO_Stream_System_Boolean_System_Char_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_System_Int32_System_Int32_
   name: ParseStream
   nameWithType: CsvParser.ParseStream
   fullName: wan24.Data.CsvParser.ParseStream
 - uid: wan24.Data.CsvParser.ParseStreamAsync*
   commentId: Overload:wan24.Data.CsvParser.ParseStreamAsync
+  href: wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseStreamAsync_System_IO_Stream_System_Boolean_System_Char_System_Nullable_System_Char__System_Boolean_System_Text_Encoding_System_Int32_System_Int32_System_Threading_CancellationToken_
   name: ParseStreamAsync
   nameWithType: CsvParser.ParseStreamAsync
   fullName: wan24.Data.CsvParser.ParseStreamAsync
 - uid: wan24.Data.CsvParser.ParseString*
   commentId: Overload:wan24.Data.CsvParser.ParseString
+  href: wan24.Data.CsvParser.html#wan24_Data_CsvParser_ParseString_System_String_System_Boolean_System_Char_System_Nullable_System_Char__System_Int32_System_Int32_
   name: ParseString
   nameWithType: CsvParser.ParseString
   fullName: wan24.Data.CsvParser.ParseString
