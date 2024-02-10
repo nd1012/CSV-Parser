@@ -8,14 +8,14 @@ items:
   - wan24.Data.CsvTable.#ctor(System.Nullable{System.Boolean},System.Char,System.Nullable{System.Char},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{System.String}})
   - wan24.Data.CsvTable.AddColumn(System.String,System.Int32,System.Func{System.Int32,System.String})
   - wan24.Data.CsvTable.AddObjects(System.Object[])
-  - wan24.Data.CsvTable.AddObjects``1(``0[])
   - wan24.Data.CsvTable.AddObjects``1(System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping},``0[])
+  - wan24.Data.CsvTable.AddObjects``1(``0[])
   - wan24.Data.CsvTable.AddRow(System.Collections.Generic.IEnumerable{System.String})
   - wan24.Data.CsvTable.AsDictionaries
   - wan24.Data.CsvTable.AsDictionary(System.Int32)
   - wan24.Data.CsvTable.AsObject(System.Int32)
-  - wan24.Data.CsvTable.AsObject``1(System.Int32,``0,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
   - wan24.Data.CsvTable.AsObject``1(System.Int32,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
+  - wan24.Data.CsvTable.AsObject``1(System.Int32,``0,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
   - wan24.Data.CsvTable.AsObjects``1(System.Int32,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
   - wan24.Data.CsvTable.Clear(System.Boolean)
   - wan24.Data.CsvTable.Clone
@@ -37,7 +37,6 @@ items:
   - wan24.Data.CsvTable.Rows
   - wan24.Data.CsvTable.StringDelimiter
   - wan24.Data.CsvTable.SwapColumn(System.Int32,System.Int32,System.Boolean)
-  - wan24.Data.CsvTable.System#Collections#IEnumerable#GetEnumerator
   - wan24.Data.CsvTable.ToString(System.Nullable{System.Boolean},System.Nullable{System.Char},System.Nullable{System.Char})
   - wan24.Data.CsvTable.Validate
   langs:
@@ -50,21 +49,19 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Map.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: CsvTable
     path: ../CSV-Parser/CsvTable.Map.cs
     startLine: 7
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nCSV table\n"
+  summary: CSV table
   example: []
   syntax:
     content: 'public class CsvTable : IEnumerable<string[]>, IEnumerable, ICloneable'
-    content.vb: >-
-      Public Class CsvTable
-          Implements IEnumerable(Of String()), IEnumerable, ICloneable
+    content.vb: Public Class CsvTable Implements IEnumerable(Of String()), IEnumerable, ICloneable
   inheritance:
   - System.Object
   implements:
@@ -79,12 +76,6 @@ items:
   - System.Object.MemberwiseClone
   - System.Object.ReferenceEquals(System.Object,System.Object)
   - System.Object.ToString
-  modifiers.csharp:
-  - public
-  - class
-  modifiers.vb:
-  - Public
-  - Class
 - uid: wan24.Data.CsvTable.CreateHeaders
   commentId: M:wan24.Data.CsvTable.CreateHeaders
   id: CreateHeaders
@@ -99,27 +90,23 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Common.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: CreateHeaders
     path: ../CSV-Parser/CsvTable.Common.cs
     startLine: 13
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nCreate column headers (0..n)\n"
+  summary: Create column headers (0..n)
   example: []
   syntax:
     content: public CsvTable CreateHeaders()
     return:
       type: wan24.Data.CsvTable
       description: This
-    content.vb: Public Function CreateHeaders As CsvTable
+    content.vb: Public Function CreateHeaders() As CsvTable
   overload: wan24.Data.CsvTable.CreateHeaders*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
 - uid: wan24.Data.CsvTable.AddColumn(System.String,System.Int32,System.Func{System.Int32,System.String})
   commentId: M:wan24.Data.CsvTable.AddColumn(System.String,System.Int32,System.Func{System.Int32,System.String})
   id: AddColumn(System.String,System.Int32,System.Func{System.Int32,System.String})
@@ -127,22 +114,22 @@ items:
   langs:
   - csharp
   - vb
-  name: AddColumn(String, Int32, Func<Int32, String>)
-  nameWithType: CsvTable.AddColumn(String, Int32, Func<Int32, String>)
-  fullName: wan24.Data.CsvTable.AddColumn(System.String, System.Int32, System.Func<System.Int32, System.String>)
+  name: AddColumn(string, int, Func<int, string>)
+  nameWithType: CsvTable.AddColumn(string, int, Func<int, string>)
+  fullName: wan24.Data.CsvTable.AddColumn(string, int, System.Func<int, string>)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Common.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: AddColumn
     path: ../CSV-Parser/CsvTable.Common.cs
     startLine: 27
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nAdd a column\n"
+  summary: Add a column
   example: []
   syntax:
     content: public CsvTable AddColumn(string header, int index = -1, Func<int, string> valueFactory = null)
@@ -161,13 +148,9 @@ items:
       description: This
     content.vb: Public Function AddColumn(header As String, index As Integer = -1, valueFactory As Func(Of Integer, String) = Nothing) As CsvTable
   overload: wan24.Data.CsvTable.AddColumn*
-  nameWithType.vb: CsvTable.AddColumn(String, Int32, Func(Of Int32, String))
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-  fullName.vb: wan24.Data.CsvTable.AddColumn(System.String, System.Int32, System.Func(Of System.Int32, System.String))
-  name.vb: AddColumn(String, Int32, Func(Of Int32, String))
+  nameWithType.vb: CsvTable.AddColumn(String, Integer, Func(Of Integer, String))
+  fullName.vb: wan24.Data.CsvTable.AddColumn(String, Integer, System.Func(Of Integer, String))
+  name.vb: AddColumn(String, Integer, Func(Of Integer, String))
 - uid: wan24.Data.CsvTable.RemoveColumn(System.Int32)
   commentId: M:wan24.Data.CsvTable.RemoveColumn(System.Int32)
   id: RemoveColumn(System.Int32)
@@ -175,22 +158,22 @@ items:
   langs:
   - csharp
   - vb
-  name: RemoveColumn(Int32)
-  nameWithType: CsvTable.RemoveColumn(Int32)
-  fullName: wan24.Data.CsvTable.RemoveColumn(System.Int32)
+  name: RemoveColumn(int)
+  nameWithType: CsvTable.RemoveColumn(int)
+  fullName: wan24.Data.CsvTable.RemoveColumn(int)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Common.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: RemoveColumn
     path: ../CSV-Parser/CsvTable.Common.cs
     startLine: 56
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nRemove a column\n"
+  summary: Remove a column
   example: []
   syntax:
     content: public CsvTable RemoveColumn(int index)
@@ -203,10 +186,9 @@ items:
       description: This
     content.vb: Public Function RemoveColumn(index As Integer) As CsvTable
   overload: wan24.Data.CsvTable.RemoveColumn*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
+  nameWithType.vb: CsvTable.RemoveColumn(Integer)
+  fullName.vb: wan24.Data.CsvTable.RemoveColumn(Integer)
+  name.vb: RemoveColumn(Integer)
 - uid: wan24.Data.CsvTable.MoveColumn(System.Int32,System.Int32,System.Boolean)
   commentId: M:wan24.Data.CsvTable.MoveColumn(System.Int32,System.Int32,System.Boolean)
   id: MoveColumn(System.Int32,System.Int32,System.Boolean)
@@ -214,22 +196,22 @@ items:
   langs:
   - csharp
   - vb
-  name: MoveColumn(Int32, Int32, Boolean)
-  nameWithType: CsvTable.MoveColumn(Int32, Int32, Boolean)
-  fullName: wan24.Data.CsvTable.MoveColumn(System.Int32, System.Int32, System.Boolean)
+  name: MoveColumn(int, int, bool)
+  nameWithType: CsvTable.MoveColumn(int, int, bool)
+  fullName: wan24.Data.CsvTable.MoveColumn(int, int, bool)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Common.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: MoveColumn
     path: ../CSV-Parser/CsvTable.Common.cs
     startLine: 79
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nMove a column\n"
+  summary: Move a column
   example: []
   syntax:
     content: public CsvTable MoveColumn(int currentIndex, int newIndex, bool updateMapping = true)
@@ -248,10 +230,9 @@ items:
       description: This
     content.vb: Public Function MoveColumn(currentIndex As Integer, newIndex As Integer, updateMapping As Boolean = True) As CsvTable
   overload: wan24.Data.CsvTable.MoveColumn*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
+  nameWithType.vb: CsvTable.MoveColumn(Integer, Integer, Boolean)
+  fullName.vb: wan24.Data.CsvTable.MoveColumn(Integer, Integer, Boolean)
+  name.vb: MoveColumn(Integer, Integer, Boolean)
 - uid: wan24.Data.CsvTable.SwapColumn(System.Int32,System.Int32,System.Boolean)
   commentId: M:wan24.Data.CsvTable.SwapColumn(System.Int32,System.Int32,System.Boolean)
   id: SwapColumn(System.Int32,System.Int32,System.Boolean)
@@ -259,22 +240,22 @@ items:
   langs:
   - csharp
   - vb
-  name: SwapColumn(Int32, Int32, Boolean)
-  nameWithType: CsvTable.SwapColumn(Int32, Int32, Boolean)
-  fullName: wan24.Data.CsvTable.SwapColumn(System.Int32, System.Int32, System.Boolean)
+  name: SwapColumn(int, int, bool)
+  nameWithType: CsvTable.SwapColumn(int, int, bool)
+  fullName: wan24.Data.CsvTable.SwapColumn(int, int, bool)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Common.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: SwapColumn
     path: ../CSV-Parser/CsvTable.Common.cs
     startLine: 137
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nSwap a column\n"
+  summary: Swap a column
   example: []
   syntax:
     content: public CsvTable SwapColumn(int a, int b, bool updateMapping = true)
@@ -293,10 +274,9 @@ items:
       description: This
     content.vb: Public Function SwapColumn(a As Integer, b As Integer, updateMapping As Boolean = True) As CsvTable
   overload: wan24.Data.CsvTable.SwapColumn*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
+  nameWithType.vb: CsvTable.SwapColumn(Integer, Integer, Boolean)
+  fullName.vb: wan24.Data.CsvTable.SwapColumn(Integer, Integer, Boolean)
+  name.vb: SwapColumn(Integer, Integer, Boolean)
 - uid: wan24.Data.CsvTable.ReorderColumns(System.Int32[],System.Boolean)
   commentId: M:wan24.Data.CsvTable.ReorderColumns(System.Int32[],System.Boolean)
   id: ReorderColumns(System.Int32[],System.Boolean)
@@ -304,22 +284,22 @@ items:
   langs:
   - csharp
   - vb
-  name: ReorderColumns(Int32[], Boolean)
-  nameWithType: CsvTable.ReorderColumns(Int32[], Boolean)
-  fullName: wan24.Data.CsvTable.ReorderColumns(System.Int32[], System.Boolean)
+  name: ReorderColumns(int[], bool)
+  nameWithType: CsvTable.ReorderColumns(int[], bool)
+  fullName: wan24.Data.CsvTable.ReorderColumns(int[], bool)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Common.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: ReorderColumns
     path: ../CSV-Parser/CsvTable.Common.cs
     startLine: 169
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nRe-order columns\n"
+  summary: Re-order columns
   example: []
   syntax:
     content: public CsvTable ReorderColumns(int[] newIndexes, bool updateMapping = true)
@@ -335,13 +315,9 @@ items:
       description: This
     content.vb: Public Function ReorderColumns(newIndexes As Integer(), updateMapping As Boolean = True) As CsvTable
   overload: wan24.Data.CsvTable.ReorderColumns*
-  nameWithType.vb: CsvTable.ReorderColumns(Int32(), Boolean)
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-  fullName.vb: wan24.Data.CsvTable.ReorderColumns(System.Int32(), System.Boolean)
-  name.vb: ReorderColumns(Int32(), Boolean)
+  nameWithType.vb: CsvTable.ReorderColumns(Integer(), Boolean)
+  fullName.vb: wan24.Data.CsvTable.ReorderColumns(Integer(), Boolean)
+  name.vb: ReorderColumns(Integer(), Boolean)
 - uid: wan24.Data.CsvTable.AddRow(System.Collections.Generic.IEnumerable{System.String})
   commentId: M:wan24.Data.CsvTable.AddRow(System.Collections.Generic.IEnumerable{System.String})
   id: AddRow(System.Collections.Generic.IEnumerable{System.String})
@@ -349,22 +325,22 @@ items:
   langs:
   - csharp
   - vb
-  name: AddRow(IEnumerable<String>)
-  nameWithType: CsvTable.AddRow(IEnumerable<String>)
-  fullName: wan24.Data.CsvTable.AddRow(System.Collections.Generic.IEnumerable<System.String>)
+  name: AddRow(IEnumerable<string>)
+  nameWithType: CsvTable.AddRow(IEnumerable<string>)
+  fullName: wan24.Data.CsvTable.AddRow(System.Collections.Generic.IEnumerable<string>)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Common.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: AddRow
     path: ../CSV-Parser/CsvTable.Common.cs
     startLine: 196
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nAdd a row\n"
+  summary: Add a row
   example: []
   syntax:
     content: public CsvTable AddRow(IEnumerable<string> row)
@@ -378,11 +354,7 @@ items:
     content.vb: Public Function AddRow(row As IEnumerable(Of String)) As CsvTable
   overload: wan24.Data.CsvTable.AddRow*
   nameWithType.vb: CsvTable.AddRow(IEnumerable(Of String))
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-  fullName.vb: wan24.Data.CsvTable.AddRow(System.Collections.Generic.IEnumerable(Of System.String))
+  fullName.vb: wan24.Data.CsvTable.AddRow(System.Collections.Generic.IEnumerable(Of String))
   name.vb: AddRow(IEnumerable(Of String))
 - uid: wan24.Data.CsvTable.Validate
   commentId: M:wan24.Data.CsvTable.Validate
@@ -398,27 +370,23 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Common.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: Validate
     path: ../CSV-Parser/CsvTable.Common.cs
     startLine: 212
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nValidate the table and all rows (will throw an exception on error)\n"
+  summary: Validate the table and all rows (will throw an exception on error)
   example: []
   syntax:
     content: public CsvTable Validate()
     return:
       type: wan24.Data.CsvTable
       description: This
-    content.vb: Public Function Validate As CsvTable
+    content.vb: Public Function Validate() As CsvTable
   overload: wan24.Data.CsvTable.Validate*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
 - uid: wan24.Data.CsvTable.Clear(System.Boolean)
   commentId: M:wan24.Data.CsvTable.Clear(System.Boolean)
   id: Clear(System.Boolean)
@@ -426,22 +394,22 @@ items:
   langs:
   - csharp
   - vb
-  name: Clear(Boolean)
-  nameWithType: CsvTable.Clear(Boolean)
-  fullName: wan24.Data.CsvTable.Clear(System.Boolean)
+  name: Clear(bool)
+  nameWithType: CsvTable.Clear(bool)
+  fullName: wan24.Data.CsvTable.Clear(bool)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Common.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: Clear
     path: ../CSV-Parser/CsvTable.Common.cs
     startLine: 233
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nClear the data\n"
+  summary: Clear the data
   example: []
   syntax:
     content: public CsvTable Clear(bool includingHeader = true)
@@ -454,10 +422,9 @@ items:
       description: This
     content.vb: Public Function Clear(includingHeader As Boolean = True) As CsvTable
   overload: wan24.Data.CsvTable.Clear*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
+  nameWithType.vb: CsvTable.Clear(Boolean)
+  fullName.vb: wan24.Data.CsvTable.Clear(Boolean)
+  name.vb: Clear(Boolean)
 - uid: wan24.Data.CsvTable.#ctor(System.Nullable{System.Boolean},System.Char,System.Nullable{System.Char},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{System.String}})
   commentId: M:wan24.Data.CsvTable.#ctor(System.Nullable{System.Boolean},System.Char,System.Nullable{System.Char},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{System.String}})
   id: '#ctor(System.Nullable{System.Boolean},System.Char,System.Nullable{System.Char},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{System.String}})'
@@ -465,22 +432,22 @@ items:
   langs:
   - csharp
   - vb
-  name: CsvTable(Nullable<Boolean>, Char, Nullable<Char>, IEnumerable<String>, IEnumerable<IEnumerable<String>>)
-  nameWithType: CsvTable.CsvTable(Nullable<Boolean>, Char, Nullable<Char>, IEnumerable<String>, IEnumerable<IEnumerable<String>>)
-  fullName: wan24.Data.CsvTable.CsvTable(System.Nullable<System.Boolean>, System.Char, System.Nullable<System.Char>, System.Collections.Generic.IEnumerable<System.String>, System.Collections.Generic.IEnumerable<System.Collections.Generic.IEnumerable<System.String>>)
+  name: CsvTable(bool?, char, char?, IEnumerable<string>, IEnumerable<IEnumerable<string>>)
+  nameWithType: CsvTable.CsvTable(bool?, char, char?, IEnumerable<string>, IEnumerable<IEnumerable<string>>)
+  fullName: wan24.Data.CsvTable.CsvTable(bool?, char, char?, System.Collections.Generic.IEnumerable<string>, System.Collections.Generic.IEnumerable<System.Collections.Generic.IEnumerable<string>>)
   type: Constructor
   source:
     remote:
       path: src/CSV-Parser/CsvTable.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: .ctor
     path: ../CSV-Parser/CsvTable.cs
     startLine: 21
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nConstructor\n"
+  summary: Constructor
   example: []
   syntax:
     content: public CsvTable(bool? hasHeader = null, char fieldDelimiter = ',', char? stringDelimiter = '"', IEnumerable<string> header = null, IEnumerable<IEnumerable<string>> rows = null)
@@ -500,15 +467,11 @@ items:
     - id: rows
       type: System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{System.String}}
       description: Rows (references will be used, if possible)
-    content.vb: Public Sub New(hasHeader As Boolean? = Nothing, fieldDelimiter As Char = ","c, stringDelimiter As Char? = """"c, header As IEnumerable(Of String) = Nothing, rows As IEnumerable(Of IEnumerable(Of String)) = Nothing)
+    content.vb: Public Sub New(hasHeader As Boolean? = Nothing, fieldDelimiter As Char = ","c, stringDelimiter As Char? = """c, header As IEnumerable(Of String) = Nothing, rows As IEnumerable(Of IEnumerable(Of String)) = Nothing)
   overload: wan24.Data.CsvTable.#ctor*
-  nameWithType.vb: CsvTable.CsvTable(Nullable(Of Boolean), Char, Nullable(Of Char), IEnumerable(Of String), IEnumerable(Of IEnumerable(Of String)))
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-  fullName.vb: wan24.Data.CsvTable.CsvTable(System.Nullable(Of System.Boolean), System.Char, System.Nullable(Of System.Char), System.Collections.Generic.IEnumerable(Of System.String), System.Collections.Generic.IEnumerable(Of System.Collections.Generic.IEnumerable(Of System.String)))
-  name.vb: CsvTable(Nullable(Of Boolean), Char, Nullable(Of Char), IEnumerable(Of String), IEnumerable(Of IEnumerable(Of String)))
+  nameWithType.vb: CsvTable.New(Boolean?, Char, Char?, IEnumerable(Of String), IEnumerable(Of IEnumerable(Of String)))
+  fullName.vb: wan24.Data.CsvTable.New(Boolean?, Char, Char?, System.Collections.Generic.IEnumerable(Of String), System.Collections.Generic.IEnumerable(Of System.Collections.Generic.IEnumerable(Of String)))
+  name.vb: New(Boolean?, Char, Char?, IEnumerable(Of String), IEnumerable(Of IEnumerable(Of String)))
 - uid: wan24.Data.CsvTable.Item(System.Int32)
   commentId: P:wan24.Data.CsvTable.Item(System.Int32)
   id: Item(System.Int32)
@@ -516,22 +479,22 @@ items:
   langs:
   - csharp
   - vb
-  name: Item[Int32]
-  nameWithType: CsvTable.Item[Int32]
-  fullName: wan24.Data.CsvTable.Item[System.Int32]
+  name: this[int]
+  nameWithType: CsvTable.this[int]
+  fullName: wan24.Data.CsvTable.this[int]
   type: Property
   source:
     remote:
       path: src/CSV-Parser/CsvTable.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: this[]
     path: ../CSV-Parser/CsvTable.cs
     startLine: 43
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nGet a row\n"
+  summary: Get a row
   example: []
   syntax:
     content: public string[] this[int index] { get; }
@@ -542,17 +505,11 @@ items:
     return:
       type: System.String[]
       description: Row
-    content.vb: Public ReadOnly Property Item(index As Integer) As String()
+    content.vb: Public ReadOnly Default Property this[](index As Integer) As String()
   overload: wan24.Data.CsvTable.Item*
-  nameWithType.vb: CsvTable.Item(Int32)
-  modifiers.csharp:
-  - public
-  - get
-  modifiers.vb:
-  - Public
-  - ReadOnly
-  fullName.vb: wan24.Data.CsvTable.Item(System.Int32)
-  name.vb: Item(Int32)
+  nameWithType.vb: CsvTable.this[](Integer)
+  fullName.vb: wan24.Data.CsvTable.this[](Integer)
+  name.vb: this[](Integer)
 - uid: wan24.Data.CsvTable.Item(System.Int32,System.String)
   commentId: P:wan24.Data.CsvTable.Item(System.Int32,System.String)
   id: Item(System.Int32,System.String)
@@ -560,22 +517,22 @@ items:
   langs:
   - csharp
   - vb
-  name: Item[Int32, String]
-  nameWithType: CsvTable.Item[Int32, String]
-  fullName: wan24.Data.CsvTable.Item[System.Int32, System.String]
+  name: this[int, string]
+  nameWithType: CsvTable.this[int, string]
+  fullName: wan24.Data.CsvTable.this[int, string]
   type: Property
   source:
     remote:
       path: src/CSV-Parser/CsvTable.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: this[]
     path: ../CSV-Parser/CsvTable.cs
     startLine: 54
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nGet a field ow a row\n"
+  summary: Get a field ow a row
   example: []
   syntax:
     content: public string this[int index, string header] { get; }
@@ -589,17 +546,11 @@ items:
     return:
       type: System.String
       description: Field value
-    content.vb: Public ReadOnly Property Item(index As Integer, header As String) As String
+    content.vb: Public ReadOnly Default Property this[](index As Integer, header As String) As String
   overload: wan24.Data.CsvTable.Item*
-  nameWithType.vb: CsvTable.Item(Int32, String)
-  modifiers.csharp:
-  - public
-  - get
-  modifiers.vb:
-  - Public
-  - ReadOnly
-  fullName.vb: wan24.Data.CsvTable.Item(System.Int32, System.String)
-  name.vb: Item(Int32, String)
+  nameWithType.vb: CsvTable.this[](Integer, String)
+  fullName.vb: wan24.Data.CsvTable.this[](Integer, String)
+  name.vb: this[](Integer, String)
 - uid: wan24.Data.CsvTable.HasHeader
   commentId: P:wan24.Data.CsvTable.HasHeader
   id: HasHeader
@@ -614,15 +565,15 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: HasHeader
     path: ../CSV-Parser/CsvTable.cs
     startLine: 69
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nHas a header row?\n"
+  summary: Has a header row?
   example: []
   syntax:
     content: public bool HasHeader { get; }
@@ -631,12 +582,6 @@ items:
       type: System.Boolean
     content.vb: Public ReadOnly Property HasHeader As Boolean
   overload: wan24.Data.CsvTable.HasHeader*
-  modifiers.csharp:
-  - public
-  - get
-  modifiers.vb:
-  - Public
-  - ReadOnly
 - uid: wan24.Data.CsvTable.FieldDelimiter
   commentId: P:wan24.Data.CsvTable.FieldDelimiter
   id: FieldDelimiter
@@ -651,15 +596,15 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: FieldDelimiter
     path: ../CSV-Parser/CsvTable.cs
     startLine: 74
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nField delimiter\n"
+  summary: Field delimiter
   example: []
   syntax:
     content: public char FieldDelimiter { get; }
@@ -668,12 +613,6 @@ items:
       type: System.Char
     content.vb: Public ReadOnly Property FieldDelimiter As Char
   overload: wan24.Data.CsvTable.FieldDelimiter*
-  modifiers.csharp:
-  - public
-  - get
-  modifiers.vb:
-  - Public
-  - ReadOnly
 - uid: wan24.Data.CsvTable.StringDelimiter
   commentId: P:wan24.Data.CsvTable.StringDelimiter
   id: StringDelimiter
@@ -688,15 +627,15 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: StringDelimiter
     path: ../CSV-Parser/CsvTable.cs
     startLine: 79
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nString delimiter\n"
+  summary: String delimiter
   example: []
   syntax:
     content: public char? StringDelimiter { get; }
@@ -705,12 +644,6 @@ items:
       type: System.Nullable{System.Char}
     content.vb: Public ReadOnly Property StringDelimiter As Char?
   overload: wan24.Data.CsvTable.StringDelimiter*
-  modifiers.csharp:
-  - public
-  - get
-  modifiers.vb:
-  - Public
-  - ReadOnly
 - uid: wan24.Data.CsvTable.CountColumns
   commentId: P:wan24.Data.CsvTable.CountColumns
   id: CountColumns
@@ -725,15 +658,15 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: CountColumns
     path: ../CSV-Parser/CsvTable.cs
     startLine: 84
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nColumn count\n"
+  summary: Column count
   example: []
   syntax:
     content: public int CountColumns { get; }
@@ -742,12 +675,6 @@ items:
       type: System.Int32
     content.vb: Public ReadOnly Property CountColumns As Integer
   overload: wan24.Data.CsvTable.CountColumns*
-  modifiers.csharp:
-  - public
-  - get
-  modifiers.vb:
-  - Public
-  - ReadOnly
 - uid: wan24.Data.CsvTable.CountRows
   commentId: P:wan24.Data.CsvTable.CountRows
   id: CountRows
@@ -762,15 +689,15 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: CountRows
     path: ../CSV-Parser/CsvTable.cs
     startLine: 89
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nRow count\n"
+  summary: Row count
   example: []
   syntax:
     content: public int CountRows { get; }
@@ -779,12 +706,6 @@ items:
       type: System.Int32
     content.vb: Public ReadOnly Property CountRows As Integer
   overload: wan24.Data.CsvTable.CountRows*
-  modifiers.csharp:
-  - public
-  - get
-  modifiers.vb:
-  - Public
-  - ReadOnly
 - uid: wan24.Data.CsvTable.Header
   commentId: P:wan24.Data.CsvTable.Header
   id: Header
@@ -799,29 +720,23 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: Header
     path: ../CSV-Parser/CsvTable.cs
     startLine: 94
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nColumn headers\n"
+  summary: Column headers
   example: []
   syntax:
     content: public List<string> Header { get; }
     parameters: []
     return:
       type: System.Collections.Generic.List{System.String}
-    content.vb: Public ReadOnly Property Header As List(Of String)
+    content.vb: Public Property Header As List(Of String)
   overload: wan24.Data.CsvTable.Header*
-  modifiers.csharp:
-  - public
-  - get
-  modifiers.vb:
-  - Public
-  - ReadOnly
 - uid: wan24.Data.CsvTable.Rows
   commentId: P:wan24.Data.CsvTable.Rows
   id: Rows
@@ -836,29 +751,23 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: Rows
     path: ../CSV-Parser/CsvTable.cs
     startLine: 99
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nRows\n"
+  summary: Rows
   example: []
   syntax:
     content: public List<string[]> Rows { get; }
     parameters: []
     return:
       type: System.Collections.Generic.List{System.String[]}
-    content.vb: Public ReadOnly Property Rows As List(Of String())
+    content.vb: Public Property Rows As List(Of String())
   overload: wan24.Data.CsvTable.Rows*
-  modifiers.csharp:
-  - public
-  - get
-  modifiers.vb:
-  - Public
-  - ReadOnly
 - uid: wan24.Data.CsvTable.GetEnumerator
   commentId: M:wan24.Data.CsvTable.GetEnumerator
   id: GetEnumerator
@@ -873,8 +782,8 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: GetEnumerator
     path: ../CSV-Parser/CsvTable.cs
     startLine: 102
@@ -886,14 +795,10 @@ items:
     content: public IEnumerator<string[]> GetEnumerator()
     return:
       type: System.Collections.Generic.IEnumerator{System.String[]}
-    content.vb: Public Function GetEnumerator As IEnumerator(Of String())
+    content.vb: Public Function GetEnumerator() As IEnumerator(Of String())
   overload: wan24.Data.CsvTable.GetEnumerator*
   implements:
   - System.Collections.Generic.IEnumerable{System.String[]}.GetEnumerator
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
 - uid: wan24.Data.CsvTable.Clone
   commentId: M:wan24.Data.CsvTable.Clone
   id: Clone
@@ -908,8 +813,8 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: Clone
     path: ../CSV-Parser/CsvTable.cs
     startLine: 105
@@ -921,14 +826,10 @@ items:
     content: public object Clone()
     return:
       type: System.Object
-    content.vb: Public Function Clone As Object
+    content.vb: Public Function Clone() As Object
   overload: wan24.Data.CsvTable.Clone*
   implements:
   - System.ICloneable.Clone
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
 - uid: wan24.Data.CsvTable.ToString(System.Nullable{System.Boolean},System.Nullable{System.Char},System.Nullable{System.Char})
   commentId: M:wan24.Data.CsvTable.ToString(System.Nullable{System.Boolean},System.Nullable{System.Char},System.Nullable{System.Char})
   id: ToString(System.Nullable{System.Boolean},System.Nullable{System.Char},System.Nullable{System.Char})
@@ -936,29 +837,29 @@ items:
   langs:
   - csharp
   - vb
-  name: ToString(Nullable<Boolean>, Nullable<Char>, Nullable<Char>)
-  nameWithType: CsvTable.ToString(Nullable<Boolean>, Nullable<Char>, Nullable<Char>)
-  fullName: wan24.Data.CsvTable.ToString(System.Nullable<System.Boolean>, System.Nullable<System.Char>, System.Nullable<System.Char>)
+  name: ToString(bool?, char?, char?)
+  nameWithType: CsvTable.ToString(bool?, char?, char?)
+  fullName: wan24.Data.CsvTable.ToString(bool?, char?, char?)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvTable.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: ToString
     path: ../CSV-Parser/CsvTable.cs
     startLine: 119
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nGet the CSV table data as string\n"
+  summary: Get the CSV table data as string
   example: []
   syntax:
     content: public string ToString(bool? header = null, char? fieldDelimiter = null, char? stringDelimiter = null)
     parameters:
     - id: header
       type: System.Nullable{System.Boolean}
-      description: If to add the column headers as first row (if <xref uid="langword_csharp_null" name="null" href=""></xref>, and <code>stringDelimiter</code> is also <xref uid="langword_csharp_null" name="null" href=""></xref>, <code>stringDelimiter</code> will be set from <code>StringDelimiter</code>
+      description: If to add the column headers as first row (if <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>, and <code>stringDelimiter</code> is also <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>, <code>stringDelimiter</code> will be set from <code>StringDelimiter</code>
     - id: fieldDelimiter
       type: System.Nullable{System.Char}
       description: Field delimiter
@@ -970,47 +871,9 @@ items:
       description: CSV table data as string
     content.vb: Public Function ToString(header As Boolean? = Nothing, fieldDelimiter As Char? = Nothing, stringDelimiter As Char? = Nothing) As String
   overload: wan24.Data.CsvTable.ToString*
-  nameWithType.vb: CsvTable.ToString(Nullable(Of Boolean), Nullable(Of Char), Nullable(Of Char))
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-  fullName.vb: wan24.Data.CsvTable.ToString(System.Nullable(Of System.Boolean), System.Nullable(Of System.Char), System.Nullable(Of System.Char))
-  name.vb: ToString(Nullable(Of Boolean), Nullable(Of Char), Nullable(Of Char))
-- uid: wan24.Data.CsvTable.System#Collections#IEnumerable#GetEnumerator
-  commentId: M:wan24.Data.CsvTable.System#Collections#IEnumerable#GetEnumerator
-  id: System#Collections#IEnumerable#GetEnumerator
-  isEii: true
-  parent: wan24.Data.CsvTable
-  langs:
-  - csharp
-  - vb
-  name: IEnumerable.GetEnumerator()
-  nameWithType: CsvTable.IEnumerable.GetEnumerator()
-  fullName: wan24.Data.CsvTable.System.Collections.IEnumerable.GetEnumerator()
-  type: Method
-  source:
-    remote:
-      path: src/CSV-Parser/CsvTable.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
-    id: System.Collections.IEnumerable.GetEnumerator
-    path: ../CSV-Parser/CsvTable.cs
-    startLine: 133
-  assemblies:
-  - csvparser
-  namespace: wan24.Data
-  example: []
-  syntax:
-    content: IEnumerator IEnumerable.GetEnumerator()
-    return:
-      type: System.Collections.IEnumerator
-    content.vb: Function System.Collections.IEnumerable.GetEnumerator As IEnumerator Implements IEnumerable.GetEnumerator
-  overload: wan24.Data.CsvTable.System#Collections#IEnumerable#GetEnumerator*
-  implements:
-  - System.Collections.IEnumerable.GetEnumerator
-  nameWithType.vb: CsvTable.System.Collections.IEnumerable.GetEnumerator()
-  name.vb: System.Collections.IEnumerable.GetEnumerator()
+  nameWithType.vb: CsvTable.ToString(Boolean?, Char?, Char?)
+  fullName.vb: wan24.Data.CsvTable.ToString(Boolean?, Char?, Char?)
+  name.vb: ToString(Boolean?, Char?, Char?)
 - uid: wan24.Data.CsvTable.AsDictionaries
   commentId: P:wan24.Data.CsvTable.AsDictionaries
   id: AsDictionaries
@@ -1025,15 +888,15 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Dictionary.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: AsDictionaries
     path: ../CSV-Parser/CsvTable.Dictionary.cs
     startLine: 12
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nRows as dictionaries\n"
+  summary: Rows as dictionaries
   example: []
   syntax:
     content: public IEnumerable<Dictionary<string, string>> AsDictionaries { get; }
@@ -1042,12 +905,6 @@ items:
       type: System.Collections.Generic.IEnumerable{System.Collections.Generic.Dictionary{System.String,System.String}}
     content.vb: Public ReadOnly Property AsDictionaries As IEnumerable(Of Dictionary(Of String, String))
   overload: wan24.Data.CsvTable.AsDictionaries*
-  modifiers.csharp:
-  - public
-  - get
-  modifiers.vb:
-  - Public
-  - ReadOnly
 - uid: wan24.Data.CsvTable.AsDictionary(System.Int32)
   commentId: M:wan24.Data.CsvTable.AsDictionary(System.Int32)
   id: AsDictionary(System.Int32)
@@ -1055,22 +912,22 @@ items:
   langs:
   - csharp
   - vb
-  name: AsDictionary(Int32)
-  nameWithType: CsvTable.AsDictionary(Int32)
-  fullName: wan24.Data.CsvTable.AsDictionary(System.Int32)
+  name: AsDictionary(int)
+  nameWithType: CsvTable.AsDictionary(int)
+  fullName: wan24.Data.CsvTable.AsDictionary(int)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Dictionary.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: AsDictionary
     path: ../CSV-Parser/CsvTable.Dictionary.cs
     startLine: 19
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nGet a row as dictionary\n"
+  summary: Get a row as dictionary
   example: []
   syntax:
     content: public Dictionary<string, string> AsDictionary(int index)
@@ -1083,10 +940,9 @@ items:
       description: Dictionary
     content.vb: Public Function AsDictionary(index As Integer) As Dictionary(Of String, String)
   overload: wan24.Data.CsvTable.AsDictionary*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
+  nameWithType.vb: CsvTable.AsDictionary(Integer)
+  fullName.vb: wan24.Data.CsvTable.AsDictionary(Integer)
+  name.vb: AsDictionary(Integer)
 - uid: wan24.Data.CsvTable.Mapping
   commentId: P:wan24.Data.CsvTable.Mapping
   id: Mapping
@@ -1101,15 +957,15 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Map.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: Mapping
     path: ../CSV-Parser/CsvTable.Map.cs
     startLine: 12
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nRow &lt;-> object mapping\n"
+  summary: Row &lt;-&gt; object mapping
   example: []
   syntax:
     content: public Dictionary<int, CsvMapping> Mapping { get; set; }
@@ -1118,12 +974,6 @@ items:
       type: System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping}
     content.vb: Public Property Mapping As Dictionary(Of Integer, CsvMapping)
   overload: wan24.Data.CsvTable.Mapping*
-  modifiers.csharp:
-  - public
-  - get
-  - set
-  modifiers.vb:
-  - Public
 - uid: wan24.Data.CsvTable.Objects
   commentId: P:wan24.Data.CsvTable.Objects
   id: Objects
@@ -1138,15 +988,15 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Map.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: Objects
     path: ../CSV-Parser/CsvTable.Map.cs
     startLine: 17
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nEnumerate trough objects\n"
+  summary: Enumerate trough objects
   example: []
   syntax:
     content: public IEnumerable<object> Objects { get; }
@@ -1155,12 +1005,6 @@ items:
       type: System.Collections.Generic.IEnumerable{System.Object}
     content.vb: Public ReadOnly Property Objects As IEnumerable(Of Object)
   overload: wan24.Data.CsvTable.Objects*
-  modifiers.csharp:
-  - public
-  - get
-  modifiers.vb:
-  - Public
-  - ReadOnly
 - uid: wan24.Data.CsvTable.AsObject``1(System.Int32,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
   commentId: M:wan24.Data.CsvTable.AsObject``1(System.Int32,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
   id: AsObject``1(System.Int32,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
@@ -1168,27 +1012,25 @@ items:
   langs:
   - csharp
   - vb
-  name: AsObject<T>(Int32, Dictionary<Int32, CsvMapping>)
-  nameWithType: CsvTable.AsObject<T>(Int32, Dictionary<Int32, CsvMapping>)
-  fullName: wan24.Data.CsvTable.AsObject<T>(System.Int32, System.Collections.Generic.Dictionary<System.Int32, wan24.Data.CsvMapping>)
+  name: AsObject<T>(int, Dictionary<int, CsvMapping>)
+  nameWithType: CsvTable.AsObject<T>(int, Dictionary<int, CsvMapping>)
+  fullName: wan24.Data.CsvTable.AsObject<T>(int, System.Collections.Generic.Dictionary<int, wan24.Data.CsvMapping>)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Map.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: AsObject
     path: ../CSV-Parser/CsvTable.Map.cs
     startLine: 32
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nGet a row as object\n"
+  summary: Get a row as object
   example: []
   syntax:
-    content: >-
-      public T AsObject<T>(int index, Dictionary<int, CsvMapping> mapping = null)
-          where T : new()
+    content: 'public T AsObject<T>(int index, Dictionary<int, CsvMapping> mapping = null) where T : new()'
     parameters:
     - id: index
       type: System.Int32
@@ -1204,13 +1046,9 @@ items:
       description: Object
     content.vb: Public Function AsObject(Of T As New)(index As Integer, mapping As Dictionary(Of Integer, CsvMapping) = Nothing) As T
   overload: wan24.Data.CsvTable.AsObject*
-  nameWithType.vb: CsvTable.AsObject(Of T)(Int32, Dictionary(Of Int32, CsvMapping))
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-  fullName.vb: wan24.Data.CsvTable.AsObject(Of T)(System.Int32, System.Collections.Generic.Dictionary(Of System.Int32, wan24.Data.CsvMapping))
-  name.vb: AsObject(Of T)(Int32, Dictionary(Of Int32, CsvMapping))
+  nameWithType.vb: CsvTable.AsObject(Of T)(Integer, Dictionary(Of Integer, CsvMapping))
+  fullName.vb: wan24.Data.CsvTable.AsObject(Of T)(Integer, System.Collections.Generic.Dictionary(Of Integer, wan24.Data.CsvMapping))
+  name.vb: AsObject(Of T)(Integer, Dictionary(Of Integer, CsvMapping))
 - uid: wan24.Data.CsvTable.AsObjects``1(System.Int32,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
   commentId: M:wan24.Data.CsvTable.AsObjects``1(System.Int32,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
   id: AsObjects``1(System.Int32,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
@@ -1218,27 +1056,25 @@ items:
   langs:
   - csharp
   - vb
-  name: AsObjects<T>(Int32, Dictionary<Int32, CsvMapping>)
-  nameWithType: CsvTable.AsObjects<T>(Int32, Dictionary<Int32, CsvMapping>)
-  fullName: wan24.Data.CsvTable.AsObjects<T>(System.Int32, System.Collections.Generic.Dictionary<System.Int32, wan24.Data.CsvMapping>)
+  name: AsObjects<T>(int, Dictionary<int, CsvMapping>)
+  nameWithType: CsvTable.AsObjects<T>(int, Dictionary<int, CsvMapping>)
+  fullName: wan24.Data.CsvTable.AsObjects<T>(int, System.Collections.Generic.Dictionary<int, wan24.Data.CsvMapping>)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Map.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: AsObjects
     path: ../CSV-Parser/CsvTable.Map.cs
     startLine: 45
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nGet rows as object\n"
+  summary: Get rows as object
   example: []
   syntax:
-    content: >-
-      public IEnumerable<T> AsObjects<T>(int index, Dictionary<int, CsvMapping> mapping = null)
-          where T : new()
+    content: 'public IEnumerable<T> AsObjects<T>(int index, Dictionary<int, CsvMapping> mapping = null) where T : new()'
     parameters:
     - id: index
       type: System.Int32
@@ -1254,13 +1090,9 @@ items:
       description: Object
     content.vb: Public Function AsObjects(Of T As New)(index As Integer, mapping As Dictionary(Of Integer, CsvMapping) = Nothing) As IEnumerable(Of T)
   overload: wan24.Data.CsvTable.AsObjects*
-  nameWithType.vb: CsvTable.AsObjects(Of T)(Int32, Dictionary(Of Int32, CsvMapping))
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-  fullName.vb: wan24.Data.CsvTable.AsObjects(Of T)(System.Int32, System.Collections.Generic.Dictionary(Of System.Int32, wan24.Data.CsvMapping))
-  name.vb: AsObjects(Of T)(Int32, Dictionary(Of Int32, CsvMapping))
+  nameWithType.vb: CsvTable.AsObjects(Of T)(Integer, Dictionary(Of Integer, CsvMapping))
+  fullName.vb: wan24.Data.CsvTable.AsObjects(Of T)(Integer, System.Collections.Generic.Dictionary(Of Integer, wan24.Data.CsvMapping))
+  name.vb: AsObjects(Of T)(Integer, Dictionary(Of Integer, CsvMapping))
 - uid: wan24.Data.CsvTable.AsObject``1(System.Int32,``0,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
   commentId: M:wan24.Data.CsvTable.AsObject``1(System.Int32,``0,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
   id: AsObject``1(System.Int32,``0,System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping})
@@ -1268,22 +1100,22 @@ items:
   langs:
   - csharp
   - vb
-  name: AsObject<T>(Int32, T, Dictionary<Int32, CsvMapping>)
-  nameWithType: CsvTable.AsObject<T>(Int32, T, Dictionary<Int32, CsvMapping>)
-  fullName: wan24.Data.CsvTable.AsObject<T>(System.Int32, T, System.Collections.Generic.Dictionary<System.Int32, wan24.Data.CsvMapping>)
+  name: AsObject<T>(int, T, Dictionary<int, CsvMapping>)
+  nameWithType: CsvTable.AsObject<T>(int, T, Dictionary<int, CsvMapping>)
+  fullName: wan24.Data.CsvTable.AsObject<T>(int, T, System.Collections.Generic.Dictionary<int, wan24.Data.CsvMapping>)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Map.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: AsObject
     path: ../CSV-Parser/CsvTable.Map.cs
     startLine: 59
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nGet a row as object\n"
+  summary: Get a row as object
   example: []
   syntax:
     content: public T AsObject<T>(int index, T obj, Dictionary<int, CsvMapping> mapping = null)
@@ -1305,13 +1137,9 @@ items:
       description: Object
     content.vb: Public Function AsObject(Of T)(index As Integer, obj As T, mapping As Dictionary(Of Integer, CsvMapping) = Nothing) As T
   overload: wan24.Data.CsvTable.AsObject*
-  nameWithType.vb: CsvTable.AsObject(Of T)(Int32, T, Dictionary(Of Int32, CsvMapping))
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-  fullName.vb: wan24.Data.CsvTable.AsObject(Of T)(System.Int32, T, System.Collections.Generic.Dictionary(Of System.Int32, wan24.Data.CsvMapping))
-  name.vb: AsObject(Of T)(Int32, T, Dictionary(Of Int32, CsvMapping))
+  nameWithType.vb: CsvTable.AsObject(Of T)(Integer, T, Dictionary(Of Integer, CsvMapping))
+  fullName.vb: wan24.Data.CsvTable.AsObject(Of T)(Integer, T, System.Collections.Generic.Dictionary(Of Integer, wan24.Data.CsvMapping))
+  name.vb: AsObject(Of T)(Integer, T, Dictionary(Of Integer, CsvMapping))
 - uid: wan24.Data.CsvTable.AsObject(System.Int32)
   commentId: M:wan24.Data.CsvTable.AsObject(System.Int32)
   id: AsObject(System.Int32)
@@ -1319,22 +1147,22 @@ items:
   langs:
   - csharp
   - vb
-  name: AsObject(Int32)
-  nameWithType: CsvTable.AsObject(Int32)
-  fullName: wan24.Data.CsvTable.AsObject(System.Int32)
+  name: AsObject(int)
+  nameWithType: CsvTable.AsObject(int)
+  fullName: wan24.Data.CsvTable.AsObject(int)
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Map.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: AsObject
     path: ../CSV-Parser/CsvTable.Map.cs
     startLine: 71
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nGet an object from an object row (having the object type in the first field)\n"
+  summary: Get an object from an object row (having the object type in the first field)
   example: []
   syntax:
     content: public object AsObject(int index)
@@ -1344,13 +1172,12 @@ items:
       description: Index
     return:
       type: System.Object
-      description: Object or <xref uid="langword_csharp_null" name="null" href=""></xref>
+      description: Object or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>
     content.vb: Public Function AsObject(index As Integer) As Object
   overload: wan24.Data.CsvTable.AsObject*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
+  nameWithType.vb: CsvTable.AsObject(Integer)
+  fullName.vb: wan24.Data.CsvTable.AsObject(Integer)
+  name.vb: AsObject(Integer)
 - uid: wan24.Data.CsvTable.AddObjects``1(``0[])
   commentId: M:wan24.Data.CsvTable.AddObjects``1(``0[])
   id: AddObjects``1(``0[])
@@ -1358,22 +1185,22 @@ items:
   langs:
   - csharp
   - vb
-  name: AddObjects<T>(T[])
-  nameWithType: CsvTable.AddObjects<T>(T[])
-  fullName: wan24.Data.CsvTable.AddObjects<T>(T[])
+  name: AddObjects<T>(params T[])
+  nameWithType: CsvTable.AddObjects<T>(params T[])
+  fullName: wan24.Data.CsvTable.AddObjects<T>(params T[])
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Map.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: AddObjects
     path: ../CSV-Parser/CsvTable.Map.cs
     startLine: 79
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nAdd rows from objects\n"
+  summary: Add rows from objects
   example: []
   syntax:
     content: public CsvTable AddObjects<T>(params T[] objs)
@@ -1389,13 +1216,9 @@ items:
       description: This
     content.vb: Public Function AddObjects(Of T)(ParamArray objs As T()) As CsvTable
   overload: wan24.Data.CsvTable.AddObjects*
-  nameWithType.vb: CsvTable.AddObjects(Of T)(T())
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-  fullName.vb: wan24.Data.CsvTable.AddObjects(Of T)(T())
-  name.vb: AddObjects(Of T)(T())
+  nameWithType.vb: CsvTable.AddObjects(Of T)(ParamArray T())
+  fullName.vb: wan24.Data.CsvTable.AddObjects(Of T)(ParamArray T())
+  name.vb: AddObjects(Of T)(ParamArray T())
 - uid: wan24.Data.CsvTable.AddObjects``1(System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping},``0[])
   commentId: M:wan24.Data.CsvTable.AddObjects``1(System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping},``0[])
   id: AddObjects``1(System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping},``0[])
@@ -1403,22 +1226,22 @@ items:
   langs:
   - csharp
   - vb
-  name: AddObjects<T>(Dictionary<Int32, CsvMapping>, T[])
-  nameWithType: CsvTable.AddObjects<T>(Dictionary<Int32, CsvMapping>, T[])
-  fullName: wan24.Data.CsvTable.AddObjects<T>(System.Collections.Generic.Dictionary<System.Int32, wan24.Data.CsvMapping>, T[])
+  name: AddObjects<T>(Dictionary<int, CsvMapping>, params T[])
+  nameWithType: CsvTable.AddObjects<T>(Dictionary<int, CsvMapping>, params T[])
+  fullName: wan24.Data.CsvTable.AddObjects<T>(System.Collections.Generic.Dictionary<int, wan24.Data.CsvMapping>, params T[])
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Map.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: AddObjects
     path: ../CSV-Parser/CsvTable.Map.cs
     startLine: 93
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nAdd rows from objects\n"
+  summary: Add rows from objects
   example: []
   syntax:
     content: public CsvTable AddObjects<T>(Dictionary<int, CsvMapping> mapping, params T[] objs)
@@ -1437,13 +1260,9 @@ items:
       description: This
     content.vb: Public Function AddObjects(Of T)(mapping As Dictionary(Of Integer, CsvMapping), ParamArray objs As T()) As CsvTable
   overload: wan24.Data.CsvTable.AddObjects*
-  nameWithType.vb: CsvTable.AddObjects(Of T)(Dictionary(Of Int32, CsvMapping), T())
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-  fullName.vb: wan24.Data.CsvTable.AddObjects(Of T)(System.Collections.Generic.Dictionary(Of System.Int32, wan24.Data.CsvMapping), T())
-  name.vb: AddObjects(Of T)(Dictionary(Of Int32, CsvMapping), T())
+  nameWithType.vb: CsvTable.AddObjects(Of T)(Dictionary(Of Integer, CsvMapping), ParamArray T())
+  fullName.vb: wan24.Data.CsvTable.AddObjects(Of T)(System.Collections.Generic.Dictionary(Of Integer, wan24.Data.CsvMapping), ParamArray T())
+  name.vb: AddObjects(Of T)(Dictionary(Of Integer, CsvMapping), ParamArray T())
 - uid: wan24.Data.CsvTable.AddObjects(System.Object[])
   commentId: M:wan24.Data.CsvTable.AddObjects(System.Object[])
   id: AddObjects(System.Object[])
@@ -1451,22 +1270,22 @@ items:
   langs:
   - csharp
   - vb
-  name: AddObjects(Object[])
-  nameWithType: CsvTable.AddObjects(Object[])
-  fullName: wan24.Data.CsvTable.AddObjects(System.Object[])
+  name: AddObjects(params object[])
+  nameWithType: CsvTable.AddObjects(params object[])
+  fullName: wan24.Data.CsvTable.AddObjects(params object[])
   type: Method
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Map.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: AddObjects
     path: ../CSV-Parser/CsvTable.Map.cs
     startLine: 105
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nAdd rows from objects with the type names in the first field\n"
+  summary: Add rows from objects with the type names in the first field
   example: []
   syntax:
     content: public CsvTable AddObjects(params object[] objs)
@@ -1479,13 +1298,9 @@ items:
       description: This
     content.vb: Public Function AddObjects(ParamArray objs As Object()) As CsvTable
   overload: wan24.Data.CsvTable.AddObjects*
-  nameWithType.vb: CsvTable.AddObjects(Object())
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
-  fullName.vb: wan24.Data.CsvTable.AddObjects(System.Object())
-  name.vb: AddObjects(Object())
+  nameWithType.vb: CsvTable.AddObjects(ParamArray Object())
+  fullName.vb: wan24.Data.CsvTable.AddObjects(ParamArray Object())
+  name.vb: AddObjects(ParamArray Object())
 - uid: wan24.Data.CsvTable.CreateMapping
   commentId: M:wan24.Data.CsvTable.CreateMapping
   id: CreateMapping
@@ -1500,94 +1315,101 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvTable.Map.cs
-      branch: dev
-      repo: https://github.com/nd1012/CSV-Parser.git
+      branch: main
+      repo: https://github.com/nd1012/CSV-Parser
     id: CreateMapping
     path: ../CSV-Parser/CsvTable.Map.cs
     startLine: 116
   assemblies:
   - csvparser
   namespace: wan24.Data
-  summary: "\nCreate a mapping from the column headers (supports string properties only, will set the <code>Mapping</code> property)\n"
+  summary: Create a mapping from the column headers (supports string properties only, will set the <code>Mapping</code> property)
   example: []
   syntax:
     content: public CsvTable CreateMapping()
     return:
       type: wan24.Data.CsvTable
       description: This
-    content.vb: Public Function CreateMapping As CsvTable
+    content.vb: Public Function CreateMapping() As CsvTable
   overload: wan24.Data.CsvTable.CreateMapping*
-  modifiers.csharp:
-  - public
-  modifiers.vb:
-  - Public
 references:
 - uid: wan24.Data
   commentId: N:wan24.Data
+  href: wan24.html
   name: wan24.Data
   nameWithType: wan24.Data
   fullName: wan24.Data
+  spec.csharp:
+  - uid: wan24
+    name: wan24
+    href: wan24.html
+  - name: .
+  - uid: wan24.Data
+    name: Data
+    href: wan24.Data.html
+  spec.vb:
+  - uid: wan24
+    name: wan24
+    href: wan24.html
+  - name: .
+  - uid: wan24.Data
+    name: Data
+    href: wan24.Data.html
 - uid: System.Object
   commentId: T:System.Object
   parent: System
   isExternal: true
-  name: Object
-  nameWithType: Object
-  fullName: System.Object
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
 - uid: System.Collections.Generic.IEnumerable{System.String[]}
   commentId: T:System.Collections.Generic.IEnumerable{System.String[]}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerable`1
-  name: IEnumerable<String[]>
-  nameWithType: IEnumerable<String[]>
-  fullName: System.Collections.Generic.IEnumerable<System.String[]>
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<string[]>
+  nameWithType: IEnumerable<string[]>
+  fullName: System.Collections.Generic.IEnumerable<string[]>
   nameWithType.vb: IEnumerable(Of String())
-  fullName.vb: System.Collections.Generic.IEnumerable(Of System.String())
+  fullName.vb: System.Collections.Generic.IEnumerable(Of String())
   name.vb: IEnumerable(Of String())
   spec.csharp:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-    nameWithType: <
-    fullName: <
   - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
+    name: string
     isExternal: true
-  - name: '[]'
-    nameWithType: '[]'
-    fullName: '[]'
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
   - uid: System.String
     name: String
-    nameWithType: String
-    fullName: System.String
     isExternal: true
-  - name: ()
-    nameWithType: ()
-    fullName: ()
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
   - name: )
-    nameWithType: )
-    fullName: )
+  - name: )
 - uid: System.Collections.IEnumerable
   commentId: T:System.Collections.IEnumerable
   parent: System.Collections
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.ienumerable
   name: IEnumerable
   nameWithType: IEnumerable
   fullName: System.Collections.IEnumerable
@@ -1595,6 +1417,7 @@ references:
   commentId: T:System.ICloneable
   parent: System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icloneable
   name: ICloneable
   nameWithType: ICloneable
   fullName: System.ICloneable
@@ -1602,290 +1425,232 @@ references:
   commentId: M:System.Object.Equals(System.Object)
   parent: System.Object
   isExternal: true
-  name: Equals(Object)
-  nameWithType: Object.Equals(Object)
-  fullName: System.Object.Equals(System.Object)
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
+  name: Equals(object)
+  nameWithType: object.Equals(object)
+  fullName: object.Equals(object)
+  nameWithType.vb: Object.Equals(Object)
+  fullName.vb: Object.Equals(Object)
+  name.vb: Equals(Object)
   spec.csharp:
   - uid: System.Object.Equals(System.Object)
     name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
   - name: (
-    nameWithType: (
-    fullName: (
   - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
+    name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-    nameWithType: )
-    fullName: )
   spec.vb:
   - uid: System.Object.Equals(System.Object)
     name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)
   - name: (
-    nameWithType: (
-    fullName: (
   - uid: System.Object
     name: Object
-    nameWithType: Object
-    fullName: System.Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Object.Equals(System.Object,System.Object)
   commentId: M:System.Object.Equals(System.Object,System.Object)
   parent: System.Object
   isExternal: true
-  name: Equals(Object, Object)
-  nameWithType: Object.Equals(Object, Object)
-  fullName: System.Object.Equals(System.Object, System.Object)
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
   spec.csharp:
   - uid: System.Object.Equals(System.Object,System.Object)
     name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
   - name: (
-    nameWithType: (
-    fullName: (
   - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
+    name: object
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
   - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
+    name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-    nameWithType: )
-    fullName: )
   spec.vb:
   - uid: System.Object.Equals(System.Object,System.Object)
     name: Equals
-    nameWithType: Object.Equals
-    fullName: System.Object.Equals
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
   - name: (
-    nameWithType: (
-    fullName: (
   - uid: System.Object
     name: Object
-    nameWithType: Object
-    fullName: System.Object
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
   - uid: System.Object
     name: Object
-    nameWithType: Object
-    fullName: System.Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Object.GetHashCode
   commentId: M:System.Object.GetHashCode
   parent: System.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
   name: GetHashCode()
-  nameWithType: Object.GetHashCode()
-  fullName: System.Object.GetHashCode()
+  nameWithType: object.GetHashCode()
+  fullName: object.GetHashCode()
+  nameWithType.vb: Object.GetHashCode()
+  fullName.vb: Object.GetHashCode()
   spec.csharp:
   - uid: System.Object.GetHashCode
     name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
   - name: (
-    nameWithType: (
-    fullName: (
   - name: )
-    nameWithType: )
-    fullName: )
   spec.vb:
   - uid: System.Object.GetHashCode
     name: GetHashCode
-    nameWithType: Object.GetHashCode
-    fullName: System.Object.GetHashCode
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gethashcode
   - name: (
-    nameWithType: (
-    fullName: (
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Object.GetType
   commentId: M:System.Object.GetType
   parent: System.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
   name: GetType()
-  nameWithType: Object.GetType()
-  fullName: System.Object.GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
   spec.csharp:
   - uid: System.Object.GetType
     name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
   - name: (
-    nameWithType: (
-    fullName: (
   - name: )
-    nameWithType: )
-    fullName: )
   spec.vb:
   - uid: System.Object.GetType
     name: GetType
-    nameWithType: Object.GetType
-    fullName: System.Object.GetType
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
   - name: (
-    nameWithType: (
-    fullName: (
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Object.MemberwiseClone
   commentId: M:System.Object.MemberwiseClone
   parent: System.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
   name: MemberwiseClone()
-  nameWithType: Object.MemberwiseClone()
-  fullName: System.Object.MemberwiseClone()
+  nameWithType: object.MemberwiseClone()
+  fullName: object.MemberwiseClone()
+  nameWithType.vb: Object.MemberwiseClone()
+  fullName.vb: Object.MemberwiseClone()
   spec.csharp:
   - uid: System.Object.MemberwiseClone
     name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
   - name: (
-    nameWithType: (
-    fullName: (
   - name: )
-    nameWithType: )
-    fullName: )
   spec.vb:
   - uid: System.Object.MemberwiseClone
     name: MemberwiseClone
-    nameWithType: Object.MemberwiseClone
-    fullName: System.Object.MemberwiseClone
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone
   - name: (
-    nameWithType: (
-    fullName: (
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Object.ReferenceEquals(System.Object,System.Object)
   commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
   parent: System.Object
   isExternal: true
-  name: ReferenceEquals(Object, Object)
-  nameWithType: Object.ReferenceEquals(Object, Object)
-  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
   spec.csharp:
   - uid: System.Object.ReferenceEquals(System.Object,System.Object)
     name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
   - name: (
-    nameWithType: (
-    fullName: (
   - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
+    name: object
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
   - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
+    name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-    nameWithType: )
-    fullName: )
   spec.vb:
   - uid: System.Object.ReferenceEquals(System.Object,System.Object)
     name: ReferenceEquals
-    nameWithType: Object.ReferenceEquals
-    fullName: System.Object.ReferenceEquals
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
   - name: (
-    nameWithType: (
-    fullName: (
   - uid: System.Object
     name: Object
-    nameWithType: Object
-    fullName: System.Object
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
   - uid: System.Object
     name: Object
-    nameWithType: Object
-    fullName: System.Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Object.ToString
   commentId: M:System.Object.ToString
   parent: System.Object
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   name: ToString()
-  nameWithType: Object.ToString()
-  fullName: System.Object.ToString()
+  nameWithType: object.ToString()
+  fullName: object.ToString()
+  nameWithType.vb: Object.ToString()
+  fullName.vb: Object.ToString()
   spec.csharp:
   - uid: System.Object.ToString
     name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
-    nameWithType: (
-    fullName: (
   - name: )
-    nameWithType: )
-    fullName: )
   spec.vb:
   - uid: System.Object.ToString
     name: ToString
-    nameWithType: Object.ToString
-    fullName: System.Object.ToString
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.tostring
   - name: (
-    nameWithType: (
-    fullName: (
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System
   commentId: N:System
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System
   nameWithType: System
   fullName: System
 - uid: System.Collections.Generic.IEnumerable`1
   commentId: T:System.Collections.Generic.IEnumerable`1
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   name: IEnumerable<T>
   nameWithType: IEnumerable<T>
   fullName: System.Collections.Generic.IEnumerable<T>
@@ -1895,58 +1660,101 @@ references:
   spec.csharp:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-    nameWithType: <
-    fullName: <
   - name: T
-    nameWithType: T
-    fullName: T
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
   - name: T
-    nameWithType: T
-    fullName: T
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Collections.Generic
   commentId: N:System.Collections.Generic
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System.Collections.Generic
   nameWithType: System.Collections.Generic
   fullName: System.Collections.Generic
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  - name: .
+  - uid: System.Collections.Generic
+    name: Generic
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic
 - uid: System.Collections
   commentId: N:System.Collections
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
   name: System.Collections
   nameWithType: System.Collections
   fullName: System.Collections
+  spec.csharp:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
+  spec.vb:
+  - uid: System
+    name: System
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system
+  - name: .
+  - uid: System.Collections
+    name: Collections
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections
 - uid: wan24.Data.CsvTable.CreateHeaders*
   commentId: Overload:wan24.Data.CsvTable.CreateHeaders
+  href: wan24.Data.CsvTable.html#wan24_Data_CsvTable_CreateHeaders
   name: CreateHeaders
   nameWithType: CsvTable.CreateHeaders
   fullName: wan24.Data.CsvTable.CreateHeaders
 - uid: wan24.Data.CsvTable
   commentId: T:wan24.Data.CsvTable
   parent: wan24.Data
+  href: wan24.Data.CsvTable.html
   name: CsvTable
   nameWithType: CsvTable
   fullName: wan24.Data.CsvTable
 - uid: wan24.Data.CsvTable.AddColumn*
   commentId: Overload:wan24.Data.CsvTable.AddColumn
+  href: wan24.Data.CsvTable.html#wan24_Data_CsvTable_AddColumn_System_String_System_Int32_System_Func_System_Int32_System_String__
   name: AddColumn
   nameWithType: CsvTable.AddColumn
   fullName: wan24.Data.CsvTable.AddColumn
@@ -1954,79 +1762,75 @@ references:
   commentId: T:System.String
   parent: System
   isExternal: true
-  name: String
-  nameWithType: String
-  fullName: System.String
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
 - uid: System.Int32
   commentId: T:System.Int32
   parent: System
   isExternal: true
-  name: Int32
-  nameWithType: Int32
-  fullName: System.Int32
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
 - uid: System.Func{System.Int32,System.String}
   commentId: T:System.Func{System.Int32,System.String}
   parent: System
   definition: System.Func`2
-  name: Func<Int32, String>
-  nameWithType: Func<Int32, String>
-  fullName: System.Func<System.Int32, System.String>
-  nameWithType.vb: Func(Of Int32, String)
-  fullName.vb: System.Func(Of System.Int32, System.String)
-  name.vb: Func(Of Int32, String)
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
+  name: Func<int, string>
+  nameWithType: Func<int, string>
+  fullName: System.Func<int, string>
+  nameWithType.vb: Func(Of Integer, String)
+  fullName.vb: System.Func(Of Integer, String)
+  name.vb: Func(Of Integer, String)
   spec.csharp:
   - uid: System.Func`2
     name: Func
-    nameWithType: Func
-    fullName: System.Func
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
   - name: <
-    nameWithType: <
-    fullName: <
   - uid: System.Int32
-    name: Int32
-    nameWithType: Int32
-    fullName: System.Int32
+    name: int
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
   - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
+    name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Func`2
     name: Func
-    nameWithType: Func
-    fullName: System.Func
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
   - uid: System.Int32
-    name: Int32
-    nameWithType: Int32
-    fullName: System.Int32
+    name: Integer
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
   - uid: System.String
     name: String
-    nameWithType: String
-    fullName: System.String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Func`2
   commentId: T:System.Func`2
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.func-2
   name: Func<T, TResult>
   nameWithType: Func<T, TResult>
   fullName: System.Func<T, TResult>
@@ -2036,52 +1840,36 @@ references:
   spec.csharp:
   - uid: System.Func`2
     name: Func
-    nameWithType: Func
-    fullName: System.Func
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
   - name: <
-    nameWithType: <
-    fullName: <
   - name: T
-    nameWithType: T
-    fullName: T
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+  - name: ','
+  - name: " "
   - name: TResult
-    nameWithType: TResult
-    fullName: TResult
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Func`2
     name: Func
-    nameWithType: Func
-    fullName: System.Func
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.func-2
+  - name: (
+  - name: Of
+  - name: " "
   - name: T
-    nameWithType: T
-    fullName: T
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+  - name: ','
+  - name: " "
   - name: TResult
-    nameWithType: TResult
-    fullName: TResult
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: wan24.Data.CsvTable.RemoveColumn*
   commentId: Overload:wan24.Data.CsvTable.RemoveColumn
+  href: wan24.Data.CsvTable.html#wan24_Data_CsvTable_RemoveColumn_System_Int32_
   name: RemoveColumn
   nameWithType: CsvTable.RemoveColumn
   fullName: wan24.Data.CsvTable.RemoveColumn
 - uid: wan24.Data.CsvTable.MoveColumn*
   commentId: Overload:wan24.Data.CsvTable.MoveColumn
+  href: wan24.Data.CsvTable.html#wan24_Data_CsvTable_MoveColumn_System_Int32_System_Int32_System_Boolean_
   name: MoveColumn
   nameWithType: CsvTable.MoveColumn
   fullName: wan24.Data.CsvTable.MoveColumn
@@ -2089,47 +1877,51 @@ references:
   commentId: T:System.Boolean
   parent: System
   isExternal: true
-  name: Boolean
-  nameWithType: Boolean
-  fullName: System.Boolean
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
 - uid: wan24.Data.CsvTable.SwapColumn*
   commentId: Overload:wan24.Data.CsvTable.SwapColumn
+  href: wan24.Data.CsvTable.html#wan24_Data_CsvTable_SwapColumn_System_Int32_System_Int32_System_Boolean_
   name: SwapColumn
   nameWithType: CsvTable.SwapColumn
   fullName: wan24.Data.CsvTable.SwapColumn
 - uid: wan24.Data.CsvTable.ReorderColumns*
   commentId: Overload:wan24.Data.CsvTable.ReorderColumns
+  href: wan24.Data.CsvTable.html#wan24_Data_CsvTable_ReorderColumns_System_Int32___System_Boolean_
   name: ReorderColumns
   nameWithType: CsvTable.ReorderColumns
   fullName: wan24.Data.CsvTable.ReorderColumns
 - uid: System.Int32[]
   isExternal: true
-  name: Int32[]
-  nameWithType: Int32[]
-  fullName: System.Int32[]
-  nameWithType.vb: Int32()
-  fullName.vb: System.Int32()
-  name.vb: Int32()
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int[]
+  nameWithType: int[]
+  fullName: int[]
+  nameWithType.vb: Integer()
+  fullName.vb: Integer()
+  name.vb: Integer()
   spec.csharp:
   - uid: System.Int32
-    name: Int32
-    nameWithType: Int32
-    fullName: System.Int32
+    name: int
     isExternal: true
-  - name: '[]'
-    nameWithType: '[]'
-    fullName: '[]'
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: '['
+  - name: ']'
   spec.vb:
   - uid: System.Int32
-    name: Int32
-    nameWithType: Int32
-    fullName: System.Int32
+    name: Integer
     isExternal: true
-  - name: ()
-    nameWithType: ()
-    fullName: ()
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: (
+  - name: )
 - uid: wan24.Data.CsvTable.AddRow*
   commentId: Overload:wan24.Data.CsvTable.AddRow
+  href: wan24.Data.CsvTable.html#wan24_Data_CsvTable_AddRow_System_Collections_Generic_IEnumerable_System_String__
   name: AddRow
   nameWithType: CsvTable.AddRow
   fullName: wan24.Data.CsvTable.AddRow
@@ -2137,225 +1929,168 @@ references:
   commentId: T:System.Collections.Generic.IEnumerable{System.String}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerable`1
-  name: IEnumerable<String>
-  nameWithType: IEnumerable<String>
-  fullName: System.Collections.Generic.IEnumerable<System.String>
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<string>
+  nameWithType: IEnumerable<string>
+  fullName: System.Collections.Generic.IEnumerable<string>
   nameWithType.vb: IEnumerable(Of String)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of System.String)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of String)
   name.vb: IEnumerable(Of String)
   spec.csharp:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-    nameWithType: <
-    fullName: <
   - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
+    name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
   - uid: System.String
     name: String
-    nameWithType: String
-    fullName: System.String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: wan24.Data.CsvTable.Validate*
   commentId: Overload:wan24.Data.CsvTable.Validate
+  href: wan24.Data.CsvTable.html#wan24_Data_CsvTable_Validate
   name: Validate
   nameWithType: CsvTable.Validate
   fullName: wan24.Data.CsvTable.Validate
 - uid: wan24.Data.CsvTable.Clear*
   commentId: Overload:wan24.Data.CsvTable.Clear
+  href: wan24.Data.CsvTable.html#wan24_Data_CsvTable_Clear_System_Boolean_
   name: Clear
   nameWithType: CsvTable.Clear
   fullName: wan24.Data.CsvTable.Clear
 - uid: wan24.Data.CsvTable.#ctor*
   commentId: Overload:wan24.Data.CsvTable.#ctor
+  href: wan24.Data.CsvTable.html#wan24_Data_CsvTable__ctor_System_Nullable_System_Boolean__System_Char_System_Nullable_System_Char__System_Collections_Generic_IEnumerable_System_String__System_Collections_Generic_IEnumerable_System_Collections_Generic_IEnumerable_System_String___
   name: CsvTable
   nameWithType: CsvTable.CsvTable
   fullName: wan24.Data.CsvTable.CsvTable
+  nameWithType.vb: CsvTable.New
+  fullName.vb: wan24.Data.CsvTable.New
+  name.vb: New
 - uid: System.Nullable{System.Boolean}
   commentId: T:System.Nullable{System.Boolean}
   parent: System
   definition: System.Nullable`1
-  name: Nullable<Boolean>
-  nameWithType: Nullable<Boolean>
-  fullName: System.Nullable<System.Boolean>
-  nameWithType.vb: Nullable(Of Boolean)
-  fullName.vb: System.Nullable(Of System.Boolean)
-  name.vb: Nullable(Of Boolean)
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool?
+  nameWithType: bool?
+  fullName: bool?
+  nameWithType.vb: Boolean?
+  fullName.vb: Boolean?
+  name.vb: Boolean?
   spec.csharp:
-  - uid: System.Nullable`1
-    name: Nullable
-    nameWithType: Nullable
-    fullName: System.Nullable
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
   - uid: System.Boolean
-    name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
+    name: bool
     isExternal: true
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '?'
   spec.vb:
-  - uid: System.Nullable`1
-    name: Nullable
-    nameWithType: Nullable
-    fullName: System.Nullable
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
   - uid: System.Boolean
     name: Boolean
-    nameWithType: Boolean
-    fullName: System.Boolean
     isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
+    href: https://learn.microsoft.com/dotnet/api/system.boolean
+  - name: '?'
 - uid: System.Char
   commentId: T:System.Char
   parent: System
   isExternal: true
-  name: Char
-  nameWithType: Char
-  fullName: System.Char
+  href: https://learn.microsoft.com/dotnet/api/system.char
+  name: char
+  nameWithType: char
+  fullName: char
+  nameWithType.vb: Char
+  fullName.vb: Char
+  name.vb: Char
 - uid: System.Nullable{System.Char}
   commentId: T:System.Nullable{System.Char}
   parent: System
   definition: System.Nullable`1
-  name: Nullable<Char>
-  nameWithType: Nullable<Char>
-  fullName: System.Nullable<System.Char>
-  nameWithType.vb: Nullable(Of Char)
-  fullName.vb: System.Nullable(Of System.Char)
-  name.vb: Nullable(Of Char)
+  href: https://learn.microsoft.com/dotnet/api/system.char
+  name: char?
+  nameWithType: char?
+  fullName: char?
+  nameWithType.vb: Char?
+  fullName.vb: Char?
+  name.vb: Char?
   spec.csharp:
-  - uid: System.Nullable`1
-    name: Nullable
-    nameWithType: Nullable
-    fullName: System.Nullable
-    isExternal: true
-  - name: <
-    nameWithType: <
-    fullName: <
   - uid: System.Char
-    name: Char
-    nameWithType: Char
-    fullName: System.Char
+    name: char
     isExternal: true
-  - name: '>'
-    nameWithType: '>'
-    fullName: '>'
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: '?'
   spec.vb:
-  - uid: System.Nullable`1
-    name: Nullable
-    nameWithType: Nullable
-    fullName: System.Nullable
-    isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
   - uid: System.Char
     name: Char
-    nameWithType: Char
-    fullName: System.Char
     isExternal: true
-  - name: )
-    nameWithType: )
-    fullName: )
+    href: https://learn.microsoft.com/dotnet/api/system.char
+  - name: '?'
 - uid: System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{System.String}}
   commentId: T:System.Collections.Generic.IEnumerable{System.Collections.Generic.IEnumerable{System.String}}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerable`1
-  name: IEnumerable<IEnumerable<String>>
-  nameWithType: IEnumerable<IEnumerable<String>>
-  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.IEnumerable<System.String>>
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<IEnumerable<string>>
+  nameWithType: IEnumerable<IEnumerable<string>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.IEnumerable<string>>
   nameWithType.vb: IEnumerable(Of IEnumerable(Of String))
-  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Collections.Generic.IEnumerable(Of System.String))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Collections.Generic.IEnumerable(Of String))
   name.vb: IEnumerable(Of IEnumerable(Of String))
   spec.csharp:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-    nameWithType: <
-    fullName: <
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-    nameWithType: <
-    fullName: <
   - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
+    name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
   - uid: System.String
     name: String
-    nameWithType: String
-    fullName: System.String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
-    nameWithType: )
-    fullName: )
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Nullable`1
   commentId: T:System.Nullable`1
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.nullable-1
   name: Nullable<T>
   nameWithType: Nullable<T>
   fullName: System.Nullable<T>
@@ -2365,91 +2100,86 @@ references:
   spec.csharp:
   - uid: System.Nullable`1
     name: Nullable
-    nameWithType: Nullable
-    fullName: System.Nullable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
   - name: <
-    nameWithType: <
-    fullName: <
   - name: T
-    nameWithType: T
-    fullName: T
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Nullable`1
     name: Nullable
-    nameWithType: Nullable
-    fullName: System.Nullable
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.nullable-1
+  - name: (
+  - name: Of
+  - name: " "
   - name: T
-    nameWithType: T
-    fullName: T
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: wan24.Data.CsvTable.Item*
   commentId: Overload:wan24.Data.CsvTable.Item
-  name: Item
-  nameWithType: CsvTable.Item
-  fullName: wan24.Data.CsvTable.Item
+  href: wan24.Data.CsvTable.html#wan24_Data_CsvTable_Item_System_Int32_
+  name: this
+  nameWithType: CsvTable.this
+  fullName: wan24.Data.CsvTable.this
+  nameWithType.vb: CsvTable.this[]
+  fullName.vb: wan24.Data.CsvTable.this[]
+  name.vb: this[]
 - uid: System.String[]
   isExternal: true
-  name: String[]
-  nameWithType: String[]
-  fullName: System.String[]
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string[]
+  nameWithType: string[]
+  fullName: string[]
   nameWithType.vb: String()
-  fullName.vb: System.String()
+  fullName.vb: String()
   name.vb: String()
   spec.csharp:
   - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
+    name: string
     isExternal: true
-  - name: '[]'
-    nameWithType: '[]'
-    fullName: '[]'
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
   spec.vb:
   - uid: System.String
     name: String
-    nameWithType: String
-    fullName: System.String
     isExternal: true
-  - name: ()
-    nameWithType: ()
-    fullName: ()
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
+  - name: )
 - uid: wan24.Data.CsvTable.HasHeader*
   commentId: Overload:wan24.Data.CsvTable.HasHeader
+  href: wan24.Data.CsvTable.html#wan24_Data_CsvTable_HasHeader
   name: HasHeader
   nameWithType: CsvTable.HasHeader
   fullName: wan24.Data.CsvTable.HasHeader
 - uid: wan24.Data.CsvTable.FieldDelimiter*
   commentId: Overload:wan24.Data.CsvTable.FieldDelimiter
+  href: wan24.Data.CsvTable.html#wan24_Data_CsvTable_FieldDelimiter
   name: FieldDelimiter
   nameWithType: CsvTable.FieldDelimiter
   fullName: wan24.Data.CsvTable.FieldDelimiter
 - uid: wan24.Data.CsvTable.StringDelimiter*
   commentId: Overload:wan24.Data.CsvTable.StringDelimiter
+  href: wan24.Data.CsvTable.html#wan24_Data_CsvTable_StringDelimiter
   name: StringDelimiter
   nameWithType: CsvTable.StringDelimiter
   fullName: wan24.Data.CsvTable.StringDelimiter
 - uid: wan24.Data.CsvTable.CountColumns*
   commentId: Overload:wan24.Data.CsvTable.CountColumns
+  href: wan24.Data.CsvTable.html#wan24_Data_CsvTable_CountColumns
   name: CountColumns
   nameWithType: CsvTable.CountColumns
   fullName: wan24.Data.CsvTable.CountColumns
 - uid: wan24.Data.CsvTable.CountRows*
   commentId: Overload:wan24.Data.CsvTable.CountRows
+  href: wan24.Data.CsvTable.html#wan24_Data_CsvTable_CountRows
   name: CountRows
   nameWithType: CsvTable.CountRows
   fullName: wan24.Data.CsvTable.CountRows
 - uid: wan24.Data.CsvTable.Header*
   commentId: Overload:wan24.Data.CsvTable.Header
+  href: wan24.Data.CsvTable.html#wan24_Data_CsvTable_Header
   name: Header
   nameWithType: CsvTable.Header
   fullName: wan24.Data.CsvTable.Header
@@ -2457,49 +2187,41 @@ references:
   commentId: T:System.Collections.Generic.List{System.String}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.List`1
-  name: List<String>
-  nameWithType: List<String>
-  fullName: System.Collections.Generic.List<System.String>
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<string>
+  nameWithType: List<string>
+  fullName: System.Collections.Generic.List<string>
   nameWithType.vb: List(Of String)
-  fullName.vb: System.Collections.Generic.List(Of System.String)
+  fullName.vb: System.Collections.Generic.List(Of String)
   name.vb: List(Of String)
   spec.csharp:
   - uid: System.Collections.Generic.List`1
     name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
-    nameWithType: <
-    fullName: <
   - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
+    name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Collections.Generic.List`1
     name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
   - uid: System.String
     name: String
-    nameWithType: String
-    fullName: System.String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Collections.Generic.List`1
   commentId: T:System.Collections.Generic.List`1
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   name: List<T>
   nameWithType: List<T>
   fullName: System.Collections.Generic.List<T>
@@ -2509,35 +2231,24 @@ references:
   spec.csharp:
   - uid: System.Collections.Generic.List`1
     name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
-    nameWithType: <
-    fullName: <
   - name: T
-    nameWithType: T
-    fullName: T
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Collections.Generic.List`1
     name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
   - name: T
-    nameWithType: T
-    fullName: T
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: wan24.Data.CsvTable.Rows*
   commentId: Overload:wan24.Data.CsvTable.Rows
+  href: wan24.Data.CsvTable.html#wan24_Data_CsvTable_Rows
   name: Rows
   nameWithType: CsvTable.Rows
   fullName: wan24.Data.CsvTable.Rows
@@ -2545,54 +2256,44 @@ references:
   commentId: T:System.Collections.Generic.List{System.String[]}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.List`1
-  name: List<String[]>
-  nameWithType: List<String[]>
-  fullName: System.Collections.Generic.List<System.String[]>
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  name: List<string[]>
+  nameWithType: List<string[]>
+  fullName: System.Collections.Generic.List<string[]>
   nameWithType.vb: List(Of String())
-  fullName.vb: System.Collections.Generic.List(Of System.String())
+  fullName.vb: System.Collections.Generic.List(Of String())
   name.vb: List(Of String())
   spec.csharp:
   - uid: System.Collections.Generic.List`1
     name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
   - name: <
-    nameWithType: <
-    fullName: <
   - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
+    name: string
     isExternal: true
-  - name: '[]'
-    nameWithType: '[]'
-    fullName: '[]'
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Collections.Generic.List`1
     name: List
-    nameWithType: List
-    fullName: System.Collections.Generic.List
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1
+  - name: (
+  - name: Of
+  - name: " "
   - uid: System.String
     name: String
-    nameWithType: String
-    fullName: System.String
     isExternal: true
-  - name: ()
-    nameWithType: ()
-    fullName: ()
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
   - name: )
-    nameWithType: )
-    fullName: )
+  - name: )
 - uid: wan24.Data.CsvTable.GetEnumerator*
   commentId: Overload:wan24.Data.CsvTable.GetEnumerator
+  href: wan24.Data.CsvTable.html#wan24_Data_CsvTable_GetEnumerator
   name: GetEnumerator
   nameWithType: CsvTable.GetEnumerator
   fullName: wan24.Data.CsvTable.GetEnumerator
@@ -2600,88 +2301,69 @@ references:
   commentId: M:System.Collections.Generic.IEnumerable{System.String[]}.GetEnumerator
   parent: System.Collections.Generic.IEnumerable{System.String[]}
   definition: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
   name: GetEnumerator()
-  nameWithType: IEnumerable<String[]>.GetEnumerator()
-  fullName: System.Collections.Generic.IEnumerable<System.String[]>.GetEnumerator()
+  nameWithType: IEnumerable<string[]>.GetEnumerator()
+  fullName: System.Collections.Generic.IEnumerable<string[]>.GetEnumerator()
   nameWithType.vb: IEnumerable(Of String()).GetEnumerator()
-  fullName.vb: System.Collections.Generic.IEnumerable(Of System.String()).GetEnumerator()
+  fullName.vb: System.Collections.Generic.IEnumerable(Of String()).GetEnumerator()
   spec.csharp:
-  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  - uid: System.Collections.Generic.IEnumerable{System.String[]}.GetEnumerator
     name: GetEnumerator
-    nameWithType: IEnumerable<String[]>.GetEnumerator
-    fullName: System.Collections.Generic.IEnumerable<System.String[]>.GetEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
   - name: (
-    nameWithType: (
-    fullName: (
   - name: )
-    nameWithType: )
-    fullName: )
   spec.vb:
-  - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
+  - uid: System.Collections.Generic.IEnumerable{System.String[]}.GetEnumerator
     name: GetEnumerator
-    nameWithType: IEnumerable(Of String()).GetEnumerator
-    fullName: System.Collections.Generic.IEnumerable(Of System.String()).GetEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
   - name: (
-    nameWithType: (
-    fullName: (
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Collections.Generic.IEnumerator{System.String[]}
   commentId: T:System.Collections.Generic.IEnumerator{System.String[]}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerator`1
-  name: IEnumerator<String[]>
-  nameWithType: IEnumerator<String[]>
-  fullName: System.Collections.Generic.IEnumerator<System.String[]>
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  name: IEnumerator<string[]>
+  nameWithType: IEnumerator<string[]>
+  fullName: System.Collections.Generic.IEnumerator<string[]>
   nameWithType.vb: IEnumerator(Of String())
-  fullName.vb: System.Collections.Generic.IEnumerator(Of System.String())
+  fullName.vb: System.Collections.Generic.IEnumerator(Of String())
   name.vb: IEnumerator(Of String())
   spec.csharp:
   - uid: System.Collections.Generic.IEnumerator`1
     name: IEnumerator
-    nameWithType: IEnumerator
-    fullName: System.Collections.Generic.IEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
   - name: <
-    nameWithType: <
-    fullName: <
   - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
+    name: string
     isExternal: true
-  - name: '[]'
-    nameWithType: '[]'
-    fullName: '[]'
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: '['
+  - name: ']'
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Collections.Generic.IEnumerator`1
     name: IEnumerator
-    nameWithType: IEnumerator
-    fullName: System.Collections.Generic.IEnumerator
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: (
+  - name: Of
+  - name: " "
   - uid: System.String
     name: String
-    nameWithType: String
-    fullName: System.String
     isExternal: true
-  - name: ()
-    nameWithType: ()
-    fullName: ()
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: (
   - name: )
-    nameWithType: )
-    fullName: )
+  - name: )
 - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
   commentId: M:System.Collections.Generic.IEnumerable`1.GetEnumerator
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
   name: GetEnumerator()
   nameWithType: IEnumerable<T>.GetEnumerator()
   fullName: System.Collections.Generic.IEnumerable<T>.GetEnumerator()
@@ -2690,30 +2372,21 @@ references:
   spec.csharp:
   - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
     name: GetEnumerator
-    nameWithType: IEnumerable<T>.GetEnumerator
-    fullName: System.Collections.Generic.IEnumerable<T>.GetEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
   - name: (
-    nameWithType: (
-    fullName: (
   - name: )
-    nameWithType: )
-    fullName: )
   spec.vb:
   - uid: System.Collections.Generic.IEnumerable`1.GetEnumerator
     name: GetEnumerator
-    nameWithType: IEnumerable(Of T).GetEnumerator
-    fullName: System.Collections.Generic.IEnumerable(Of T).GetEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1.getenumerator
   - name: (
-    nameWithType: (
-    fullName: (
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Collections.Generic.IEnumerator`1
   commentId: T:System.Collections.Generic.IEnumerator`1
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
   name: IEnumerator<T>
   nameWithType: IEnumerator<T>
   fullName: System.Collections.Generic.IEnumerator<T>
@@ -2723,35 +2396,24 @@ references:
   spec.csharp:
   - uid: System.Collections.Generic.IEnumerator`1
     name: IEnumerator
-    nameWithType: IEnumerator
-    fullName: System.Collections.Generic.IEnumerator
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
   - name: <
-    nameWithType: <
-    fullName: <
   - name: T
-    nameWithType: T
-    fullName: T
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Collections.Generic.IEnumerator`1
     name: IEnumerator
-    nameWithType: IEnumerator
-    fullName: System.Collections.Generic.IEnumerator
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1
+  - name: (
+  - name: Of
+  - name: " "
   - name: T
-    nameWithType: T
-    fullName: T
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: wan24.Data.CsvTable.Clone*
   commentId: Overload:wan24.Data.CsvTable.Clone
+  href: wan24.Data.CsvTable.html#wan24_Data_CsvTable_Clone
   name: Clone
   nameWithType: CsvTable.Clone
   fullName: wan24.Data.CsvTable.Clone
@@ -2759,85 +2421,33 @@ references:
   commentId: M:System.ICloneable.Clone
   parent: System.ICloneable
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.icloneable.clone
   name: Clone()
   nameWithType: ICloneable.Clone()
   fullName: System.ICloneable.Clone()
   spec.csharp:
   - uid: System.ICloneable.Clone
     name: Clone
-    nameWithType: ICloneable.Clone
-    fullName: System.ICloneable.Clone
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icloneable.clone
   - name: (
-    nameWithType: (
-    fullName: (
   - name: )
-    nameWithType: )
-    fullName: )
   spec.vb:
   - uid: System.ICloneable.Clone
     name: Clone
-    nameWithType: ICloneable.Clone
-    fullName: System.ICloneable.Clone
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.icloneable.clone
   - name: (
-    nameWithType: (
-    fullName: (
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: wan24.Data.CsvTable.ToString*
   commentId: Overload:wan24.Data.CsvTable.ToString
+  href: wan24.Data.CsvTable.html#wan24_Data_CsvTable_ToString_System_Nullable_System_Boolean__System_Nullable_System_Char__System_Nullable_System_Char__
   name: ToString
   nameWithType: CsvTable.ToString
   fullName: wan24.Data.CsvTable.ToString
-- uid: wan24.Data.CsvTable.System#Collections#IEnumerable#GetEnumerator*
-  commentId: Overload:wan24.Data.CsvTable.System#Collections#IEnumerable#GetEnumerator
-  name: IEnumerable.GetEnumerator
-  nameWithType: CsvTable.IEnumerable.GetEnumerator
-  fullName: wan24.Data.CsvTable.System.Collections.IEnumerable.GetEnumerator
-  nameWithType.vb: CsvTable.System.Collections.IEnumerable.GetEnumerator
-  name.vb: System.Collections.IEnumerable.GetEnumerator
-- uid: System.Collections.IEnumerable.GetEnumerator
-  commentId: M:System.Collections.IEnumerable.GetEnumerator
-  parent: System.Collections.IEnumerable
-  isExternal: true
-  name: GetEnumerator()
-  nameWithType: IEnumerable.GetEnumerator()
-  fullName: System.Collections.IEnumerable.GetEnumerator()
-  spec.csharp:
-  - uid: System.Collections.IEnumerable.GetEnumerator
-    name: GetEnumerator
-    nameWithType: IEnumerable.GetEnumerator
-    fullName: System.Collections.IEnumerable.GetEnumerator
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-  spec.vb:
-  - uid: System.Collections.IEnumerable.GetEnumerator
-    name: GetEnumerator
-    nameWithType: IEnumerable.GetEnumerator
-    fullName: System.Collections.IEnumerable.GetEnumerator
-    isExternal: true
-  - name: (
-    nameWithType: (
-    fullName: (
-  - name: )
-    nameWithType: )
-    fullName: )
-- uid: System.Collections.IEnumerator
-  commentId: T:System.Collections.IEnumerator
-  parent: System.Collections
-  isExternal: true
-  name: IEnumerator
-  nameWithType: IEnumerator
-  fullName: System.Collections.IEnumerator
 - uid: wan24.Data.CsvTable.AsDictionaries*
   commentId: Overload:wan24.Data.CsvTable.AsDictionaries
+  href: wan24.Data.CsvTable.html#wan24_Data_CsvTable_AsDictionaries
   name: AsDictionaries
   nameWithType: CsvTable.AsDictionaries
   fullName: wan24.Data.CsvTable.AsDictionaries
@@ -2845,86 +2455,66 @@ references:
   commentId: T:System.Collections.Generic.IEnumerable{System.Collections.Generic.Dictionary{System.String,System.String}}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerable`1
-  name: IEnumerable<Dictionary<String, String>>
-  nameWithType: IEnumerable<Dictionary<String, String>>
-  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.Dictionary<System.String, System.String>>
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<Dictionary<string, string>>
+  nameWithType: IEnumerable<Dictionary<string, string>>
+  fullName: System.Collections.Generic.IEnumerable<System.Collections.Generic.Dictionary<string, string>>
   nameWithType.vb: IEnumerable(Of Dictionary(Of String, String))
-  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Collections.Generic.Dictionary(Of System.String, System.String))
+  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Collections.Generic.Dictionary(Of String, String))
   name.vb: IEnumerable(Of Dictionary(Of String, String))
   spec.csharp:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-    nameWithType: <
-    fullName: <
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
-    nameWithType: Dictionary
-    fullName: System.Collections.Generic.Dictionary
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   - name: <
-    nameWithType: <
-    fullName: <
   - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
+    name: string
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
   - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
+    name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
-    nameWithType: Dictionary
-    fullName: System.Collections.Generic.Dictionary
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
   - uid: System.String
     name: String
-    nameWithType: String
-    fullName: System.String
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
   - uid: System.String
     name: String
-    nameWithType: String
-    fullName: System.String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
-    nameWithType: )
-    fullName: )
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: wan24.Data.CsvTable.AsDictionary*
   commentId: Overload:wan24.Data.CsvTable.AsDictionary
+  href: wan24.Data.CsvTable.html#wan24_Data_CsvTable_AsDictionary_System_Int32_
   name: AsDictionary
   nameWithType: CsvTable.AsDictionary
   fullName: wan24.Data.CsvTable.AsDictionary
@@ -2932,65 +2522,53 @@ references:
   commentId: T:System.Collections.Generic.Dictionary{System.String,System.String}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.Dictionary`2
-  name: Dictionary<String, String>
-  nameWithType: Dictionary<String, String>
-  fullName: System.Collections.Generic.Dictionary<System.String, System.String>
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<string, string>
+  nameWithType: Dictionary<string, string>
+  fullName: System.Collections.Generic.Dictionary<string, string>
   nameWithType.vb: Dictionary(Of String, String)
-  fullName.vb: System.Collections.Generic.Dictionary(Of System.String, System.String)
+  fullName.vb: System.Collections.Generic.Dictionary(Of String, String)
   name.vb: Dictionary(Of String, String)
   spec.csharp:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
-    nameWithType: Dictionary
-    fullName: System.Collections.Generic.Dictionary
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   - name: <
-    nameWithType: <
-    fullName: <
   - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
+    name: string
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
   - uid: System.String
-    name: String
-    nameWithType: String
-    fullName: System.String
+    name: string
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
-    nameWithType: Dictionary
-    fullName: System.Collections.Generic.Dictionary
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
   - uid: System.String
     name: String
-    nameWithType: String
-    fullName: System.String
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.string
+  - name: ','
+  - name: " "
   - uid: System.String
     name: String
-    nameWithType: String
-    fullName: System.String
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.string
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: System.Collections.Generic.Dictionary`2
   commentId: T:System.Collections.Generic.Dictionary`2
   isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   name: Dictionary<TKey, TValue>
   nameWithType: Dictionary<TKey, TValue>
   fullName: System.Collections.Generic.Dictionary<TKey, TValue>
@@ -3000,47 +2578,30 @@ references:
   spec.csharp:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
-    nameWithType: Dictionary
-    fullName: System.Collections.Generic.Dictionary
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   - name: <
-    nameWithType: <
-    fullName: <
   - name: TKey
-    nameWithType: TKey
-    fullName: TKey
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+  - name: ','
+  - name: " "
   - name: TValue
-    nameWithType: TValue
-    fullName: TValue
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
-    nameWithType: Dictionary
-    fullName: System.Collections.Generic.Dictionary
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
   - name: TKey
-    nameWithType: TKey
-    fullName: TKey
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+  - name: ','
+  - name: " "
   - name: TValue
-    nameWithType: TValue
-    fullName: TValue
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: wan24.Data.CsvTable.Mapping*
   commentId: Overload:wan24.Data.CsvTable.Mapping
+  href: wan24.Data.CsvTable.html#wan24_Data_CsvTable_Mapping
   name: Mapping
   nameWithType: CsvTable.Mapping
   fullName: wan24.Data.CsvTable.Mapping
@@ -3048,62 +2609,50 @@ references:
   commentId: T:System.Collections.Generic.Dictionary{System.Int32,wan24.Data.CsvMapping}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.Dictionary`2
-  name: Dictionary<Int32, CsvMapping>
-  nameWithType: Dictionary<Int32, CsvMapping>
-  fullName: System.Collections.Generic.Dictionary<System.Int32, wan24.Data.CsvMapping>
-  nameWithType.vb: Dictionary(Of Int32, CsvMapping)
-  fullName.vb: System.Collections.Generic.Dictionary(Of System.Int32, wan24.Data.CsvMapping)
-  name.vb: Dictionary(Of Int32, CsvMapping)
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  name: Dictionary<int, CsvMapping>
+  nameWithType: Dictionary<int, CsvMapping>
+  fullName: System.Collections.Generic.Dictionary<int, wan24.Data.CsvMapping>
+  nameWithType.vb: Dictionary(Of Integer, CsvMapping)
+  fullName.vb: System.Collections.Generic.Dictionary(Of Integer, wan24.Data.CsvMapping)
+  name.vb: Dictionary(Of Integer, CsvMapping)
   spec.csharp:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
-    nameWithType: Dictionary
-    fullName: System.Collections.Generic.Dictionary
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
   - name: <
-    nameWithType: <
-    fullName: <
   - uid: System.Int32
-    name: Int32
-    nameWithType: Int32
-    fullName: System.Int32
+    name: int
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
   - uid: wan24.Data.CsvMapping
     name: CsvMapping
-    nameWithType: CsvMapping
-    fullName: wan24.Data.CsvMapping
+    href: wan24.Data.CsvMapping.html
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Collections.Generic.Dictionary`2
     name: Dictionary
-    nameWithType: Dictionary
-    fullName: System.Collections.Generic.Dictionary
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2
+  - name: (
+  - name: Of
+  - name: " "
   - uid: System.Int32
-    name: Int32
-    nameWithType: Int32
-    fullName: System.Int32
+    name: Integer
     isExternal: true
-  - name: ', '
-    nameWithType: ', '
-    fullName: ', '
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
   - uid: wan24.Data.CsvMapping
     name: CsvMapping
-    nameWithType: CsvMapping
-    fullName: wan24.Data.CsvMapping
+    href: wan24.Data.CsvMapping.html
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: wan24.Data.CsvTable.Objects*
   commentId: Overload:wan24.Data.CsvTable.Objects
+  href: wan24.Data.CsvTable.html#wan24_Data_CsvTable_Objects
   name: Objects
   nameWithType: CsvTable.Objects
   fullName: wan24.Data.CsvTable.Objects
@@ -3111,48 +2660,40 @@ references:
   commentId: T:System.Collections.Generic.IEnumerable{System.Object}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerable`1
-  name: IEnumerable<Object>
-  nameWithType: IEnumerable<Object>
-  fullName: System.Collections.Generic.IEnumerable<System.Object>
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  name: IEnumerable<object>
+  nameWithType: IEnumerable<object>
+  fullName: System.Collections.Generic.IEnumerable<object>
   nameWithType.vb: IEnumerable(Of Object)
-  fullName.vb: System.Collections.Generic.IEnumerable(Of System.Object)
+  fullName.vb: System.Collections.Generic.IEnumerable(Of Object)
   name.vb: IEnumerable(Of Object)
   spec.csharp:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-    nameWithType: <
-    fullName: <
   - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
+    name: object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
   - uid: System.Object
     name: Object
-    nameWithType: Object
-    fullName: System.Object
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: wan24.Data.CsvTable.AsObject*
   commentId: Overload:wan24.Data.CsvTable.AsObject
+  href: wan24.Data.CsvTable.html#wan24_Data_CsvTable_AsObject__1_System_Int32_System_Collections_Generic_Dictionary_System_Int32_wan24_Data_CsvMapping__
   name: AsObject
   nameWithType: CsvTable.AsObject
   fullName: wan24.Data.CsvTable.AsObject
@@ -3168,6 +2709,7 @@ references:
   fullName: T
 - uid: wan24.Data.CsvTable.AsObjects*
   commentId: Overload:wan24.Data.CsvTable.AsObjects
+  href: wan24.Data.CsvTable.html#wan24_Data_CsvTable_AsObjects__1_System_Int32_System_Collections_Generic_Dictionary_System_Int32_wan24_Data_CsvMapping__
   name: AsObjects
   nameWithType: CsvTable.AsObjects
   fullName: wan24.Data.CsvTable.AsObjects
@@ -3175,6 +2717,7 @@ references:
   commentId: T:System.Collections.Generic.IEnumerable{``0}
   parent: System.Collections.Generic
   definition: System.Collections.Generic.IEnumerable`1
+  href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   name: IEnumerable<T>
   nameWithType: IEnumerable<T>
   fullName: System.Collections.Generic.IEnumerable<T>
@@ -3184,35 +2727,24 @@ references:
   spec.csharp:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
   - name: <
-    nameWithType: <
-    fullName: <
   - name: T
-    nameWithType: T
-    fullName: T
   - name: '>'
-    nameWithType: '>'
-    fullName: '>'
   spec.vb:
   - uid: System.Collections.Generic.IEnumerable`1
     name: IEnumerable
-    nameWithType: IEnumerable
-    fullName: System.Collections.Generic.IEnumerable
     isExternal: true
-  - name: '(Of '
-    nameWithType: '(Of '
-    fullName: '(Of '
+    href: https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1
+  - name: (
+  - name: Of
+  - name: " "
   - name: T
-    nameWithType: T
-    fullName: T
   - name: )
-    nameWithType: )
-    fullName: )
 - uid: wan24.Data.CsvTable.AddObjects*
   commentId: Overload:wan24.Data.CsvTable.AddObjects
+  href: wan24.Data.CsvTable.html#wan24_Data_CsvTable_AddObjects__1___0___
   name: AddObjects
   nameWithType: CsvTable.AddObjects
   fullName: wan24.Data.CsvTable.AddObjects
@@ -3226,46 +2758,38 @@ references:
   name.vb: T()
   spec.csharp:
   - name: T
-    nameWithType: T
-    fullName: T
-  - name: '[]'
-    nameWithType: '[]'
-    fullName: '[]'
+  - name: '['
+  - name: ']'
   spec.vb:
   - name: T
-    nameWithType: T
-    fullName: T
-  - name: ()
-    nameWithType: ()
-    fullName: ()
+  - name: (
+  - name: )
 - uid: System.Object[]
   isExternal: true
-  name: Object[]
-  nameWithType: Object[]
-  fullName: System.Object[]
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object[]
+  nameWithType: object[]
+  fullName: object[]
   nameWithType.vb: Object()
-  fullName.vb: System.Object()
+  fullName.vb: Object()
   name.vb: Object()
   spec.csharp:
   - uid: System.Object
-    name: Object
-    nameWithType: Object
-    fullName: System.Object
+    name: object
     isExternal: true
-  - name: '[]'
-    nameWithType: '[]'
-    fullName: '[]'
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: '['
+  - name: ']'
   spec.vb:
   - uid: System.Object
     name: Object
-    nameWithType: Object
-    fullName: System.Object
     isExternal: true
-  - name: ()
-    nameWithType: ()
-    fullName: ()
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: (
+  - name: )
 - uid: wan24.Data.CsvTable.CreateMapping*
   commentId: Overload:wan24.Data.CsvTable.CreateMapping
+  href: wan24.Data.CsvTable.html#wan24_Data_CsvTable_CreateMapping
   name: CreateMapping
   nameWithType: CsvTable.CreateMapping
   fullName: wan24.Data.CsvTable.CreateMapping
