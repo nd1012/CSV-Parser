@@ -47,6 +47,24 @@ namespace wan24.Data
                 : Rows[index];
 
         /// <summary>
+        /// Get a field ow a row
+        /// </summary>
+        /// <param name="index">Row index</param>
+        /// <param name="header">Field header name</param>
+        /// <returns>Field value</returns>
+        public string this[int index, string header]
+        {
+            get
+            {
+                string[] row = this[index];
+                index = Header.IndexOf(header);
+                if (index < 0) throw new ArgumentException("Invalid header", nameof(header));
+                if (index >= row.Length) throw new InvalidDataException("Row doesn't seem to contain a value for the requested column");
+                return row[index];
+            }
+        }
+
+        /// <summary>
         /// Has a header row?
         /// </summary>
         public bool HasHeader { get; }

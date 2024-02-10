@@ -1840,6 +1840,15 @@ references:
   fullName.vb: wan24.Data.CsvTable.Item(System.Int32)
   nameWithType: CsvTable.Item[Int32]
   nameWithType.vb: CsvTable.Item(Int32)
+- uid: wan24.Data.CsvTable.Item(System.Int32,System.String)
+  name: Item[Int32, String]
+  href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_Item_System_Int32_System_String_
+  commentId: P:wan24.Data.CsvTable.Item(System.Int32,System.String)
+  name.vb: Item(Int32, String)
+  fullName: wan24.Data.CsvTable.Item[System.Int32, System.String]
+  fullName.vb: wan24.Data.CsvTable.Item(System.Int32, System.String)
+  nameWithType: CsvTable.Item[Int32, String]
+  nameWithType.vb: CsvTable.Item(Int32, String)
 - uid: wan24.Data.CsvTable.Item*
   name: Item
   href: api/wan24.Data.CsvTable.html#wan24_Data_CsvTable_Item_

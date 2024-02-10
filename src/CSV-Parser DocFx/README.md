@@ -2,18 +2,31 @@
 
 A lightweight .NET Standard 2.0 CSV table (RFC 4180-like) parser.
 
+## How to get it
+
+CSV-Parser is available as 
+(NuGet package "CSV-Parser")[https://www.nuget.org/packages/CSV-Parser/].
+
 ## Usage
 
 Parse a file example:
 
 ```cs
-CsvTable table = wan24.Data.CsvParser.ParseFile(@"path\to\file.csv");
+CsvTable table = wan24.Data.CsvParser.ParseFile(@"/path/to/file.csv");
+foreach(string[] row in table)
+{
+	Console.WriteLine("Row in CSV table:");
+	for(int i = 0; i < table.CountColumns; i++)
+	{
+		Console.WriteLine($"\t{table.Header[i]}: {row[i]}");
+	}
+}
 ```
 
 Parse a file asynchronous example:
 
 ```cs
-CsvTable table = await wan24.Data.CsvParser.ParseFileAsync(@"path\to\file.csv");
+CsvTable table = await wan24.Data.CsvParser.ParseFileAsync(@"/path/to/file.csv");
 ```
 
 These static methods are available:

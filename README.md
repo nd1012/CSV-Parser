@@ -12,13 +12,21 @@ CSV-Parser is available as
 Parse a file example:
 
 ```cs
-CsvTable table = wan24.Data.CsvParser.ParseFile(@"path\to\file.csv");
+CsvTable table = wan24.Data.CsvParser.ParseFile(@"/path/to/file.csv");
+foreach(string[] row in table)
+{
+	Console.WriteLine("Row in CSV table:");
+	for(int i = 0; i < table.CountColumns; i++)
+	{
+		Console.WriteLine($"\t{table.Header[i]}: {row[i]}");
+	}
+}
 ```
 
 Parse a file asynchronous example:
 
 ```cs
-CsvTable table = await wan24.Data.CsvParser.ParseFileAsync(@"path\to\file.csv");
+CsvTable table = await wan24.Data.CsvParser.ParseFileAsync(@"/path/to/file.csv");
 ```
 
 These static methods are available:

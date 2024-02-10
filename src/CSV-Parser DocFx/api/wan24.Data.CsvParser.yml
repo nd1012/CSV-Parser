@@ -45,7 +45,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Parse.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CsvParser
     path: ../CSV-Parser/CsvParser.Parse.cs
@@ -89,7 +89,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Count.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CountRowsFromFile
     path: ../CSV-Parser/CsvParser.Count.cs
@@ -139,7 +139,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Count.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CountRowsFromFileAsync
     path: ../CSV-Parser/CsvParser.Count.cs
@@ -193,7 +193,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Count.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CountRowsFromStream
     path: ../CSV-Parser/CsvParser.Count.cs
@@ -246,7 +246,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Count.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CountRowsFromStreamAsync
     path: ../CSV-Parser/CsvParser.Count.cs
@@ -303,7 +303,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Count.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CountRowsFromString
     path: ../CSV-Parser/CsvParser.Count.cs
@@ -350,7 +350,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: IgnoreErrors
     path: ../CSV-Parser/CsvParser.cs
@@ -389,7 +389,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Enumerate.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: EnumerateFile
     path: ../CSV-Parser/CsvParser.Enumerate.cs
@@ -442,7 +442,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Enumerate.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: EnumerateStream
     path: ../CSV-Parser/CsvParser.Enumerate.cs
@@ -498,7 +498,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Enumerate.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: EnumerateString
     path: ../CSV-Parser/CsvParser.Enumerate.cs
@@ -548,7 +548,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Header.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ParseHeaderFromFile
     path: ../CSV-Parser/CsvParser.Header.cs
@@ -607,7 +607,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Header.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ParseHeaderFromFileAsync
     path: ../CSV-Parser/CsvParser.Header.cs
@@ -667,7 +667,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Header.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ParseHeaderFromStream
     path: ../CSV-Parser/CsvParser.Header.cs
@@ -729,7 +729,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Header.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ParseHeaderFromStreamAsync
     path: ../CSV-Parser/CsvParser.Header.cs
@@ -792,7 +792,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Header.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ParseHeaderFromString
     path: ../CSV-Parser/CsvParser.Header.cs
@@ -842,7 +842,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Map.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ObjectValueFactories
     path: ../CSV-Parser/CsvParser.Map.cs
@@ -881,7 +881,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Map.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: RowValueFactories
     path: ../CSV-Parser/CsvParser.Map.cs
@@ -920,7 +920,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Map.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: TypeMappings
     path: ../CSV-Parser/CsvParser.Map.cs
@@ -959,7 +959,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Map.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CreateMapping
     path: ../CSV-Parser/CsvParser.Map.cs
@@ -1003,7 +1003,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Map.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CreateMapping
     path: ../CSV-Parser/CsvParser.Map.cs
@@ -1046,7 +1046,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Map.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: CreateMapping
     path: ../CSV-Parser/CsvParser.Map.cs
@@ -1087,7 +1087,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Map.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Map
     path: ../CSV-Parser/CsvParser.Map.cs
@@ -1139,7 +1139,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Map.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Map
     path: ../CSV-Parser/CsvParser.Map.cs
@@ -1189,7 +1189,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Map.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Map
     path: ../CSV-Parser/CsvParser.Map.cs
@@ -1242,7 +1242,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Map.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Unmap
     path: ../CSV-Parser/CsvParser.Map.cs
@@ -1292,7 +1292,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Map.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: Unmap
     path: ../CSV-Parser/CsvParser.Map.cs
@@ -1339,7 +1339,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Parse.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ParseFile
     path: ../CSV-Parser/CsvParser.Parse.cs
@@ -1401,7 +1401,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Parse.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ParseFileAsync
     path: ../CSV-Parser/CsvParser.Parse.cs
@@ -1467,7 +1467,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Parse.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ParseStream
     path: ../CSV-Parser/CsvParser.Parse.cs
@@ -1532,7 +1532,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Parse.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ParseStreamAsync
     path: ../CSV-Parser/CsvParser.Parse.cs
@@ -1601,7 +1601,7 @@ items:
   source:
     remote:
       path: src/CSV-Parser/CsvParser.Parse.cs
-      branch: main
+      branch: dev
       repo: https://github.com/nd1012/CSV-Parser.git
     id: ParseString
     path: ../CSV-Parser/CsvParser.Parse.cs

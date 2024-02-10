@@ -63,12 +63,23 @@
 <h1 id="csv-parser">CSV-Parser</h1>
 
 <p>A lightweight .NET Standard 2.0 CSV table (RFC 4180-like) parser.</p>
+<h2 id="how-to-get-it">How to get it</h2>
+<p>CSV-Parser is available as
+(NuGet package &quot;CSV-Parser&quot;)[https://www.nuget.org/packages/CSV-Parser/].</p>
 <h2 id="usage">Usage</h2>
 <p>Parse a file example:</p>
-<pre><code class="lang-cs">CsvTable table = wan24.Data.CsvParser.ParseFile(@&quot;path\to\file.csv&quot;);
+<pre><code class="lang-cs">CsvTable table = wan24.Data.CsvParser.ParseFile(@&quot;/path/to/file.csv&quot;);
+foreach(string[] row in table)
+{
+	Console.WriteLine(&quot;Row in CSV table:&quot;);
+	for(int i = 0; i &lt; table.CountColumns; i++)
+	{
+		Console.WriteLine($&quot;\t{table.Header[i]}: {row[i]}&quot;);
+	}
+}
 </code></pre>
 <p>Parse a file asynchronous example:</p>
-<pre><code class="lang-cs">CsvTable table = await wan24.Data.CsvParser.ParseFileAsync(@&quot;path\to\file.csv&quot;);
+<pre><code class="lang-cs">CsvTable table = await wan24.Data.CsvParser.ParseFileAsync(@&quot;/path/to/file.csv&quot;);
 </code></pre>
 <p>These static methods are available:</p>
 <ul>
@@ -235,7 +246,7 @@ using(CsvStream csv = new CsvStream(FileStream.OpenRead(&quot;objects.csv&quot;)
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/nd1012/CSV-Parser/blob/main/src/CSV-Parser DocFx/README.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/nd1012/CSV-Parser/blob/dev/src/CSV-Parser DocFx/README.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
