@@ -40,12 +40,11 @@ namespace wan24.Data
         /// Get rows as object
         /// </summary>
         /// <typeparam name="T">Object type</typeparam>
-        /// <param name="index">Index</param>
         /// <param name="mapping">Override mapping</param>
         /// <returns>Object</returns>
-        public IEnumerable<T> AsObjects<T>(int index, Dictionary<int, CsvMapping> mapping = null) where T : new()
+        public IEnumerable<T> AsObjects<T>(Dictionary<int, CsvMapping> mapping = null) where T : new()
         {
-            if (index < 0 || index > CountRows) throw new ArgumentException("Invalid index", nameof(index));
+            if (mapping == null) mapping = Mapping;
             foreach (string[] row in Rows) yield return CsvParser.Map<T>(row, mapping ?? Mapping);
         }
 
